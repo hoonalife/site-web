@@ -16,3 +16,6 @@ _shot-*.html
 /NOTES-INTERNES.md
 /traductions-a-valider.md
 /design.md
+
+# Fichiers temporaires des outils de capture et de PDF
+_pdf-*
