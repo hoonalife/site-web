@@ -1,0 +1,5 @@
+# Netlify construit le site avec le générateur maison (Python, bibliothèque standard uniquement)
+# et publie le dossier dist/.
+[build]
+  command = "python3 build.py"
+  publish = "dist"

@@ -1,0 +1,18 @@
+# Généré par build.py
+/fr/
+/nl/
+/en/
+/index.html
+/sitemap.xml
+/dist/
+
+# Essais de mise en page, hors site
+/simulations/
+_shot-*.html
+
+.DS_Store
+
+# Notes de travail internes : restent hors du dépôt public
+/NOTES-INTERNES.md
+/traductions-a-valider.md
+/design.md

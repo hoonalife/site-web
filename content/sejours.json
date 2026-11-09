@@ -1,0 +1,89 @@
+{
+  "sejours": [
+    {
+      "debut": "2026-11-16",
+      "fin": "2026-11-20",
+      "complet": false
+    },
+    {
+      "debut": "2026-11-30",
+      "fin": "2026-12-04",
+      "complet": false
+    },
+    {
+      "debut": "2026-12-14",
+      "fin": "2026-12-18",
+      "complet": false
+    },
+    {
+      "debut": "2027-01-11",
+      "fin": "2027-01-15",
+      "complet": false
+    },
+    {
+      "debut": "2027-01-25",
+      "fin": "2027-01-29",
+      "complet": false
+    },
+    {
+      "debut": "2027-02-01",
+      "fin": "2027-02-05",
+      "complet": false
+    },
+    {
+      "debut": "2027-02-15",
+      "fin": "2027-02-19",
+      "complet": false
+    },
+    {
+      "debut": "2027-03-01",
+      "fin": "2027-03-05",
+      "complet": false
+    },
+    {
+      "debut": "2027-03-15",
+      "fin": "2027-03-19",
+      "complet": false
+    },
+    {
+      "debut": "2027-03-22",
+      "fin": "2027-03-26",
+      "complet": false
+    },
+    {
+      "debut": "2027-04-12",
+      "fin": "2027-04-16",
+      "complet": false
+    },
+    {
+      "debut": "2027-04-26",
+      "fin": "2027-04-30",
+      "complet": false
+    },
+    {
+      "debut": "2027-05-10",
+      "fin": "2027-05-14",
+      "complet": false
+    },
+    {
+      "debut": "2027-05-24",
+      "fin": "2027-05-28",
+      "complet": false
+    },
+    {
+      "debut": "2027-06-07",
+      "fin": "2027-06-11",
+      "complet": false
+    },
+    {
+      "debut": "2027-06-21",
+      "fin": "2027-06-25",
+      "complet": false
+    },
+    {
+      "debut": "2027-07-12",
+      "fin": "2027-07-16",
+      "complet": false
+    }
+  ]
+}

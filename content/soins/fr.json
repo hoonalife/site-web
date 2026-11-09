@@ -1,0 +1,568 @@
+{
+  "categories": [
+    {
+      "slug": "bilans",
+      "nom": "Bilans holistiques",
+      "intro": "Le point de départ conseillé : faire le point sur vos 7 axes pour savoir lequel soutenir en priorité.",
+      "image": "assets/img/bilan.webp",
+      "image_caption": "L'espace Consultations",
+      "prestations": [
+        {
+          "nom": "Bilan holistique individuel, au centre",
+          "description": "Avec Olivia et une thérapeute, pour une analyse personnalisée.",
+          "duree": 80,
+          "prix": 140,
+          "axes": [
+            "nutrition",
+            "sommeil",
+            "mouvement",
+            "detox",
+            "systeme-nerveux",
+            "psycho-emotionnel",
+            "sens"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520g%25C3%25A9n%25C3%25A9rales/appointment/84348096"
+        },
+        {
+          "nom": "Bilan holistique individuel, à distance",
+          "description": "Le même bilan, via Zoom, depuis chez vous.",
+          "duree": 80,
+          "prix": 140,
+          "axes": [
+            "nutrition",
+            "sommeil",
+            "mouvement",
+            "detox",
+            "systeme-nerveux",
+            "psycho-emotionnel",
+            "sens"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520g%25C3%25A9n%25C3%25A9rales/appointment/91421098"
+        },
+        {
+          "nom": "Bilan holistique en petit groupe",
+          "description": "Une demi-journée accompagnée, en groupe.",
+          "duree": 180,
+          "axes": [
+            "nutrition",
+            "sommeil",
+            "mouvement",
+            "detox",
+            "systeme-nerveux",
+            "psycho-emotionnel",
+            "sens"
+          ],
+          "url": "mailto:hello@hoona.life?subject=je%20souhaite%20participer%20%C3%A0%20un%20bilan%20holistique%20en%20groupe&body=Pr%C3%A9nom%20%3A%0D%0ANom%20%3A%0D%0AN%C2%B0%20de%20t%C3%A9l%C3%A9phone%20%3A%0D%0A%0D%0AVotre%20message%20%3A%0D%0A"
+        }
+      ]
+    },
+    {
+      "slug": "consultations",
+      "nom": "Consultations",
+      "intro": "Un accompagnement personnalisé avec nos experts pour soutenir ou restaurer votre vitalité, de façon autonome.",
+      "image": "assets/img/consultation.webp",
+      "image_caption": "Une consultation",
+      "prestations": [
+        {
+          "nom": "Consultation holistique",
+          "description": "Une vision globale de votre vitalité : l'équilibre corps-âme-esprit et le soutien de votre métabolisme.",
+          "duree": 80,
+          "prix": 120,
+          "axes": [
+            "nutrition",
+            "sommeil",
+            "mouvement",
+            "detox",
+            "systeme-nerveux",
+            "psycho-emotionnel",
+            "sens"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520g%25C3%25A9n%25C3%25A9rales/appointment/76141800"
+        },
+        {
+          "nom": "Consultation de suivi",
+          "description": "Avec le même thérapeute, pour ancrer, ajuster et approfondir.",
+          "duree": 50,
+          "prix": 80,
+          "axes": [
+            "nutrition",
+            "sommeil",
+            "mouvement",
+            "detox",
+            "systeme-nerveux",
+            "psycho-emotionnel",
+            "sens"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520sp%25C3%25A9cifiques/appointment/79448166"
+        },
+        {
+          "nom": "Burn-out et épuisement",
+          "description": "Un espace d'écoute pour comprendre les causes de l'épuisement et retrouver un équilibre mental, émotionnel et physique.",
+          "duree": 80,
+          "prix": 120,
+          "axes": [
+            "sommeil",
+            "detox",
+            "systeme-nerveux",
+            "psycho-emotionnel",
+            "sens"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520sp%25C3%25A9cifiques/appointment/77131404"
+        },
+        {
+          "nom": "Santé du système digestif",
+          "description": "Ballonnements, inconforts, intolérances : explorer l'équilibre digestif, avec des recommandations personnalisées.",
+          "duree": 80,
+          "prix": 120,
+          "axes": [
+            "nutrition",
+            "detox",
+            "systeme-nerveux",
+            "psycho-emotionnel"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520sp%25C3%25A9cifiques/appointment/76346819"
+        },
+        {
+          "nom": "Détox holistique",
+          "description": "Les sources de toxines (alimentation, eau, environnement), leur impact, et des stratégies simples pour s'en préserver.",
+          "duree": 80,
+          "prix": 120,
+          "axes": [
+            "nutrition",
+            "sommeil",
+            "mouvement",
+            "detox",
+            "systeme-nerveux",
+            "psycho-emotionnel",
+            "sens"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520sp%25C3%25A9cifiques/appointment/76650137"
+        },
+        {
+          "nom": "Coaching de vie",
+          "description": "Comprendre les déséquilibres émotionnels et relationnels qui pèsent sur la vitalité.",
+          "duree": 80,
+          "prix": 120,
+          "axes": [
+            "systeme-nerveux",
+            "psycho-emotionnel",
+            "sens"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520sp%25C3%25A9cifiques/appointment/76346785"
+        },
+        {
+          "nom": "Sommeil",
+          "description": "Rythmes de repos et rituels apaisants pour retrouver des nuits réparatrices.",
+          "duree": 80,
+          "prix": 120,
+          "axes": [
+            "nutrition",
+            "sommeil",
+            "systeme-nerveux",
+            "psycho-emotionnel",
+            "sens"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520sp%25C3%25A9cifiques/appointment/76535446"
+        },
+        {
+          "nom": "Gestion du stress",
+          "description": "Des stratégies adaptées, inspirées des 7 axes, pour retrouver de l'élan.",
+          "duree": 80,
+          "prix": 120,
+          "axes": [
+            "sommeil",
+            "detox",
+            "systeme-nerveux",
+            "psycho-emotionnel",
+            "sens"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520sp%25C3%25A9cifiques/appointment/76346766"
+        },
+        {
+          "nom": "Nutrition et habitudes alimentaires",
+          "description": "Un accompagnement personnalisé vers une alimentation saine et énergisante.",
+          "duree": 80,
+          "prix": 120,
+          "axes": [
+            "nutrition"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520sp%25C3%25A9cifiques/appointment/79450093"
+        }
+      ]
+    },
+    {
+      "slug": "technologies",
+      "nom": "Technologies de régénération",
+      "intro": "Des outils innovants pour soutenir le métabolisme naturel du corps, la régénération et l'élimination.",
+      "image": "assets/img/soin-indiba.jpg",
+      "image_caption": "L'espace Soins & technologies",
+      "prestations": [
+        {
+          "nom": "Papimi, induction ionique · 1re séance",
+          "description": "Des impulsions électromagnétiques pour soutenir la régénération et revitaliser l'organisme.",
+          "duree": 50,
+          "prix": 60,
+          "axes": [
+            "detox",
+            "systeme-nerveux"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Soins%2520hoona/appointment/79690218",
+          "page": "papimi.html",
+          "alias": [
+            "Papimi"
+          ]
+        },
+        {
+          "nom": "Papimi, induction ionique · séances suivantes",
+          "description": "",
+          "duree": 30,
+          "prix": 60,
+          "axes": [
+            "detox",
+            "systeme-nerveux"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Soins%2520hoona/appointment/86482176",
+          "pack": 300,
+          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2154526",
+          "page": "papimi.html",
+          "alias": [
+            "Papimi"
+          ]
+        },
+        {
+          "nom": "Indiba, radiofréquence",
+          "description": "Une radiofréquence de 448 kHz pour soutenir la régénération naturelle et l'énergie cellulaire.",
+          "duree": 50,
+          "prix": 100,
+          "axes": [
+            "mouvement",
+            "detox"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Soins%2520hoona/appointment/79690238",
+          "pack": 500,
+          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2154528"
+        },
+        {
+          "nom": "IHHT, Mitovit",
+          "description": "Une alternance d'air pauvre puis riche en oxygène, comme un entraînement en altitude.",
+          "duree": 50,
+          "prix": 60,
+          "axes": [
+            "sommeil",
+            "mouvement",
+            "systeme-nerveux"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Soins%2520hoona/appointment/76393467",
+          "pack": 300,
+          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2154529"
+        },
+        {
+          "nom": "QRS et Airnergy",
+          "description": "Stimulation électromagnétique douce et oxygène actif.",
+          "duree": 25,
+          "prix": 30,
+          "axes": [
+            "sommeil",
+            "detox"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Soins%2520hoona/appointment/76393492",
+          "pack": 150,
+          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2075667"
+        },
+        {
+          "nom": "Lumière infrarouge",
+          "description": "Une chaleur douce pour soutenir la régénération et recharger l'énergie.",
+          "duree": 25,
+          "prix": 30,
+          "axes": [
+            "sommeil",
+            "detox",
+            "systeme-nerveux"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Soins%2520hoona/appointment/76440251",
+          "pack": 150,
+          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2075668"
+        },
+        {
+          "nom": "Sauna privé",
+          "description": "Un sauna infrarouge pour soutenir la détox, apaiser les tensions et la circulation.",
+          "duree": 50,
+          "prix": 60,
+          "axes": [
+            "detox",
+            "systeme-nerveux"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Soins%2520hoona/appointment/76440260",
+          "pack": 300,
+          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2075697"
+        },
+        {
+          "nom": "Bain aux sels de magnésium",
+          "description": "Pour se détendre, se réhydrater et se reminéraliser.",
+          "duree": 30,
+          "prix": 30,
+          "axes": [
+            "sommeil",
+            "detox",
+            "systeme-nerveux"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Soins%2520hoona/appointment/76440268"
+        },
+        {
+          "nom": "Bain de pieds aux sels de magnésium",
+          "description": "Récupération et relaxation profonde.",
+          "duree": 25,
+          "prix": 30,
+          "axes": [
+            "sommeil",
+            "detox",
+            "systeme-nerveux"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Soins%2520hoona/appointment/76440274",
+          "pack": 150,
+          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2075700"
+        },
+        {
+          "nom": "Cataplasme du foie",
+          "description": "Plantes fraîches et bouillotte chaude pour accompagner la détox et apaiser la fatigue.",
+          "duree": 25,
+          "prix": 30,
+          "axes": [
+            "nutrition",
+            "detox"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Soins%2520hoona/appointment/76440638"
+        },
+        {
+          "nom": "Hydrothérapie du côlon",
+          "description": "Un nettoyage doux du côlon pour soutenir l'élimination et le confort digestif.",
+          "duree": 90,
+          "prix": 120,
+          "axes": [
+            "detox",
+            "systeme-nerveux",
+            "psycho-emotionnel"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Soins%2520hoona/appointment/76346936"
+        }
+      ]
+    },
+    {
+      "slug": "massages",
+      "nom": "Massages et soins énergétiques",
+      "intro": "Des thérapies manuelles pour libérer les tensions, relancer la circulation et apaiser le système nerveux.",
+      "image": "assets/img/cadeau-massage.webp",
+      "image_caption": "L'espace Soins",
+      "prestations": [
+        {
+          "nom": "Massage du corps",
+          "description": "Profond et enveloppant, il alterne rythmes et intensités pour libérer les tensions musculaires et nerveuses.",
+          "duree": 90,
+          "prix": 150,
+          "axes": [
+            "sommeil",
+            "detox",
+            "systeme-nerveux",
+            "psycho-emotionnel",
+            "sens"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/76346236"
+        },
+        {
+          "nom": "Massage du corps à deux",
+          "description": "Le même massage, partagé à deux. Sur demande.",
+          "duree": 90,
+          "prix": 250,
+          "axes": [
+            "sommeil",
+            "systeme-nerveux",
+            "psycho-emotionnel",
+            "sens"
+          ],
+          "url": "mailto:hello@hoona.life?subject=R%C3%A9servation%20d%27un%20massage%20du%20corps%20pour%202%20personnes&body=Pr%C3%A9nom%20%3A%0D%0ANom%20%3A%0D%0AN%C2%B0%20de%20t%C3%A9l%C3%A9phone%20%3A%0D%0A%0D%0AVotre%20message%20%3A%0D%0A"
+        },
+        {
+          "nom": "Massage du dos",
+          "description": "Un soin ciblé pour dénouer les tensions de tout le dos.",
+          "duree": 60,
+          "prix": 100,
+          "axes": [
+            "systeme-nerveux",
+            "psycho-emotionnel",
+            "sens"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868394"
+        },
+        {
+          "nom": "Massage circulatoire des jambes",
+          "description": "Pour alléger les jambes lourdes et relancer la circulation.",
+          "duree": 60,
+          "prix": 100,
+          "axes": [
+            "detox",
+            "psycho-emotionnel",
+            "sens"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868321"
+        },
+        {
+          "nom": "Massage du visage et du crâne",
+          "description": "Visage, crâne et décolleté : draine, détend et tonifie.",
+          "duree": 60,
+          "prix": 100,
+          "axes": [
+            "sommeil",
+            "detox",
+            "systeme-nerveux",
+            "psycho-emotionnel",
+            "sens"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868446"
+        },
+        {
+          "nom": "Visage, pieds et voyage sonore",
+          "description": "Un soin en trois temps pour apaiser le mental et harmoniser le système nerveux.",
+          "duree": 90,
+          "prix": 150,
+          "axes": [
+            "sommeil",
+            "detox",
+            "systeme-nerveux",
+            "psycho-emotionnel",
+            "sens"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868428"
+        },
+        {
+          "nom": "Massage Tuina",
+          "description": "Massage chinois : pétrissage, roulement et étirements pour la mobilité et la circulation.",
+          "duree": 90,
+          "prix": 150,
+          "axes": [
+            "mouvement",
+            "detox",
+            "systeme-nerveux",
+            "psycho-emotionnel",
+            "sens"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79580799"
+        },
+        {
+          "nom": "Soin aux bols tibétains",
+          "description": "Le son et les vibrations des bols pour un lâcher-prise physique et mental.",
+          "duree": 60,
+          "prix": 100,
+          "axes": [
+            "sommeil",
+            "detox",
+            "systeme-nerveux",
+            "psycho-emotionnel",
+            "sens"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868267"
+        },
+        {
+          "nom": "Chi Nei Tsang, massage du ventre",
+          "description": "Un massage abdominal pour la digestion et les tensions physiques et émotionnelles.",
+          "duree": 60,
+          "prix": 100,
+          "axes": [
+            "nutrition",
+            "detox",
+            "systeme-nerveux",
+            "psycho-emotionnel",
+            "sens"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868375"
+        },
+        {
+          "nom": "Massage des pieds au bol Kansu",
+          "description": "Un massage apaisant des pieds, profondément relaxant.",
+          "duree": 60,
+          "prix": 100,
+          "axes": [
+            "sommeil",
+            "detox",
+            "systeme-nerveux",
+            "psycho-emotionnel",
+            "sens"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868366"
+        },
+        {
+          "nom": "Dien Chan, massage vietnamien",
+          "description": "Une multi-réflexologie du visage et du corps pour la détente et la circulation.",
+          "duree": 60,
+          "prix": 100,
+          "axes": [
+            "detox",
+            "systeme-nerveux",
+            "psycho-emotionnel",
+            "sens"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868461"
+        },
+        {
+          "nom": "Réflexologie plantaire",
+          "description": "Les zones réflexes du pied, pour la détente, l'équilibre et la vitalité.",
+          "duree": 60,
+          "prix": 100,
+          "axes": [
+            "nutrition",
+            "detox",
+            "systeme-nerveux",
+            "psycho-emotionnel",
+            "sens"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868286"
+        }
+      ]
+    },
+    {
+      "slug": "mouvement",
+      "nom": "Mouvement, en individuel",
+      "intro": "Une séance sur mesure, à votre rythme, avec nos coachs et notre yogi.",
+      "image": "assets/img/chemin-prevenir.webp",
+      "image_caption": "Le parc de Tervuren",
+      "prestations": [
+        {
+          "nom": "Yoga, session individuelle",
+          "description": "Une séance construite pour vous, guidée par notre yogi.",
+          "duree": 60,
+          "prix": 80,
+          "axes": [
+            "mouvement",
+            "systeme-nerveux"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Mouvement%2520individuel/appointment/76534622"
+        },
+        {
+          "nom": "Marche nordique, session individuelle",
+          "description": "En forêt de Soignes, à deux pas du centre.",
+          "duree": 60,
+          "prix": 50,
+          "axes": [
+            "mouvement",
+            "detox",
+            "systeme-nerveux",
+            "psycho-emotionnel"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Mouvement%2520individuel/appointment/76534659"
+        },
+        {
+          "nom": "Coaching sportif et renforcement musculaire",
+          "description": "Une séance individuelle adaptée à votre niveau.",
+          "duree": 50,
+          "prix": 100,
+          "axes": [
+            "mouvement",
+            "detox",
+            "systeme-nerveux",
+            "psycho-emotionnel"
+          ],
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Mouvement%2520individuel/appointment/82145718"
+        }
+      ]
+    }
+  ]
+}

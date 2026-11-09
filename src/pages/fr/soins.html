@@ -1,0 +1,35 @@
+<!--
+title: Soins, consultations et technologies de régénération | hoona
+description: Les soins hoona à Tervuren : bilans, consultations, technologies de régénération (Indiba, Papimi, IHHT), massages et soins énergétiques. Durées et tarifs.
+nav: SOINS
+-->
+
+<header class="wrap page-head page-head--compact">
+  <ol class="crumbs" aria-label="Fil d'Ariane"><li><a href="index.html">Accueil</a></li><li><span aria-current="page">Soins &amp; consultations</span></li></ol>
+  <h1>Soins &amp; consultations</h1>
+  <p class="chapeau">Technologies de pointe, thérapies manuelles et consultations holistiques, pour réunir les conditions favorables à votre équilibre.</p>
+</header>
+
+<div class="wrap" data-catalogue data-collapsible>
+  {{AXES_PICKER}}
+  <div class="toolbar">
+    <div class="filters" aria-label="{{t:goto_cat}}">
+      {{SOINS_FILTERS}}
+    </div>
+    <div class="search">
+      <svg class="i" aria-hidden="true"><use href="#i-search"/></svg>
+      <label class="visually-hidden" for="q">Rechercher un soin</label>
+      <input id="q" type="search" data-search placeholder="Rechercher : sommeil, massage, détox…" autocomplete="off">
+    </div>
+    <p class="toolbar__status" data-status role="status" aria-live="polite">{{SOINS_STATUS}}</p>
+  </div>
+
+    {{SOINS_GROUPS}}
+
+  <div class="empty" data-empty hidden>
+    <p>Aucune prestation ne correspond à cette recherche.</p>
+    <p style="margin-top:var(--space-sm)"><button class="btn btn--line btn--sm" type="button" data-reset>Tout afficher</button></p>
+  </div>
+  <p class="muted" style="padding-block:var(--space-xl) var(--space-3xl);font-size:var(--text-sm)">{{t:soins_note}}</p>
+  {{SOINS_JSONLD}}
+</div>

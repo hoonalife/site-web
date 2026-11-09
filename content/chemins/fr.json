@@ -1,0 +1,308 @@
+{
+  "intro": "Quatre chemins pour soutenir sa vitalité. Chacun commence par une première étape simple, puis se compose avec vous.",
+  "chemins": [
+    {
+      "slug": "epuisement",
+      "num": "01",
+      "nom": "Sortir de l'épuisement",
+      "titre": "Sortir de l'épuisement et apaiser son système nerveux",
+      "chapeau": "Fatigue qui s'installe, sommeil peu réparateur, tête qui ne s'arrête plus. Vous continuez à tout faire tourner, et vous commencez à vous perdre en route.",
+      "image": "assets/img/chemin-nerveux.webp",
+      "image_alt": "Une participante, les yeux fermés, respire sous la charpente du Dôme",
+      "image_caption": "Le Dôme · hoona",
+      "signaux": [
+        "Vous dormez, mais vous vous réveillez déjà fatigué·e.",
+        "Les pensées tournent le soir et ne s'arrêtent plus.",
+        "La patience s'use, les réactions montent plus vite qu'avant.",
+        "Écouter les autres, même ceux que vous aimez, vous demande un effort.",
+        "Vous tenez la maison, le travail, la famille, et vous vous demandez combien de temps encore."
+      ],
+      "axes": [
+        "systeme-nerveux",
+        "sommeil",
+        "psycho-emotionnel"
+      ],
+      "etapes": [
+        {
+          "phase": "point",
+          "titre": "Une consultation de naturopathie",
+          "texte": "1h20 avec une naturopathe pour faire le point sur vos 7 axes et repérer ce qui use en premier : sommeil, charge mentale, digestion, carences.",
+          "label": "Réserver la consultation",
+          "url": "consultation.html",
+          "prix": "120 €"
+        },
+        {
+          "phase": "experimenter",
+          "titre": "La demi-journée « Relaxation du système nerveux »",
+          "texte": "Consultation et mantras, lumière infrarouge, marche nordique en petit groupe. Une parenthèse de quelques heures pour faire redescendre.",
+          "label": "Voir la demi-journée",
+          "url": "journees.html#demi-journees",
+          "prix": "180 €"
+        },
+        {
+          "phase": "experimenter",
+          "titre": "Des soins qui apaisent, à votre rythme",
+          "texte": "QRS et Airnergy, bain aux sels de magnésium, massage du corps, bols tibétains : des séances courtes, à la carte, pour entretenir le calme retrouvé.",
+          "label": "Voir les soins",
+          "url": "soins.html",
+          "prix": "dès 30 €"
+        },
+        {
+          "phase": "immerger",
+          "titre": "Cinq jours pour tout poser",
+          "texte": "Quand la fatigue est installée, le séjour immersif donne au corps le temps qu'une demi-journée ne peut pas donner : quatre nuits, consultations, soins, sessions, cuisine anti-inflammatoire.",
+          "label": "Voir les séjours",
+          "url": "sejours.html",
+          "prix": "dès 2 650 €"
+        }
+      ],
+      "soins": [
+        "Consultation holistique",
+        "Burn-out et épuisement",
+        "Sommeil",
+        "Gestion du stress",
+        "QRS et Airnergy",
+        "Bain aux sels de magnésium",
+        "Massage du corps",
+        "Soin aux bols tibétains",
+        "Massage du visage et du crâne"
+      ],
+      "sessions": [
+        "Yin Yoga",
+        "Yoga Nidra",
+        "Bain de gongs",
+        "Marche nordique"
+      ],
+      "journal": [
+        "expirer-plus-longtemps",
+        "le-sommeil-commence-le-matin",
+        "laisser-le-corps-trembler"
+      ]
+    },
+    {
+      "slug": "digestif",
+      "num": "02",
+      "nom": "Retrouver un confort digestif",
+      "titre": "Retrouver un confort digestif",
+      "chapeau": "Ballonnements, inconforts récurrents, digestion capricieuse. Le ventre parle le premier, et souvent longtemps avant le reste. Nous l'écoutons avec vous.",
+      "image": "assets/img/chemin-digestif.webp",
+      "image_alt": "Un bol de nouilles aux légumes et herbes fraîches, préparé par le chef de hoona",
+      "image_caption": "La cuisine de la maison d'hôtes · hoona",
+      "signaux": [
+        "Ballonnements après les repas, même légers.",
+        "Transit irrégulier, lourdeurs, reflux.",
+        "Énergie en dents de scie, envies de sucre dans l'après-midi.",
+        "Des analyses normales, et pourtant.",
+        "Une digestion qui se dérègle dès que le stress monte."
+      ],
+      "axes": [
+        "nutrition",
+        "detox",
+        "systeme-nerveux"
+      ],
+      "etapes": [
+        {
+          "phase": "point",
+          "titre": "La consultation « Santé du système digestif »",
+          "texte": "1h20 pour explorer votre équilibre digestif : assiette, rythme des repas, microbiote, stress, avec des recommandations personnalisées.",
+          "label": "Réserver la consultation",
+          "url": "consultation.html#formats",
+          "prix": "120 €"
+        },
+        {
+          "phase": "experimenter",
+          "titre": "La journée « Nutrition, ventre & détox »",
+          "texte": "Consultation santé digestive, Chi Nei Tsang, cataplasme du foie, déjeuner anti-inflammatoire préparé par le chef.",
+          "label": "Voir la journée",
+          "url": "journees.html#journees-completes",
+          "prix": "250 €"
+        },
+        {
+          "phase": "experimenter",
+          "titre": "Des soins pour le ventre et le foie",
+          "texte": "Chi Nei Tsang, cataplasme du foie, hydrothérapie du côlon, bain de pieds au magnésium : à la carte, selon ce que la consultation a montré. Entre deux, la marche nordique et le yoga hormonal soutiennent le transit.",
+          "label": "Voir les soins",
+          "url": "soins.html#technologies",
+          "prix": "dès 30 €"
+        },
+        {
+          "phase": "immerger",
+          "titre": "Le séjour immersif de cinq jours",
+          "texte": "Quatre nuits en maison d'hôtes, cuisine anti-inflammatoire à chaque repas, consultations, soins et sessions : le temps d'installer d'autres habitudes, loin du quotidien.",
+          "label": "Voir les séjours",
+          "url": "sejours.html",
+          "prix": "dès 2 650 €"
+        }
+      ],
+      "soins": [
+        "Santé du système digestif",
+        "Nutrition et habitudes alimentaires",
+        "Chi Nei Tsang, massage du ventre",
+        "Cataplasme du foie",
+        "Hydrothérapie du côlon",
+        "Bain de pieds aux sels de magnésium"
+      ],
+      "sessions": [
+        "Marche nordique",
+        "Yoga hormonal"
+      ],
+      "journal": [
+        "le-microbiote-socle-discret",
+        "la-premiere-detox",
+        "expirer-plus-longtemps"
+      ]
+    },
+    {
+      "slug": "ressourcer",
+      "num": "03",
+      "nom": "Se ressourcer en profondeur",
+      "titre": "Se ressourcer en profondeur",
+      "chapeau": "Une vraie parenthèse pour ralentir, déposer ce que vous portez et revenir à vous. Quelques heures, une journée, ou cinq jours loin du quotidien.",
+      "image": "assets/img/chemin-ressourcer.webp",
+      "image_alt": "Un gong et des bols dans la lumière du Dôme",
+      "image_caption": "Le Dôme · hoona",
+      "signaux": [
+        "Vous n'avez pas pris de temps pour vous depuis des mois.",
+        "Vous fonctionnez, sans vraiment être là.",
+        "Le week-end ne suffit plus à récupérer.",
+        "Vous avez besoin de déposer, pas de performer.",
+        "Vous aimeriez que quelqu'un s'occupe de vous, pour une fois."
+      ],
+      "axes": [
+        "sens",
+        "psycho-emotionnel",
+        "systeme-nerveux"
+      ],
+      "etapes": [
+        {
+          "phase": "point",
+          "titre": "Une consultation de naturopathie",
+          "texte": "1h20 avec une naturopathe pour déposer ce que vous portez, faire le point sur vos 7 axes et choisir la parenthèse qui vous convient.",
+          "label": "Réserver la consultation",
+          "url": "consultation.html",
+          "prix": "120 €"
+        },
+        {
+          "phase": "experimenter",
+          "principal": true,
+          "titre": "Une demi-journée ou une journée pour vous",
+          "texte": "La demi-journée « Équilibre de vie » : consultation, bain aux sels de magnésium, kundalini et bain de gongs au Dôme. Ou la journée « Retour à soi » : consultation, yoga individuel, Papimi, soin aux bols tibétains, déjeuner au centre.",
+          "label": "Voir les journées",
+          "url": "journees.html",
+          "prix": "180 à 250 €"
+        },
+        {
+          "phase": "experimenter",
+          "titre": "Entre deux, le Dôme",
+          "texte": "Bain de gongs le mardi soir, Yoga Nidra le vendredi matin, Body & Sound Experience une fois par mois : des rendez-vous réguliers pour ne pas laisser retomber.",
+          "label": "Voir les sessions",
+          "url": "sessions.html",
+          "prix": "dès 25 €"
+        },
+        {
+          "phase": "immerger",
+          "titre": "Le séjour immersif de cinq jours",
+          "texte": "Du lundi au vendredi, en petit groupe, dans la maison d'hôtes : consultations, soins, sessions, pension complète. Le temps de lâcher prise et de repartir avec un nouveau rythme.",
+          "label": "Voir les dates",
+          "url": "sejours.html#dates",
+          "prix": "dès 2 650 €"
+        }
+      ],
+      "soins": [
+        "Visage, pieds et voyage sonore",
+        "Soin aux bols tibétains",
+        "Massage du corps",
+        "Sauna privé",
+        "Massage Tuina",
+        "Réflexologie plantaire"
+      ],
+      "sessions": [
+        "Bain de gongs",
+        "Body & Sound Experience",
+        "Yoga Nidra",
+        "Kundalini Yoga"
+      ],
+      "journal": [
+        "laisser-le-corps-trembler",
+        "expirer-plus-longtemps",
+        "marche-nordique-foret-de-soignes"
+      ]
+    },
+    {
+      "slug": "prevenir",
+      "num": "04",
+      "nom": "Prévenir et se détoxifier",
+      "titre": "Prévenir activement et se détoxifier",
+      "chapeau": "Prendre soin de sa vitalité quand on va bien, et que ça dure. Il n'y a rien de plus intelligent que de s'occuper de sa santé avant que le corps ne proteste.",
+      "image": "assets/img/chemin-prevenir.webp",
+      "image_alt": "Un groupe en marche nordique sous les arbres du parc de Tervuren",
+      "image_caption": "Marche nordique · parc de Tervuren",
+      "signaux": [
+        "Vous allez bien et vous voulez que ça dure.",
+        "Vous sentez que le quotidien encrasse : écrans, alcool, sucre, informations.",
+        "Vous cherchez des repères fiables dans un monde de remèdes miracles.",
+        "Vous voulez comprendre votre corps avant qu'il ne tire la sonnette.",
+        "Vous aimez bouger, dehors, et vous voudriez plus de régularité."
+      ],
+      "axes": [
+        "detox",
+        "nutrition",
+        "mouvement"
+      ],
+      "etapes": [
+        {
+          "phase": "point",
+          "titre": "Le bilan holistique",
+          "texte": "1h20 avec Olivia et une thérapeute pour évaluer vos 7 axes et savoir lequel soutenir en priorité. Au centre ou à distance.",
+          "label": "Réserver le bilan",
+          "url": "bilan.html",
+          "prix": "140 €"
+        },
+        {
+          "phase": "experimenter",
+          "titre": "La journée « Détox du foie »",
+          "texte": "Consultation, Papimi, Indiba, cataplasme du foie. Ou, en version courte, la demi-journée « Détox douce » : consultation, sauna, bain de pieds, QRS.",
+          "label": "Voir les journées",
+          "url": "journees.html",
+          "prix": "180 à 250 €"
+        },
+        {
+          "phase": "experimenter",
+          "titre": "La régularité, en forêt",
+          "texte": "Marche nordique le mardi matin et le jeudi midi, coaching sportif le mardi, au départ du centre : c'est la régularité qui fait tenir une détox.",
+          "label": "Voir les sessions",
+          "url": "sessions.html",
+          "prix": "dès 15 €"
+        },
+        {
+          "phase": "immerger",
+          "titre": "Le séjour immersif de cinq jours",
+          "texte": "Cinq jours pour prendre de l'avance : quatre nuits en maison d'hôtes, consultations, soins, mouvement et cuisine anti-inflammatoire. La prévention, en grand format.",
+          "label": "Voir les séjours",
+          "url": "sejours.html",
+          "prix": "dès 2 650 €"
+        }
+      ],
+      "soins": [
+        "Bilan holistique individuel, au centre",
+        "Détox holistique",
+        "Sauna privé",
+        "Cataplasme du foie",
+        "IHHT, Mitovit",
+        "Papimi, induction ionique · 1re séance",
+        "Indiba, radiofréquence"
+      ],
+      "sessions": [
+        "Marche nordique",
+        "Coaching sportif & renforcement musculaire",
+        "Yoga Flow"
+      ],
+      "journal": [
+        "la-premiere-detox",
+        "marche-nordique-foret-de-soignes",
+        "le-microbiote-socle-discret"
+      ]
+    }
+  ],
+  "_aide_etapes": "Chaque étape porte une phase : point (Faire le point), experimenter (Expérimenter) ou immerger (S'immerger). Les étapes voisines de même phase sont regroupées sous un seul intitulé. principal: true = l'étape reprise par le bouton d'en-tête (sinon la première). Quatre étapes par chemin."
+}

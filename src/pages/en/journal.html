@@ -1,0 +1,26 @@
+<!--
+title: {{t:journal_title}} | hoona
+description: {{t:journal_desc}}
+nav: JOURNAL
+-->
+
+<header class="wrap page-head page-head--compact">
+  <ol class="crumbs" aria-label="{{t:crumbs}}"><li><a href="index.html">{{t:m_home}}</a></li><li><span aria-current="page">{{t:m_journal}}</span></li></ol>
+  <p class="cartouche" style="margin-bottom:var(--space-lg)">{{t:journal_title}}</p>
+  <h1>{{t:journal_h1}}</h1>
+  <p class="chapeau">{{t:journal_intro}}</p>
+</header>
+
+<section class="section section--tight" aria-label="{{t:m_journal}}">
+  <div class="wrap journal" data-journal>
+    <div class="journal__filters" role="group" aria-label="{{t:journal_filter_label}}">
+      {{JOURNAL_FILTERS}}
+    </div>
+    <p class="journal__status"><span role="status" aria-live="polite" data-journal-count>{{JOURNAL_COUNT}}</span> · <a class="link" href="journal.xml">{{t:journal_rss}}</a></p>
+    <div class="posts posts--3">
+{{JOURNAL_CARDS}}
+    </div>
+    <p class="empty muted" data-empty hidden>{{t:journal_empty}}</p>
+    {{JOURNAL_JSONLD}}
+  </div>
+</section>

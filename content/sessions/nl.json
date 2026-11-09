@@ -1,0 +1,302 @@
+{
+  "categories": [
+    {
+      "slug": "mouvement",
+      "nom": "Beweging",
+      "intro": "Het lichaam versterken, de mobiliteit verbeteren en vitaliteit opbouwen in de energie van een groep.",
+      "image": "assets/img/chemin-prevenir.webp",
+      "image_caption": "Het park van Tervuren",
+      "sessions": [
+        {
+          "nom": "Sportcoaching & spierversterking",
+          "description": "Spierversterkende sessies voor fysiek welzijn en vitaliteit, in een stimulerende groepsdynamiek.",
+          "horaire": [
+            {
+              "jour": "mar",
+              "heure": "11:00"
+            }
+          ],
+          "duree": 50,
+          "prix": 25,
+          "pack": 125,
+          "abo": null,
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Session%2520collective%2520%25C3%25A0%2520l%2527unit%25C3%25A9/appointment/84799101/calendar/12002631",
+          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2071105",
+          "url_abo": "",
+          "axes": [
+            "nutrition",
+            "sommeil",
+            "mouvement",
+            "detox",
+            "systeme-nerveux",
+            "psycho-emotionnel"
+          ]
+        },
+        {
+          "nom": "Nordic walking",
+          "description": "Nordic walking versterkt de natuurlijke armzwaai en gebruikt twee stokken om je actief vooruit te stuwen.",
+          "horaire": [
+            {
+              "jour": "mar",
+              "heure": "9:30"
+            },
+            {
+              "jour": "jeu",
+              "heure": "12:30"
+            }
+          ],
+          "duree": 60,
+          "prix": 15,
+          "pack": 75,
+          "abo": 59,
+          "url": "https://hoonalife.as.me/?appointmentType=98126631",
+          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2071094",
+          "url_abo": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2071092",
+          "axes": [
+            "nutrition",
+            "sommeil",
+            "mouvement",
+            "detox",
+            "systeme-nerveux",
+            "psycho-emotionnel"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "voyagesonore",
+      "nom": "Klankreis",
+      "intro": "De trilling van de gongs, een onderdompelende en regenererende ervaring, begeleid door Coralie.",
+      "image": "assets/img/chemin-ressourcer.webp",
+      "image_caption": "De Dome",
+      "sessions": [
+        {
+          "nom": "Gongbad",
+          "description": "Een unieke trillingservaring, gedragen door de magie en de kracht van de gongs. Een klankmassage die je terugbrengt naar het hier en nu, je lichaam en je gewaarwordingen.",
+          "horaire": [
+            {
+              "jour": "mar",
+              "heure": "19:30"
+            }
+          ],
+          "duree": 70,
+          "prix": 25,
+          "pack": 125,
+          "abo": 99,
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Session%2520collective%2520%25C3%25A0%2520l%2527unit%25C3%25A9/appointment/79828223/calendar/11799358",
+          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070405",
+          "url_abo": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "axes": [
+            "sommeil",
+            "systeme-nerveux",
+            "psycho-emotionnel",
+            "sens"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "yoga",
+      "nom": "Yoga",
+      "intro": "Verschillende benaderingen voor soepelheid, kracht, ontspanning of innerlijk ontwaken. Elke yoga bestaat ook als individuele sessie.",
+      "image": "assets/img/sessions.webp",
+      "image_caption": "De Dome",
+      "sessions": [
+        {
+          "nom": "Flow yoga",
+          "description": "Een dynamische en vloeiende praktijk die houdingen, ademhaling en beweging verbindt om het lichaam te versterken, de geest te kalmeren en aanwezigheid te cultiveren. Voor iedereen, zonder voorkennis.",
+          "horaire": [
+            {
+              "jour": "mer",
+              "heure": "18:00"
+            }
+          ],
+          "duree": 70,
+          "prix": 25,
+          "pack": 125,
+          "abo": 99,
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Session%2520collective%2520%25C3%25A0%2520l%2527unit%25C3%25A9/appointment/79685079/calendar/11820061",
+          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "url_abo": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "axes": [
+            "mouvement",
+            "systeme-nerveux"
+          ]
+        },
+        {
+          "nom": "Yin yoga",
+          "description": "Een zachte en diepe praktijk: houdingen worden lang aangehouden om fysieke en emotionele spanning los te laten.",
+          "horaire": [
+            {
+              "jour": "mer",
+              "heure": "19:30"
+            },
+            {
+              "jour": "ven",
+              "heure": "14:00"
+            }
+          ],
+          "duree": 70,
+          "prix": 25,
+          "pack": 125,
+          "abo": 99,
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Session%2520collective%2520%25C3%25A0%2520l%2527unit%25C3%25A9/appointment/79834946/calendar/11820061",
+          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "url_abo": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "axes": [
+            "sommeil",
+            "mouvement",
+            "systeme-nerveux"
+          ]
+        },
+        {
+          "nom": "Kundalini yoga",
+          "description": "Houdingen, adem, mantra's en meditatie om de levensenergie te wekken, de chakra's in balans te brengen en het zelfbewustzijn te verhogen. Voor iedereen, zonder voorkennis.",
+          "horaire": [
+            {
+              "jour": "mar",
+              "heure": "18:00"
+            }
+          ],
+          "duree": 70,
+          "prix": 25,
+          "pack": 125,
+          "abo": 99,
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Session%2520collective%2520%25C3%25A0%2520l%2527unit%25C3%25A9/appointment/79830972/calendar/11820061",
+          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "url_abo": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "axes": [
+            "mouvement",
+            "sens"
+          ]
+        },
+        {
+          "nom": "Yoga nidra",
+          "description": "Een diepe geleide meditatie, liggend beoefend, die een intense ontspanning tussen waken en slapen opwekt. Een verwennerij voor het zenuwstelsel.",
+          "horaire": [
+            {
+              "jour": "ven",
+              "heure": "10:30"
+            }
+          ],
+          "duree": 70,
+          "prix": 25,
+          "pack": 125,
+          "abo": 99,
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Session%2520collective%2520%25C3%25A0%2520l%2527unit%25C3%25A9/appointment/79830674/calendar/11820061",
+          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "url_abo": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "axes": [
+            "sommeil",
+            "mouvement",
+            "systeme-nerveux"
+          ]
+        },
+        {
+          "nom": "Hormonale yoga",
+          "description": "Stimuleert op natuurlijke wijze de hormoonproductie met dynamische ademhalingstechnieken, houdingen en energiecirculatie.",
+          "horaire": [
+            {
+              "jour": "mar",
+              "heure": "12:45"
+            },
+            {
+              "jour": "ven",
+              "heure": "9:00"
+            }
+          ],
+          "duree": 70,
+          "prix": 25,
+          "pack": 125,
+          "abo": 99,
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Session%2520collective%2520%25C3%25A0%2520l%2527unit%25C3%25A9/appointment/91612143/calendar/11820061",
+          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "url_abo": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "axes": [
+            "sommeil",
+            "mouvement",
+            "detox",
+            "systeme-nerveux",
+            "psycho-emotionnel",
+            "sens"
+          ]
+        },
+        {
+          "nom": "Hatha yoga",
+          "description": "Brengt lichaam en geest in harmonie met houdingen, ademhaling en ontspanning. Een zachte praktijk, toegankelijk voor iedereen.",
+          "horaire": [
+            {
+              "jour": "ven",
+              "heure": "12:30"
+            }
+          ],
+          "duree": 70,
+          "prix": 25,
+          "pack": 125,
+          "abo": 99,
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Session%2520collective%2520%25C3%25A0%2520l%2527unit%25C3%25A9/appointment/91612122/calendar/11820061",
+          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "url_abo": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "axes": [
+            "sommeil",
+            "mouvement",
+            "detox",
+            "systeme-nerveux",
+            "psycho-emotionnel",
+            "sens"
+          ]
+        },
+        {
+          "nom": "Viniyoga, op aanvraag",
+          "description": "Een zachte, progressieve en sterk gepersonaliseerde benadering, aangepast aan leeftijd, conditie en behoeften, met de nadruk op de band tussen adem en beweging. Aanbevolen vanaf 65 jaar.",
+          "horaire": [],
+          "duree": 75,
+          "prix": 25,
+          "pack": 125,
+          "abo": 99,
+          "url": "mailto:hello@hoona.life?subject=R%C3%A9servation%20d'une%20session%20collective%20-%20Vini%20Yoga&body=Pr%C3%A9nom%20%3A%0D%0ANom%20%3A%0D%0AN%C2%B0%20de%20t%C3%A9l%C3%A9phone%20%3A%0D%0A%0D%0AVotre%20message%20%3A%0D%0A%0D%0A%0D%0A",
+          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "url_abo": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "axes": [
+            "mouvement",
+            "systeme-nerveux"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "yogaetson",
+      "nom": "Yoga en klankreis",
+      "intro": "Een yogasessie gevolgd door een gongbad, voor een volledige verbinding tussen lichaam en geest.",
+      "image": "assets/img/lieu-dome.webp",
+      "image_caption": "De Dome, bij valavond",
+      "sessions": [
+        {
+          "nom": "Body & Sound Experience",
+          "description": "Een uitnodiging om terug te keren naar je lichaam en ruimte te maken voor rust: twee uur Kundalini-kriya, mantra en diepe ontspanning gedragen door de klank van de gong, afgesloten met een vrij moment van integratie.",
+          "horaire": [
+            {
+              "jour": "jeu",
+              "heure": "19:00"
+            }
+          ],
+          "duree": 120,
+          "prix": 30,
+          "pack": null,
+          "abo": null,
+          "url": "https://hoonalife.as.me/?appointmentType=98393658",
+          "url_pack": "",
+          "url_abo": "",
+          "axes": [
+            "sommeil",
+            "mouvement",
+            "systeme-nerveux",
+            "psycho-emotionnel",
+            "sens"
+          ],
+          "note": "maandelijks"
+        }
+      ]
+    }
+  ]
+}

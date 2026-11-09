@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="{{LANG}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESC}}">
+{{ROBOTS}}
+<meta name="theme-color" content="#fbf6f0">
+<link rel="icon" href="assets/brand/sigle-hoona.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/TWKLausanne-300.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/TWKLausanne-350.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/hoona.css?v=25">
+<link rel="stylesheet" href="assets/css/v6.css?v=25">
+<script>
+/* Avant le premier rendu : bandeau déjà fermé ? */
+(function(){var d=document.documentElement;d.className+=" js";
+try{if(localStorage.getItem("hoona-banner")==="closed"){d.className+=" is-banner-dismissed";}}catch(e){}})();
+</script>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="hoona">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{DESC}}">
+<meta property="og:locale" content="{{t:locale}}">
+<link rel="canonical" href="{{CANONICAL}}">
+{{HREFLANG}}
+{{RSS_LINK}}
+<meta property="og:image" content="assets/img/hero-poster.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HealthAndBeautyBusiness","name":"hoona","url":"https://www.hoona.life/","email":"hello@hoona.life","telephone":"+32471250922","image":"https://www.hoona.life/assets/img/hero-poster.jpg","address":{"@type":"PostalAddress","streetAddress":"Elisabethlaan 6","postalCode":"3080","addressLocality":"Tervuren","addressCountry":"BE"},"founder":{"@type":"Person","name":"Olivia De Stoop"},"knowsLanguage":["fr","nl","en"],"priceRange":"€€","geo":{"@type":"GeoCoordinates","latitude":50.8308058,"longitude":4.5105459},"sameAs":["https://www.google.com/maps/place/hoona/@50.8308058,4.507971,717m/data=!3m1!1e3!4m8!3m7!1s0x47c3d97b022ccfd7:0x1e445bc87bc55351!8m2!3d50.8308058!4d4.5105459!9m1!1b1!16s%2Fg%2F11x98cbg4m"]}
+</script>
+</head>
+<body data-page="{{PAGE}}" data-header="{{HEADER}}">
+
+<a class="skip-link" href="#main">{{t:skip}}</a>
+<div class="grain" aria-hidden="true"></div>
+<span data-scroll-sentinel aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:48px;pointer-events:none"></span>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="logo-hoona" viewBox="0 0 408.79 92.44"><path d="M408.69,65.77c-.07-.98-.23-1.94-.47-2.86-.07-.28-.13-.52-.19-.71-.02-.07-.04-.14-.06-.21-.06-.19-.09-.3-.09-.3h-.01c-2.24-6.66-8.53-11.46-15.94-11.46-9.3,0-16.83,7.54-16.83,16.83,0,7.86,5.4,14.44,12.68,16.3h-.01s1.31.32,1.12,1.21v.04c-.08.51-.26,1.16-.67,1.83-1.2,1.97-2.14,2.43-3.4,3.17,0,0-1.01.57-.58,1.61.43,1.02,1.41,1.42,2.88,1.12,1.59-.33,15.07-3.28,20.46-17.89.06-.16.09-.3.15-.45.02-.05.04-.11.07-.16,1.04-2.94,1.11-5.84.89-8.07"/><path d="M331.91,65.27c-9.26,0-16.79-7.53-16.79-16.79s7.53-16.79,16.79-16.79,16.79,7.53,16.79,16.79-7.54,16.79-16.79,16.79M367.52,44.85c-.84-8.33-4.63-16.15-10.68-22.03-6.73-6.54-15.58-10.14-24.94-10.14-19.74,0-35.8,16.06-35.8,35.8s16.06,35.8,35.8,35.8c4.17,0,8.23-.7,12.08-2.09l4.71-1.7v3.79h19.01v-37.72l-.03-.24-.15-1.47Z"/><path d="M257.87,13.6c-17.02,0-30.86,13.84-30.86,30.86v39.82h19.29l.03-39.82c0-6.36,5.18-11.53,11.53-11.53s11.53,5.18,11.53,11.53l.03,39.82h19.29v-39.82c.01-17.02-13.83-30.86-30.84-30.86"/><path d="M183.88,65.99c-9.26,0-16.79-7.53-16.79-16.79s7.53-16.78,16.79-16.78,16.79,7.53,16.79,16.78-7.54,16.79-16.79,16.79M183.88,13.4c-19.74,0-35.8,16.06-35.8,35.8s16.06,35.8,35.8,35.8,35.8-16.06,35.8-35.8-16.06-35.8-35.8-35.8"/><path d="M104.89,65.99c-9.26,0-16.79-7.53-16.79-16.79s7.53-16.78,16.79-16.78,16.79,7.53,16.79,16.78c0,9.26-7.53,16.79-16.79,16.79M104.89,13.4c-19.74,0-35.8,16.06-35.8,35.8s16.06,35.8,35.8,35.8,35.8-16.06,35.8-35.8S124.64,13.4,104.89,13.4"/><path d="M30.85,13.57c-2.43,0-4.86.29-7.22.86l-4.34,1.05V0H0v84.25h19.29l.03-39.82c0-6.36,5.17-11.53,11.53-11.53s11.53,5.18,11.53,11.53l.03,39.82h19.3v-39.82c0-17.02-13.84-30.86-30.86-30.86"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"/><path d="M3 7l9 6l9 -6"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/><path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol><symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 18l6 -6"/><path d="M13 6l6 6"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><path d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"/><path d="M21 21l-6 -6"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6l-12 12"/><path d="M6 6l12 12"/></symbol>
+<symbol id="i-pause" viewBox="0 0 24 24"><path d="M7 5h2v14h-2zM15 5h2v14h-2z"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11 -7z"/></symbol>
+</defs></svg>
+
+<header class="site-head" id="site-head">
+  <div class="banner" role="region" aria-label="{{t:banner_region}}">
+    <p class="banner__inner">
+      <span class="banner__label">{{t:banner_label}}</span>
+      <span class="banner__date">{{SEJOUR_NEXT}}</span>
+      <a class="link" href="sejours.html#dates">{{t:banner_link}}</a>
+    </p>
+    <button class="banner__x" type="button" data-banner-close aria-label="{{t:banner_close}}">
+      <svg class="i" aria-hidden="true"><use href="#i-x"/></svg>
+    </button>
+  </div>
+  <div class="bar">
+    <div class="wrap bar__inner">
+      <a class="brand" href="index.html" aria-label="{{t:home_label}}">
+        <svg viewBox="0 0 408.79 92.44" aria-hidden="true" focusable="false"><use href="#logo-hoona"/></svg>
+      </a>
+      <nav class="menu-links" aria-label="{{t:nav_main}}">
+        <a href="{{t:url_consultation}}" {{CUR_CONSULTATION}}>{{t:nav_consultation}}</a>
+        <div class="menu-item" data-submenu>
+          <a href="soins.html" {{CUR_G_SOINS}}>{{t:nav_soins_sessions}}</a>
+          <button class="menu-item__toggle" type="button" aria-expanded="false" aria-controls="sub-soins" aria-label="{{t:sub_open}} : {{t:nav_soins_sessions}}"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="submenu" id="sub-soins">
+            <li><a href="soins.html">{{t:sub_soins_tech}}</a></li>
+            <li><a href="sessions.html">{{t:m_sessions}}</a></li>
+            <li><a href="bilan.html">{{t:m_bilan}}</a></li>
+            <li><a href="bon-cadeau.html">{{t:m_cadeau}}</a></li>
+          </ul>
+        </div>
+        <a href="sejours.html" {{CUR_SEJOURS}}>{{t:nav_sejours}}</a>
+        <a href="{{t:url_journees}}" {{CUR_JOURNEES}}>{{t:nav_journees}}</a>
+        <div class="menu-item" data-submenu>
+          <a href="approche.html" {{CUR_G_APPROCHE}}>{{t:nav_approche}}</a>
+          <button class="menu-item__toggle" type="button" aria-expanded="false" aria-controls="sub-approche" aria-label="{{t:sub_open}} : {{t:nav_approche}}"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="submenu" id="sub-approche">
+            <li><a href="approche.html#axes">{{t:f_axes}}</a></li>
+            {{JOURNAL_LI}}
+            <li><a href="a-propos.html">{{t:m_centre}}</a></li>
+            <li><a href="a-propos.html#maison">{{t:f_maison}}</a></li>
+            <li><a href="contact.html#acces">{{t:f_venir}}</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="bar__end">
+        {{LANGSWITCH}}
+        <a class="btn btn--sm btn--line bar__call" href="{{t:url_call_page}}">{{t:call}}</a>
+        <div class="bookpanel" data-bookpanel>
+          <button class="btn btn--sm" type="button" aria-expanded="false" aria-controls="bookpanel-menu" data-bookpanel-toggle>{{t:book}}</button>
+          <div class="bookpanel__menu" id="bookpanel-menu" hidden>
+            <p class="bookpanel__title">{{t:book_title}}</p>
+            <a href="{{t:url_book_consultation}}" target="_blank" rel="noopener"><strong>{{t:book_consult}}</strong><span>{{t:book_consult_meta}}</span></a>
+            <a href="soins.html"><strong>{{t:book_soin}}</strong><span>{{t:book_soin_meta}}</span></a>
+            <a href="{{t:url_journees}}"><strong>{{t:book_journee}}</strong><span>{{t:book_journee_meta}}</span></a>
+            <a href="sejours.html#dates"><strong>{{t:book_sejour}}</strong><span>{{t:book_sejour_meta}}</span></a>
+            <a class="bookpanel__free" href="{{t:url_call_page}}"><strong>{{t:book_call}}</strong><span>{{t:book_call_meta}}</span></a>
+          </div>
+        </div>
+        <button class="burger" type="button" aria-expanded="false" aria-controls="drawer">
+          <span></span><span></span>
+          <span class="visually-hidden">{{t:menu}}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+  <nav aria-label="{{t:nav_mobile}}">
+    <ul class="drawer__list">
+      <li><a href="index.html">{{t:m_home}}</a></li>
+      <li><a href="{{t:url_consultation}}">{{t:m_consultation}}</a></li>
+      <li class="drawer__head">{{t:nav_soins_sessions}}</li>
+      <li><a href="soins.html">{{t:sub_soins_tech}}</a></li>
+      <li><a href="sessions.html">{{t:m_sessions}}</a></li>
+      <li><a href="bilan.html">{{t:m_bilan}}</a></li>
+      <li><a href="bon-cadeau.html">{{t:m_cadeau}}</a></li>
+      <li class="drawer__head">{{t:nav_sejours}} &amp; {{t:nav_journees}}</li>
+      <li><a href="sejours.html">{{t:m_sejours}}</a></li>
+      <li><a href="{{t:url_journees}}">{{t:m_journees}}</a></li>
+      <li class="drawer__head">{{t:nav_approche}}</li>
+      <li><a href="approche.html">{{t:m_approche}}</a></li>
+      {{JOURNAL_LI}}
+      <li><a href="a-propos.html">{{t:m_centre}}</a></li>
+      <li><a href="contact.html">{{t:m_contact}}</a></li>
+    </ul>
+  </nav>
+  <div class="drawer__meta">
+    <a href="tel:+32471250922">+32 471 25 09 22</a>
+    <a href="mailto:hello@hoona.life">hello@hoona.life</a>
+    <span>{{t:address}}</span>
+    {{LANGSWITCH}}
+    <p class="actions" style="margin-top:var(--space-md)"><a class="btn btn--line" href="{{t:url_call_page}}">{{t:call}}</a><a class="btn" href="{{t:url_book_consultation}}" target="_blank" rel="noopener">{{t:book_consult}}</a></p>
+  </div>
+</div>
+
+<main id="main">
+{{CONTENT}}
+</main>
+
+<footer class="site-foot">
+  <img class="site-foot__bg" src="assets/brand/strates-footer.jpg" alt="" loading="lazy" decoding="async" width="1512" height="1818">
+  <div class="wrap">
+    <section class="letter" aria-labelledby="letter-title">
+      <h2 id="letter-title">{{t:letter_title}}</h2>
+      <p>{{t:letter_text}}</p>
+      <form data-demo novalidate>
+        <label class="visually-hidden" for="letter-email">{{t:letter_label}}</label>
+        <div class="letter__row">
+          <input class="field" id="letter-email" name="email" type="email" autocomplete="email" placeholder="{{t:letter_label}}" required>
+          <button class="btn" type="submit">{{t:letter_submit}}</button>
+        </div>
+        <p class="form__status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <div class="foot-meta">
+      <div class="stack">
+        <a class="brand" href="index.html" aria-label="{{t:home_label}}">
+          <svg viewBox="0 0 408.79 92.44" aria-hidden="true" focusable="false"><use href="#logo-hoona"/></svg>
+        </a>
+        <p class="muted">{{t:foot_tagline}}</p>
+        <p class="signature"><span>Well doing</span><span class="signature__rule" aria-hidden="true"></span><span>for well-being</span></p>
+      </div>
+      <nav aria-label="{{t:foot_offers}}">
+        <ul>
+          <li><a href="{{t:url_call_page}}">{{t:m_call}}</a></li>
+          <li><a href="{{t:url_consultation}}">{{t:m_consultation}}</a></li>
+          <li><a href="{{t:url_journees}}">{{t:m_journees}}</a></li>
+          <li><a href="soins.html">{{t:m_soins}}</a></li>
+          <li><a href="sejours.html">{{t:m_sejours}}</a></li>
+          <li><a href="sessions.html">{{t:m_sessions}}</a></li>
+          <li><a href="bon-cadeau.html">{{t:m_cadeau}}</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="hoona">
+        <ul>
+          <li><a href="approche.html">{{t:nav_approche}}</a></li>
+          <li><a href="approche.html#axes">{{t:f_axes}}</a></li>
+          {{JOURNAL_LI}}
+          <li><a href="a-propos.html">{{t:m_centre}}</a></li>
+          <li><a href="a-propos.html#maison">{{t:f_maison}}</a></li>
+          <li><a href="contact.html#acces">{{t:f_venir}}</a></li>
+          {{FOOT_PLUS_LI}}
+        </ul>
+      </nav>
+      <address class="contact-lines" style="font-style:normal">
+        <a href="tel:+32471250922"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>+32 471 25 09 22</a>
+        <a href="mailto:hello@hoona.life"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg>hello@hoona.life</a>
+        <p><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg>{{t:address}}</p>
+      </address>
+    </div>
+    <div class="foot-legal" style="padding-bottom:var(--space-xl)">
+      <span>© {{YEAR}} hoona</span>
+      <a href="{{t:legal_cgv_url}}">{{t:legal_cgv}}</a>
+      <a href="{{t:legal_privacy_url}}">{{t:legal_privacy}}</a>
+      <a href="{{t:legal_cookies_url}}">{{t:legal_cookies}}</a>
+      <a href="{{t:legal_disclaimer_url}}">{{t:legal_disclaimer}}</a>
+    </div>
+  </div>
+</footer>
+
+<script>window.HOONA_I18N = {{JS_I18N}};</script>
+<script src="assets/js/hoona.js?v=25" defer></script>
+<script src="assets/js/v6.js?v=25" defer></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!--
+title: Verzorgingen, consultaties en technologieën | hoona
+description: Het aanbod van hoona in Tervuren: vitaliteitschecks, consultaties, regeneratietechnologieën (Indiba, Papimi, IHHT), massages, energetische verzorgingen.
+nav: SOINS
+-->
+
+<header class="wrap page-head page-head--compact">
+  <ol class="crumbs" aria-label="Kruimelpad"><li><a href="index.html">Home</a></li><li><span aria-current="page">Verzorgingen &amp; consultaties</span></li></ol>
+  <h1>Verzorgingen &amp; consultaties</h1>
+  <p class="chapeau">Geavanceerde technologieën, manuele therapieën en holistische consultaties, om de juiste omstandigheden voor je evenwicht samen te brengen.</p>
+</header>
+
+<div class="wrap" data-catalogue data-collapsible>
+  {{AXES_PICKER}}
+  <div class="toolbar">
+    <div class="filters" aria-label="{{t:goto_cat}}">
+      {{SOINS_FILTERS}}
+    </div>
+    <div class="search">
+      <svg class="i" aria-hidden="true"><use href="#i-search"/></svg>
+      <label class="visually-hidden" for="q">Zoeken in het aanbod</label>
+      <input id="q" type="search" data-search placeholder="Zoeken: slaap, massage, detox…" autocomplete="off">
+    </div>
+    <p class="toolbar__status" data-status role="status" aria-live="polite">{{SOINS_STATUS}}</p>
+  </div>
+
+    {{SOINS_GROUPS}}
+
+  <div class="empty" data-empty hidden>
+    <p>Niets in ons aanbod komt overeen met deze zoekopdracht.</p>
+    <p style="margin-top:var(--space-sm)"><button class="btn btn--line btn--sm" type="button" data-reset>Alles tonen</button></p>
+  </div>
+  <p class="muted" style="padding-block:var(--space-xl) var(--space-3xl);font-size:var(--text-sm)">{{t:soins_note}}</p>
+  {{SOINS_JSONLD}}
+</div>

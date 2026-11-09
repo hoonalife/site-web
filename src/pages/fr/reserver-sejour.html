@@ -1,0 +1,168 @@
+<!--
+title: Réserver un séjour immersif | hoona Tervuren
+description: Choisissez vos dates, votre chambre et le nombre de participants. Un acompte de 30 % confirme la réservation. Dès 2 650 € par personne, tout compris.
+nav: SEJOURS
+-->
+
+<header class="wrap page-head page-head--compact">
+  <ol class="crumbs" aria-label="Fil d'Ariane"><li><a href="index.html">Accueil</a></li><li><a href="sejours.html">Séjours</a></li><li><span aria-current="page">Réserver</span></li></ol>
+  <h1>Réserver mon séjour</h1>
+  <p class="chapeau">Cinq jours, quatre nuits, du lundi au vendredi, en petit groupe. Choisissez une date, le nombre de participants et votre chambre : nous revenons vers vous avec le lien de paiement de l'acompte.</p>
+</header>
+
+<section class="section section--tight" aria-label="Formulaire de réservation">
+  <div class="wrap">
+    <form class="rsv" id="rsv-form" name="reservation-sejour" method="post" action="merci-sejour.html"
+          data-rsv data-endpoint="" data-netlify="true" netlify-honeypot="site" novalidate
+          data-deposit="30" data-max-people="8">
+      <input type="hidden" name="form-name" value="reservation-sejour">
+      <p class="visually-hidden" aria-hidden="true"><label>Laissez ce champ vide <input name="site" tabindex="-1" autocomplete="off"></label></p>
+
+      <div class="rsv__steps">
+
+        <fieldset class="rsv__step">
+          <legend><span class="rsv__num">1</span>La date du séjour</legend>
+          <div class="rsv__dates" data-dates>
+{{SEJOURS_OPTIONS}}
+          </div>
+          <p class="rsv__none muted" data-none hidden>Les prochaines dates sont en préparation. Écrivez-nous à <a href="mailto:hello@hoona.life">hello@hoona.life</a> pour être prévenu·e.</p>
+          <p class="error" data-err="sejour"></p>
+        </fieldset>
+
+        <fieldset class="rsv__step">
+          <legend><span class="rsv__num">2</span>Le nombre de participants</legend>
+          <div class="rsv__people">
+            <div class="stepper" data-stepper>
+              <button class="stepper__btn" type="button" data-step="-1" aria-label="Une personne de moins">−</button>
+              <label class="visually-hidden" for="rsv-personnes">Nombre de participants</label>
+              <input class="stepper__value" id="rsv-personnes" name="personnes" type="number" inputmode="numeric" min="1" max="8" value="1" required>
+              <button class="stepper__btn" type="button" data-step="1" aria-label="Une personne de plus">+</button>
+            </div>
+            <p class="hint">La chambre partagée s'ouvre à partir de deux participants qui voyagent ensemble.</p>
+          </div>
+        </fieldset>
+
+        <fieldset class="rsv__step">
+          <legend><span class="rsv__num">3</span>La chambre</legend>
+          <div class="rsv__rooms" data-rooms>
+            <label class="rsv__room">
+              <input type="radio" name="chambre" value="confort" data-price="2950" data-label="Chambre confort" required>
+              <span class="rsv__room-name">Chambre confort</span>
+              <span class="rsv__room-desc">Lit double ou twin, salle de bain privée.</span>
+              <span class="rsv__room-price">2 950 € <small>par personne</small></span>
+            </label>
+            <label class="rsv__room">
+              <input type="radio" name="chambre" value="premium" data-price="3350" data-label="Chambre premium">
+              <span class="rsv__room-name">Chambre premium</span>
+              <span class="rsv__room-desc">Plus spacieuse, vue sur le jardin.</span>
+              <span class="rsv__room-price">3 350 € <small>par personne</small></span>
+            </label>
+            <label class="rsv__room" data-min-people="2">
+              <input type="radio" name="chambre" value="partagee" data-price="2650" data-label="Chambre partagée">
+              <span class="rsv__room-name">Chambre partagée</span>
+              <span class="rsv__room-desc">À deux, dans la même chambre. Dès deux participants.</span>
+              <span class="rsv__room-price">2 650 € <small>par personne</small></span>
+            </label>
+          </div>
+          <p class="error" data-err="chambre"></p>
+        </fieldset>
+
+        <fieldset class="rsv__step">
+          <legend><span class="rsv__num">4</span>Vos coordonnées</legend>
+          <div class="form">
+            <div class="form__row">
+              <div>
+                <label for="rsv-prenom">Prénom</label>
+                <input class="field" id="rsv-prenom" name="prenom" autocomplete="given-name" required aria-describedby="rsv-prenom-err">
+                <p class="error" id="rsv-prenom-err"></p>
+              </div>
+              <div>
+                <label for="rsv-nom">Nom</label>
+                <input class="field" id="rsv-nom" name="nom" autocomplete="family-name" required aria-describedby="rsv-nom-err">
+                <p class="error" id="rsv-nom-err"></p>
+              </div>
+            </div>
+            <div class="form__row">
+              <div>
+                <label for="rsv-email">E-mail</label>
+                <input class="field" id="rsv-email" name="email" type="email" autocomplete="email" required aria-describedby="rsv-email-err">
+                <p class="error" id="rsv-email-err"></p>
+              </div>
+              <div>
+                <label for="rsv-tel">Téléphone <span class="muted" style="font-weight:var(--weight-body)">(facultatif)</span></label>
+                <input class="field" id="rsv-tel" name="tel" type="tel" autocomplete="tel">
+                <p class="hint">Pour un échange rapide avant de confirmer.</p>
+              </div>
+            </div>
+            <div>
+              <label for="rsv-message">Besoins particuliers <span class="muted" style="font-weight:var(--weight-body)">(facultatif)</span></label>
+              <textarea class="field" id="rsv-message" name="message" placeholder="Alimentation, mobilité, situation de santé à nous signaler, personne qui vous accompagne…"></textarea>
+            </div>
+            <label class="check" for="rsv-cg" style="font-weight:var(--weight-body)">
+              <input id="rsv-cg" type="checkbox" name="conditions" value="oui" required aria-describedby="rsv-cg-err">
+              <span>J'ai pris connaissance des <a href="https://www.hoona.life/fr/termes-et-conditions" target="_blank" rel="noopener">conditions générales</a> et des contre-indications, dont la grossesse et une chimiothérapie, radiothérapie ou immunothérapie en cours.</span>
+            </label>
+            <p class="error" id="rsv-cg-err"></p>
+            <label class="check" for="rsv-lettre" style="font-weight:var(--weight-body)">
+              <input id="rsv-lettre" type="checkbox" name="lettre" value="oui">
+              <span>Je souhaite aussi recevoir la lettre hoona.</span>
+            </label>
+          </div>
+        </fieldset>
+
+      </div>
+
+      <aside class="rsv__recap" aria-labelledby="recap-title">
+        <p class="insert" id="recap-title">Récapitulatif</p>
+        <dl class="rsv__lines">
+          <div><dt>Séjour</dt><dd data-recap="sejour">à choisir</dd></div>
+          <div><dt>Participants</dt><dd data-recap="personnes">1 personne</dd></div>
+          <div><dt>Chambre</dt><dd data-recap="chambre">à choisir</dd></div>
+          <div><dt>Par personne</dt><dd data-recap="unit">·</dd></div>
+        </dl>
+        <p class="rsv__total"><span>Total</span><strong data-recap="total">·</strong></p>
+        <p class="rsv__deposit muted" data-recap="deposit">Un acompte de 30 % confirme la réservation. Le solde se règle avant le séjour.</p>
+
+        <input type="hidden" name="sejour_libelle" data-h="sejour_libelle">
+        <input type="hidden" name="chambre_libelle" data-h="chambre_libelle">
+        <input type="hidden" name="prix_par_personne" data-h="prix_par_personne">
+        <input type="hidden" name="total" data-h="total">
+        <input type="hidden" name="acompte" data-h="acompte">
+        <input type="hidden" name="solde" data-h="solde">
+        <input type="hidden" name="langue" value="fr">
+        <input type="hidden" name="page" data-h="page">
+        <input type="hidden" name="utm_source" data-h="utm_source">
+        <input type="hidden" name="utm_medium" data-h="utm_medium">
+        <input type="hidden" name="utm_campaign" data-h="utm_campaign">
+        <input type="hidden" name="utm_content" data-h="utm_content">
+        <input type="hidden" name="gclid" data-h="gclid">
+        <input type="hidden" name="fbclid" data-h="fbclid">
+
+        <div class="actions">
+          <button class="btn" type="submit" data-submit>Envoyer ma demande de réservation</button>
+        </div>
+        <p class="form__status" role="status" aria-live="polite" data-status></p>
+        <p class="rsv__note muted">Sans engagement tant que l'acompte n'est pas réglé. Réponse sous deux jours ouvrés, par e-mail ou par téléphone.</p>
+      </aside>
+    </form>
+  </div>
+</section>
+
+<section class="section section--deep" aria-labelledby="inclus-title">
+  <div class="wrap doc">
+    <div>
+      <h2 id="inclus-title" style="font-size:var(--text-xl)">Ce que comprend le séjour</h2>
+    </div>
+    <div class="stack">
+      <div class="rows rows--compact">
+        <div class="row row--3"><span class="row__title">Hébergement</span><span class="row__desc">Quatre nuits dans notre maison d'hôtes, à quelques pas du centre, petit-déjeuner compris.</span><span class="row__meta">4 nuits</span></div>
+        <div class="row row--3"><span class="row__title">Consultations</span><span class="row__desc">Une avant votre séjour, deux pendant, une de suivi après votre retour.</span><span class="row__meta">4 consultations</span></div>
+        <div class="row row--3"><span class="row__title">Soins et sessions</span><span class="row__desc">Une trentaine d'heures de massages, technologies de régénération, yoga, marche nordique et sound healing.</span><span class="row__meta"><span class="row__pill"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg>30h</span></span></div>
+        <div class="row row--3"><span class="row__title">Alimentation</span><span class="row__desc">Pension complète, cuisine anti-inflammatoire préparée par notre chef.</span><span class="row__meta">pension complète</span></div>
+      </div>
+      <p class="muted" style="font-size:var(--text-sm)">Une question avant de réserver ? <a href="echange-decouverte.html">Un échange découverte de 20 minutes</a> avec l'équipe, ou <a href="tel:+32471250922" style="white-space:nowrap">+32 471 25 09 22</a>.</p>
+    </div>
+  </div>
+</section>
+
+<script src="assets/js/reserver.js?v=13" defer></script>

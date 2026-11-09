@@ -1,0 +1,308 @@
+{
+  "categories": [
+    {
+      "slug": "mouvement",
+      "nom": "Mouvement",
+      "intro": "Renforcer le corps, améliorer la mobilité et cultiver la vitalité dans une énergie de groupe.",
+      "image": "assets/img/chemin-prevenir.webp",
+      "image_caption": "Le parc de Tervuren",
+      "sessions": [
+        {
+          "nom": "Coaching sportif & renforcement musculaire",
+          "description": "Ces séances de renforcement musculaire favorisent le bien-être physique et la vitalité au sein d'une dynamique de groupe stimulante.",
+          "horaire": [
+            {
+              "jour": "mar",
+              "heure": "11:00"
+            }
+          ],
+          "duree": 50,
+          "prix": 25,
+          "pack": 125,
+          "abo": null,
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Session%2520collective%2520%25C3%25A0%2520l%2527unit%25C3%25A9/appointment/84799101/calendar/12002631",
+          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2071105",
+          "url_abo": "",
+          "axes": [
+            "nutrition",
+            "sommeil",
+            "mouvement",
+            "detox",
+            "systeme-nerveux",
+            "psycho-emotionnel"
+          ]
+        },
+        {
+          "nom": "Marche nordique",
+          "description": "La marche nordique consiste à amplifier le balancement naturel des bras et à utiliser deux bâtons pour se propulser activement vers l'avant.",
+          "horaire": [
+            {
+              "jour": "mar",
+              "heure": "9:30"
+            },
+            {
+              "jour": "jeu",
+              "heure": "12:30"
+            }
+          ],
+          "duree": 60,
+          "prix": 15,
+          "pack": 75,
+          "abo": 59,
+          "url": "https://hoonalife.as.me/?appointmentType=98126631",
+          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2071094",
+          "url_abo": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2071092",
+          "axes": [
+            "nutrition",
+            "sommeil",
+            "mouvement",
+            "detox",
+            "systeme-nerveux",
+            "psycho-emotionnel"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "voyagesonore",
+      "nom": "Voyage sonore",
+      "intro": "La vibration des gongs, une expérience immersive et régénératrice animée par Coralie.",
+      "image": "assets/img/chemin-ressourcer.webp",
+      "image_caption": "Le Dôme",
+      "sessions": [
+        {
+          "nom": "Bain de gongs",
+          "description": "Soin vibratoire unique, porté par la magie et la puissance des gongs. Une expérience immersive qui vous reconnecte à l'instant présent, à votre corps et à vos sensations, comme un véritable massage sonore.",
+          "horaire": [
+            {
+              "jour": "mar",
+              "heure": "19:30"
+            }
+          ],
+          "duree": 70,
+          "prix": 25,
+          "pack": 125,
+          "abo": 99,
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Session%2520collective%2520%25C3%25A0%2520l%2527unit%25C3%25A9/appointment/79828223/calendar/11799358",
+          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070405",
+          "url_abo": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "axes": [
+            "sommeil",
+            "systeme-nerveux",
+            "psycho-emotionnel",
+            "sens"
+          ],
+          "page": "bain-de-gongs.html",
+          "alias": [
+            "bain de gongs",
+            "Bain de gongs",
+            "bains de gongs"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "yoga",
+      "nom": "Yoga",
+      "intro": "Plusieurs approches pour répondre à vos besoins de souplesse, de force, de détente ou d'éveil intérieur. Chaque yoga existe aussi en session individuelle.",
+      "image": "assets/img/sessions.webp",
+      "image_caption": "Le Dôme",
+      "sessions": [
+        {
+          "nom": "Yoga Flow",
+          "description": "Le Yoga Flow est une pratique dynamique et fluide qui allie postures, respiration et mouvement pour renforcer le corps, apaiser l'esprit et cultiver la présence. Il favorise la coordination, la souplesse et le bien-être global. Accessible à tous, sans prérequis.",
+          "horaire": [
+            {
+              "jour": "mer",
+              "heure": "18:00"
+            }
+          ],
+          "duree": 70,
+          "prix": 25,
+          "pack": 125,
+          "abo": 99,
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Session%2520collective%2520%25C3%25A0%2520l%2527unit%25C3%25A9/appointment/79685079/calendar/11820061",
+          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "url_abo": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "axes": [
+            "mouvement",
+            "systeme-nerveux"
+          ]
+        },
+        {
+          "nom": "Yin Yoga",
+          "description": "Le yoga Yin est une pratique douce et profonde qui invite à la détente en maintenant les postures longtemps pour relâcher les tensions physiques et émotionnelles.",
+          "horaire": [
+            {
+              "jour": "mer",
+              "heure": "19:30"
+            },
+            {
+              "jour": "ven",
+              "heure": "14:00"
+            }
+          ],
+          "duree": 70,
+          "prix": 25,
+          "pack": 125,
+          "abo": 99,
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Session%2520collective%2520%25C3%25A0%2520l%2527unit%25C3%25A9/appointment/79834946/calendar/11820061",
+          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "url_abo": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "axes": [
+            "sommeil",
+            "mouvement",
+            "systeme-nerveux"
+          ]
+        },
+        {
+          "nom": "Kundalini Yoga",
+          "description": "Le Kundalini Yoga combine postures, souffle, mantras et méditation pour éveiller l'énergie vitale, harmoniser les chakras et élever la conscience de soi. Accessible à tous, sans prérequis.",
+          "horaire": [
+            {
+              "jour": "mar",
+              "heure": "18:00"
+            }
+          ],
+          "duree": 70,
+          "prix": 25,
+          "pack": 125,
+          "abo": 99,
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Session%2520collective%2520%25C3%25A0%2520l%2527unit%25C3%25A9/appointment/79830972/calendar/11820061",
+          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "url_abo": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "axes": [
+            "mouvement",
+            "sens"
+          ]
+        },
+        {
+          "nom": "Yoga Nidra",
+          "description": "Le yoga Nidra est une méditation guidée profonde, pratiquée allongé, qui induit un état de relaxation intense entre veille et sommeil. Caviar pour le système nerveux.",
+          "horaire": [
+            {
+              "jour": "ven",
+              "heure": "10:30"
+            }
+          ],
+          "duree": 70,
+          "prix": 25,
+          "pack": 125,
+          "abo": 99,
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Session%2520collective%2520%25C3%25A0%2520l%2527unit%25C3%25A9/appointment/79830674/calendar/11820061",
+          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "url_abo": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "axes": [
+            "sommeil",
+            "mouvement",
+            "systeme-nerveux"
+          ]
+        },
+        {
+          "nom": "Yoga hormonal",
+          "description": "Le yoga hormonal stimule naturellement la production hormonale grâce à des techniques dynamiques de respiration, postures et circulation d'énergie.",
+          "horaire": [
+            {
+              "jour": "mar",
+              "heure": "12:45"
+            },
+            {
+              "jour": "ven",
+              "heure": "9:00"
+            }
+          ],
+          "duree": 70,
+          "prix": 25,
+          "pack": 125,
+          "abo": 99,
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Session%2520collective%2520%25C3%25A0%2520l%2527unit%25C3%25A9/appointment/91612143/calendar/11820061",
+          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "url_abo": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "axes": [
+            "sommeil",
+            "mouvement",
+            "detox",
+            "systeme-nerveux",
+            "psycho-emotionnel",
+            "sens"
+          ]
+        },
+        {
+          "nom": "Hatha Yoga",
+          "description": "Le Hatha Yoga harmonise le corps et l'esprit grâce aux postures, à la respiration et à la relaxation. Une pratique douce et accessible à tous.",
+          "horaire": [
+            {
+              "jour": "ven",
+              "heure": "12:30"
+            }
+          ],
+          "duree": 70,
+          "prix": 25,
+          "pack": 125,
+          "abo": 99,
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Session%2520collective%2520%25C3%25A0%2520l%2527unit%25C3%25A9/appointment/91612122/calendar/11820061",
+          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "url_abo": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "axes": [
+            "sommeil",
+            "mouvement",
+            "detox",
+            "systeme-nerveux",
+            "psycho-emotionnel",
+            "sens"
+          ]
+        },
+        {
+          "nom": "Vini Yoga, sur demande",
+          "description": "Le Viniyoga est une approche douce, progressive et profondément personnalisée. Adaptée à chaque individu selon son âge, sa condition physique et ses besoins, elle met l'accent sur le lien entre respiration et mouvement. Aucun prérequis. Yoga adapté à tous et recommandé pour les plus de 65 ans.",
+          "horaire": [],
+          "duree": 75,
+          "prix": 25,
+          "pack": 125,
+          "abo": 99,
+          "url": "mailto:hello@hoona.life?subject=R%C3%A9servation%20d'une%20session%20collective%20-%20Vini%20Yoga&body=Pr%C3%A9nom%20%3A%0D%0ANom%20%3A%0D%0AN%C2%B0%20de%20t%C3%A9l%C3%A9phone%20%3A%0D%0A%0D%0AVotre%20message%20%3A%0D%0A%0D%0A%0D%0A",
+          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "url_abo": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2070402",
+          "axes": [
+            "mouvement",
+            "systeme-nerveux"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "yogaetson",
+      "nom": "Yoga et voyage sonore",
+      "intro": "Une séance de yoga suivie d'un bain de gongs, pour une reconnexion complète corps-esprit.",
+      "image": "assets/img/lieu-dome.webp",
+      "image_caption": "Le Dôme, à la tombée du jour",
+      "sessions": [
+        {
+          "nom": "Body & Sound Experience",
+          "description": "Une invitation à revenir à votre corps, à libérer ce qui est prêt à l'être et à faire plus de place au calme. Pendant deux heures, laissez-vous guider à travers un kriya de Kundalini yoga, un mantra et une relaxation profonde portée par le son du gong. Un moment pour respirer, lâcher prise et revenir à vous-même. La séance se clôture par un temps d'intégration libre, où vous êtes le/la bienvenu·e pour rester, échanger et tirer une carte.",
+          "horaire": [
+            {
+              "jour": "jeu",
+              "heure": "19:00"
+            }
+          ],
+          "duree": 120,
+          "prix": 30,
+          "pack": null,
+          "abo": null,
+          "url": "https://hoonalife.as.me/?appointmentType=98393658",
+          "url_pack": "",
+          "url_abo": "",
+          "axes": [
+            "sommeil",
+            "mouvement",
+            "systeme-nerveux",
+            "psycho-emotionnel",
+            "sens"
+          ],
+          "note": "mensuel"
+        }
+      ]
+    }
+  ]
+}

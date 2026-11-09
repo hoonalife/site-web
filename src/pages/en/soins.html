@@ -1,0 +1,35 @@
+<!--
+title: Care, consultations and regeneration technologies | hoona
+description: The hoona care menu in Tervuren: holistic assessments, consultations, regeneration technologies (Indiba, Papimi, IHHT), massages and energy work. Prices.
+nav: SOINS
+-->
+
+<header class="wrap page-head page-head--compact">
+  <ol class="crumbs" aria-label="Breadcrumb"><li><a href="index.html">Home</a></li><li><span aria-current="page">Care &amp; consultations</span></li></ol>
+  <h1>Care &amp; consultations</h1>
+  <p class="chapeau">Advanced technologies, manual therapies and holistic consultations, to bring together the right conditions for your balance.</p>
+</header>
+
+<div class="wrap" data-catalogue data-collapsible>
+  {{AXES_PICKER}}
+  <div class="toolbar">
+    <div class="filters" aria-label="{{t:goto_cat}}">
+      {{SOINS_FILTERS}}
+    </div>
+    <div class="search">
+      <svg class="i" aria-hidden="true"><use href="#i-search"/></svg>
+      <label class="visually-hidden" for="q">Search the care menu</label>
+      <input id="q" type="search" data-search placeholder="Search: sleep, massage, detox…" autocomplete="off">
+    </div>
+    <p class="toolbar__status" data-status role="status" aria-live="polite">{{SOINS_STATUS}}</p>
+  </div>
+
+    {{SOINS_GROUPS}}
+
+  <div class="empty" data-empty hidden>
+    <p>Nothing matches this search.</p>
+    <p style="margin-top:var(--space-sm)"><button class="btn btn--line btn--sm" type="button" data-reset>Show everything</button></p>
+  </div>
+  <p class="muted" style="padding-block:var(--space-xl) var(--space-3xl);font-size:var(--text-sm)">{{t:soins_note}}</p>
+  {{SOINS_JSONLD}}
+</div>

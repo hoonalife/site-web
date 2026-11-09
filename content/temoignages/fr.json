@@ -1,0 +1,176 @@
+{
+  "google_url": "https://www.google.com/maps/place/hoona/@50.8308058,4.507971,717m/data=!3m1!1e3!4m8!3m7!1s0x47c3d97b022ccfd7:0x1e445bc87bc55351!8m2!3d50.8308058!4d4.5105459!9m1!1b1!16s%2Fg%2F11x98cbg4m",
+  "google_note": "5,0",
+  "google_nombre": 24,
+  "videos": [
+    {
+      "fichier": "assets/video/temoignages/jean-sejour.mp4",
+      "affiche": "assets/video/temoignages/jean-sejour.jpg",
+      "auteur": "Jean",
+      "format": "séjour immersif",
+      "sejour": true,
+      "accueil": true,
+      "duree": "1 min"
+    },
+    {
+      "fichier": "assets/video/temoignages/marie-estelle-sejour.mp4",
+      "affiche": "assets/video/temoignages/marie-estelle-sejour.jpg",
+      "auteur": "Marie-Estelle",
+      "format": "séjour immersif",
+      "sejour": true,
+      "accueil": true,
+      "duree": "1 min 55"
+    },
+    {
+      "fichier": "assets/video/temoignages/nadia-sejour.mp4",
+      "affiche": "assets/video/temoignages/nadia-sejour.jpg",
+      "auteur": "Nadia",
+      "format": "séjour immersif, en anglais",
+      "sejour": true,
+      "accueil": true,
+      "duree": "1 min 21"
+    },
+    {
+      "fichier": "assets/video/temoignages/maurice-sejour.mp4",
+      "affiche": "assets/video/temoignages/maurice-sejour.jpg",
+      "auteur": "Maurice",
+      "format": "séjour immersif",
+      "sejour": true,
+      "accueil": true,
+      "duree": "45 s"
+    },
+    {
+      "fichier": "assets/video/temoignages/marie-estelle-papimi.mp4",
+      "affiche": "assets/video/temoignages/marie-estelle-papimi.jpg",
+      "auteur": "Marie-Estelle",
+      "format": "soin Papimi, pendant son séjour",
+      "sejour": true,
+      "accueil": false,
+      "duree": "1 min 21"
+    }
+  ],
+  "_aide_videos": "Chaque vidéo : fichier mp4 (portrait 9/16, 540x960) et affiche jpg dans assets/video/temoignages/, auteur, format vécu, sejour (page séjours), accueil (page d'accueil), duree affichée. Lecture au clic seulement.",
+  "google": [
+    {
+      "texte": "Depuis mon retour, et malgré les défis du quotidien, les enseignements reçus continuent de m'accompagner chaque jour, grâce aux sept axes de la vitalité qui nous ont été transmis. Une expérience riche et inspirante que je recommande sans hésitation.",
+      "auteur": "Christine K.",
+      "format": "séjour immersif de cinq jours",
+      "sejour": true,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xkcGJXSjZka3RWWWsxelRFbGZVVGRLYW14MFRFRRAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOldpbWJ6dktVYk1zTElfUTdKamx0TEE||",
+      "photo": "assets/img/avis/christine-k.webp"
+    },
+    {
+      "texte": "J'ai adoré le massage de Jaqueline. L'ambiance y est très relaxante et ses mains sentent exactement ce dont notre corps a besoin. Une expérience détente incroyable, pas comme les autres. On sent qu'elle fait ce travail avec le cœur.",
+      "auteur": "Camille C.",
+      "format": "massage",
+      "sejour": false,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2sxVFdIbE1hVzFWVjNsVVFVODRNRTh0YWsxU05XYxAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOk1TWHlMaW1VV3lUQU84ME8tak1SNWc||",
+      "photo": "assets/img/avis/camille-c.webp"
+    },
+    {
+      "texte": "Dès l'arrivée, j'ai été touché par la qualité de l'accueil, l'attention portée à chaque détail et la bienveillance constante de tous les professionnels. Je repars reconnaissant, ressourcé et profondément inspiré.",
+      "auteur": "Maurice M.",
+      "format": "séjour immersif de cinq jours",
+      "sejour": true,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25CSVRGSktSWFU0TldwbmJFVjBiV1p2YkhoUmJXYxAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOnBITFJKRXU4NWpnbEV0bWZvbHhRbWc||",
+      "photo": "assets/img/avis/maurice-m.webp"
+    },
+    {
+      "texte": "Ce lieu est tout simplement exceptionnel ! L'équipe est accueillante, les soins sont professionnels et tout est bien pensé. J'ai participé à un bain de gongs dans la superbe salle dôme : un moment de bien-être total, hors du temps.",
+      "auteur": "Sophie d'Y.",
+      "format": "bain de gongs",
+      "sejour": false,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pVM1UybG9RV2x3ZUZwcWJGOXdjamsyYkVKRVdXYxAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOjU3U2loQWlweFpqbF9wcjk2bEJEWWc||",
+      "photo": "assets/img/avis/sophie-dy.webp"
+    },
+    {
+      "texte": "Une parenthèse unique, transformatrice et profondément régénérante. Le système nerveux s'apaise, les tensions se relâchent, l'esprit s'éclaircit. Peu à peu, une joie simple réapparaît, comme si chaque instant permettait de revenir un peu plus vers soi.",
+      "auteur": "Delphine C.",
+      "format": "séjour immersif de cinq jours",
+      "sejour": true,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2twcmVHc3dYMDVyTVdoTWJuTXhSMjgwWDNSbVlWRRAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOkpreGswX05rMWhMbnMxR280X3RmYVE||",
+      "photo": "assets/img/avis/delphine-c.webp"
+    },
+    {
+      "texte": "Une consultation, puis Indiba, Papimi, Airnergy et infrarouge : ces thérapies m'ont aidé à ne pas glisser vers le burn-out et ont réglé plusieurs problèmes physiques, comme des épaules bloquées. L'équipe est très professionnelle et chaleureuse.",
+      "auteur": "Menno B.",
+      "format": "soins et technologies, traduit de l'anglais",
+      "sejour": false,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pONVoyWnhVMmhsT0RSeGJFRnRTVWRvYjNjMkxWRRAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOjN5Z2ZxU2hlODRxbEFtSUdob3c2LVE||",
+      "photo": "assets/img/avis/menno-b.webp"
+    },
+    {
+      "texte": "Cinq jours, quatre nuits pour une succession subtile de consultations, de soins traditionnels et innovants, de moments de partage aussi. Arrivée sur les rotules, je suis repartie debout, réconciliée avec mon sommeil, animée par une envie folle de repasser en mode vitalité.",
+      "auteur": "Carine d. S.",
+      "format": "séjour immersif de cinq jours",
+      "sejour": true,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xKT1MyVkxVSHBUVGtSMlNuWm5RazF5WXpCdFprRRAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOlJOS2VLUHpTTkR2SnZnQk1yYzBtZkE||",
+      "photo": "assets/img/avis/carine-ds.webp"
+    },
+    {
+      "texte": "Un lieu et un cadre magiques qui invitent véritablement à la déconnexion. Les cours de yoga, d'une grande qualité, se déroulent dans le dôme, un véritable cocon. Chaque séance fait l'objet d'une attention particulière.",
+      "auteur": "Stéphanie V.",
+      "format": "sessions de yoga",
+      "sejour": false,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pCNFprSmtZa3BCYkMweGJXdHNaRXBaVlhCWVFWRRAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOjB4ZkJkYkpBbC0xbWtsZEpZVXBYQVE||",
+      "photo": "assets/img/avis/stephanie-v.webp"
+    },
+    {
+      "texte": "Malgré la proximité des lieux, j'ai eu l'impression d'être partie loin de chez moi. Dans un cadre magnifique et verdoyant, j'ai été touchée par la gentillesse et la bienveillance des thérapeutes. Les soins que j'y ai reçus sont d'une grande qualité.",
+      "auteur": "Evelyne V. L.",
+      "format": "séjour immersif de cinq jours",
+      "sejour": true,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25kbFQwYzROVmswVEhScE5IbGpSblp6WjBsUmJtYxAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOndlT0c4NVk0THRpNHljRnZzZ0lRbmc||",
+      "photo": "assets/img/avis/evelyne-vl.webp"
+    },
+    {
+      "texte": "Un bel accueil suivi par deux soins, un infrarouge et un Airnergy. Subtil, et de quoi apaiser mon système nerveux. Quel espace zen et quelle bienveillance. Un beau cadeau d'anniversaire.",
+      "auteur": "Claire B.",
+      "format": "infrarouge et Airnergy",
+      "sejour": false,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25sWlUyZHFTV05QVFVadmVqRlRRV3RMUkhWQ2NsRRAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOnlZU2dqSWNPTUZvejFTQWtLRHVCclE||",
+      "photo": "assets/img/avis/claire-b.webp"
+    },
+    {
+      "texte": "J'ai eu la chance de participer à une retraite chez hoona et j'ai vraiment adoré ce moment hors du temps. Une équipe fantastique, des soins tout simplement magiques, un cadre idyllique : tout participe à un ressourcement complet.",
+      "auteur": "Louis d. B.",
+      "format": "séjour immersif de cinq jours",
+      "sejour": true,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xsbmRuY3hhRjkzU0Y4d2NtOUtUbkUzWms5VmNWRRAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOllndncxaF93SF8wcm9KTnE3Zk9VcVE||",
+      "photo": "assets/img/avis/louis-db.webp"
+    },
+    {
+      "texte": "Excellentes sessions de yoga, nidra, yin. Mes maux de dos s'estompent au fur et à mesure. Très belles leçons de vie véhiculées aussi.",
+      "auteur": "Basile M.",
+      "format": "sessions de yoga",
+      "sejour": false,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21KUU5HeHBSbTV1ZDFKMGJVaHNiRUZ1TkY4M2FIYxAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOmJQNGxpRm5ud1J0bUhsbEFuNF83aHc||",
+      "photo": "assets/img/avis/basile-m.webp"
+    },
+    {
+      "texte": "J'ai eu l'immense joie de faire une retraite chez hoona, dans un cadre naturel et harmonieux, entre les mains expertes d'une équipe très bienveillante, avec l'offre d'une technologie avancée. Toutes les approches ont nourri mon souhait d'un corps sain et en pleine santé.",
+      "auteur": "Annie H.",
+      "format": "séjour immersif de cinq jours",
+      "sejour": true,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21OU1UycGlPREpSTUZObE5pMWhNM0YzTm1GcVNuYxAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOmNSU2piODJRMFNlNi1hM3F3NmFqSnc||",
+      "photo": "assets/img/avis/annie-h.webp"
+    },
+    {
+      "texte": "Dès mon arrivée, je me suis sentie accueillie et attendue. Marie a bien ciblé ce que je souhaitais et a su être attentive à mes demandes. Cela faisait longtemps que je n'avais pas eu une qualité de soins comme celle-là.",
+      "auteur": "Delphine E.",
+      "format": "massage du corps",
+      "sejour": false,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pJMFQxSTRXbUp6WldOU1VHVTBURmxDVjJRM1kxRRAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOjI0T1I4WmJzZWNSUGU0TFlCV2Q3Y1E||",
+      "photo": "assets/img/avis/delphine-e.webp"
+    },
+    {
+      "texte": "La salle de yoga avec le dôme est exceptionnelle, et les thérapeutes sont top. On sent qu'il y a une belle énergie et qu'on est entouré de personnes compétentes et attentives.",
+      "auteur": "Julie R.",
+      "format": "sessions de yoga",
+      "sejour": false,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2toSldrMUhVMnh6TkhsWFRVRnpja1IyWTBaM1JHYxAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOkhJWk1HU2xzNHlXTUFzckR2Y0Z3RGc||",
+      "photo": "assets/img/avis/julie-r.webp"
+    }
+  ],
+  "_aide_google": "Extraits fidèles des avis publiés sur la fiche Google (24 avis au 4 nov. 2026). sejour: true = montré aussi sur la page séjours. url = lien de partage de l'avis sur Google ; photo = portrait Google (96 px, webp) dans assets/img/avis/."
+}

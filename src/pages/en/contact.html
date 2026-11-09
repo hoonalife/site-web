@@ -1,0 +1,92 @@
+<!--
+title: Contact, booking and directions | hoona Tervuren
+description: Book a retreat, an assessment, a care session or a group session at hoona, Elisabethlaan 6, Tervuren, at the end of tram line 44. +32 471 25 09 22.
+nav:
+-->
+
+<header class="wrap page-head">
+  <ol class="crumbs" aria-label="Breadcrumb"><li><a href="index.html">Home</a></li><li><span aria-current="page">Contact</span></li></ol>
+  <h1>Let's talk.</h1>
+  <p class="chapeau">A booking, a question, or simply the wish to know more: we will get back to you as soon as we can.</p>
+</header>
+
+<section class="section section--tight" id="reserver" aria-labelledby="form-title">
+  <div class="wrap retreat">
+    <div>
+      <h2 id="form-title" style="font-size:var(--text-xl);margin-bottom:var(--space-lg)">Your request</h2>
+      <form class="form" data-demo novalidate data-success="Thank you, your request is on its way. We will get back to you very soon.">
+        <div>
+          <label for="c-sujet">Your request is about</label>
+          <select class="field" id="c-sujet" name="sujet">
+            <option value="sejour">An immersive retreat</option>
+            <option value="bilan">A holistic assessment</option>
+            <option value="experience">A half-day experience</option>
+            <option value="soin">A care session or a consultation</option>
+            <option value="session">A group session</option>
+            <option value="cadeau">A gift voucher</option>
+            <option value="autre">Something else</option>
+          </select>
+        </div>
+        <div class="form__row">
+          <div>
+            <label for="c-nom">First and last name</label>
+            <input class="field" id="c-nom" name="nom" autocomplete="name" required aria-describedby="c-nom-err">
+            <p class="error" id="c-nom-err"></p>
+          </div>
+          <div>
+            <label for="c-email">Email</label>
+            <input class="field" id="c-email" name="email" type="email" autocomplete="email" required aria-describedby="c-email-err">
+            <p class="error" id="c-email-err"></p>
+          </div>
+        </div>
+        <div>
+          <label for="c-tel">Phone <span class="muted" style="font-weight:var(--weight-body)">(optional)</span></label>
+          <input class="field" id="c-tel" name="tel" type="tel" autocomplete="tel">
+          <p class="hint">Handy if you would rather we call you back.</p>
+        </div>
+        <div>
+          <label for="c-message">Your message</label>
+          <textarea class="field" id="c-message" name="message" required aria-describedby="c-message-err" placeholder="The dates you have in mind, your questions…"></textarea>
+          <p class="error" id="c-message-err"></p>
+        </div>
+        <label class="check" for="c-ok" style="font-weight:var(--weight-body)">
+          <input id="c-ok" type="checkbox" name="lettre">
+          <span>I would also like to receive the hoona letter.</span>
+        </label>
+        <div class="actions">
+          <button class="btn" type="submit">Send my request</button>
+          <p class="form__status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+    <aside class="stack-lg" aria-label="Contact details">
+      <div class="stack">
+        <p class="insert">Get in touch</p>
+        <div class="contact-lines" style="font-size:var(--text-lg)">
+          <a href="tel:+32471250922"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>+32 471 25 09 22</a>
+          <a href="mailto:hello@hoona.life"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg>hello@hoona.life</a>
+        </div>
+      </div>
+      <div class="stack">
+        <p class="insert">The centre</p>
+        <address style="font-style:normal">hoona<br>Elisabethlaan 6<br>3080 Tervuren, Belgium</address>
+        <p><a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=hoona%20Elisabethlaan%206%203080%20Tervuren" rel="noopener">Open in Google Maps</a></p>
+      </div>
+      <p class="muted" style="font-size:var(--text-sm)">Our care sessions are held in French, Dutch or English; our group sessions in French or English.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="section section--deep" id="acces" aria-labelledby="acces-title">
+  <div class="wrap">
+    <div class="stack" style="margin-bottom:var(--space-xl)">
+      <p class="insert">Getting to hoona</p>
+      <h2 id="acces-title">Steps from the forest, minutes from Brussels</h2>
+    </div>
+    <div class="rows">
+      <div class="row row--3"><span class="row__title">By public transport</span><span class="row__desc">STIB tram 44 to the end of the line, in front of the Royal Museum for Central Africa: hoona is a 200-metre walk away. De Lijn buses: lines 317, 410, 519, 526, 549, 553, 555, 558 and N2.</span><span class="row__meta">200 m on foot</span></div>
+      <div class="row row--3"><span class="row__title">By car</span><span class="row__desc">Close to the Brussels ring road (R0) and the E40. Access is via a road reserved for residents and local traffic: you are welcome to use it. Parking is available nearby.</span><span class="row__meta">R0 · E40</span></div>
+      <div class="row row--3"><span class="row__title">By plane</span><span class="row__desc">Brussels Airport is 13 km from the centre.</span><span class="row__meta">13 km</span></div>
+    </div>
+  </div>
+</section>

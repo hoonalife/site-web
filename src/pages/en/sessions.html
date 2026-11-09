@@ -1,0 +1,68 @@
+<!--
+title: Group sessions: yoga, Nordic walking, gong bath | hoona
+description: hoona group sessions in Tervuren: flow, yin, kundalini, nidra and hormonal yoga, Nordic walking, fitness coaching, gong bath. €25 per session.
+nav: SESSIONS
+-->
+
+<header class="wrap page-head">
+  <ol class="crumbs" aria-label="Breadcrumb"><li><a href="index.html">Home</a></li><li><span aria-current="page">Group sessions</span></li></ol>
+  <h1>Move, breathe, together.</h1>
+  <p class="chapeau">Every week, in the Dome or in the forest, small-group sessions to keep your vitality alive, in French or in English.</p>
+  <p class="cartouche" style="margin-top:var(--space-lg)">First session free with the code <strong>ENSEMBLE</strong></p>
+</header>
+
+<figure class="plate">
+  <img src="assets/img/pratiques-collectives.jpg" alt="A group session in the Dome: participants standing, arms stretched out in front of them, facing large windows open onto the trees" width="1200" height="1800" loading="lazy" decoding="async" style="object-position:center 35%">
+</figure>
+
+<section class="section" id="planning" aria-labelledby="planning-title">
+  <div class="wrap">
+    <div class="stack" style="margin-bottom:var(--space-xl)">
+      <p class="insert">This week's schedule</p>
+      <h2 id="planning-title">Find your moment</h2>
+    </div>
+{{SESSIONS_WEEK}}
+  </div>
+</section>
+
+<section class="section section--deep" id="reserver" aria-labelledby="rsv-title">
+  <div class="wrap" data-catalogue data-sessions>
+    <div class="stack" style="margin-bottom:var(--space-md)">
+      <p class="insert">{{t:book}}</p>
+      <h2 id="rsv-title">{{t:sess_title}}</h2>
+      <p class="muted measure">{{t:sess_intro}}</p>
+    </div>
+    {{AXES_PICKER}}
+    <div class="toolbar">
+      <div class="filters" aria-label="{{t:goto_cat}}">
+        {{SESSIONS_FILTERS}}
+      </div>
+      <div class="search">
+        <svg class="i" aria-hidden="true"><use href="#i-search"/></svg>
+        <label class="visually-hidden" for="q">{{t:sess_search_label}}</label>
+        <input id="q" type="search" data-search placeholder="{{t:sess_search}}" autocomplete="off">
+      </div>
+      <p class="toolbar__status" data-status role="status" aria-live="polite">{{SESSIONS_STATUS}}</p>
+    </div>
+
+    {{SESSIONS_GROUPS}}
+
+    <div class="empty" data-empty hidden>
+      <p>{{t:sess_empty}}</p>
+      <p style="margin-top:var(--space-sm)"><button class="btn btn--line btn--sm" type="button" data-reset>{{t:show_all}}</button></p>
+    </div>
+    <p class="muted" style="padding-block:var(--space-xl) var(--space-lg);font-size:var(--text-sm)">{{t:sess_note}}</p>
+    {{SESSIONS_JSONLD}}
+  </div>
+</section>
+
+<section class="section" id="conferences" aria-labelledby="conf-title">
+  <div class="wrap">
+    <div class="prose">
+      <p class="insert">hoona Academy</p>
+      <h2 id="conf-title" style="margin-top:var(--space-sm)">Talks and workshops</h2>
+      <p class="lede">Themed half-days to explore the pillars of vitality in depth, in the Workshop space.</p>
+      <p>No talks are scheduled at the moment. To hear as soon as a date is set, sign up for the hoona letter at the bottom of this page.</p>
+    </div>
+  </div>
+</section>

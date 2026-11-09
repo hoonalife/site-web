@@ -1,0 +1,11 @@
+<svg class="flower__svg" viewBox="86 86 628 620" role="group" aria-label="The 7 hoona vitality axes, arranged as a flower: each circle overlaps its neighbours">
+  <g class="petal"><a href="approche.html#axe-nutrition" aria-label="Nutrition"><circle cx="400.0" cy="250.0" r="150"/><text x="400.0" y="190.0" text-anchor="middle">Nutrition</text></a></g>
+  <g class="petal"><a href="approche.html#axe-sommeil" aria-label="Sleep"><circle cx="517.3" cy="306.5" r="150"/><text x="578.3" y="275.8" text-anchor="middle">Sleep</text></a></g>
+  <g class="petal"><a href="approche.html#axe-mouvement" aria-label="Movement"><circle cx="546.2" cy="433.4" r="150"/><text x="622.3" y="468.7" text-anchor="middle">Movement</text></a></g>
+  <g class="petal"><a href="approche.html#axe-detox" aria-label="Detox"><circle cx="465.1" cy="535.1" r="150"/><text x="498.9" y="623.4" text-anchor="middle">Detox</text></a></g>
+  <g class="petal"><a href="approche.html#axe-systeme-nerveux" aria-label="Nervous system"><circle cx="334.9" cy="535.1" r="150"/><text x="301.1" y="612.4" text-anchor="middle">Nervous</text><text x="301.1" y="635.4" text-anchor="middle">system</text></a></g>
+  <g class="petal"><a href="approche.html#axe-psycho-emotionnel" aria-label="Psycho-emotional"><circle cx="253.8" cy="433.4" r="150"/><text x="177.7" y="457.7" text-anchor="middle">Psycho-</text><text x="177.7" y="480.7" text-anchor="middle">emotional</text></a></g>
+  <g class="petal"><a href="approche.html#axe-sens" aria-label="Meaning"><circle cx="282.7" cy="306.5" r="150"/><text x="221.7" y="275.8" text-anchor="middle">Meaning</text></a></g>
+  <circle class="flower__core" cx="400" cy="400" r="5"/>
+  <text class="flower__core-label" x="400" y="428" text-anchor="middle" aria-hidden="true">vital energy</text>
+</svg>

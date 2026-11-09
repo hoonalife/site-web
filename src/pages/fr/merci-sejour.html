@@ -1,0 +1,56 @@
+<!--
+title: Demande reçue | hoona
+description: Votre demande de réservation de séjour immersif est bien arrivée chez hoona.
+nav: SEJOURS
+noindex: true
+-->
+
+<header class="wrap page-head">
+  <p class="cartouche" style="margin-bottom:var(--space-lg)">Demande reçue</p>
+  <h1>Merci, c'est noté.</h1>
+  <p class="chapeau" data-merci-recap>Votre demande de réservation est bien arrivée. Nous revenons vers vous sous deux jours ouvrés, par e-mail ou par téléphone, avec le lien de paiement de l'acompte.</p>
+</header>
+
+<section class="section section--tight" aria-labelledby="suite-title">
+  <div class="wrap doc">
+    <div>
+      <h2 id="suite-title" style="font-size:var(--text-xl)">Et maintenant ?</h2>
+    </div>
+    <div class="stack-lg">
+      <ol class="steps-list">
+        <li><strong>Nous vérifions les disponibilités</strong> de la date et de la chambre choisies, puis nous vous écrivons.</li>
+        <li><strong>Vous réglez l'acompte de 30 %</strong> par le lien de paiement reçu. La réservation est alors confirmée.</li>
+        <li><strong>Avant le séjour,</strong> une consultation en ligne prépare votre programme, et vous recevez la liste des essentiels à apporter.</li>
+      </ol>
+      <p class="muted">Rien reçu dans les deux jours ? Vérifiez vos courriers indésirables, ou appelez-nous : <a href="tel:+32471250922" style="white-space:nowrap">+32 471 25 09 22</a>.</p>
+      <div class="actions">
+        <a class="btn btn--line" href="sejours.html">Relire le programme du séjour</a>
+        <a class="link" href="index.html">Retour à l'accueil</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+/* Page de confirmation : seul point de mesure de la conversion « demande de séjour ».
+   Les régies (Meta, Google Ads) se branchent sur l'URL de cette page, et sur l'événement ci-dessous via GTM. */
+(function () {
+  var p = new URLSearchParams(window.location.search);
+  var acompte = parseInt(p.get("acompte"), 10) || 0;
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: "demande_sejour",
+    value: acompte, currency: "EUR",
+    sejour: p.get("sejour") || "", chambre: p.get("chambre") || "", personnes: parseInt(p.get("personnes"), 10) || 1
+  });
+  var el = document.querySelector("[data-merci-recap]");
+  var d = p.get("sejour");
+  if (el && d && /^\d{4}-\d{2}-\d{2}$/.test(d)) {
+    var when = new Date(d + "T00:00:00").toLocaleDateString("fr-BE", { day: "numeric", month: "long", year: "numeric" });
+    var n = parseInt(p.get("personnes"), 10) || 1;
+    el.textContent = "Votre demande pour le séjour du " + when + (n > 1 ? ", pour " + n + " personnes," : "") +
+      " est bien arrivée. Nous revenons vers vous sous deux jours ouvrés, par e-mail ou par téléphone, avec le lien de paiement de l'acompte" +
+      (acompte ? " (" + acompte.toLocaleString("fr-BE") + " €)" : "") + ".";
+  }
+})();
+</script>

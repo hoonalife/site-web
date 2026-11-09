@@ -1,0 +1,105 @@
+/* Hallmark · genre: editorial · theme: custom (charte hoona 2025) · design-system: design.md
+ * paper: crème #FBF6F0 · ink: navy #17283F · accent: bleus de la charte (#5291CC · #7BAEDB · #AAC9E2)
+ * display + body: TWK Lausanne 300 / 350 / 600 · axes: light / grotesk-sans / cool
+ */
+
+@font-face { font-family: "TWK Lausanne"; src: url("../fonts/TWKLausanne-300.woff2") format("woff2"); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: "TWK Lausanne"; src: url("../fonts/TWKLausanne-350.woff2") format("woff2"); font-weight: 350; font-style: normal; font-display: swap; }
+@font-face { font-family: "TWK Lausanne"; src: url("../fonts/TWKLausanne-600.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+
+:root {
+  /* Couleurs de la charte, en OKLCH */
+  --color-navy:        oklch(27.4% 0.049 256);   /* #17283F */
+  --color-cream:       oklch(97.5% 0.010 73);    /* #FBF6F0 */
+  --color-blue-500:    oklch(64.0% 0.110 248);   /* #5291CC */
+  --color-blue-400:    oklch(73.2% 0.085 246);   /* #7BAEDB */
+  --color-blue-300:    oklch(82.1% 0.049 243);   /* #AAC9E2 */
+
+  /* Rôles */
+  --color-paper:       var(--color-cream);
+  --color-paper-2:     oklch(94.4% 0.016 74);    /* crème profonde, sections calmes */
+  --color-paper-3:     oklch(91.5% 0.020 74);    /* survol sur crème profonde */
+  --color-ink:         var(--color-navy);
+  --color-ink-2:       oklch(42% 0.036 256);     /* texte secondaire, 7,6:1 sur crème */
+  --color-ink-3:       oklch(52% 0.028 256);     /* mentions, 5,0:1 sur crème */
+  --color-rule:        oklch(27.4% 0.049 256 / 0.16);
+  --color-rule-strong: oklch(27.4% 0.049 256 / 0.42);
+  --color-accent:      var(--color-blue-500);    /* aplats et graphiques, jamais du texte courant */
+  --color-accent-ink:  oklch(47.6% 0.098 251);   /* #2E5F92 : liens et accents texte, 6,4:1 sur crème */
+  --color-wash:        oklch(82.1% 0.049 243 / 0.42); /* remplissage des cercles de la fleur */
+  --color-on-ink:      var(--color-cream);
+  --color-on-ink-2:    oklch(86% 0.020 250);     /* secondaire sur navy, 9:1 */
+  --color-focus:       oklch(53.9% 0.104 250);
+  --color-focus-on-ink: var(--color-blue-300);
+  --color-scrim:       oklch(20% 0.045 256 / 0.62);
+  /* Voiles et transparences (vidéo, pastilles, survols) */
+  --color-veil-0:      oklch(20% 0.045 256 / 0.08);
+  --color-veil-1:      oklch(20% 0.045 256 / 0.25);
+  --color-veil-2:      oklch(20% 0.045 256 / 0.42);
+  --color-veil-3:      oklch(20% 0.045 256 / 0.55);
+  --color-veil-4:      oklch(20% 0.045 256 / 0.8);
+  --color-cream-24:    oklch(97.5% 0.010 73 / 0.24);
+  --color-cream-60:    oklch(97.5% 0.010 73 / 0.6);
+  --color-cream-90:    oklch(97.5% 0.010 73 / 0.9);
+  --color-cream-10:    oklch(97.5% 0.010 73 / 0.1);
+  --color-wash-near:   oklch(82.1% 0.049 243 / 0.18);
+  --color-error:       oklch(50% 0.150 28);
+  --color-success:     oklch(48% 0.090 160);
+
+  /* Typographie : une seule famille, celle de la charte */
+  --font-sans: "TWK Lausanne", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: var(--font-sans);
+  --font-body: var(--font-sans);
+  --weight-light: 300;   /* titres, chapeaux, inserts */
+  --weight-body: 350;    /* texte de labeur */
+  --weight-bold: 600;    /* sous-titres, puces, mots mis en valeur */
+
+  --text-xs:   0.8125rem;
+  --text-sm:   0.9375rem;
+  --text-md:   1.0625rem;
+  --text-lg:   1.25rem;
+  --text-xl:   clamp(1.375rem, 1.15rem + 0.9vw, 1.875rem);
+  --text-2xl:  clamp(1.75rem, 1.3rem + 1.9vw, 2.75rem);
+  --text-3xl:  clamp(2.1rem, 1.4rem + 2.4vw, 3.5rem);   /* 4 nov. 2026 : 56 px max, au lieu de 68 */
+  --text-display: clamp(2.75rem, 1.4rem + 4.6vw, 5.5rem); /* 4 nov. 2026 : 88 px max, au lieu de 120, héro seulement */
+
+  --leading-tight: 1.04;
+  --leading-snug: 1.22;
+  --leading-body: 1.62;
+  --tracking-display: -0.025em;
+  --tracking-insert: 0.14em;
+
+  /* Espacements, échelle de 4 pt */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs:  0.75rem;
+  --space-sm:  1rem;
+  --space-md:  1.5rem;
+  --space-lg:  2rem;
+  --space-xl:  3rem;
+  --space-2xl: 4.5rem;
+  --space-3xl: 7rem;
+  --space-4xl: 10rem;
+  --gutter: clamp(1rem, 0.4rem + 3vw, 3rem);
+  --measure: 62ch;
+  --wide: 80rem;
+
+  /* Formes : la pilule de la charte pour cartouches et boutons, angles vifs pour les photos */
+  --radius-pill: 999px;
+  --radius-input: 0.5rem;
+  --radius-media: 0;
+  --rule-hair: 1px;
+  --rule-filet: 1px;
+
+  /* Mouvement */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-short: 180ms;
+  --dur-medium: 320ms;
+  --dur-long: 700ms;
+
+  /* En-tête N12 : bandeau + barre */
+  --banner-h: 2.5rem;
+  --bar-h: 4.5rem;
+}

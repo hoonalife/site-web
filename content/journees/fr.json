@@ -1,0 +1,94 @@
+{
+  "categories": [
+    {
+      "slug": "demi-journees",
+      "nom": "Demi-journées",
+      "prestations": [
+        {
+          "nom": "Relaxation du système nerveux",
+          "description": "Consultation et mantras, infrarouge, session de marche nordique en petit groupe.",
+          "prix": 180,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        },
+        {
+          "nom": "Good night",
+          "description": "Consultation, bain au magnésium, infrarouge, cocoon room.",
+          "prix": 180,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        },
+        {
+          "nom": "Détox douce",
+          "description": "Consultation, sauna, bain de pieds, QRS.",
+          "prix": 180,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        },
+        {
+          "nom": "Équilibre de vie",
+          "description": "Consultation, bain au magnésium, session en petit groupe : kundalini et bain de gongs.",
+          "prix": 180,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        },
+        {
+          "nom": "Bouger, c'est la vie",
+          "description": "Marche nordique individuelle, yoga collectif, QRS et Airnergy, technique Alexander.",
+          "prix": 180,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        },
+        {
+          "nom": "Refresh the mind & oxygénation",
+          "description": "Life-coaching, marche nordique en groupe, cocoon room.",
+          "prix": 180,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        }
+      ]
+    },
+    {
+      "slug": "journees",
+      "nom": "Journées",
+      "prestations": [
+        {
+          "nom": "Nutrition, ventre & détox",
+          "description": "Consultation santé du système digestif, Chi Nei Tsang, cataplasme du foie.",
+          "prix": 250,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        },
+        {
+          "nom": "Détox du foie",
+          "description": "Consultation, Papimi, Indiba, cataplasme du foie.",
+          "prix": 250,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        },
+        {
+          "nom": "Soutien du système nerveux",
+          "description": "Consultation et mantras, marche nordique individuelle, IHHT, cocoon room.",
+          "prix": 250,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        },
+        {
+          "nom": "Good night plus",
+          "description": "IHHT, Papimi, massage visage-pieds et voyage sonore.",
+          "prix": 250,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        },
+        {
+          "nom": "Retour à soi",
+          "description": "Consultation, yoga individuel, Papimi, soin aux bols tibétains.",
+          "prix": 250,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        },
+        {
+          "nom": "Reset the mind",
+          "description": "Life-coaching, Dien Chan, QRS et Airnergy, bain au magnésium.",
+          "prix": 250,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        },
+        {
+          "nom": "Endurance, performance, récupération",
+          "description": "Renforcement musculaire individuel, IHHT, Indiba.",
+          "prix": 250,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        }
+      ]
+    }
+  ]
+}

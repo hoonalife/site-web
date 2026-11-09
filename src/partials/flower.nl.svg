@@ -1,0 +1,11 @@
+<svg class="flower__svg" viewBox="86 86 628 620" role="group" aria-label="De 7 vitaliteitsassen van hoona, geschikt als een bloem: elke cirkel overlapt zijn buren">
+  <g class="petal"><a href="approche.html#axe-nutrition" aria-label="Voeding"><circle cx="400.0" cy="250.0" r="150"/><text x="400.0" y="190.0" text-anchor="middle">Voeding</text></a></g>
+  <g class="petal"><a href="approche.html#axe-sommeil" aria-label="Slaap"><circle cx="517.3" cy="306.5" r="150"/><text x="578.3" y="275.8" text-anchor="middle">Slaap</text></a></g>
+  <g class="petal"><a href="approche.html#axe-mouvement" aria-label="Beweging"><circle cx="546.2" cy="433.4" r="150"/><text x="622.3" y="468.7" text-anchor="middle">Beweging</text></a></g>
+  <g class="petal"><a href="approche.html#axe-detox" aria-label="Detox"><circle cx="465.1" cy="535.1" r="150"/><text x="498.9" y="623.4" text-anchor="middle">Detox</text></a></g>
+  <g class="petal"><a href="approche.html#axe-systeme-nerveux" aria-label="Zenuwstelsel"><circle cx="334.9" cy="535.1" r="150"/><text x="301.1" y="612.4" text-anchor="middle">Zenuw-</text><text x="301.1" y="635.4" text-anchor="middle">stelsel</text></a></g>
+  <g class="petal"><a href="approche.html#axe-psycho-emotionnel" aria-label="Psycho-emotioneel"><circle cx="253.8" cy="433.4" r="150"/><text x="177.7" y="457.7" text-anchor="middle">Psycho-</text><text x="177.7" y="480.7" text-anchor="middle">emotioneel</text></a></g>
+  <g class="petal"><a href="approche.html#axe-sens" aria-label="Zingeving"><circle cx="282.7" cy="306.5" r="150"/><text x="221.7" y="275.8" text-anchor="middle">Zingeving</text></a></g>
+  <circle class="flower__core" cx="400" cy="400" r="5"/>
+  <text class="flower__core-label" x="400" y="428" text-anchor="middle" aria-hidden="true">levenskracht</text>
+</svg>

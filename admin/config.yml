@@ -1,0 +1,204 @@
+# Sveltia CMS · hoona v4 (prototype)
+# Ouvrir http://localhost:4321/v4/admin/ dans Chrome ou Edge,
+# puis « Work with Local Repository » et choisir le dossier v4.
+# Le site se reconstruit avec : python3 v4/build.py --watch
+
+backend:
+  name: github
+  repo: hoonalife/site-web   # en local, le CMS ne contacte jamais GitHub
+  branch: main
+
+media_folder: assets/img
+public_folder: /assets/img
+
+i18n:
+  locales: [fr, nl, en]
+  default_locale: fr
+
+collections:
+  # ---------- Séjours immersifs ----------
+  - name: agenda
+    label: Séjours immersifs
+    description: Les dates alimentent le bandeau « prochain séjour », l'accueil et le calendrier. Les dates passées disparaissent toutes seules.
+    files:
+      - name: sejours
+        label: Dates des séjours
+        file: content/sejours.json
+        fields:
+          - name: sejours
+            label: Séjours
+            label_singular: Séjour
+            widget: list
+            collapsed: true
+            summary: "{{debut}} → {{fin}}"
+            fields:
+              - { name: debut, label: Premier jour, widget: datetime, type: date, format: YYYY-MM-DD }
+              - { name: fin, label: Dernier jour, widget: datetime, type: date, format: YYYY-MM-DD }
+              - name: complet
+                label: Complet
+                widget: boolean
+                default: false
+                hint: Coché, la date reste visible avec la mention « Complet » mais n'est plus réservable.
+
+  # ---------- Catalogue des soins ----------
+  - name: catalogue
+    label: Catalogue des soins
+    description: Catégories et prestations de la page Soins & consultations, en français, néerlandais et anglais.
+    i18n: true
+    files:
+      - name: soins
+        label: Soins & consultations
+        file: content/soins/{{locale}}.json
+        i18n: true
+        fields:
+          - name: categories
+            label: Catégories
+            label_singular: Catégorie
+            widget: list
+            i18n: duplicate
+            collapsed: true
+            summary: "{{nom}}"
+            fields:
+              - name: slug
+                label: Identifiant
+                widget: string
+                i18n: duplicate
+                pattern: ['^[a-z0-9-]+$', 'Minuscules, chiffres et tirets uniquement']
+                hint: Sert aux filtres et aux ancres (ex. massages). À ne pas changer une fois publié.
+              - { name: nom, label: Nom de la catégorie, widget: string, i18n: true }
+              - { name: intro, label: Introduction, widget: text, i18n: true }
+              - { name: image, label: Photo du bandeau, widget: image, required: false, i18n: duplicate }
+              - { name: image_caption, label: Légende du bandeau, widget: string, required: false, i18n: true, hint: "Ex. « L'espace Soins »." }
+              - name: prestations
+                label: Prestations
+                label_singular: Prestation
+                widget: list
+                i18n: duplicate
+                collapsed: true
+                summary: "{{nom}}"
+                fields:
+                  - { name: nom, label: Nom, widget: string, i18n: true }
+                  - { name: description, label: Description, widget: text, i18n: true }
+                  - name: duree
+                    label: Durée (minutes)
+                    widget: number
+                    value_type: int
+                    min: 5
+                    i18n: duplicate
+                    hint: "Affichée automatiquement selon la langue : 80 → « 1 h 20 » en français, « 80 min » en anglais."
+                  - name: prix
+                    label: Prix (€)
+                    widget: number
+                    value_type: int
+                    required: false
+                    i18n: duplicate
+                    hint: Laisser vide pour afficher « sur demande ».
+                  - { name: page, label: Page dédiée, widget: string, required: false, hint: "ex. papimi.html : le nom devient un lien, et les mentions dans les descriptions aussi" }
+                  - { name: alias, label: Autres façons de nommer la prestation, widget: list, required: false, hint: "pour le lien automatique dans les textes, ex. Papimi" }
+
+  # ---------- Journal ----------
+  - name: journal
+    label: Journal
+    label_singular: Article
+    description: Les articles du Journal, en français, néerlandais et anglais. Un article daté dans le futur paraît à sa date ; « Brouillon » le garde hors ligne. Le site se reconstruit au moins une fois par jour.
+    folder: content/journal
+    create: true
+    slug: "{{slug}}"
+    format: frontmatter
+    extension: md
+    i18n:
+      structure: multiple_folders
+    summary: "{{date}} · {{title}}"
+    sortable_fields: [date, title]
+    fields:
+      - { name: title, label: Titre, widget: string, i18n: true }
+      - { name: description, label: Chapeau (deux phrases, sert aussi de description Google), widget: text, i18n: true }
+      - { name: date, label: Date de publication, widget: datetime, type: date, format: YYYY-MM-DD, i18n: duplicate }
+      - { name: draft, label: Brouillon, widget: boolean, default: false, required: false, i18n: duplicate }
+      - name: axes
+        label: Axes de vitalité
+        widget: select
+        multiple: true
+        i18n: duplicate
+        options:
+          - { label: Nutrition, value: nutrition }
+          - { label: Sommeil, value: sommeil }
+          - { label: Mouvement, value: mouvement }
+          - { label: Détox, value: detox }
+          - { label: Système nerveux, value: systeme-nerveux }
+          - { label: Psycho-émotionnel, value: psycho-emotionnel }
+          - { label: Sens, value: sens }
+      - { name: image, label: Photo de tête, widget: image, required: false, i18n: duplicate }
+      - { name: image_alt, label: Description de la photo (accessibilité), widget: string, required: false, i18n: true }
+      - { name: image_caption, label: Légende de la photo, widget: string, required: false, i18n: true }
+      - { name: author, label: Auteur, widget: string, default: "L'équipe hoona", i18n: true, hint: "« Olivia De Stoop » signe l'article en son nom dans les données structurées." }
+      - { name: cta_label, label: Bouton en fin d'article, widget: string, required: false, i18n: true, hint: "Vide : « Échange gratuit »." }
+      - { name: cta_url, label: Lien du bouton, widget: string, required: false, i18n: duplicate, hint: "Une page du site (consultation.html) ou une adresse complète." }
+      - { name: cta_text, label: Phrase d'appel, widget: text, required: false, i18n: true }
+      - { name: body, label: Texte de l'article, widget: markdown, i18n: true, hint: "Titres en « ## », listes en « - », citation en « > » terminée par « -- Auteur »." }
+
+  # ---------- Journées et demi-journées ----------
+  - name: journees
+    label: Journées & demi-journées
+    description: Les treize formats de la page Journées, avec le lien de réservation de chacun (agenda Acuity).
+    files:
+      - name: journees
+        label: Journées
+        file: content/journees/fr.json
+        fields:
+          - name: categories
+            label: Catégories
+            widget: list
+            collapsed: true
+            summary: "{{nom}}"
+            fields:
+              - { name: slug, label: Identifiant, widget: string, pattern: ['^[a-z0-9-]+$', 'Minuscules, chiffres et tirets'] }
+              - { name: nom, label: Nom, widget: string }
+              - name: prestations
+                label: Journées
+                widget: list
+                collapsed: true
+                summary: "{{nom}} · {{prix}} €"
+                fields:
+                  - { name: nom, label: Nom, widget: string }
+                  - { name: description, label: Composition, widget: text }
+                  - { name: prix, label: Prix (€), widget: number, value_type: int }
+                  - { name: url, label: Lien de réservation Acuity, widget: string, hint: "Lien générique en attendant le lien propre à chaque journée." }
+
+  # ---------- Témoignages ----------
+  - name: temoignages
+    label: Témoignages
+    description: Avis Google (accueil et page séjours) et témoignages vidéo. Les vidéos se déposent dans assets/video/temoignages avec une image d'affiche.
+    files:
+      - name: temoignages
+        label: Témoignages
+        file: content/temoignages/fr.json
+        fields:
+          - { name: google_url, label: Lien de la fiche Google, widget: string }
+          - { name: google_note, label: Note Google, widget: string }
+          - { name: google_nombre, label: Nombre d'avis, widget: number, value_type: int }
+          - name: videos
+            label: Témoignages vidéo
+            widget: list
+            collapsed: true
+            summary: "{{auteur}} · {{format}}"
+            fields:
+              - { name: fichier, label: Fichier vidéo (mp4), widget: string }
+              - { name: affiche, label: Image d'affiche, widget: image }
+              - { name: auteur, label: Prénom et initiale, widget: string }
+              - { name: format, label: Format vécu, widget: string, hint: "ex. séjour immersif de cinq jours" }
+              - { name: sejour, label: Lié au séjour, widget: boolean, default: true }
+              - { name: accueil, label: Montrer sur l'accueil, widget: boolean, default: false }
+              - { name: duree, label: Durée affichée, widget: string, required: false }
+          - name: google
+            label: Avis Google
+            widget: list
+            collapsed: true
+            summary: "{{auteur}} · {{format}}"
+            fields:
+              - { name: texte, label: Extrait, widget: text }
+              - { name: auteur, label: Prénom et initiale, widget: string }
+              - { name: format, label: Format vécu, widget: string }
+              - { name: sejour, label: Lié au séjour (affiché sur la page séjours), widget: boolean, default: false }
+              - { name: url, label: Lien de l'avis sur Google, widget: string, required: false, hint: "Fiche Google > avis > Partager > copier le lien" }
+              - { name: photo, label: Portrait Google, widget: image, required: false, hint: "96 x 96 px, dans assets/img/avis/" }
