@@ -212,5 +212,7 @@
   "m_journees_sub": "Days & half-days",
   "m_sejour_long": "Five-day immersive retreat",
   "m_journee_type": "A typical day",
-  "m_dates": "Next dates"
+  "m_dates": "Next dates",
+  "chemin_cta_kicker": "Not sure?",
+  "chemin_cta_text": "Not sure where to start, or whether this path is the right one? A 20-minute discovery call with the team, free and without obligation, to choose the first step together."
 }

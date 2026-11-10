@@ -218,5 +218,7 @@
   "m_journees_sub": "Journées & demi-journées",
   "m_sejour_long": "Séjour immersif de cinq jours",
   "m_journee_type": "Une journée type",
-  "m_dates": "Prochaines dates"
+  "m_dates": "Prochaines dates",
+  "chemin_cta_kicker": "Vous hésitez ?",
+  "chemin_cta_text": "Vous ne savez pas par où commencer, ou si ce chemin est le bon ? Un échange découverte de 20 minutes avec l'équipe, offert et sans engagement, pour choisir ensemble la première étape."
 }

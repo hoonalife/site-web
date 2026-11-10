@@ -412,7 +412,7 @@ def chemin_html(c, chemins, t, lang, arts):
         '%(journal)s'
         '<section class="section section--tight" aria-labelledby="cc-title">\n  <div class="wrap"><aside class="post__cta">\n'
         '    <p class="insert" id="cc-title">%(cta_kicker)s</p>\n    <p>%(cta_text)s</p>\n'
-        '    <p class="actions"><a class="btn" href="echange-decouverte.html">%(call)s</a><a class="link" href="%(first_url)s">%(first_label)s</a></p>\n'
+        '    <p class="actions"><a class="btn" href="echange-decouverte.html">%(call)s</a></p>\n'
         '  </aside></div>\n</section>\n'
         '<section class="section section--tight" aria-labelledby="co-title">\n  <div class="wrap">\n'
         '    <h2 id="co-title" style="font-size:var(--text-xl);margin-bottom:var(--space-lg)">%(others_title)s</h2>\n'
@@ -427,7 +427,7 @@ def chemin_html(c, chemins, t, lang, arts):
             "reco_kicker": e(t["chemin_reco_kicker"]), "reco_title": e(t["chemin_reco_title"]), "reco_intro": e(t["chemin_reco_intro"]), "rows_soins": rows_soins,
             "sessions_block": ('    <h3 class="chemin-sub">%s</h3>\n    <div class="rows rows--compact">\n%s\n    </div>\n' % (e(t["chemin_sessions"]), rows_sessions)) if rows_sessions else "",
             "all_soins": e(t["chemin_all_soins"]), "all_sessions": e(t["chemin_all_sessions"]), "journal": journal,
-            "cta_kicker": e(t["journal_cta_kicker"]), "cta_text": e(t["journal_cta_default"]), "others_title": e(t["chemin_others"]), "others": others,
+            "cta_kicker": e(t["chemin_cta_kicker"]), "cta_text": e(t["chemin_cta_text"]), "others_title": e(t["chemin_others"]), "others": others,
         }
     )
 
