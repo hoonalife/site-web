@@ -69,7 +69,8 @@ LANGS = ["fr", "nl", "en"]             # ordre du sélecteur
 DEFAULT_LANG = "fr"
 NAV_KEYS = ["APPROCHE", "SEJOURS", "SOINS", "SESSIONS", "BILAN", "APROPOS", "CONSULTATION", "JOURNEES"]
 # Les entrées à sous-menu de la barre sont marquées « page courante » pour toutes les pages qu'elles regroupent.
-NAV_GROUPS = {"SOINS": {"SOINS", "SESSIONS", "BILAN", "CADEAU"}, "APPROCHE": {"APPROCHE", "APROPOS", "JOURNAL", "CONTACT"}}
+NAV_GROUPS = {"COMPRENDRE": {"CONSULTATION", "BILAN", "CHEMINS", "CALL"}, "EXPERIMENTER": {"SOINS", "SESSIONS", "JOURNEES", "CADEAU"},
+              "IMMERGER": {"SEJOURS"}, "APROPOS": {"APPROCHE", "APROPOS", "JOURNAL", "SOUTIEN", "CONTACT"}}
 
 CONTENT = ROOT / "content"
 
@@ -1086,6 +1087,9 @@ def build():
             "{{FLOWER}}": flower(lang),
             "{{LANG}}": lang,
             "{{JS_I18N}}": json.dumps(dict(t["js"], lang=lang), ensure_ascii=False),
+            "{{CHEMINS_LI}}": '<li><a href="index.html#chemins">%s</a></li>' % htmllib.escape(t["m_chemins"], quote=True) if lang == "fr" else "",
+            "{{JOURNEE_TYPE_LI}}": '<li><a href="sejours.html#journee-type">%s</a></li>' % htmllib.escape(t["m_journee_type"], quote=True) if lang == "fr" else "",
+            "{{SOUTIEN_LI}}": '<li><a href="hoona-soutien.html">%s</a></li>' % htmllib.escape(t["m_soutien"], quote=True) if "hoona-soutien" in available[lang] else "",
             "{{JOURNAL_LI}}": '<li><a href="journal.html">%s</a></li>' % htmllib.escape(t["m_journal"], quote=True) if arts else "",
             "{{FOOT_PLUS_LI}}": "".join('<li><a href="%s.html">%s</a></li>' % (pg, htmllib.escape(t[key], quote=True))
                                         for pg, key in (("entreprises", "m_entreprises"), ("hoona-soutien", "m_soutien")) if pg in available[lang]),

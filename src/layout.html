@@ -10,8 +10,8 @@
 <link rel="icon" href="assets/brand/sigle-hoona.svg" type="image/svg+xml">
 <link rel="preload" href="assets/fonts/TWKLausanne-300.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/TWKLausanne-350.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/hoona.css?v=26">
-<link rel="stylesheet" href="assets/css/v6.css?v=26">
+<link rel="stylesheet" href="assets/css/hoona.css?v=27">
+<link rel="stylesheet" href="assets/css/v6.css?v=27">
 <script>
 /* Avant le premier rendu : bandeau déjà fermé ? */
 (function(){var d=document.documentElement;d.className+=" js";
@@ -65,27 +65,49 @@ try{if(localStorage.getItem("hoona-banner")==="closed"){d.className+=" is-banner
         <svg viewBox="0 0 408.79 92.44" aria-hidden="true" focusable="false"><use href="#logo-hoona"/></svg>
       </a>
       <nav class="menu-links" aria-label="{{t:nav_main}}">
-        <a href="{{t:url_consultation}}" {{CUR_CONSULTATION}}>{{t:nav_consultation}}</a>
         <div class="menu-item" data-submenu>
-          <a href="soins.html" {{CUR_G_SOINS}}>{{t:nav_soins_sessions}}</a>
-          <button class="menu-item__toggle" type="button" aria-expanded="false" aria-controls="sub-soins" aria-label="{{t:sub_open}} : {{t:nav_soins_sessions}}"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
-          <ul class="submenu" id="sub-soins">
+          <a href="{{t:url_consultation}}" {{CUR_G_COMPRENDRE}}>{{t:nav_comprendre}}</a>
+          <button class="menu-item__toggle" type="button" aria-expanded="false" aria-controls="sub-comprendre" aria-label="{{t:sub_open}} : {{t:nav_comprendre}}"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="submenu" id="sub-comprendre">
+            <li class="submenu__lead">{{t:lead_comprendre}}</li>
+            <li><a href="{{t:url_consultation}}">{{t:m_consultation}}</a></li>
+            <li><a href="bilan.html">{{t:m_bilan}}</a></li>
+            {{CHEMINS_LI}}
+            <li><a href="{{t:url_call_page}}">{{t:m_call}}</a></li>
+          </ul>
+        </div>
+        <div class="menu-item" data-submenu>
+          <a href="soins.html" {{CUR_G_EXPERIMENTER}}>{{t:nav_experimenter}}</a>
+          <button class="menu-item__toggle" type="button" aria-expanded="false" aria-controls="sub-experimenter" aria-label="{{t:sub_open}} : {{t:nav_experimenter}}"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="submenu" id="sub-experimenter">
+            <li class="submenu__lead">{{t:lead_experimenter}}</li>
             <li><a href="soins.html">{{t:sub_soins_tech}}</a></li>
             <li><a href="sessions.html">{{t:m_sessions}}</a></li>
-            <li><a href="bilan.html">{{t:m_bilan}}</a></li>
+            <li><a href="{{t:url_journees}}">{{t:m_journees_sub}}</a></li>
             <li><a href="bon-cadeau.html">{{t:m_cadeau}}</a></li>
           </ul>
         </div>
-        <a href="sejours.html" {{CUR_SEJOURS}}>{{t:nav_sejours}}</a>
-        <a href="{{t:url_journees}}" {{CUR_JOURNEES}}>{{t:nav_journees}}</a>
         <div class="menu-item" data-submenu>
-          <a href="approche.html" {{CUR_G_APPROCHE}}>{{t:nav_approche}}</a>
-          <button class="menu-item__toggle" type="button" aria-expanded="false" aria-controls="sub-approche" aria-label="{{t:sub_open}} : {{t:nav_approche}}"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
-          <ul class="submenu" id="sub-approche">
-            <li><a href="approche.html#axes">{{t:f_axes}}</a></li>
-            {{JOURNAL_LI}}
-            <li><a href="a-propos.html">{{t:m_centre}}</a></li>
+          <a href="sejours.html" {{CUR_G_IMMERGER}}>{{t:nav_immerger}}</a>
+          <button class="menu-item__toggle" type="button" aria-expanded="false" aria-controls="sub-immerger" aria-label="{{t:sub_open}} : {{t:nav_immerger}}"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="submenu" id="sub-immerger">
+            <li class="submenu__lead">{{t:lead_immerger}}</li>
+            <li><a href="sejours.html">{{t:m_sejour_long}}</a></li>
+            {{JOURNEE_TYPE_LI}}
             <li><a href="a-propos.html#maison">{{t:f_maison}}</a></li>
+            <li><a href="sejours.html#dates">{{t:m_dates}}</a></li>
+          </ul>
+        </div>
+        <div class="menu-item" data-submenu>
+          <a href="a-propos.html" {{CUR_G_APROPOS}}>{{t:nav_apropos}}</a>
+          <button class="menu-item__toggle" type="button" aria-expanded="false" aria-controls="sub-apropos" aria-label="{{t:sub_open}} : {{t:nav_apropos}}"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="submenu" id="sub-apropos">
+            <li class="submenu__lead">{{t:lead_apropos}}</li>
+            <li><a href="approche.html">{{t:m_approche}}</a></li>
+            <li><a href="approche.html#axes">{{t:f_axes}}</a></li>
+            <li><a href="a-propos.html">{{t:m_centre}}</a></li>
+            {{JOURNAL_LI}}
+            {{SOUTIEN_LI}}
             <li><a href="contact.html#acces">{{t:f_venir}}</a></li>
           </ul>
         </div>
@@ -117,19 +139,28 @@ try{if(localStorage.getItem("hoona-banner")==="closed"){d.className+=" is-banner
   <nav aria-label="{{t:nav_mobile}}">
     <ul class="drawer__list">
       <li><a href="index.html">{{t:m_home}}</a></li>
+      <li class="drawer__head">{{t:nav_comprendre}}<span class="drawer__lead">{{t:lead_comprendre}}</span></li>
       <li><a href="{{t:url_consultation}}">{{t:m_consultation}}</a></li>
-      <li class="drawer__head">{{t:nav_soins_sessions}}</li>
+      <li><a href="bilan.html">{{t:m_bilan}}</a></li>
+      {{CHEMINS_LI}}
+      <li><a href="{{t:url_call_page}}">{{t:m_call}}</a></li>
+      <li class="drawer__head">{{t:nav_experimenter}}<span class="drawer__lead">{{t:lead_experimenter}}</span></li>
       <li><a href="soins.html">{{t:sub_soins_tech}}</a></li>
       <li><a href="sessions.html">{{t:m_sessions}}</a></li>
-      <li><a href="bilan.html">{{t:m_bilan}}</a></li>
+      <li><a href="{{t:url_journees}}">{{t:m_journees_sub}}</a></li>
       <li><a href="bon-cadeau.html">{{t:m_cadeau}}</a></li>
-      <li class="drawer__head">{{t:nav_sejours}} &amp; {{t:nav_journees}}</li>
-      <li><a href="sejours.html">{{t:m_sejours}}</a></li>
-      <li><a href="{{t:url_journees}}">{{t:m_journees}}</a></li>
-      <li class="drawer__head">{{t:nav_approche}}</li>
+      <li class="drawer__head">{{t:nav_immerger}}<span class="drawer__lead">{{t:lead_immerger}}</span></li>
+      <li><a href="sejours.html">{{t:m_sejour_long}}</a></li>
+      {{JOURNEE_TYPE_LI}}
+      <li><a href="a-propos.html#maison">{{t:f_maison}}</a></li>
+      <li><a href="sejours.html#dates">{{t:m_dates}}</a></li>
+      <li class="drawer__head">{{t:nav_apropos}}<span class="drawer__lead">{{t:lead_apropos}}</span></li>
       <li><a href="approche.html">{{t:m_approche}}</a></li>
-      {{JOURNAL_LI}}
+      <li><a href="approche.html#axes">{{t:f_axes}}</a></li>
       <li><a href="a-propos.html">{{t:m_centre}}</a></li>
+      {{JOURNAL_LI}}
+      {{SOUTIEN_LI}}
+      <li><a href="contact.html#acces">{{t:f_venir}}</a></li>
       <li><a href="contact.html">{{t:m_contact}}</a></li>
     </ul>
   </nav>
@@ -209,7 +240,7 @@ try{if(localStorage.getItem("hoona-banner")==="closed"){d.className+=" is-banner
 </footer>
 
 <script>window.HOONA_I18N = {{JS_I18N}};</script>
-<script src="assets/js/hoona.js?v=26" defer></script>
+<script src="assets/js/hoona.js?v=27" defer></script>
 <script src="assets/js/v6.js?v=25" defer></script>
 </body>
 </html>
