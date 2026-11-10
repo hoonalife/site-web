@@ -393,7 +393,7 @@ def chemin_html(c, chemins, t, lang, arts):
         '  <ol class="crumbs" aria-label="%(crumbs)s"><li><a href="index.html">%(home)s</a></li><li><a href="index.html#chemins">%(kicker_all)s</a></li><li><span aria-current="page">%(nom)s</span></li></ol>\n'
         '  <h1>%(titre)s</h1>\n'
         '  <p class="chapeau">%(chapeau)s</p>\n'
-        '  <div class="actions"><a class="btn" href="%(first_url)s">%(first_label)s</a><a class="link" href="echange-decouverte.html">%(call)s</a></div>\n'
+        '  <div class="actions"><a class="btn" href="%(first_url)s">%(first_label)s</a></div>\n'
         '</header>\n'
         '<figure class="plate plate--short reveal reveal--scale"><img src="%(image)s" alt="%(image_alt)s" width="1600" height="1000" loading="eager" decoding="async"></figure>\n'
         '<section class="section section--tight" aria-labelledby="cs-title">\n  <div class="wrap doc">\n'

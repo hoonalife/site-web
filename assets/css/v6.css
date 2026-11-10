@@ -630,7 +630,7 @@ html { scroll-behavior: smooth; }
 .chemin-card__body { position: absolute; left: var(--space-md); right: var(--space-md); bottom: var(--space-md); z-index: 1; display: grid; gap: var(--space-3xs); }
 .chemin-card__num { font-size: var(--text-xs); letter-spacing: var(--tracking-insert); opacity: 0.8; }
 .chemin-card__title { font-size: var(--text-lg); font-weight: var(--weight-light); line-height: 1.2; text-wrap: balance; }
-.path__go { margin: 0; }
+.path__go { margin: 0; margin-top: auto; }
 @media (min-width: 40rem) { .path-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } .chemins-nav { grid-template-columns: repeat(3, minmax(0, 1fr)); } .signals { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--space-xl); } }
 @media (min-width: 60rem) { .path-steps { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 
