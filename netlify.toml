@@ -3,3 +3,9 @@
 [build]
   command = "python3 build.py"
   publish = "dist"
+
+# Anciennes adresses des parcours (nommés « chemins » jusqu'au 10 nov. 2026)
+[[redirects]]
+  from = "/fr/chemin-:slug"
+  to = "/fr/parcours-:slug"
+  status = 301

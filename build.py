@@ -35,9 +35,9 @@ Contenus éditables dans Sveltia CMS (admin/) :
   content/journees/<langue>.json  les journées et demi-journées (nom, description, prix, lien Acuity par journée)
   content/temoignages/<langue>.json  avis Google (texte, auteur, format, séjour) et témoignages vidéo (fichier, affiche,
                                auteur, format, durée) : accueil et page séjours
-  content/chemins/<langue>.json  les quatre chemins de l'accueil : signaux, étapes conseillées, soins et sessions
+  content/parcours/<langue>.json les quatre parcours de l'accueil : signaux, étapes conseillées, soins et sessions
                                recommandés (par nom, repris des catalogues), articles du Journal. Produit
-                               <langue>/chemin-<slug>.html.
+                               <langue>/parcours-<slug>.html.
   sitemap.xml                  généré à chaque build (toutes les pages indexables, trois langues).
 
     python3 v7/build.py --watch   reconstruit à chaque enregistrement dans le CMS
@@ -69,7 +69,7 @@ LANGS = ["fr", "nl", "en"]             # ordre du sélecteur
 DEFAULT_LANG = "fr"
 NAV_KEYS = ["APPROCHE", "SEJOURS", "SOINS", "SESSIONS", "BILAN", "APROPOS", "CONSULTATION", "JOURNEES"]
 # Les entrées à sous-menu de la barre sont marquées « page courante » pour toutes les pages qu'elles regroupent.
-NAV_GROUPS = {"COMPRENDRE": {"CONSULTATION", "BILAN", "CHEMINS", "CALL"}, "EXPERIMENTER": {"SOINS", "SESSIONS", "JOURNEES", "CADEAU"},
+NAV_GROUPS = {"COMPRENDRE": {"CONSULTATION", "BILAN", "PARCOURS", "CALL"}, "EXPERIMENTER": {"SOINS", "SESSIONS", "JOURNEES", "CADEAU"},
               "IMMERGER": {"SEJOURS"}, "APROPOS": {"APPROCHE", "APROPOS", "JOURNAL", "SOUTIEN", "CONTACT"}}
 
 CONTENT = ROOT / "content"
@@ -346,13 +346,13 @@ def catalogue_items(kind, lang):
     return out
 
 
-def chemin_html(c, chemins, t, lang, arts):
-    """La page d'un chemin : signaux, parcours conseillé en étapes, soins et sessions recommandés, Journal, autres chemins."""
+def parcours_html(c, parcours, t, lang, arts):
+    """La page d'un parcours : signaux, étapes conseillées, soins et sessions recommandés, Journal, autres parcours."""
     e = lambda x: htmllib.escape(str(x or ""), quote=True)
     soins, sessions = catalogue_items("soins", lang), catalogue_items("sessions", lang)
     missing = [n for n in c.get("soins", []) + c.get("sessions", []) if n not in soins and n not in sessions]
     if missing:
-        print("⚠ chemin %s : introuvable dans les catalogues %s" % (c["slug"], missing))
+        print("⚠ parcours %s : introuvable dans les catalogues %s" % (c["slug"], missing))
     rows_soins = "\n".join(soin_row(soins[n], t, lang) for n in c.get("soins", []) if n in soins)
     rows_sessions = "\n".join(session_row(sessions[n], t, lang) for n in c.get("sessions", []) if n in sessions)
     # Bouton d'en-tête : l'étape marquée "principal", sinon la première.
@@ -367,7 +367,7 @@ def chemin_html(c, chemins, t, lang, arts):
     for s in c["etapes"]:
         ph = s.get("phase") or "experimenter"
         if ph not in ("point", "experimenter", "immerger"):
-            print("⚠ chemin %s : phase inconnue « %s »" % (c["slug"], ph)); ph = "experimenter"
+            print("⚠ parcours %s : phase inconnue « %s »" % (c["slug"], ph)); ph = "experimenter"
         if groups and groups[-1][0] == ph:
             groups[-1][1].append(s)
         else:
@@ -383,15 +383,15 @@ def chemin_html(c, chemins, t, lang, arts):
     journal = ('<section class="section section--tight" aria-labelledby="cj-title">\n  <div class="wrap">\n'
                '    <h2 id="cj-title" style="font-size:var(--text-xl);margin-bottom:var(--space-lg)">%s</h2>\n'
                '    <div class="posts posts--3">\n%s\n    </div>\n  </div>\n</section>\n'
-               % (e(t["chemin_journal"]), "\n".join(post_card(a, t, lang, level=3) for a in posts))) if posts else ""
+               % (e(t["parcours_journal"]), "\n".join(post_card(a, t, lang, level=3) for a in posts))) if posts else ""
     others = "\n".join(
-        '      <a class="chemin-card" href="chemin-%s.html"><img src="%s" alt="" loading="lazy" decoding="async">'
+        '      <a class="chemin-card" href="parcours-%s.html"><img src="%s" alt="" loading="lazy" decoding="async">'
         '<span class="chemin-card__body"><span class="chemin-card__title">%s</span></span></a>'
-        % (e(o["slug"]), e(o["image"]), e(o["titre"])) for o in chemins if o["slug"] != c["slug"])
+        % (e(o["slug"]), e(o["image"]), e(o["titre"])) for o in parcours if o["slug"] != c["slug"])
     signals = "\n".join("      <li>%s</li>" % e(s) for s in c.get("signaux", []))
     return (
         '<header class="wrap page-head">\n'
-        '  <ol class="crumbs" aria-label="%(crumbs)s"><li><a href="index.html">%(home)s</a></li><li><a href="index.html#chemins">%(kicker_all)s</a></li><li><span aria-current="page">%(nom)s</span></li></ol>\n'
+        '  <ol class="crumbs" aria-label="%(crumbs)s"><li><a href="index.html">%(home)s</a></li><li><a href="index.html#parcours">%(kicker_all)s</a></li><li><span aria-current="page">%(nom)s</span></li></ol>\n'
         '  <h1>%(titre)s</h1>\n'
         '  <p class="chapeau">%(chapeau)s</p>\n'
         '  <div class="actions"><a class="btn" href="%(first_url)s">%(first_label)s</a></div>\n'
@@ -418,16 +418,16 @@ def chemin_html(c, chemins, t, lang, arts):
         '    <h2 id="co-title" style="font-size:var(--text-xl);margin-bottom:var(--space-lg)">%(others_title)s</h2>\n'
         '    <div class="chemins-nav">\n%(others)s\n    </div>\n  </div>\n</section>\n'
         % {
-            "crumbs": e(t["crumbs"]), "home": e(t["m_home"]), "kicker_all": e(t["chemin_all"]), "nom": e(c["nom"]),
-            "kicker": e(t["chemin_kicker"]), "num": e(c["num"]), "titre": e(c["titre"]), "chapeau": e(c["chapeau"]),
+            "crumbs": e(t["crumbs"]), "home": e(t["m_home"]), "kicker_all": e(t["parcours_all"]), "nom": e(c["nom"]),
+            "kicker": e(t["parcours_kicker"]), "num": e(c["num"]), "titre": e(c["titre"]), "chapeau": e(c["chapeau"]),
             "first_url": e(first["url"]), "first_label": e(first["label"]), "call": e(t["m_call"]),
             "image": e(c["image"].lstrip("/")), "image_alt": e(c.get("image_alt")), "image_caption": e(c.get("image_caption")),
-            "signals_title": e(t["chemin_signals"]), "signals": signals,
-            "path_kicker": e(t["chemin_path_kicker"]), "path_title": e(t["chemin_path_title"]), "path_intro": e(t["chemin_path_intro"]), "steps": steps, "path_cols": path_cols,
-            "reco_kicker": e(t["chemin_reco_kicker"]), "reco_title": e(t["chemin_reco_title"]), "reco_intro": e(t["chemin_reco_intro"]), "rows_soins": rows_soins,
-            "sessions_block": ('    <h3 class="chemin-sub">%s</h3>\n    <div class="rows rows--compact">\n%s\n    </div>\n' % (e(t["chemin_sessions"]), rows_sessions)) if rows_sessions else "",
-            "all_soins": e(t["chemin_all_soins"]), "all_sessions": e(t["chemin_all_sessions"]), "journal": journal,
-            "cta_kicker": e(t["chemin_cta_kicker"]), "cta_text": e(t["chemin_cta_text"]), "others_title": e(t["chemin_others"]), "others": others,
+            "signals_title": e(t["parcours_signals"]), "signals": signals,
+            "path_kicker": e(t["parcours_path_kicker"]), "path_title": e(t["parcours_path_title"]), "path_intro": e(t["parcours_path_intro"]), "steps": steps, "path_cols": path_cols,
+            "reco_kicker": e(t["parcours_reco_kicker"]), "reco_title": e(t["parcours_reco_title"]), "reco_intro": e(t["parcours_reco_intro"]), "rows_soins": rows_soins,
+            "sessions_block": ('    <h3 class="chemin-sub">%s</h3>\n    <div class="rows rows--compact">\n%s\n    </div>\n' % (e(t["parcours_sessions"]), rows_sessions)) if rows_sessions else "",
+            "all_soins": e(t["parcours_all_soins"]), "all_sessions": e(t["parcours_all_sessions"]), "journal": journal,
+            "cta_kicker": e(t["parcours_cta_kicker"]), "cta_text": e(t["parcours_cta_text"]), "others_title": e(t["parcours_others"]), "others": others,
         }
     )
 
@@ -1053,10 +1053,10 @@ def render_page(lang, t, page_id, meta, content, tokens, available, outpath, war
 def build():
     today = dt.date.today()
     articles = {l: load_articles(l, today) for l in LANGS}
-    chemins = {l: (load_json(CONTENT / "chemins" / ("%s.json" % l)).get("chemins", []) if (CONTENT / "chemins" / ("%s.json" % l)).exists() else []) for l in LANGS}
+    parcours = {l: (load_json(CONTENT / "parcours" / ("%s.json" % l)).get("parcours", []) if (CONTENT / "parcours" / ("%s.json" % l)).exists() else []) for l in LANGS}
     available = {
         l: ({p.stem for p in (SRC / "pages" / l).glob("*.html")} if (SRC / "pages" / l).is_dir() else set())
-           | {"journal/%s" % a["slug"] for a in articles[l]} | {"chemin-%s" % c["slug"] for c in chemins[l]}
+           | {"journal/%s" % a["slug"] for a in articles[l]} | {"parcours-%s" % c["slug"] for c in parcours[l]}
         for l in LANGS
     }
     for l in LANGS:
@@ -1087,7 +1087,7 @@ def build():
             "{{FLOWER}}": flower(lang),
             "{{LANG}}": lang,
             "{{JS_I18N}}": json.dumps(dict(t["js"], lang=lang), ensure_ascii=False),
-            "{{CHEMINS_LI}}": '<li><a href="index.html#chemins">%s</a></li>' % htmllib.escape(t["m_chemins"], quote=True) if lang == "fr" else "",
+            "{{PARCOURS_LI}}": '<li><a href="index.html#parcours">%s</a></li>' % htmllib.escape(t["m_parcours"], quote=True) if lang == "fr" else "",
             "{{JOURNEE_TYPE_LI}}": '<li><a href="sejours.html#journee-type">%s</a></li>' % htmllib.escape(t["m_journee_type"], quote=True) if lang == "fr" else "",
             "{{SOUTIEN_LI}}": '<li><a href="hoona-soutien.html">%s</a></li>' % htmllib.escape(t["m_soutien"], quote=True) if "hoona-soutien" in available[lang] else "",
             "{{JOURNAL_LI}}": '<li><a href="journal.html">%s</a></li>' % htmllib.escape(t["m_journal"], quote=True) if arts else "",
@@ -1118,11 +1118,11 @@ def build():
         if arts:
             (outdir / "journal.xml").write_text(rss(arts, t, lang), encoding="utf-8")
 
-        for c in chemins[lang]:
-            meta = {"title": "%s | hoona" % c["titre"], "description": meta_desc(c["chapeau"]), "nav": "CHEMINS"}
-            built.append(render_page(lang, t, "chemin-%s" % c["slug"], meta, chemin_html(c, chemins[lang], t, lang, arts), tokens, available,
-                                     outdir / ("chemin-%s.html" % c["slug"]), warnings))
-            sitemap.append(("%s/%s/chemin-%s.html" % (SITE_URL, lang, c["slug"]), today.isoformat(), "chemin-%s" % c["slug"], lang))
+        for c in parcours[lang]:
+            meta = {"title": "%s | hoona" % c["titre"], "description": meta_desc(c["chapeau"]), "nav": "PARCOURS"}
+            built.append(render_page(lang, t, "parcours-%s" % c["slug"], meta, parcours_html(c, parcours[lang], t, lang, arts), tokens, available,
+                                     outdir / ("parcours-%s.html" % c["slug"]), warnings))
+            sitemap.append(("%s/%s/parcours-%s.html" % (SITE_URL, lang, c["slug"]), today.isoformat(), "parcours-%s" % c["slug"], lang))
 
     # sitemap.xml : une entrée par page indexable, avec ses versions linguistiques.
     urls = []

@@ -1,6 +1,6 @@
 {
-  "intro": "Quatre chemins pour soutenir sa vitalité. Chacun commence par une première étape simple, puis se compose avec vous.",
-  "chemins": [
+  "intro": "Quatre parcours pour soutenir sa vitalité. Chacun commence par une première étape simple, puis se compose avec vous.",
+  "parcours": [
     {
       "slug": "epuisement",
       "num": "01",
@@ -304,5 +304,5 @@
       ]
     }
   ],
-  "_aide_etapes": "Chaque étape porte une phase : point (Faire le point), experimenter (Expérimenter) ou immerger (S'immerger). Les étapes voisines de même phase sont regroupées sous un seul intitulé. principal: true = l'étape reprise par le bouton d'en-tête (sinon la première). Quatre étapes par chemin."
+  "_aide_etapes": "Chaque étape porte une phase : point (Faire le point), experimenter (Expérimenter) ou immerger (S'immerger). Les étapes voisines de même phase sont regroupées sous un seul intitulé. principal: true = l'étape reprise par le bouton d'en-tête (sinon la première). Quatre étapes par parcours."
 }

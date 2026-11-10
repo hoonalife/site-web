@@ -9,7 +9,7 @@ Le site est statique. Il est produit par un petit générateur Python, sans dép
 | Dossier | Contenu |
 |---|---|
 | `src/` | Gabarit commun, pages par langue (`fr`, `nl`, `en`), textes d'interface |
-| `content/` | Catalogues des soins et des sessions, journées, séjours, chemins, témoignages, articles du Journal |
+| `content/` | Catalogues des soins et des sessions, journées, séjours, parcours, témoignages, articles du Journal |
 | `assets/` | Feuilles de style, scripts, images, vidéos, polices |
 | `admin/` | Configuration de l'éditeur de contenus |
 | `build.py` | Le générateur |
