@@ -6,6 +6,34 @@
 
 # Anciennes adresses des parcours (nommés « chemins » jusqu'au 10 nov. 2026)
 [[redirects]]
-  from = "/fr/chemin-:slug"
-  to = "/fr/parcours-:slug"
+  from = "/fr/chemin-epuisement"
+  to = "/fr/parcours-epuisement"
+  status = 301
+[[redirects]]
+  from = "/fr/chemin-epuisement.html"
+  to = "/fr/parcours-epuisement"
+  status = 301
+[[redirects]]
+  from = "/fr/chemin-digestif"
+  to = "/fr/parcours-digestif"
+  status = 301
+[[redirects]]
+  from = "/fr/chemin-digestif.html"
+  to = "/fr/parcours-digestif"
+  status = 301
+[[redirects]]
+  from = "/fr/chemin-ressourcer"
+  to = "/fr/parcours-ressourcer"
+  status = 301
+[[redirects]]
+  from = "/fr/chemin-ressourcer.html"
+  to = "/fr/parcours-ressourcer"
+  status = 301
+[[redirects]]
+  from = "/fr/chemin-prevenir"
+  to = "/fr/parcours-prevenir"
+  status = 301
+[[redirects]]
+  from = "/fr/chemin-prevenir.html"
+  to = "/fr/parcours-prevenir"
   status = 301
