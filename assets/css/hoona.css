@@ -746,11 +746,11 @@ select.field { appearance: none; background-image: linear-gradient(45deg, transp
    Mobile d'abord : petit carré en bas à droite, sans label (l'aria-label porte le sens).
    Sous l'en-tête (40) et le tiroir (39), au-dessus du contenu. */
 .gift {
-  position: fixed; right: var(--space-sm); bottom: var(--space-sm); z-index: 30;
+  position: fixed; right: 0; bottom: var(--space-sm); z-index: 30;
   display: grid; grid-template-columns: var(--gift-size) 0fr; align-items: center;
   --gift-size: 2.75rem;
   height: var(--gift-size);
-  border: var(--rule-hair) solid var(--color-cream-24); border-radius: 0.9rem;
+  border: var(--rule-hair) solid var(--color-cream-24); border-right: 0; border-radius: 0.9rem 0 0 0.9rem;
   background: var(--color-navy); color: var(--color-cream);
   box-shadow: var(--shadow-float, 0 0.5rem 1.5rem -0.75rem oklch(27.4% 0.049 256 / 0.22));
   text-decoration: none; overflow: hidden;
@@ -786,7 +786,7 @@ body[data-page="bon-cadeau"] .gift, body.menu-open .gift { display: none; }
 @media (min-width: 60rem) {
   .gift {
     --gift-size: 3.25rem;
-    top: 56%; bottom: auto; right: var(--space-sm);
+    top: 56%; bottom: auto; right: 0;
     transform: translateY(-50%);
     transition: grid-template-columns var(--dur-medium) var(--ease-out), background-color var(--dur-short) var(--ease-out);
   }
