@@ -585,7 +585,7 @@ def horaire(item, t, lang):
     return " · ".join("%s %s" % (t["jours"].get(x["jour"], x["jour"]), heure(x["heure"])) for x in slots)
 
 
-def render_week(cats, t, lang):
+def render_week(cats, t, lang, href_prefix=""):
     """L'agenda de la semaine, calculé depuis les horaires des sessions : chaque créneau mène à sa ligne réservable."""
     e = lambda x: htmllib.escape(str(x or ""), quote=True)
     days, on_request = {}, []
@@ -603,15 +603,15 @@ def render_week(cats, t, lang):
     for jour in ("lun", "mar", "mer", "jeu", "ven", "sam", "dim"):
         if jour not in days:
             continue
-        lis = "\n".join('          <li><a href="#%s">%s%s</a><time>%s</time></li>'
-                        % (sid, e(label), ' <span class="note">%s</span>' % e(note) if note else "", when)
+        lis = "\n".join('          <li><a href="%s#%s">%s%s</a><time>%s</time></li>'
+                        % (href_prefix, sid, e(label), ' <span class="note">%s</span>' % e(note) if note else "", when)
                         for _, label, sid, when, note in sorted(days[jour]))
         out.append('      <div class="day">\n        <h3 class="day__name">%s</h3>\n        <ul class="day__slots">\n%s\n        </ul>\n      </div>'
                    % (e(t["jours"][jour].capitalize()), lis))
     html = '    <div class="week">\n%s\n    </div>' % "\n".join(out)
     if on_request:
         html += '\n    <p class="week__note muted">%s : %s</p>' % (
-            e(t["on_request"][:1].upper() + t["on_request"][1:]), ", ".join('<a href="#%s">%s</a>' % (sid, e(label)) for label, sid in on_request))
+            e(t["on_request"][:1].upper() + t["on_request"][1:]), ", ".join('<a href="%s#%s">%s</a>' % (href_prefix, sid, e(label)) for label, sid in on_request))
     return html
 
 
@@ -1147,6 +1147,9 @@ def build():
             "{{RSS_LINK}}": ('<link rel="alternate" type="application/rss+xml" title="%s" href="%s/%s/journal.xml">'
                              % (htmllib.escape(t["journal_title"], quote=True), SITE_URL, lang)) if arts else "",
         }
+        sessions_path = CONTENT / "sessions" / ("%s.json" % lang)
+        tokens["{{HOME_WEEK}}"] = (render_week(load_json(sessions_path).get("categories", []), t, lang, href_prefix="sessions.html")
+                                   if sessions_path.exists() else "")
         tokens.update(render_soins(t, lang))
         tokens.update(render_sessions(t, lang, today))
         tokens.update(render_journees(t, lang))

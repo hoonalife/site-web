@@ -485,11 +485,12 @@ select.field { appearance: none; background-image: linear-gradient(45deg, transp
 .contact-lines { display: grid; gap: var(--space-xs); }
 .contact-lines a, .contact-lines p { display: flex; align-items: center; gap: var(--space-xs); text-decoration: none; }
 .contact-lines a:hover { text-decoration: underline; }
-.social__title { margin: 0 0 var(--space-2xs); font-size: var(--text-xs); color: var(--color-ink-2); }
-.foot-meta .social ul { display: flex; gap: var(--space-2xs); }
-.foot-meta .social a { display: inline-flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; border: var(--rule-hair) solid var(--color-rule-strong); border-radius: 50%; color: var(--color-ink); transition: background-color var(--dur-medium) var(--ease-out), color var(--dur-medium) var(--ease-out), border-color var(--dur-medium) var(--ease-out); }
-.foot-meta .social a:hover, .foot-meta .social a:focus-visible { background: var(--color-navy); border-color: var(--color-navy); color: var(--color-paper); text-decoration: none; }
-.social .i { width: 1.3rem; height: 1.3rem; }
+.social__title { margin: 0 0 var(--space-2xs); font-size: inherit; font-weight: 400; color: var(--color-ink); }
+.foot-meta .social ul { display: flex; gap: var(--space-sm); margin-left: -0.625rem; }
+.foot-meta .social a { display: inline-flex; align-items: center; justify-content: center; min-width: 2.75rem; min-height: 2.75rem; border: 0; background: none; color: var(--color-ink); transition: color var(--dur-medium) var(--ease-out); }
+.foot-meta .social a:hover, .foot-meta .social a:focus-visible { color: var(--color-blue-500); text-decoration: none; }
+.social .i { width: 1.5rem; height: 1.5rem; }
+.i--fill { fill: currentColor; stroke: none; }
 
 /* ---------- Bloc final ---------- */
 .closing { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); align-items: end; }
@@ -865,3 +866,44 @@ body[data-page="bon-cadeau"] .gift, body.menu-open .gift { display: none; }
   .promo__link:hover .promo__cta .i { transform: none; }
 }
 @media print { .gift, .promo { display: none !important; } }
+
+/* Pages L'approche et Le centre */
+/* Deux colonnes : une phrase d'appel à gauche, le texte à droite */
+.lead-split { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); align-items: start; }
+.lead-split--end { align-items: end; }
+.lead-split .prose { max-width: none; }
+h2.insert { font-size: var(--text-xs); line-height: var(--leading-body); }
+.lead-text { font-size: var(--text-xl); font-weight: var(--weight-light); line-height: 1.32; letter-spacing: -0.01em; max-width: 30ch; text-wrap: pretty; }
+/* Cartes douces : papier profond sur crème, crème sur papier profond */
+.card-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-md); align-content: start; }
+.soft-card { display: grid; gap: var(--space-xs); align-content: start; padding: var(--space-lg); border-radius: var(--radius-card); background: var(--color-paper-2); transition: background-color var(--dur-short) var(--ease-out), box-shadow var(--dur-short) var(--ease-out); }
+.section--deep .soft-card { background: var(--color-paper); }
+.soft-card h3 { font-size: var(--text-lg); line-height: 1.25; }
+.soft-card p { color: var(--color-ink-2); }
+.axis-grid .soft-card p { font-size: var(--text-sm); }
+.axis-grid .soft-card.is-active { box-shadow: inset 0 0 0 var(--rule-hair) var(--color-rule-strong); }
+/* Carte-citation, bleu nuit */
+.quote-card { display: grid; align-content: space-between; gap: var(--space-lg); margin: 0; padding: var(--space-lg); border-radius: var(--radius-card); background: var(--color-ink); color: var(--color-on-ink); }
+.quote-card p { font-size: var(--text-xl); font-weight: var(--weight-light); line-height: 1.3; }
+.quote-card footer { font-size: var(--text-sm); color: var(--color-on-ink-2); }
+/* Les 7 axes : la fleur à gauche, les cartes à droite */
+.axes-head { max-width: var(--measure); margin-bottom: var(--space-xl); }
+.axes-board { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); align-items: start; }
+.axes-board .flower__figure { max-width: 22rem; margin: 0 auto; }
+.axes-board[data-active] .petal circle { fill: transparent; }
+/* Panneau d'appel (Évaluer sa vitalité) */
+.panel { padding: var(--space-xl) var(--space-lg); border-radius: var(--radius-card); background: var(--color-paper-2); }
+.panel .actions { justify-content: flex-start; }
+/* Le centre : légende de la photo d'Olivia, équipe texte puis photo */
+.founder__figure figcaption { margin-top: var(--space-xs); font-size: var(--text-xs); color: var(--color-ink-2); }
+.team--page { margin-top: 0; }
+@media (min-width: 40rem) {
+  .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 60rem) {
+  .lead-split { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: var(--space-3xl); }
+  .axes-board { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); column-gap: var(--space-2xl); }
+  .axes-board .flower__figure { position: sticky; top: calc(var(--bar-h) + var(--space-xl)); max-width: 30rem; margin: 0; }
+  .panel { padding: var(--space-2xl); }
+  .panel.lead-split { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); column-gap: var(--space-2xl); }
+}
