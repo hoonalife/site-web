@@ -814,3 +814,49 @@ a.quote__who:focus-visible { outline: 2px solid var(--color-focus); outline-offs
 .agenda__week .day__slots time { font-size: var(--text-sm); }
 .agenda__week .week__note { margin-top: var(--space-md); }
 @media (min-width: 60rem) { .agenda__week .week { grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); } }
+
+/* L'approche : fleur interactive */
+/* Sans JS (ou sur mobile) : la fleur puis sept volets <details>, au style de la FAQ. */
+.axes-bloom { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); align-items: start; }
+.axes-bloom__flower { width: 100%; max-width: 20rem; margin: 0 auto; }
+.axes-bloom.is-live .petal text { font-weight: var(--weight-body); }
+.axes-bloom.is-live .petal.is-active text { font-weight: var(--weight-bold); }
+.axis-panel { border-top: var(--rule-hair) solid var(--color-rule-strong); }
+.axis-panel .axis { counter-set: axe var(--n, 0); border-bottom: var(--rule-hair) solid var(--color-rule); }
+/* Numéro fixé par position : un axe masqué (display: none) ne compterait pas. */
+.axis-panel .axis:nth-child(1) { --n: 1; } .axis-panel .axis:nth-child(2) { --n: 2; } .axis-panel .axis:nth-child(3) { --n: 3; } .axis-panel .axis:nth-child(4) { --n: 4; } .axis-panel .axis:nth-child(5) { --n: 5; } .axis-panel .axis:nth-child(6) { --n: 6; } .axis-panel .axis:nth-child(7) { --n: 7; }
+.axis-panel summary { display: flex; align-items: center; gap: var(--space-sm); padding-block: var(--space-md); cursor: pointer; list-style: none; }
+.axis-panel summary::-webkit-details-marker { display: none; }
+.axis-panel summary::before { content: counter(axe, decimal-leading-zero); flex: none; min-width: 1.75em; font-size: var(--text-sm); font-weight: var(--weight-light); font-variant-numeric: tabular-nums; color: var(--color-ink-3); }
+.axis-panel summary::after { content: "+"; flex: none; margin-left: auto; width: 2.25rem; height: 2.25rem; display: grid; place-items: center; border: var(--rule-hair) solid var(--color-rule-strong); border-radius: var(--radius-pill); font-size: var(--text-lg); line-height: 1; transition: transform var(--dur-short) var(--ease-out), background var(--dur-short) var(--ease-out); }
+.axis-panel details[open] summary::after { transform: rotate(45deg); background: var(--color-ink); color: var(--color-on-ink); border-color: var(--color-ink); }
+.axis-panel .axis__name { font-size: var(--text-lg); font-weight: var(--weight-light); line-height: 1.25; }
+.axis-panel summary:hover .axis__name { color: var(--color-accent-ink); }
+.axis__body { display: grid; gap: var(--space-md); max-width: 60ch; padding: 0 0 var(--space-lg) calc(1.75em * 0.9375 + var(--space-sm)); }
+.axis__body > p { color: var(--color-ink-2); }
+.axis__quote { margin: 0; }
+.axis__quote p { font-size: var(--text-lg); line-height: 1.35; color: var(--color-ink); }
+@media (prefers-reduced-motion: no-preference) {
+  .axis-panel details[open] .axis__body { animation: fadeUp var(--dur-medium) var(--ease-spring) both; }
+}
+/* Ordinateur : la fleur, grande, à gauche ; à droite, le panneau ne montre que l'axe choisi. */
+@media (min-width: 60rem) {
+  .axes-bloom { grid-template-columns: minmax(0, 34rem) minmax(0, 1fr); column-gap: var(--space-3xl); align-items: center; }
+  .axes-bloom__flower { max-width: 34rem; margin: 0; }
+  .axes-bloom.is-live .axis-panel { border-top: 0; min-height: 27rem; }
+  .axes-bloom.is-live .axis { border-bottom: 0; }
+  .axes-bloom.is-live .axis:not(.is-active) { display: none; }
+  .axes-bloom.is-live summary { flex-direction: column; align-items: flex-start; gap: var(--space-xs); padding-block: 0 var(--space-lg); cursor: default; pointer-events: none; }
+  .axes-bloom.is-live summary::after { display: none; }
+  .axes-bloom.is-live summary::before { font-size: var(--text-md); }
+  .axes-bloom.is-live .axis__name { font-size: var(--text-3xl); line-height: 1.05; letter-spacing: var(--tracking-display); text-wrap: balance; }
+  .axes-bloom.is-live .axis__body { padding: 0; gap: var(--space-lg); }
+  .axes-bloom.is-live .axis__body > p { font-size: var(--text-lg); line-height: 1.55; }
+  @media (prefers-reduced-motion: no-preference) {
+    .axes-bloom.is-live .axis.is-active summary { animation: fadeUp var(--dur-medium) var(--ease-spring) both; }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .axes-bloom .petal circle { transition: none; transform: none !important; }
+  .axis-panel summary::after { transition: none; }
+}

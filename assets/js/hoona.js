@@ -25,18 +25,6 @@
     });
   }
 
-  /* Ruban promo de l'accueil (bons cadeaux des fêtes) : même modèle, clé « hoona-promo ».
-     Le focus passe au titre du fold pour ne pas se perdre avec le bouton qui disparaît. */
-  var promoClose = document.querySelector("[data-promo-close]");
-  if (promoClose) {
-    promoClose.addEventListener("click", function () {
-      doc.classList.add("is-promo-dismissed");
-      try { localStorage.setItem("hoona-promo", "closed"); } catch (e) {}
-      var t = document.getElementById("fold-title");
-      if (t) { t.setAttribute("tabindex", "-1"); t.focus({ preventScroll: true }); }
-    });
-  }
-
   /* ---------- Menu plein écran ---------- */
   /* Sous-menus de la barre : le chevron ouvre au toucher et au clavier, Échap et un clic ailleurs referment. */
   var subs = [].slice.call(document.querySelectorAll("[data-submenu]"));

@@ -40,42 +40,70 @@ nav: APPROCHE
       <h2 id="axes-title">Les 7 axes de vitalité</h2>
       <p class="muted">Tout est lié. Notre approche s'articule autour de sept piliers qui fonctionnent comme des vases communicants : agir sur l'un, c'est soutenir l'ensemble de votre élan vital. Et un débordement dans l'un se ressent dans les autres.</p>
     </div>
-    <div class="axes-board" data-flower>
-      <figure class="flower__figure reveal reveal--scale">
+    <div class="axes-bloom" data-axes-bloom>
+      <figure class="flower__figure axes-bloom__flower reveal reveal--scale">
         {{FLOWER}}
       </figure>
-      <div class="card-grid axis-grid">
-        <section class="axis soft-card" id="axe-nutrition" aria-labelledby="t-nutrition" data-axis-item>
-          <h3 class="axis__name" id="t-nutrition">Nutrition</h3>
-          <p>L'alimentation et l'hydratation sont nos principales sources d'énergie. Nous vous proposons des conseils pratiques, adaptés à vos besoins, pour une alimentation vivante, de saison et anti-inflammatoire, sans tomber dans l'extrémisme. Avec une attention particulière au microbiote et au système digestif, socle de nos défenses naturelles, et aux méthodes de préparation et de conservation qui font de chaque repas un carburant de qualité.</p>
+      <div class="axis-panel">
+        <section class="axis" id="axe-nutrition" aria-labelledby="t-nutrition">
+          <details name="axes" open>
+            <summary><h3 class="axis__name" id="t-nutrition">Nutrition</h3></summary>
+            <div class="axis__body">
+              <p>L'alimentation et l'hydratation sont nos principales sources d'énergie. Nous vous proposons des conseils pratiques, adaptés à vos besoins, pour une alimentation vivante, de saison et anti-inflammatoire, sans tomber dans l'extrémisme. Avec une attention particulière au microbiote et au système digestif, socle de nos défenses naturelles, et aux méthodes de préparation et de conservation qui font de chaque repas un carburant de qualité.</p>
+            </div>
+          </details>
         </section>
-        <section class="axis soft-card" id="axe-sommeil" aria-labelledby="t-sommeil" data-axis-item>
-          <h3 class="axis__name" id="t-sommeil">Sommeil</h3>
-          <p>C'est la nuit que le corps se répare, se régénère et fait le tri, sur tous les plans. Comprendre l'impact de notre environnement (éclairages, écrans, rythmes) et de certaines habitudes sur la qualité de nos nuits permet d'adopter des gestes simples et concrets pour mieux dormir.</p>
+        <section class="axis" id="axe-sommeil" aria-labelledby="t-sommeil">
+          <details name="axes">
+            <summary><h3 class="axis__name" id="t-sommeil">Sommeil</h3></summary>
+            <div class="axis__body">
+              <p>C'est la nuit que le corps se répare, se régénère et fait le tri, sur tous les plans. Comprendre l'impact de notre environnement (éclairages, écrans, rythmes) et de certaines habitudes sur la qualité de nos nuits permet d'adopter des gestes simples et concrets pour mieux dormir.</p>
+            </div>
+          </details>
         </section>
-        <section class="axis soft-card" id="axe-mouvement" aria-labelledby="t-mouvement" data-axis-item>
-          <h3 class="axis__name" id="t-mouvement">Mouvement</h3>
-          <p>Bouger, de manière adaptée, c'est maintenir l'équilibre du corps tout entier, en évitant autant la sédentarité que le surentraînement. Marche nordique, yoga, technique Alexander, renforcement musculaire : nos pratiques s'intègrent facilement au quotidien et s'adaptent à la météo comme à votre état du jour.</p>
+        <section class="axis" id="axe-mouvement" aria-labelledby="t-mouvement">
+          <details name="axes">
+            <summary><h3 class="axis__name" id="t-mouvement">Mouvement</h3></summary>
+            <div class="axis__body">
+              <p>Bouger, de manière adaptée, c'est maintenir l'équilibre du corps tout entier, en évitant autant la sédentarité que le surentraînement. Marche nordique, yoga, technique Alexander, renforcement musculaire : nos pratiques s'intègrent facilement au quotidien et s'adaptent à la météo comme à votre état du jour.</p>
+            </div>
+          </details>
         </section>
-        <section class="axis soft-card" id="axe-detox" aria-labelledby="t-detox" data-axis-item>
-          <h3 class="axis__name" id="t-detox">Détox</h3>
-          <p>Réduire l'exposition aux toxines aide le corps à préserver son équilibre. Nous vous accompagnons pour identifier les sources les plus courantes, dans l'assiette, la salle de bain ou l'environnement, et pour leur trouver des alternatives simples. Les pratiques de détox soutiennent ensuite les voies naturelles d'élimination du corps.</p>
+        <section class="axis" id="axe-detox" aria-labelledby="t-detox">
+          <details name="axes">
+            <summary><h3 class="axis__name" id="t-detox">Détox</h3></summary>
+            <div class="axis__body">
+              <p>Réduire l'exposition aux toxines aide le corps à préserver son équilibre. Nous vous accompagnons pour identifier les sources les plus courantes, dans l'assiette, la salle de bain ou l'environnement, et pour leur trouver des alternatives simples. Les pratiques de détox soutiennent ensuite les voies naturelles d'élimination du corps.</p>
+              <blockquote class="voice axis__quote">
+                <p>« La première détox, c'est d'arrêter de s'intoxiquer… encore faut-il savoir comment. »</p>
+                <footer>Olivia De Stoop</footer>
+              </blockquote>
+            </div>
+          </details>
         </section>
-        <blockquote class="quote-card">
-          <p>« La première détox, c'est d'arrêter de s'intoxiquer… encore faut-il savoir comment. »</p>
-          <footer>Olivia De Stoop</footer>
-        </blockquote>
-        <section class="axis soft-card" id="axe-systeme-nerveux" aria-labelledby="t-nerveux" data-axis-item>
-          <h3 class="axis__name" id="t-nerveux">Système nerveux</h3>
-          <p>Le système nerveux est un régulateur clé de tout l'organisme. En bonne santé, il alterne entre périodes stimulantes et moments de calme régénérant. Nous relayons des outils concrets, simples à intégrer, pour retrouver ces plages de récupération, souvent trop rares dans nos vies.</p>
+        <section class="axis" id="axe-systeme-nerveux" aria-labelledby="t-nerveux">
+          <details name="axes">
+            <summary><h3 class="axis__name" id="t-nerveux">Système nerveux</h3></summary>
+            <div class="axis__body">
+              <p>Le système nerveux est un régulateur clé de tout l'organisme. En bonne santé, il alterne entre périodes stimulantes et moments de calme régénérant. Nous relayons des outils concrets, simples à intégrer, pour retrouver ces plages de récupération, souvent trop rares dans nos vies.</p>
+            </div>
+          </details>
         </section>
-        <section class="axis soft-card" id="axe-psycho-emotionnel" aria-labelledby="t-psycho" data-axis-item>
-          <h3 class="axis__name" id="t-psycho">Psycho-émotionnel &amp; relationnel</h3>
-          <p>Nos émotions et nos relations influencent directement notre vitalité. Repérer comment certains événements, conflits ou schémas répétitifs pèsent sur notre métabolisme, c'est pouvoir y répondre avec plus de douceur, et cultiver un terreau émotionnel fertile et soutenant.</p>
+        <section class="axis" id="axe-psycho-emotionnel" aria-labelledby="t-psycho">
+          <details name="axes">
+            <summary><h3 class="axis__name" id="t-psycho">Psycho-émotionnel &amp; relationnel</h3></summary>
+            <div class="axis__body">
+              <p>Nos émotions et nos relations influencent directement notre vitalité. Repérer comment certains événements, conflits ou schémas répétitifs pèsent sur notre métabolisme, c'est pouvoir y répondre avec plus de douceur, et cultiver un terreau émotionnel fertile et soutenant.</p>
+            </div>
+          </details>
         </section>
-        <section class="axis soft-card" id="axe-sens" aria-labelledby="t-sens" data-axis-item>
-          <h3 class="axis__name" id="t-sens">Sens</h3>
-          <p>Trouver du sens dans ce que nous vivons nourrit l'épanouissement. Nous vous invitons à explorer vos passions, vos talents et vos élans, pour donner de belles coordonnées GPS à votre corps : des envies pour rester en vie.</p>
+        <section class="axis" id="axe-sens" aria-labelledby="t-sens">
+          <details name="axes">
+            <summary><h3 class="axis__name" id="t-sens">Sens</h3></summary>
+            <div class="axis__body">
+              <p>Trouver du sens dans ce que nous vivons nourrit l'épanouissement. Nous vous invitons à explorer vos passions, vos talents et vos élans, pour donner de belles coordonnées GPS à votre corps : des envies pour rester en vie.</p>
+            </div>
+          </details>
         </section>
       </div>
     </div>
@@ -106,3 +134,76 @@ nav: APPROCHE
     </blockquote>
   </div>
 </section>
+
+<script>
+/* L'approche : fleur interactive des 7 axes. Le clic sur un pétale fixe l'axe, le survol l'affiche en aperçu (ordinateur) ;
+   sur mobile, le pétale ouvre le volet correspondant. Sans JS : volets <details> natifs. */
+(function () {
+  var root = document.querySelector("[data-axes-bloom]");
+  if (!root || !window.matchMedia) return;
+  var desk = window.matchMedia("(min-width: 60rem)");
+  var fine = window.matchMedia("(hover: hover) and (pointer: fine)");
+  var calm = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var svg = root.querySelector("svg");
+  var petals = [].slice.call(root.querySelectorAll(".petal"));
+  var links = petals.map(function (p) { return p.querySelector("a"); });
+  var ids = links.map(function (a) { return (a.getAttribute("href") || "").split("#")[1]; });
+  var items = ids.map(function (id) { return document.getElementById(id); });
+  if (items.some(function (s) { return !s; })) return;
+  var boxes = items.map(function (s) { return s.querySelector("details"); });
+  var heads = boxes.map(function (d) { return d.querySelector("summary"); });
+  var n = petals.length, fixed = 0, shown = -1;
+  root.classList.add("is-live");
+
+  function show(i) {
+    shown = i;
+    petals.forEach(function (p, k) {
+      p.classList.toggle("is-active", k === i);
+      p.classList.toggle("is-near", k === (i + 1) % n || k === (i + n - 1) % n);
+    });
+    items.forEach(function (s, k) { s.classList.toggle("is-active", k === i); });
+    boxes.forEach(function (d, k) { if (d.open !== (k === i)) d.open = k === i; });
+  }
+  function fix(i) {
+    fixed = i;
+    links.forEach(function (a, k) { a.setAttribute("aria-pressed", String(k === i)); });
+    show(i);
+  }
+  function fromHash() {
+    var k = ids.indexOf(decodeURIComponent(location.hash.slice(1)));
+    if (k !== -1) fix(k);
+    return k !== -1;
+  }
+  function layout() {
+    heads.forEach(function (h) { if (desk.matches) h.setAttribute("tabindex", "-1"); else h.removeAttribute("tabindex"); });
+  }
+
+  links.forEach(function (a, i) {
+    a.setAttribute("role", "button");
+    a.setAttribute("aria-controls", ids[i]);
+    a.addEventListener("click", function (ev) {
+      ev.preventDefault();
+      fix(i);
+      if (!desk.matches) items[i].scrollIntoView({ behavior: calm.matches ? "auto" : "smooth", block: "start" });
+    });
+    a.addEventListener("keydown", function (ev) {
+      if (ev.key === " " || ev.key === "Spacebar") { ev.preventDefault(); a.click(); }
+    });
+    petals[i].addEventListener("mouseenter", function () { if (desk.matches && fine.matches) show(i); });
+  });
+  if (svg) svg.addEventListener("mouseleave", function () { if (shown !== fixed) show(fixed); });
+
+  boxes.forEach(function (d, i) {
+    heads[i].addEventListener("click", function (ev) { if (desk.matches) ev.preventDefault(); });
+    d.addEventListener("toggle", function () {
+      if (d.open && i !== shown) fix(i);
+      else if (!d.open && i === shown && desk.matches) d.open = true;
+    });
+  });
+
+  if (desk.addEventListener) desk.addEventListener("change", layout); else if (desk.addListener) desk.addListener(layout);
+  window.addEventListener("hashchange", fromHash);
+  layout();
+  if (!fromHash()) fix(0);
+})();
+</script>
