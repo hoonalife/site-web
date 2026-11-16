@@ -548,19 +548,21 @@ def render_soins(t, lang):
     cats = load_json(path).get("categories", [])
     e = lambda x: htmllib.escape(str(x or ""), quote=False)
     total = sum(len(c.get("prestations", [])) for c in cats)
-    # La note « après une première consultation » ne paraît qu'une fois : en tête de la catégorie qui en compte le plus (les technologies)
-    n_locked = lambda c: sum(locked(i) for i in c.get("prestations", []))
-    note_cat = max(cats, key=n_locked, default=None)
-    if note_cat is not None and not n_locked(note_cat):
-        note_cat = None
+    # Dans chaque catégorie, les soins ouverts à tous d'abord ; les soins réservés après une première consultation
+    # suivent, sous une rubrique « Déjà venu·e chez hoona ? » qui en explique l'accès.
     groups = []
     for c in cats:
         items = c.get("prestations", [])
-        rows = "\n".join(soin_row(i, t, lang) for i in items)
+        open_items, locked_items = [i for i in items if not locked(i)], [i for i in items if locked(i)]
+        rows = "\n".join(soin_row(i, t, lang) for i in open_items)
+        if locked_items:
+            rows += ('\n      </div>\n      <div class="cat-sub" id="%s-deja">\n        <h3 class="cat-sub__title">%s%s</h3>\n        <p class="cat-sub__text">%s</p>\n      </div>\n'
+                     '      <div class="rows rows--compact">\n' % (e(c["slug"]), ICON_LOCK, e(t["locked_heading"]), e(t["locked_text"]))
+                     ) + "\n".join(soin_row(i, t, lang) for i in locked_items)
         groups.append(
             '    <section class="cat-group" data-cat="%(s)s" id="%(s)s" aria-labelledby="h-%(s)s">\n%(h)s'
             '      <div class="rows rows--compact">\n%(r)s\n      </div>\n    </section>'
-            % {"s": e(c["slug"]), "h": cat_head(c, t["cat_locked_note"] if c is note_cat else ""), "r": rows}
+            % {"s": e(c["slug"]), "h": cat_head(c), "r": rows}
         )
     return {
         "{{SOINS_FILTERS}}": anchor_chips(cats, "prestations", t),

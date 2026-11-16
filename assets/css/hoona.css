@@ -736,3 +736,127 @@ select.field { appearance: none; background-image: linear-gradient(45deg, transp
   .site-head, .drawer, .media-toggle, .site-foot__bg, .letter { display: none !important; }
   body[data-header="solid"] main { padding-top: 0; }
 }
+
+/* ====================================================================
+   Fêtes de fin d'année · picto cadeau flottant (toutes les pages) et ruban promo (accueil)
+   Les deux renvoient vers bon-cadeau.html. Couleurs brutes navy / crème : identiques en mode sombre.
+   ==================================================================== */
+
+/* ---------- Picto cadeau flottant ----------
+   Mobile d'abord : petit carré en bas à droite, sans label (l'aria-label porte le sens).
+   Sous l'en-tête (40) et le tiroir (39), au-dessus du contenu. */
+.gift {
+  position: fixed; right: var(--space-sm); bottom: var(--space-sm); z-index: 30;
+  display: grid; grid-template-columns: var(--gift-size) 0fr; align-items: center;
+  --gift-size: 2.75rem;
+  height: var(--gift-size);
+  border: var(--rule-hair) solid var(--color-cream-24); border-radius: 0.9rem;
+  background: var(--color-navy); color: var(--color-cream);
+  box-shadow: var(--shadow-float, 0 0.5rem 1.5rem -0.75rem oklch(27.4% 0.049 256 / 0.22));
+  text-decoration: none; overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+.gift__icon { display: grid; place-items: center; width: var(--gift-size); height: 100%; }
+.gift__icon .i { width: 1.35rem; height: 1.35rem; }
+.gift__label {
+  min-width: 0; overflow: hidden; white-space: nowrap;
+  font-size: var(--text-sm); font-weight: var(--weight-bold); letter-spacing: 0.01em;
+  opacity: 0;
+}
+.gift:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+body[data-page="bon-cadeau"] .gift, body.menu-open .gift { display: none; }
+
+/* Étincelles : deux petites étoiles à quatre branches qui scintillent lentement, décalées */
+.gift::before, .gift::after {
+  content: ""; position: absolute; pointer-events: none;
+  background: var(--color-blue-300);
+  clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+  opacity: 0; transform: scale(0.3);
+  animation: gift-twinkle 3.6s var(--ease-in-out) infinite;
+}
+.gift::before { width: 0.55rem; height: 0.55rem; left: calc(var(--gift-size) - 0.8rem); top: 0.3rem; }
+.gift::after { width: 0.35rem; height: 0.35rem; left: 0.35rem; top: calc(var(--gift-size) - 0.85rem); background: var(--color-cream); animation-delay: 1.8s; }
+@keyframes gift-twinkle {
+  0%, 55%, 100% { opacity: 0; transform: scale(0.3) rotate(0deg); }
+  70% { opacity: 0.95; transform: scale(1) rotate(45deg); }
+  85% { opacity: 0; transform: scale(0.4) rotate(90deg); }
+}
+
+/* Ordinateur : sur la marge droite, un peu sous le centre ; s'élargit vers la gauche au survol et au clavier */
+@media (min-width: 60rem) {
+  .gift {
+    --gift-size: 3.25rem;
+    top: 56%; bottom: auto; right: var(--space-sm);
+    transform: translateY(-50%);
+    transition: grid-template-columns var(--dur-medium) var(--ease-out), background-color var(--dur-short) var(--ease-out);
+  }
+  .gift__label { transition: opacity var(--dur-short) var(--ease-out), padding var(--dur-medium) var(--ease-out); }
+  .gift:hover, .gift:focus-visible { grid-template-columns: var(--gift-size) 1fr; }
+  .gift:hover .gift__label, .gift:focus-visible .gift__label { opacity: 1; padding-right: 1.15rem; transition-delay: 80ms, 0s; }
+}
+@media (max-width: 59.99rem) {
+  .gift__label { display: none; }
+}
+
+/* ---------- Ruban promo de l'accueil ----------
+   Posé en haut du fold, juste sous la barre ; suit la barre quand le bandeau du haut se ferme (--banner-h passe à 0). */
+.fold--promo { --promo-h: 3.25rem; }
+.promo {
+  position: absolute; left: 0; right: 0; top: calc(var(--banner-h) + var(--bar-h)); z-index: 2;
+  min-height: var(--promo-h);
+  display: flex; align-items: center;
+  background: oklch(97.5% 0.010 73 / 0.86); color: var(--color-navy);
+  border-block: var(--rule-hair) solid oklch(97.5% 0.010 73 / 0.5);
+  -webkit-backdrop-filter: blur(14px) saturate(140%); backdrop-filter: blur(14px) saturate(140%);
+  font-size: var(--text-sm);
+}
+@media (prefers-reduced-transparency: reduce) { .promo { background: var(--color-cream); backdrop-filter: none; -webkit-backdrop-filter: none; } }
+.promo__inner { display: flex; align-items: center; gap: var(--space-sm); width: 100%; }
+.promo__link {
+  flex: 1 1 auto; min-width: 0; min-height: 2.75rem;
+  display: flex; align-items: center; justify-content: center; gap: var(--space-xs) var(--space-sm);
+  color: inherit; text-decoration: none;
+}
+.promo__icon { width: 1.3rem; height: 1.3rem; color: var(--color-accent-ink); }
+.promo__title { font-weight: var(--weight-bold); white-space: nowrap; }
+.promo__text { color: oklch(27.4% 0.049 256 / 0.78); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.promo__text::before { content: "·"; margin-right: var(--space-sm); color: var(--color-accent-ink); }
+.promo__cta {
+  display: inline-flex; align-items: center; gap: 0.45em; flex: none;
+  font-weight: var(--weight-bold); color: var(--color-accent-ink);
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.3em; white-space: nowrap;
+}
+.promo__cta .i { width: 1.05em; height: 1.05em; transition: transform var(--dur-medium) var(--ease-out); }
+.promo__link:hover .promo__cta { color: var(--color-navy); text-decoration-thickness: 2px; }
+.promo__link:hover .promo__cta .i { transform: translateX(3px); }
+.promo__link:focus-visible, .promo__x:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; border-radius: var(--radius-input); }
+.promo__x {
+  flex: none; width: 2.75rem; height: 2.75rem; display: grid; place-items: center; margin-right: calc(var(--space-2xs) * -1);
+  background: none; border: 0; color: inherit; cursor: pointer; border-radius: var(--radius-pill);
+}
+.promo__x:hover { background: oklch(27.4% 0.049 256 / 0.08); }
+.is-promo-dismissed .promo { display: none; }
+.is-promo-dismissed .fold--promo { --promo-h: 0px; }
+/* Le contenu du fold garde sa respiration sous le ruban (prime sur .fold__body de v6.css) */
+.fold--promo .fold__body { padding-top: calc(var(--banner-h) + var(--bar-h) + var(--promo-h) + var(--space-xl)); }
+
+/* Tablette : le détail cède la place au titre et à l'appel */
+@media (max-width: 55.99rem) {
+  .promo__text { display: none; }
+}
+/* Mobile : une ligne compacte, titre court + flèche, toute la ligne est cliquable */
+@media (max-width: 39.99rem) {
+  .fold--promo { --promo-h: 2.75rem; }
+  .promo { font-size: var(--text-xs); }
+  .promo__link { justify-content: flex-start; gap: var(--space-2xs); }
+  .promo__cta { margin-left: auto; }
+  .promo__cta-label { display: none; }
+  .promo__x { margin-right: calc(var(--space-xs) * -1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gift, .gift__label, .promo__cta .i { transition: none !important; }
+  .gift::before, .gift::after { animation: none !important; opacity: 0.8; transform: none; }
+  .promo__link:hover .promo__cta .i { transform: none; }
+}
+@media print { .gift, .promo { display: none !important; } }

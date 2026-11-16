@@ -126,7 +126,6 @@
   "after_consult": "After a first consultation",
   "book_consult_first": "Book the consultation",
   "already_client": "Already a client? hoona calendar",
-  "cat_locked_note": "Care options marked ‘After a first consultation’ are booked once you have met your naturopath: the consultation helps you choose the ones that suit you. They are also included in the themed days.",
   "included": "Included:",
   "per_session": "per session",
   "on_request": "on request",
@@ -146,7 +145,6 @@
   "sess_search_label": "Search for a session",
   "sess_empty": "No session matches this search.",
   "sess_note": "The buttons open the hoona calendar in a new tab: the session on its time slot, the pack or the subscription in the basket. Sessions are held in French or English.",
-  "soins_note": "The « Book » buttons open the hoona calendar in a new tab, on the chosen offering. All our care takes place at the hoona centre in Tervuren, in French, Dutch or English.",
   "m_journal": "Journal",
   "journal_title": "The hoona Journal",
   "journal_desc": "Simple keys to your vitality, around the 7 hoona axes: sleep, nervous system, detox, movement, nutrition, emotional balance and meaning.",
@@ -219,5 +217,9 @@
   "m_journee_type": "A typical day",
   "m_dates": "Next dates",
   "parcours_cta_kicker": "Not sure?",
-  "parcours_cta_text": "Not sure where to start, or whether this journey is the right one? A 20-minute discovery call with the team, free and without obligation, to choose the first step together."
+  "parcours_cta_text": "Not sure where to start, or whether this journey is the right one? A 20-minute discovery call with the team, free and without obligation, to choose the first step together.",
+  "gift_float": "Give hoona",
+  "gift_float_sr": "Give hoona: the gift vouchers",
+  "locked_heading": "Already been to hoona? These care options are open to you",
+  "locked_text": "These technologies are booked after a first consultation: your naturopath tells you which ones suit you, and in what order. You also find them, included, in the themed days and half-days."
 }

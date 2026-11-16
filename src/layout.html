@@ -10,12 +10,13 @@
 <link rel="icon" href="assets/brand/sigle-hoona.svg" type="image/svg+xml">
 <link rel="preload" href="assets/fonts/TWKLausanne-300.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/TWKLausanne-350.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/hoona.css?v=28">
-<link rel="stylesheet" href="assets/css/v6.css?v=28">
+<link rel="stylesheet" href="assets/css/hoona.css?v=29">
+<link rel="stylesheet" href="assets/css/v6.css?v=29">
 <script>
 /* Avant le premier rendu : bandeau déjà fermé ? */
 (function(){var d=document.documentElement;d.className+=" js";
-try{if(localStorage.getItem("hoona-banner")==="closed"){d.className+=" is-banner-dismissed";}}catch(e){}})();
+try{if(localStorage.getItem("hoona-banner")==="closed"){d.className+=" is-banner-dismissed";}
+if(localStorage.getItem("hoona-promo")==="closed"){d.className+=" is-promo-dismissed";}}catch(e){}})();
 </script>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="hoona">
@@ -46,6 +47,7 @@ try{if(localStorage.getItem("hoona-banner")==="closed"){d.className+=" is-banner
 <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6l-12 12"/><path d="M6 6l12 12"/></symbol>
 <symbol id="i-pause" viewBox="0 0 24 24"><path d="M7 5h2v14h-2zM15 5h2v14h-2z"/></symbol>
 <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11 -7z"/></symbol>
+<symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0 -5a4.8 8 0 0 1 4.5 5a4.8 8 0 0 1 4.5 -5a2.5 2.5 0 0 1 0 5"/></symbol>
 </defs></svg>
 
 <header class="site-head" id="site-head">
@@ -239,8 +241,14 @@ try{if(localStorage.getItem("hoona-banner")==="closed"){d.className+=" is-banner
   </div>
 </footer>
 
+<!-- Picto cadeau flottant : renvoie vers les bons cadeaux (masqué sur bon-cadeau.html et menu ouvert) -->
+<a class="gift" href="bon-cadeau.html" aria-label="{{t:gift_float_sr}}">
+  <span class="gift__icon"><svg class="i" aria-hidden="true"><use href="#i-gift"/></svg></span>
+  <span class="gift__label" aria-hidden="true">{{t:gift_float}}</span>
+</a>
+
 <script>window.HOONA_I18N = {{JS_I18N}};</script>
-<script src="assets/js/hoona.js?v=28" defer></script>
+<script src="assets/js/hoona.js?v=29" defer></script>
 <script src="assets/js/v6.js?v=25" defer></script>
 </body>
 </html>

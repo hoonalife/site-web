@@ -126,7 +126,6 @@
   "after_consult": "Après une première consultation",
   "book_consult_first": "Réserver la consultation",
   "already_client": "Déjà venu·e ? Agenda hoona",
-  "cat_locked_note": "Les soins marqués « Après une première consultation » se réservent une fois votre naturopathe rencontré·e : la consultation permet de choisir ceux qui vous conviennent. Ils sont aussi inclus dans les journées thématiques.",
   "included": "Inclus :",
   "per_session": "la session",
   "on_request": "sur demande",
@@ -146,7 +145,6 @@
   "sess_search_label": "Rechercher une session",
   "sess_empty": "Aucune session ne correspond à cette recherche.",
   "sess_note": "Les boutons ouvrent l'agenda hoona dans un nouvel onglet : la session sur son créneau, le pack ou l'abonnement dans le panier. Les sessions se déroulent en français ou en anglais.",
-  "soins_note": "Les boutons « Réserver » ouvrent l'agenda hoona dans un nouvel onglet, sur la prestation choisie. Tous nos soins se déroulent au centre hoona de Tervuren, en français, en néerlandais ou en anglais.",
   "m_journal": "Journal",
   "journal_title": "Le Journal hoona",
   "journal_desc": "Des clés simples pour votre vitalité, autour des 7 axes hoona : sommeil, système nerveux, détox, mouvement, nutrition, psycho-émotionnel et sens.",
@@ -225,5 +223,9 @@
   "m_journee_type": "Une journée type",
   "m_dates": "Prochaines dates",
   "parcours_cta_kicker": "Vous hésitez ?",
-  "parcours_cta_text": "Vous ne savez pas par où commencer, ou si ce parcours est le bon ? Un échange découverte de 20 minutes avec l'équipe, offert et sans engagement, pour choisir ensemble la première étape."
+  "parcours_cta_text": "Vous ne savez pas par où commencer, ou si ce parcours est le bon ? Un échange découverte de 20 minutes avec l'équipe, offert et sans engagement, pour choisir ensemble la première étape.",
+  "gift_float": "Offrez hoona",
+  "gift_float_sr": "Offrez hoona : les bons cadeaux",
+  "locked_heading": "Déjà venu·e chez hoona ? Ces soins vous sont accessibles",
+  "locked_text": "Ces technologies se réservent après une première consultation : votre naturopathe vous indique celles qui vous conviennent, et dans quel ordre. Vous les retrouvez aussi, incluses, dans les journées et demi-journées thématiques."
 }

@@ -126,7 +126,6 @@
   "after_consult": "Na een eerste consult",
   "book_consult_first": "Consult boeken",
   "already_client": "Al klant? hoona-agenda",
-  "cat_locked_note": "Verzorgingen met de vermelding ‘Na een eerste consult’ boekt u nadat u uw natuurgeneeskundige hebt ontmoet: tijdens het consult kiest u samen welke bij u passen. Ze zijn ook inbegrepen in de themadagen.",
   "included": "Inbegrepen:",
   "per_session": "per sessie",
   "on_request": "op aanvraag",
@@ -146,7 +145,6 @@
   "sess_search_label": "Een sessie zoeken",
   "sess_empty": "Geen enkele sessie komt overeen met deze zoekopdracht.",
   "sess_note": "De knoppen openen de hoona-agenda in een nieuw tabblad: de sessie op haar tijdslot, het pakket of het abonnement in het winkelmandje. De sessies verlopen in het Frans of het Engels.",
-  "soins_note": "De knoppen « Reserveren » openen de hoona-agenda in een nieuw tabblad, op de gekozen verzorging. Al onze verzorgingen vinden plaats in het hoona-centrum in Tervuren, in het Nederlands, het Frans of het Engels.",
   "m_journal": "Journaal",
   "journal_title": "Het hoona-journaal",
   "journal_desc": "Eenvoudige sleutels voor je vitaliteit, rond de 7 hoona-assen: slaap, zenuwstelsel, detox, beweging, voeding, psycho-emotioneel en zin.",
@@ -219,5 +217,9 @@
   "m_journee_type": "Een typische dag",
   "m_dates": "Volgende data",
   "parcours_cta_kicker": "Twijfel je?",
-  "parcours_cta_text": "Je weet niet waar te beginnen, of of dit het juiste traject is? Een kennismakingsgesprek van 20 minuten met het team, gratis en vrijblijvend, om samen de eerste stap te kiezen."
+  "parcours_cta_text": "Je weet niet waar te beginnen, of of dit het juiste traject is? Een kennismakingsgesprek van 20 minuten met het team, gratis en vrijblijvend, om samen de eerste stap te kiezen.",
+  "gift_float": "Schenk hoona",
+  "gift_float_sr": "Schenk hoona: de cadeaubonnen",
+  "locked_heading": "Al bij hoona geweest? Deze verzorgingen zijn voor jou toegankelijk",
+  "locked_text": "Deze technologieën reserveer je na een eerste consult: je naturopaat geeft aan welke bij je passen, en in welke volgorde. Je vindt ze ook terug, inbegrepen, in de thematische dagen en halve dagen."
 }
