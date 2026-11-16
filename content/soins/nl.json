@@ -64,7 +64,7 @@
       "image_caption": "Een consultatie",
       "prestations": [
         {
-          "nom": "Holistische consultatie",
+          "nom": "Consult holistische naturopathie",
           "description": "Een globaal beeld van je vitaliteit: het evenwicht tussen lichaam, ziel en geest en de ondersteuning van je metabolisme.",
           "duree": 80,
           "prix": 120,
@@ -83,7 +83,8 @@
           "nom": "Opvolgconsultatie",
           "description": "Met dezelfde therapeut, om te verankeren, bij te sturen en te verdiepen.",
           "duree": 50,
-          "prix": 80,
+          "prix": 75,
+          "apres_consultation": true,
           "axes": [
             "nutrition",
             "sommeil",
@@ -96,37 +97,11 @@
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520sp%25C3%25A9cifiques/appointment/79448166"
         },
         {
-          "nom": "Burn-out en uitputting",
-          "description": "Een luisterend oor om de oorzaken van uitputting te begrijpen en je mentale, emotionele en fysieke evenwicht terug te vinden.",
-          "duree": 80,
-          "prix": 120,
-          "axes": [
-            "sommeil",
-            "detox",
-            "systeme-nerveux",
-            "psycho-emotionnel",
-            "sens"
-          ],
-          "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520sp%25C3%25A9cifiques/appointment/77131404"
-        },
-        {
-          "nom": "Spijsverteringsgezondheid",
-          "description": "Een opgeblazen gevoel, ongemakken, intoleranties: je spijsverteringsevenwicht verkennen, met persoonlijke aanbevelingen.",
-          "duree": 80,
-          "prix": 120,
-          "axes": [
-            "nutrition",
-            "detox",
-            "systeme-nerveux",
-            "psycho-emotionnel"
-          ],
-          "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520sp%25C3%25A9cifiques/appointment/76346819"
-        },
-        {
-          "nom": "Holistische detox",
-          "description": "De bronnen van gifstoffen (voeding, water, omgeving), hun impact, en eenvoudige strategieën om je ertegen te beschermen.",
-          "duree": 80,
-          "prix": 120,
+          "nom": "Consult gerichte naturopathie",
+          "description": "Een kort moment met je naturopaat voor een specifiek punt, na een eerste consult.",
+          "duree": 30,
+          "prix": 45,
+          "apres_consultation": true,
           "axes": [
             "nutrition",
             "sommeil",
@@ -136,57 +111,7 @@
             "psycho-emotionnel",
             "sens"
           ],
-          "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520sp%25C3%25A9cifiques/appointment/76650137"
-        },
-        {
-          "nom": "Lifecoaching",
-          "description": "De emotionele en relationele onevenwichten begrijpen die op je vitaliteit wegen.",
-          "duree": 80,
-          "prix": 120,
-          "axes": [
-            "systeme-nerveux",
-            "psycho-emotionnel",
-            "sens"
-          ],
-          "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520sp%25C3%25A9cifiques/appointment/76346785"
-        },
-        {
-          "nom": "Slaap",
-          "description": "Rustritmes en kalmerende rituelen voor herstellende nachten.",
-          "duree": 80,
-          "prix": 120,
-          "axes": [
-            "nutrition",
-            "sommeil",
-            "systeme-nerveux",
-            "psycho-emotionnel",
-            "sens"
-          ],
-          "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520sp%25C3%25A9cifiques/appointment/76535446"
-        },
-        {
-          "nom": "Stressbeheer",
-          "description": "Strategieën op maat, geïnspireerd op de 7 assen, om weer energie te vinden.",
-          "duree": 80,
-          "prix": 120,
-          "axes": [
-            "sommeil",
-            "detox",
-            "systeme-nerveux",
-            "psycho-emotionnel",
-            "sens"
-          ],
-          "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520sp%25C3%25A9cifiques/appointment/76346766"
-        },
-        {
-          "nom": "Voeding en eetgewoonten",
-          "description": "Persoonlijke begeleiding naar gezonde, energiegevende voeding.",
-          "duree": 80,
-          "prix": 120,
-          "axes": [
-            "nutrition"
-          ],
-          "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520sp%25C3%25A9cifiques/appointment/79450093"
+          "url": "https://hoonalife.as.me/schedule/584843fc"
         }
       ]
     },
@@ -200,8 +125,9 @@
         {
           "nom": "Papimi, ioneninductie · eerste sessie",
           "description": "Elektromagnetische impulsen om de regeneratie te ondersteunen en het organisme te revitaliseren.",
-          "duree": 50,
+          "duree": 45,
           "prix": 60,
+          "apres_consultation": true,
           "axes": [
             "detox",
             "systeme-nerveux"
@@ -210,9 +136,10 @@
         },
         {
           "nom": "Papimi, ioneninductie · volgende sessies",
-          "description": "",
+          "description": "Elektromagnetische impulsen om de regeneratie te ondersteunen en het organisme te revitaliseren.",
           "duree": 30,
           "prix": 60,
+          "apres_consultation": true,
           "axes": [
             "detox",
             "systeme-nerveux"
@@ -224,8 +151,9 @@
         {
           "nom": "Indiba, radiofrequentie",
           "description": "Een radiofrequentie van 448 kHz om de natuurlijke regeneratie en de celenergie te ondersteunen.",
-          "duree": 50,
+          "duree": 45,
           "prix": 100,
+          "apres_consultation": true,
           "axes": [
             "mouvement",
             "detox"
@@ -239,6 +167,7 @@
           "description": "Afwisselend zuurstofarme en zuurstofrijke lucht, zoals een hoogtetraining.",
           "duree": 50,
           "prix": 60,
+          "apres_consultation": true,
           "axes": [
             "sommeil",
             "mouvement",
@@ -253,6 +182,7 @@
           "description": "Zachte elektromagnetische stimulatie en actieve zuurstof.",
           "duree": 25,
           "prix": 30,
+          "apres_consultation": true,
           "axes": [
             "sommeil",
             "detox"
@@ -266,6 +196,7 @@
           "description": "Een zachte warmte om de regeneratie te ondersteunen en je energie op te laden.",
           "duree": 25,
           "prix": 30,
+          "apres_consultation": true,
           "axes": [
             "sommeil",
             "detox",
@@ -278,14 +209,15 @@
         {
           "nom": "Privésauna",
           "description": "Een infraroodsauna om de detox te ondersteunen, spanningen te verlichten en de doorbloeding te bevorderen.",
-          "duree": 50,
-          "prix": 60,
+          "duree": 60,
+          "prix": 40,
+          "apres_consultation": true,
           "axes": [
             "detox",
             "systeme-nerveux"
           ],
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Soins%2520hoona/appointment/76440260",
-          "pack": 300,
+          "pack": 200,
           "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2075697"
         },
         {
@@ -293,6 +225,7 @@
           "description": "Om te ontspannen, te rehydrateren en te remineraliseren.",
           "duree": 30,
           "prix": 30,
+          "apres_consultation": true,
           "axes": [
             "sommeil",
             "detox",
@@ -305,6 +238,7 @@
           "description": "Recuperatie en diepe ontspanning.",
           "duree": 25,
           "prix": 30,
+          "apres_consultation": true,
           "axes": [
             "sommeil",
             "detox",
@@ -319,6 +253,7 @@
           "description": "Verse kruiden en een warme kruik om de detox te begeleiden en vermoeidheid te verzachten.",
           "duree": 25,
           "prix": 30,
+          "apres_consultation": true,
           "axes": [
             "nutrition",
             "detox"
@@ -371,7 +306,7 @@
             "psycho-emotionnel",
             "sens"
           ],
-          "url": "mailto:hello@hoona.life?subject=R%C3%A9servation%20d%27un%20massage%20du%20corps%20pour%202%20personnes&body=Pr%C3%A9nom%20%3A%0D%0ANom%20%3A%0D%0AN%C2%B0%20de%20t%C3%A9l%C3%A9phone%20%3A%0D%0A%0D%0AVotre%20message%20%3A%0D%0A"
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79873380"
         },
         {
           "nom": "Rugmassage",
@@ -386,7 +321,7 @@
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868394"
         },
         {
-          "nom": "Circulatiemassage van de benen",
+          "nom": "Lymfedrainage van de benen",
           "description": "Voor lichtere benen en een betere doorbloeding.",
           "duree": 60,
           "prix": 100,
@@ -428,8 +363,8 @@
         {
           "nom": "Tuinamassage",
           "description": "Chinese massage: kneden, rollen en strekken voor mobiliteit en doorbloeding.",
-          "duree": 90,
-          "prix": 150,
+          "duree": 60,
+          "prix": 100,
           "axes": [
             "mouvement",
             "detox",
@@ -438,20 +373,6 @@
             "sens"
           ],
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79580799"
-        },
-        {
-          "nom": "Sessie met Tibetaanse klankschalen",
-          "description": "De klank en de trillingen van de schalen om fysiek en mentaal los te laten.",
-          "duree": 60,
-          "prix": 100,
-          "axes": [
-            "sommeil",
-            "detox",
-            "systeme-nerveux",
-            "psycho-emotionnel",
-            "sens"
-          ],
-          "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868267"
         },
         {
           "nom": "Chi Nei Tsang, buikmassage",
@@ -468,20 +389,6 @@
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868375"
         },
         {
-          "nom": "Voetmassage met Kansa-schaal",
-          "description": "Een kalmerende, diep ontspannende voetmassage.",
-          "duree": 60,
-          "prix": 100,
-          "axes": [
-            "sommeil",
-            "detox",
-            "systeme-nerveux",
-            "psycho-emotionnel",
-            "sens"
-          ],
-          "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868366"
-        },
-        {
           "nom": "Dien Chan, Vietnamese massage",
           "description": "Multireflexologie van gezicht en lichaam voor ontspanning en doorbloeding.",
           "duree": 60,
@@ -495,64 +402,19 @@
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868461"
         },
         {
-          "nom": "Voetreflexologie",
-          "description": "De reflexzones van de voet, voor ontspanning, evenwicht en vitaliteit.",
-          "duree": 60,
-          "prix": 100,
+          "nom": "Reflexologie van gezicht en voeten met klankreis, verdiepend ritueel",
+          "description": "Een diepe, omhullende verzorging om het hoofd tot rust te brengen, de energie te laten stromen en het zenuwstelsel in balans te brengen.",
+          "duree": 120,
+          "prix": 180,
           "axes": [
             "nutrition",
+            "sommeil",
             "detox",
             "systeme-nerveux",
             "psycho-emotionnel",
             "sens"
           ],
-          "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868286"
-        }
-      ]
-    },
-    {
-      "slug": "mouvement",
-      "nom": "Beweging, individueel",
-      "intro": "Een sessie op maat, op je eigen ritme, met onze coaches en onze yogaleraar.",
-      "image": "assets/img/chemin-prevenir.webp",
-      "image_caption": "Het park van Tervuren",
-      "prestations": [
-        {
-          "nom": "Yoga, individuele sessie",
-          "description": "Een sessie op jouw maat, begeleid door onze yogaleraar.",
-          "duree": 60,
-          "prix": 80,
-          "axes": [
-            "mouvement",
-            "systeme-nerveux"
-          ],
-          "url": "https://hoonalife.as.me/schedule/584843fc/category/Mouvement%2520individuel/appointment/76534622"
-        },
-        {
-          "nom": "Nordic walking, individuele sessie",
-          "description": "In het Zoniënwoud, op een steenworp van het centrum.",
-          "duree": 60,
-          "prix": 50,
-          "axes": [
-            "mouvement",
-            "detox",
-            "systeme-nerveux",
-            "psycho-emotionnel"
-          ],
-          "url": "https://hoonalife.as.me/schedule/584843fc/category/Mouvement%2520individuel/appointment/76534659"
-        },
-        {
-          "nom": "Sportcoaching en spierversterking",
-          "description": "Een individuele sessie, afgestemd op je niveau.",
-          "duree": 50,
-          "prix": 100,
-          "axes": [
-            "mouvement",
-            "detox",
-            "systeme-nerveux",
-            "psycho-emotionnel"
-          ],
-          "url": "https://hoonalife.as.me/schedule/584843fc/category/Mouvement%2520individuel/appointment/82145718"
+          "url": "https://hoonalife.as.me/?appointmentType=95683483"
         }
       ]
     }

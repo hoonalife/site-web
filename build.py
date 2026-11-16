@@ -238,6 +238,13 @@ def actions(item, t, lang):
                % (e(u), e(t["book"]), e(item.get("nom")), e(t["book_sr"])))
     else:
         out = '<a class="btn btn--sm btn--line" href="contact.html?sujet=soin#reserver">%s</a>' % e(t["contact_us"])
+    return out + offer_buttons(item, t, lang)
+
+
+def offer_buttons(item, t, lang):
+    """Les boutons Pack 5+1 et Abonnement, quand la prestation en propose."""
+    e = lambda x: htmllib.escape(str(x), quote=True)
+    out = ""
     for key, url_key, label, suffix in (("pack", "url_pack", t["pack_label"], ""), ("abo", "url_abo", t["abo_label"], t["per_month"])):
         if item.get(key):
             price = prix(item[key], t, lang) + suffix
@@ -247,20 +254,46 @@ def actions(item, t, lang):
     return out
 
 
+ICON_LOCK = ('<svg class="i" aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4">'
+             '<rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg>')
+
+
+def locked(item):
+    """Vrai si la prestation se réserve après une première consultation."""
+    return bool(item.get("apres_consultation"))
+
+
+def lock_badge(t):
+    return '<span class="badge badge--lock">%s%s</span>' % (ICON_LOCK, htmllib.escape(t["after_consult"], quote=False))
+
+
+def locked_actions(item, t, lang):
+    """Prestation réservée : d'abord la consultation, puis l'agenda pour qui est déjà venu·e, puis Pack / Abonnement."""
+    e = lambda x: htmllib.escape(str(x), quote=True)
+    out = '<a class="btn btn--sm" href="%s">%s</a>' % (e(t["url_consultation"]), e(t["book_consult_first"]))
+    u = item.get("url") or ""
+    if u.startswith("http"):
+        out += ('<a class="link link--sm" href="%s" target="_blank" rel="noopener">%s<span class="visually-hidden"> : %s</span></a>'
+                % (e(u), e(t["already_client"]), e(item.get("nom"))))
+    return out + offer_buttons(item, t, lang)
+
+
 def anchor_chips(cats, key, t):
     e = lambda x: htmllib.escape(str(x), quote=True)
     return "\n      ".join('<a class="chip chip--link" href="#%s">%s<span class="count">%d</span></a>' % (e(c["slug"]), e(c["nom"]), len(c.get(key, []))) for c in cats)
 
 
-def cat_head(c):
-    """L'en-tête d'une catégorie : bandeau photo avec le titre en réserve et une légende, puis l'intro ; sans photo, titre et intro."""
+def cat_head(c, note=""):
+    """L'en-tête d'une catégorie : bandeau photo avec le titre en réserve et une légende, puis l'intro ; sans photo, titre et intro.
+    `note` : une phrase facultative sous l'intro (les soins réservés après consultation)."""
     e = lambda x: htmllib.escape(str(x or ""), quote=True)
+    note = '      <p class="cat-note">%s%s</p>\n' % (ICON_LOCK, e(note)) if note else ""
     if not c.get("image"):
-        return '      <h2 id="h-%s">%s</h2>\n      <p>%s</p>\n' % (e(c["slug"]), e(c["nom"]), e(c.get("intro")))
+        return '      <h2 id="h-%s">%s</h2>\n      <p>%s</p>\n%s' % (e(c["slug"]), e(c["nom"]), e(c.get("intro")), note)
     cap = '<span class="cartouche">%s</span>' % e(c["image_caption"]) if c.get("image_caption") else ""
     return ('      <figure class="cat-plate"><img src="%s" alt="" width="1600" height="900" loading="lazy" decoding="async">'
-            '<figcaption><h2 id="h-%s">%s</h2>%s</figcaption></figure>\n      <p class="cat-intro">%s</p>\n'
-            % (e(c["image"].lstrip("/")), e(c["slug"]), e(c["nom"]), cap, e(c.get("intro"))))
+            '<figcaption><h2 id="h-%s">%s</h2>%s</figcaption></figure>\n      <p class="cat-intro">%s</p>\n%s'
+            % (e(c["image"].lstrip("/")), e(c["slug"]), e(c["nom"]), cap, e(c.get("intro")), note))
 
 
 ICON_CLOCK = '<svg class="i" aria-hidden="true"><use href="#i-clock"/></svg>'
@@ -315,12 +348,17 @@ def row_title(i, e):
 
 
 def soin_row(i, t, lang):
+    """Une ligne de soin ; les soins réservés après consultation portent un badge à côté de la durée (visible même replié
+    sur mobile) et renvoient d'abord vers la consultation."""
     e = lambda x: htmllib.escape(str(x or ""), quote=False)
-    return ('        <div class="row row--soin item" data-axes="%s"><span class="row__title">%s</span>'
-            '<span class="row__desc">%s%s</span><span class="row__meta">%s</span>%s'
+    lock = locked(i)
+    return ('        <div class="row row--soin item%s" data-axes="%s"><span class="row__title">%s</span>'
+            '<span class="row__desc">%s%s%s</span><span class="row__meta">%s</span>%s'
             '<span class="row__act">%s</span></div>'
-            % (" ".join(a for a in i.get("axes", []) if a in AXES), row_title(i, e), link_products(e(i.get("description")), lang, i.get("page")), axes_tags(i, t),
-               pill(duree(i.get("duree", 0), lang), ICON_CLOCK), price_span(i.get("prix"), t, lang), actions(i, t, lang)))
+            % (" row--locked" if lock else "", " ".join(a for a in i.get("axes", []) if a in AXES), row_title(i, e),
+               "", link_products(e(i.get("description")), lang, i.get("page")), axes_tags(i, t),
+               pill(duree(i.get("duree", 0), lang), ICON_CLOCK) + (lock_badge(t) if lock else ""), price_span(i.get("prix"), t, lang),
+               locked_actions(i, t, lang) if lock else actions(i, t, lang)))
 
 
 def session_row(i, t, lang):
@@ -439,12 +477,18 @@ def render_journees(t, lang):
     if not path.exists():
         return {}
     e = lambda x: htmllib.escape(str(x or ""), quote=False)
+    def inclus(i):
+        # « Inclus : soin · soin · … » sur sa propre ligne, les soins qui ont une page sont reliés
+        if not i.get("inclus"):
+            return ""
+        return '<span class="row__inclus">%s %s</span>' % (e(t["included"]), link_products(" · ".join(e(x) for x in i["inclus"]), lang))
     out = {}
     for c in load_json(path).get("categories", []):
         rows = "\n".join(
-            '        <div class="row row--soin"><span class="row__title">%s</span><span class="row__desc">%s</span><span class="row__meta"></span>'
+            '        <div class="row row--soin"><span class="row__title">%s</span><span class="row__desc">%s%s</span><span class="row__meta">%s</span>'
             '%s<span class="row__act">%s</span></div>'
-            % (e(i.get("nom")), link_products(e(i.get("description")), lang), price_span(i.get("prix"), t, lang), actions(i, t, lang))
+            % (e(i.get("nom")), link_products(e(i.get("description")), lang), inclus(i),
+               pill(i["duree_txt"], ICON_CLOCK) if i.get("duree_txt") else "", price_span(i.get("prix"), t, lang), actions(i, t, lang))
             for i in c.get("prestations", []))
         out["{{JOURNEES_%s}}" % ("DEMI" if c["slug"] == "demi-journees" else "COMPLETES")] = '<div class="rows rows--compact">\n%s\n    </div>' % rows
     return out
@@ -504,6 +548,11 @@ def render_soins(t, lang):
     cats = load_json(path).get("categories", [])
     e = lambda x: htmllib.escape(str(x or ""), quote=False)
     total = sum(len(c.get("prestations", [])) for c in cats)
+    # La note « après une première consultation » ne paraît qu'une fois : en tête de la catégorie qui en compte le plus (les technologies)
+    n_locked = lambda c: sum(locked(i) for i in c.get("prestations", []))
+    note_cat = max(cats, key=n_locked, default=None)
+    if note_cat is not None and not n_locked(note_cat):
+        note_cat = None
     groups = []
     for c in cats:
         items = c.get("prestations", [])
@@ -511,7 +560,7 @@ def render_soins(t, lang):
         groups.append(
             '    <section class="cat-group" data-cat="%(s)s" id="%(s)s" aria-labelledby="h-%(s)s">\n%(h)s'
             '      <div class="rows rows--compact">\n%(r)s\n      </div>\n    </section>'
-            % {"s": e(c["slug"]), "h": cat_head(c), "r": rows}
+            % {"s": e(c["slug"]), "h": cat_head(c, t["cat_locked_note"] if c is note_cat else ""), "r": rows}
         )
     return {
         "{{SOINS_FILTERS}}": anchor_chips(cats, "prestations", t),

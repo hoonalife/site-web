@@ -5,39 +5,52 @@
       "nom": "Demi-journées",
       "prestations": [
         {
-          "nom": "Relaxation du système nerveux",
-          "description": "Consultation et mantras, infrarouge, session de marche nordique en petit groupe.",
+          "nom": "Apaisement profond",
+          "description": "Un programme pour relâcher les tensions et régénérer le système nerveux.",
+          "inclus": [
+            "Réflexologie visage, pieds et voyage sonore",
+            "IHHT Mitovit",
+            "QRS et Airnergy"
+          ],
+          "duree_txt": "2h50",
+          "prix": 228,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        },
+        {
+          "nom": "Équilibre digestif",
+          "description": "Un programme pour relancer la dynamique digestive et le confort abdominal.",
+          "inclus": [
+            "Chi Nei Tsang ou Indiba",
+            "Réflexologie (1h)",
+            "Cataplasme du foie ou Papimi"
+          ],
+          "duree_txt": "2h30",
+          "prix": 247,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        },
+        {
+          "nom": "Sérénité absolue",
+          "description": "Un programme pour lâcher prise et se déconnecter, par les sens.",
+          "inclus": [
+            "Massage spécifique (1h)",
+            "Sauna privé",
+            "Bain aux sels de magnésium"
+          ],
+          "duree_txt": "2h15",
           "prix": 180,
           "url": "https://hoonalife.as.me/schedule/584843fc"
         },
         {
-          "nom": "Good night",
-          "description": "Consultation, bain au magnésium, infrarouge, cocoon room.",
-          "prix": 180,
-          "url": "https://hoonalife.as.me/schedule/584843fc"
-        },
-        {
-          "nom": "Détox douce",
-          "description": "Consultation, sauna, bain de pieds, QRS.",
-          "prix": 180,
-          "url": "https://hoonalife.as.me/schedule/584843fc"
-        },
-        {
-          "nom": "Équilibre de vie",
-          "description": "Consultation, bain au magnésium, session en petit groupe : kundalini et bain de gongs.",
-          "prix": 180,
-          "url": "https://hoonalife.as.me/schedule/584843fc"
-        },
-        {
-          "nom": "Bouger, c'est la vie",
-          "description": "Marche nordique individuelle, yoga collectif, QRS et Airnergy, technique Alexander.",
-          "prix": 180,
-          "url": "https://hoonalife.as.me/schedule/584843fc"
-        },
-        {
-          "nom": "Refresh the mind & oxygénation",
-          "description": "Life-coaching, marche nordique en groupe, cocoon room.",
-          "prix": 180,
+          "nom": "Prévention naturelle",
+          "description": "Un programme pour soutenir la détox et la vitalité, en prévention.",
+          "inclus": [
+            "Papimi",
+            "QRS et Airnergy",
+            "Sauna privé",
+            "Bain aux sels de magnésium"
+          ],
+          "duree_txt": "2h15",
+          "prix": 171,
           "url": "https://hoonalife.as.me/schedule/584843fc"
         }
       ]
@@ -47,45 +60,67 @@
       "nom": "Journées",
       "prestations": [
         {
-          "nom": "Nutrition, ventre & détox",
-          "description": "Consultation santé du système digestif, Chi Nei Tsang, cataplasme du foie.",
-          "prix": 250,
+          "nom": "Apaisement profond",
+          "description": "Un programme pour relâcher les tensions et régénérer le système nerveux.",
+          "inclus": [
+            "Consultation de naturopathie (1h30)",
+            "Massage spécifique (1h)",
+            "IHHT Mitovit",
+            "QRS et Airnergy",
+            "Lumière infrarouge",
+            "Bain aux sels de magnésium",
+            "Lunch"
+          ],
+          "duree_txt": "5h15 de soins + lunch",
+          "prix": 368,
           "url": "https://hoonalife.as.me/schedule/584843fc"
         },
         {
-          "nom": "Détox du foie",
-          "description": "Consultation, Papimi, Indiba, cataplasme du foie.",
-          "prix": 250,
+          "nom": "Équilibre digestif",
+          "description": "Un programme pour relancer la dynamique digestive et le confort abdominal.",
+          "inclus": [
+            "Consultation de naturopathie (1h30)",
+            "Indiba du ventre",
+            "Chi Nei Tsang ou réflexologie",
+            "Papimi",
+            "Cataplasme du foie",
+            "Lumière infrarouge",
+            "Lunch"
+          ],
+          "duree_txt": "5h de soins + lunch",
+          "prix": 431,
           "url": "https://hoonalife.as.me/schedule/584843fc"
         },
         {
-          "nom": "Soutien du système nerveux",
-          "description": "Consultation et mantras, marche nordique individuelle, IHHT, cocoon room.",
-          "prix": 250,
+          "nom": "Sérénité absolue",
+          "description": "Un programme pour lâcher prise et se déconnecter, par les sens.",
+          "inclus": [
+            "Deux massages spécifiques (2 × 1h)",
+            "Sauna privé",
+            "Bain aux sels de magnésium",
+            "Lumière infrarouge",
+            "QRS et Airnergy",
+            "Lunch"
+          ],
+          "duree_txt": "4h45 de soins + lunch",
+          "prix": 332,
           "url": "https://hoonalife.as.me/schedule/584843fc"
         },
         {
-          "nom": "Good night plus",
-          "description": "IHHT, Papimi, massage visage-pieds et voyage sonore.",
-          "prix": 250,
-          "url": "https://hoonalife.as.me/schedule/584843fc"
-        },
-        {
-          "nom": "Retour à soi",
-          "description": "Consultation, yoga individuel, Papimi, soin aux bols tibétains.",
-          "prix": 250,
-          "url": "https://hoonalife.as.me/schedule/584843fc"
-        },
-        {
-          "nom": "Reset the mind",
-          "description": "Life-coaching, Dien Chan, QRS et Airnergy, bain au magnésium.",
-          "prix": 250,
-          "url": "https://hoonalife.as.me/schedule/584843fc"
-        },
-        {
-          "nom": "Endurance, performance, récupération",
-          "description": "Renforcement musculaire individuel, IHHT, Indiba.",
-          "prix": 250,
+          "nom": "Prévention naturelle",
+          "description": "Un programme pour soutenir la détox et la vitalité, en prévention.",
+          "inclus": [
+            "Consultation de naturopathie (1h30)",
+            "Papimi",
+            "QRS et Airnergy",
+            "Sauna privé",
+            "Bain de pieds aux sels de magnésium",
+            "Lumière infrarouge",
+            "Massage (1h)",
+            "Lunch"
+          ],
+          "duree_txt": "5h de soins + lunch",
+          "prix": 422,
           "url": "https://hoonalife.as.me/schedule/584843fc"
         }
       ]

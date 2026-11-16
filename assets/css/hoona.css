@@ -329,6 +329,22 @@ a.row:hover .row__go { transform: translateX(0.25rem); }
 @media (max-width: 55.99rem) { .row--4 { grid-template-columns: minmax(0, 1fr) auto; } .row--4 .row__title, .row--4 .row__desc { grid-column: 1 / -1; } .row--3 { grid-template-columns: minmax(0, 1fr) auto; } .row--3 .row__title { grid-column: 1; } .row--3 .row__desc { grid-column: 1 / -1; grid-row: 2; } .row--3 .row__meta, .row--3 .row__price { grid-column: 2; grid-row: 1; } }
 .rows--compact .row__title { font-size: var(--text-md); font-weight: var(--weight-bold); }
 
+/* Soins réservés après une première consultation : un badge discret, la ligne reste pleinement lisible */
+.badge {
+  display: inline-flex; align-items: center; gap: 0.35em; width: fit-content;
+  font-size: var(--text-xs); font-weight: var(--weight-light); letter-spacing: var(--tracking-insert); text-transform: uppercase;
+  color: var(--color-ink-2); line-height: 1.3;
+}
+.badge .i { width: 0.95em; height: 0.95em; flex: none; }
+.row__meta > .badge--lock { margin-left: 0.5rem; vertical-align: middle; }
+.row--locked .row__act .link--sm { justify-self: center; }
+.link--sm { font-size: var(--text-xs); font-weight: var(--weight-body); color: var(--color-ink-2); text-underline-offset: 0.25em; }
+.link--sm:hover { color: var(--color-ink); }
+.cat-note { display: flex; gap: 0.5em; align-items: baseline; max-width: 64ch; margin-top: var(--space-xs); font-size: var(--text-sm); color: var(--color-ink-2); }
+.cat-note .i { width: 0.95em; height: 0.95em; flex: none; transform: translateY(0.1em); }
+/* Journées : la liste des soins inclus, sur sa propre ligne */
+.row__inclus { display: block; margin-top: 0.3rem; font-size: var(--text-sm); color: var(--color-ink-2); }
+
 /* ---------- Citation sur strates ---------- */
 .strata { position: relative; isolation: isolate; overflow: hidden; background: var(--color-blue-300); }
 .strata__bg { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; object-fit: cover; }

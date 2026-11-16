@@ -64,7 +64,7 @@
       "image_caption": "A consultation",
       "prestations": [
         {
-          "nom": "Holistic consultation",
+          "nom": "Holistic naturopathy consultation",
           "description": "An overall view of your vitality: your body-mind-spirit balance and how to support your metabolism.",
           "duree": 80,
           "prix": 120,
@@ -83,7 +83,8 @@
           "nom": "Follow-up consultation",
           "description": "With the same therapist, to anchor, adjust and go further.",
           "duree": 50,
-          "prix": 80,
+          "prix": 75,
+          "apres_consultation": true,
           "axes": [
             "nutrition",
             "sommeil",
@@ -96,37 +97,11 @@
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520sp%25C3%25A9cifiques/appointment/79448166"
         },
         {
-          "nom": "Burnout and exhaustion",
-          "description": "A space to be heard, to understand what lies behind exhaustion and to regain mental, emotional and physical balance.",
-          "duree": 80,
-          "prix": 120,
-          "axes": [
-            "sommeil",
-            "detox",
-            "systeme-nerveux",
-            "psycho-emotionnel",
-            "sens"
-          ],
-          "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520sp%25C3%25A9cifiques/appointment/77131404"
-        },
-        {
-          "nom": "Digestive health",
-          "description": "Bloating, discomfort, intolerances: exploring your digestive balance, with personalised recommendations.",
-          "duree": 80,
-          "prix": 120,
-          "axes": [
-            "nutrition",
-            "detox",
-            "systeme-nerveux",
-            "psycho-emotionnel"
-          ],
-          "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520sp%25C3%25A9cifiques/appointment/76346819"
-        },
-        {
-          "nom": "Holistic detox",
-          "description": "Sources of toxins (food, water, environment), their impact, and simple ways to limit your exposure.",
-          "duree": 80,
-          "prix": 120,
+          "nom": "Targeted naturopathy consultation",
+          "description": "A short time with your naturopath for one specific point, after a first consultation.",
+          "duree": 30,
+          "prix": 45,
+          "apres_consultation": true,
           "axes": [
             "nutrition",
             "sommeil",
@@ -136,57 +111,7 @@
             "psycho-emotionnel",
             "sens"
           ],
-          "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520sp%25C3%25A9cifiques/appointment/76650137"
-        },
-        {
-          "nom": "Life coaching",
-          "description": "Understanding the emotional and relational imbalances that weigh on your vitality.",
-          "duree": 80,
-          "prix": 120,
-          "axes": [
-            "systeme-nerveux",
-            "psycho-emotionnel",
-            "sens"
-          ],
-          "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520sp%25C3%25A9cifiques/appointment/76346785"
-        },
-        {
-          "nom": "Sleep",
-          "description": "Rest rhythms and soothing rituals for restorative nights.",
-          "duree": 80,
-          "prix": 120,
-          "axes": [
-            "nutrition",
-            "sommeil",
-            "systeme-nerveux",
-            "psycho-emotionnel",
-            "sens"
-          ],
-          "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520sp%25C3%25A9cifiques/appointment/76535446"
-        },
-        {
-          "nom": "Stress management",
-          "description": "Tailored strategies, inspired by the 7 axes, to find your drive again.",
-          "duree": 80,
-          "prix": 120,
-          "axes": [
-            "sommeil",
-            "detox",
-            "systeme-nerveux",
-            "psycho-emotionnel",
-            "sens"
-          ],
-          "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520sp%25C3%25A9cifiques/appointment/76346766"
-        },
-        {
-          "nom": "Nutrition and eating habits",
-          "description": "Personalised support towards healthy, energising food.",
-          "duree": 80,
-          "prix": 120,
-          "axes": [
-            "nutrition"
-          ],
-          "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520sp%25C3%25A9cifiques/appointment/79450093"
+          "url": "https://hoonalife.as.me/schedule/584843fc"
         }
       ]
     },
@@ -200,8 +125,9 @@
         {
           "nom": "Papimi, ion induction · first session",
           "description": "Electromagnetic pulses to support regeneration and revitalise the body.",
-          "duree": 50,
+          "duree": 45,
           "prix": 60,
+          "apres_consultation": true,
           "axes": [
             "detox",
             "systeme-nerveux"
@@ -213,6 +139,7 @@
           "description": "5 + 1 pack available at €300.",
           "duree": 30,
           "prix": 60,
+          "apres_consultation": true,
           "axes": [
             "detox",
             "systeme-nerveux"
@@ -224,8 +151,9 @@
         {
           "nom": "Indiba, radiofrequency",
           "description": "A 448 kHz radiofrequency to support natural regeneration and cellular energy. 5 + 1 pack at €500.",
-          "duree": 50,
+          "duree": 45,
           "prix": 100,
+          "apres_consultation": true,
           "axes": [
             "mouvement",
             "detox"
@@ -239,6 +167,7 @@
           "description": "Alternating oxygen-poor and oxygen-rich air, like altitude training. 5 + 1 pack at €300.",
           "duree": 50,
           "prix": 60,
+          "apres_consultation": true,
           "axes": [
             "sommeil",
             "mouvement",
@@ -253,6 +182,7 @@
           "description": "Gentle electromagnetic stimulation and active oxygen. 5 + 1 pack at €150.",
           "duree": 25,
           "prix": 30,
+          "apres_consultation": true,
           "axes": [
             "sommeil",
             "detox"
@@ -266,6 +196,7 @@
           "description": "Gentle warmth to support regeneration and recharge your energy. 5 + 1 pack at €150.",
           "duree": 25,
           "prix": 30,
+          "apres_consultation": true,
           "axes": [
             "sommeil",
             "detox",
@@ -277,15 +208,16 @@
         },
         {
           "nom": "Private sauna",
-          "description": "An infrared sauna to support detox, ease tension and help circulation. 5 + 1 pack at €300.",
-          "duree": 50,
-          "prix": 60,
+          "description": "An infrared sauna to support detox, ease tension and help circulation. 5 + 1 pack at €200.",
+          "duree": 60,
+          "prix": 40,
+          "apres_consultation": true,
           "axes": [
             "detox",
             "systeme-nerveux"
           ],
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Soins%2520hoona/appointment/76440260",
-          "pack": 300,
+          "pack": 200,
           "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2075697"
         },
         {
@@ -293,6 +225,7 @@
           "description": "To relax, rehydrate and remineralise.",
           "duree": 30,
           "prix": 30,
+          "apres_consultation": true,
           "axes": [
             "sommeil",
             "detox",
@@ -305,6 +238,7 @@
           "description": "Recovery and deep relaxation. 5 + 1 pack at €150.",
           "duree": 25,
           "prix": 30,
+          "apres_consultation": true,
           "axes": [
             "sommeil",
             "detox",
@@ -319,6 +253,7 @@
           "description": "Fresh herbs and a hot-water bottle to accompany detox and ease tiredness.",
           "duree": 25,
           "prix": 30,
+          "apres_consultation": true,
           "axes": [
             "nutrition",
             "detox"
@@ -371,7 +306,7 @@
             "psycho-emotionnel",
             "sens"
           ],
-          "url": "mailto:hello@hoona.life?subject=R%C3%A9servation%20d%27un%20massage%20du%20corps%20pour%202%20personnes&body=Pr%C3%A9nom%20%3A%0D%0ANom%20%3A%0D%0AN%C2%B0%20de%20t%C3%A9l%C3%A9phone%20%3A%0D%0A%0D%0AVotre%20message%20%3A%0D%0A"
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79873380"
         },
         {
           "nom": "Back massage",
@@ -386,7 +321,7 @@
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868394"
         },
         {
-          "nom": "Circulatory leg massage",
+          "nom": "Lymphatic drainage of the legs",
           "description": "To lighten heavy legs and boost circulation.",
           "duree": 60,
           "prix": 100,
@@ -428,8 +363,8 @@
         {
           "nom": "Tuina massage",
           "description": "Chinese massage: kneading, rolling and stretching for mobility and circulation.",
-          "duree": 90,
-          "prix": 150,
+          "duree": 60,
+          "prix": 100,
           "axes": [
             "mouvement",
             "detox",
@@ -438,20 +373,6 @@
             "sens"
           ],
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79580799"
-        },
-        {
-          "nom": "Tibetan singing bowl session",
-          "description": "The sound and vibration of the bowls for physical and mental letting go.",
-          "duree": 60,
-          "prix": 100,
-          "axes": [
-            "sommeil",
-            "detox",
-            "systeme-nerveux",
-            "psycho-emotionnel",
-            "sens"
-          ],
-          "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868267"
         },
         {
           "nom": "Chi Nei Tsang, abdominal massage",
@@ -468,20 +389,6 @@
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868375"
         },
         {
-          "nom": "Kansa bowl foot massage",
-          "description": "A soothing, deeply relaxing foot massage.",
-          "duree": 60,
-          "prix": 100,
-          "axes": [
-            "sommeil",
-            "detox",
-            "systeme-nerveux",
-            "psycho-emotionnel",
-            "sens"
-          ],
-          "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868366"
-        },
-        {
           "nom": "Dien Chan, Vietnamese massage",
           "description": "Multi-reflexology of the face and body for relaxation and circulation.",
           "duree": 60,
@@ -495,64 +402,19 @@
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868461"
         },
         {
-          "nom": "Foot reflexology",
-          "description": "The reflex zones of the foot, for relaxation, balance and vitality.",
-          "duree": 60,
-          "prix": 100,
+          "nom": "Face and foot reflexology with sound journey, in-depth ritual",
+          "description": "A deep, enveloping session to quiet the mind, let energy flow and bring the nervous system into harmony.",
+          "duree": 120,
+          "prix": 180,
           "axes": [
             "nutrition",
+            "sommeil",
             "detox",
             "systeme-nerveux",
             "psycho-emotionnel",
             "sens"
           ],
-          "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868286"
-        }
-      ]
-    },
-    {
-      "slug": "mouvement",
-      "nom": "Movement, one-to-one",
-      "intro": "A tailor-made session, at your own pace, with our coaches and our yoga teacher.",
-      "image": "assets/img/chemin-prevenir.webp",
-      "image_caption": "Tervuren park",
-      "prestations": [
-        {
-          "nom": "Yoga, one-to-one session",
-          "description": "A session built around you, guided by our yoga teacher.",
-          "duree": 60,
-          "prix": 80,
-          "axes": [
-            "mouvement",
-            "systeme-nerveux"
-          ],
-          "url": "https://hoonalife.as.me/schedule/584843fc/category/Mouvement%2520individuel/appointment/76534622"
-        },
-        {
-          "nom": "Nordic walking, one-to-one session",
-          "description": "In the Sonian Forest, steps from the centre.",
-          "duree": 60,
-          "prix": 50,
-          "axes": [
-            "mouvement",
-            "detox",
-            "systeme-nerveux",
-            "psycho-emotionnel"
-          ],
-          "url": "https://hoonalife.as.me/schedule/584843fc/category/Mouvement%2520individuel/appointment/76534659"
-        },
-        {
-          "nom": "Fitness coaching and strength training",
-          "description": "A one-to-one session adapted to your level.",
-          "duree": 50,
-          "prix": 100,
-          "axes": [
-            "mouvement",
-            "detox",
-            "systeme-nerveux",
-            "psycho-emotionnel"
-          ],
-          "url": "https://hoonalife.as.me/schedule/584843fc/category/Mouvement%2520individuel/appointment/82145718"
+          "url": "https://hoonalife.as.me/?appointmentType=95683483"
         }
       ]
     }

@@ -33,19 +33,19 @@
         },
         {
           "phase": "experimenter",
-          "titre": "La demi-journée « Relaxation du système nerveux »",
-          "texte": "Consultation et mantras, lumière infrarouge, marche nordique en petit groupe. Une parenthèse de quelques heures pour faire redescendre.",
+          "titre": "La demi-journée « Apaisement profond »",
+          "texte": "Réflexologie visage, pieds et voyage sonore, IHHT Mitovit, QRS et Airnergy. Une parenthèse de quelques heures pour faire redescendre le système nerveux.",
           "label": "Voir la demi-journée",
           "url": "journees.html#demi-journees",
-          "prix": "180 €"
+          "prix": "228 €"
         },
         {
           "phase": "experimenter",
           "titre": "Des soins qui apaisent, à votre rythme",
-          "texte": "QRS et Airnergy, bain aux sels de magnésium, massage du corps, bols tibétains : des séances courtes, à la carte, pour entretenir le calme retrouvé.",
+          "texte": "Massage du corps, massage du visage et du crâne, voyage sonore : des séances d'une heure, à la carte, pour entretenir le calme retrouvé.",
           "label": "Voir les soins",
           "url": "soins.html",
-          "prix": "dès 30 €"
+          "prix": "dès 100 €"
         },
         {
           "phase": "immerger",
@@ -57,15 +57,11 @@
         }
       ],
       "soins": [
-        "Consultation holistique",
-        "Burn-out et épuisement",
-        "Sommeil",
-        "Gestion du stress",
-        "QRS et Airnergy",
-        "Bain aux sels de magnésium",
+        "Consultation de naturopathie holistique",
         "Massage du corps",
-        "Soin aux bols tibétains",
-        "Massage du visage et du crâne"
+        "Massage du visage et du crâne",
+        "Visage, pieds et voyage sonore",
+        "Réflexologie visage, pieds et voyage sonore, rituel approfondi"
       ],
       "sessions": [
         "Yin Yoga",
@@ -103,27 +99,27 @@
       "etapes": [
         {
           "phase": "point",
-          "titre": "La consultation « Santé du système digestif »",
-          "texte": "1h20 pour explorer votre équilibre digestif : assiette, rythme des repas, microbiote, stress, avec des recommandations personnalisées.",
+          "titre": "Une consultation de naturopathie",
+          "texte": "1h20 avec une naturopathe pour faire le point sur vos 7 axes. La consultation explore aussi votre digestion : assiette, rythme des repas, stress, avec des recommandations personnalisées.",
           "label": "Réserver la consultation",
-          "url": "consultation.html#formats",
+          "url": "consultation.html",
           "prix": "120 €"
         },
         {
           "phase": "experimenter",
-          "titre": "La journée « Nutrition, ventre & détox »",
-          "texte": "Consultation santé digestive, Chi Nei Tsang, cataplasme du foie, déjeuner anti-inflammatoire préparé par le chef.",
+          "titre": "La journée « Équilibre digestif »",
+          "texte": "Consultation de naturopathie, Chi Nei Tsang ou réflexologie, technologies ciblées sur le ventre et le foie, lunch anti-inflammatoire.",
           "label": "Voir la journée",
           "url": "journees.html#journees-completes",
-          "prix": "250 €"
+          "prix": "431 €"
         },
         {
           "phase": "experimenter",
           "titre": "Des soins pour le ventre et le foie",
-          "texte": "Chi Nei Tsang, cataplasme du foie, hydrothérapie du côlon, bain de pieds au magnésium : à la carte, selon ce que la consultation a montré. Entre deux, la marche nordique et le yoga hormonal soutiennent le transit.",
+          "texte": "Chi Nei Tsang, hydrothérapie du côlon, Dien Chan : des soins à la carte, selon ce que la consultation a montré. Entre deux, la marche nordique et le yoga hormonal soutiennent le transit.",
           "label": "Voir les soins",
-          "url": "soins.html#technologies",
-          "prix": "dès 30 €"
+          "url": "soins.html#massages",
+          "prix": "dès 100 €"
         },
         {
           "phase": "immerger",
@@ -135,12 +131,10 @@
         }
       ],
       "soins": [
-        "Santé du système digestif",
-        "Nutrition et habitudes alimentaires",
+        "Consultation de naturopathie holistique",
         "Chi Nei Tsang, massage du ventre",
-        "Cataplasme du foie",
         "Hydrothérapie du côlon",
-        "Bain de pieds aux sels de magnésium"
+        "Dien Chan, massage vietnamien"
       ],
       "sessions": [
         "Marche nordique",
@@ -186,10 +180,10 @@
           "phase": "experimenter",
           "principal": true,
           "titre": "Une demi-journée ou une journée pour vous",
-          "texte": "La demi-journée « Équilibre de vie » : consultation, bain aux sels de magnésium, kundalini et bain de gongs au Dôme. Ou la journée « Retour à soi » : consultation, yoga individuel, Papimi, soin aux bols tibétains, déjeuner au centre.",
+          "texte": "Quelques heures ou toute une journée autour du thème « Sérénité absolue » : des massages, des soins pour les sens, du temps pour déposer, et un lunch au centre pour la journée complète. Pour lâcher prise sans rien avoir à décider.",
           "label": "Voir les journées",
           "url": "journees.html",
-          "prix": "180 à 250 €"
+          "prix": "180 à 332 €"
         },
         {
           "phase": "experimenter",
@@ -210,11 +204,10 @@
       ],
       "soins": [
         "Visage, pieds et voyage sonore",
-        "Soin aux bols tibétains",
         "Massage du corps",
-        "Sauna privé",
         "Massage Tuina",
-        "Réflexologie plantaire"
+        "Réflexologie visage, pieds et voyage sonore, rituel approfondi",
+        "Massage du visage et du crâne"
       ],
       "sessions": [
         "Bain de gongs",
@@ -260,11 +253,11 @@
         },
         {
           "phase": "experimenter",
-          "titre": "La journée « Détox du foie »",
-          "texte": "Consultation, Papimi, Indiba, cataplasme du foie. Ou, en version courte, la demi-journée « Détox douce » : consultation, sauna, bain de pieds, QRS.",
-          "label": "Voir les journées",
-          "url": "journees.html",
-          "prix": "180 à 250 €"
+          "titre": "La journée « Prévention naturelle »",
+          "texte": "Consultation de naturopathie, Papimi, QRS et Airnergy, sauna, bain de pieds, lumière infrarouge, massage et lunch : un programme complet pour prendre de l'avance.",
+          "label": "Voir la journée",
+          "url": "journees.html#journees-completes",
+          "prix": "422 €"
         },
         {
           "phase": "experimenter",
@@ -285,12 +278,10 @@
       ],
       "soins": [
         "Bilan holistique individuel, au centre",
-        "Détox holistique",
-        "Sauna privé",
-        "Cataplasme du foie",
-        "IHHT, Mitovit",
-        "Papimi, induction ionique · 1re séance",
-        "Indiba, radiofréquence"
+        "Consultation de naturopathie holistique",
+        "Hydrothérapie du côlon",
+        "Drainage lymphatique des jambes",
+        "Massage Tuina"
       ],
       "sessions": [
         "Marche nordique",
