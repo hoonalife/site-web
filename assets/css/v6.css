@@ -503,10 +503,10 @@ main > .strata:last-of-type { margin-bottom: var(--space-xl); }
   .row--soin > .row__title { grid-area: title; font-size: var(--text-lg); font-weight: var(--weight-bold); }
   .row--soin > .row__desc { grid-area: desc; max-width: 90ch; font-size: var(--text-sm); }
   .row--soin > .row__meta { grid-area: meta; }
-  .row--soin > .row__price { grid-area: price; align-self: center; justify-self: end; text-align: right; font-size: var(--text-lg); font-weight: var(--weight-bold); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .row--soin > .row__price { grid-area: price; align-self: start; display: flex; align-items: center; min-height: 2.4rem; justify-self: end; text-align: right; font-size: var(--text-lg); font-weight: var(--weight-bold); font-variant-numeric: tabular-nums; white-space: nowrap; }
   /* Réserver sur toute la largeur de la colonne, pack et abonnement en dessous sur une même ligne ; même largeur partout. */
   /* Variante 2 retenue le 4 nov. 2026 : Réserver plein, puis pack et abonnement en boutons filets empilés, libellé à gauche, prix à droite. */
-  .row--soin > .row__act { grid-area: act; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.3rem; align-content: center; }
+  .row--soin > .row__act { grid-area: act; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.3rem; align-content: start; align-self: start; }
   .row--soin > .row__act > .btn:first-child { justify-content: center; min-height: 2.4rem; }
   .row__act .btn--line.offer-btn { justify-content: space-between; padding-inline: 0.8rem; min-height: 1.9rem; }
   .row__act .offer-btn b { margin-left: 0.5em; }
