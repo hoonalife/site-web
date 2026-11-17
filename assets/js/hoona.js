@@ -168,6 +168,33 @@
     legend.forEach(bind);
   }
 
+  /* ---------- Lot 4 : fleur, éclosion, tracé et pulsation (accueil, [data-fleur-anim]) ----------
+     Toute l'animation est en CSS (hoona.css). Ici : .is-anim à la première entrée du bloc dans l'écran
+     (ou au chargement s'il est déjà visible), .is-paused quand il en sort, retirée au retour.
+     L'éclosion ne démarre que si la page est réellement affichée : un onglet en arrière-plan ne reçoit pas
+     les rappels d'IntersectionObserver, d'où aussi le contrôle direct au chargement et au retour sur l'onglet.
+     « Réduire les animations » ou pas d'IntersectionObserver : .is-still, fleur affichée et immobile. */
+  var fleur = document.querySelector("[data-fleur-anim]");
+  if (fleur) {
+    if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      fleur.classList.add("is-still");
+    } else {
+      var fleurInView = function () {
+        var r = fleur.getBoundingClientRect();
+        return r.height > 0 && r.top < window.innerHeight * 0.9 && r.bottom > window.innerHeight * 0.1;
+      };
+      var fleurStart = function () { if (!document.hidden) fleur.classList.add("is-anim"); };
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) fleurStart();
+          fleur.classList.toggle("is-paused", !e.isIntersecting);
+        });
+      }, { threshold: 0.1, rootMargin: "0px 0px -10% 0px" }).observe(fleur);
+      if (fleurInView()) fleurStart();
+      document.addEventListener("visibilitychange", function () { if (fleurInView()) fleurStart(); });
+    }
+  }
+
   /* ---------- Dates passées : masquées en direct si la page date d'un ancien build ---------- */
   var today = new Date(); today.setHours(0, 0, 0, 0);
   [].forEach.call(document.querySelectorAll("[data-start]"), function (el) {

@@ -25,7 +25,7 @@
       "fichier": "assets/video/temoignages/nadia-sejour.mp4",
       "affiche": "assets/video/temoignages/nadia-sejour.jpg",
       "auteur": "Nadia",
-      "format": "séjour immersif, en anglais",
+      "format": "séjour immersif",
       "sejour": true,
       "accueil": true,
       "duree": "1 min 21"

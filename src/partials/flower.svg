@@ -1,11 +1,28 @@
 <svg class="flower__svg" viewBox="86 86 628 620" role="group" aria-label="Les 7 axes de vitalité hoona, disposés en fleur : chaque cercle chevauche ses voisins">
-  <g class="petal"><a href="approche.html#axe-nutrition" aria-label="Nutrition"><circle cx="400.0" cy="250.0" r="150"/><text x="400.0" y="190.0" text-anchor="middle">Nutrition</text></a></g>
-  <g class="petal"><a href="approche.html#axe-sommeil" aria-label="Sommeil"><circle cx="517.3" cy="306.5" r="150"/><text x="578.3" y="275.8" text-anchor="middle">Sommeil</text></a></g>
-  <g class="petal"><a href="approche.html#axe-mouvement" aria-label="Mouvement"><circle cx="546.2" cy="433.4" r="150"/><text x="622.3" y="468.7" text-anchor="middle">Mouvement</text></a></g>
-  <g class="petal"><a href="approche.html#axe-detox" aria-label="Détox"><circle cx="465.1" cy="535.1" r="150"/><text x="498.9" y="623.4" text-anchor="middle">Détox</text></a></g>
-  <g class="petal"><a href="approche.html#axe-systeme-nerveux" aria-label="Système nerveux"><circle cx="334.9" cy="535.1" r="150"/><text x="301.1" y="612.4" text-anchor="middle">Système</text><text x="301.1" y="635.4" text-anchor="middle">nerveux</text></a></g>
-  <g class="petal"><a href="approche.html#axe-psycho-emotionnel" aria-label="Psycho-émotionnel"><circle cx="253.8" cy="433.4" r="150"/><text x="177.7" y="457.7" text-anchor="middle">Psycho-</text><text x="177.7" y="480.7" text-anchor="middle">émotionnel</text></a></g>
-  <g class="petal"><a href="approche.html#axe-sens" aria-label="Sens"><circle cx="282.7" cy="306.5" r="150"/><text x="221.7" y="275.8" text-anchor="middle">Sens</text></a></g>
+  <!-- Lot 4 : fleur, éclosion, tracé et pulsation. Lueur du centre, onde (un disque à dégradé par pétale, découpé
+       par son contour) et tirets lumineux : en display: none partout, sauf sur l'accueil quand [data-fleur-anim]
+       les anime (hoona.css). style="--fleur-i" : rang du pétale ; pathLength="100" : tracé de l'éclosion. -->
+  <defs>
+    <radialGradient id="flower-glow"><stop offset="0" stop-color="#5291CC"/><stop offset="1" stop-color="#5291CC" stop-opacity="0"/></radialGradient>
+    <radialGradient id="flower-wave"><stop offset="0" stop-color="#AAC9E2" stop-opacity="0.04"/><stop offset="0.62" stop-color="#AAC9E2" stop-opacity="0.14"/><stop offset="0.93" stop-color="#7BAEDB" stop-opacity="0.38"/><stop offset="1" stop-color="#7BAEDB" stop-opacity="0"/></radialGradient>
+    <clipPath id="flower-clip-0"><circle cx="400.0" cy="250.0" r="150"/></clipPath>
+    <clipPath id="flower-clip-1"><circle cx="517.3" cy="306.5" r="150"/></clipPath>
+    <clipPath id="flower-clip-2"><circle cx="546.2" cy="433.4" r="150"/></clipPath>
+    <clipPath id="flower-clip-3"><circle cx="465.1" cy="535.1" r="150"/></clipPath>
+    <clipPath id="flower-clip-4"><circle cx="334.9" cy="535.1" r="150"/></clipPath>
+    <clipPath id="flower-clip-5"><circle cx="253.8" cy="433.4" r="150"/></clipPath>
+    <clipPath id="flower-clip-6"><circle cx="282.7" cy="306.5" r="150"/></clipPath>
+  </defs>
+  <circle class="flower__glow" cx="400" cy="400" r="130" fill="url(#flower-glow)" aria-hidden="true"/>
+  <g class="flower__waves" aria-hidden="true"><g clip-path="url(#flower-clip-0)"><circle class="flower__wave" cx="400" cy="400" r="300" fill="url(#flower-wave)"/></g><g clip-path="url(#flower-clip-1)"><circle class="flower__wave" cx="400" cy="400" r="300" fill="url(#flower-wave)"/></g><g clip-path="url(#flower-clip-2)"><circle class="flower__wave" cx="400" cy="400" r="300" fill="url(#flower-wave)"/></g><g clip-path="url(#flower-clip-3)"><circle class="flower__wave" cx="400" cy="400" r="300" fill="url(#flower-wave)"/></g><g clip-path="url(#flower-clip-4)"><circle class="flower__wave" cx="400" cy="400" r="300" fill="url(#flower-wave)"/></g><g clip-path="url(#flower-clip-5)"><circle class="flower__wave" cx="400" cy="400" r="300" fill="url(#flower-wave)"/></g><g clip-path="url(#flower-clip-6)"><circle class="flower__wave" cx="400" cy="400" r="300" fill="url(#flower-wave)"/></g></g>
+  <g class="flower__traces" aria-hidden="true"><circle class="flower__trace" cx="400.0" cy="250.0" r="150" pathLength="100"/><circle class="flower__trace" cx="517.3" cy="306.5" r="150" pathLength="100"/><circle class="flower__trace" cx="546.2" cy="433.4" r="150" pathLength="100"/><circle class="flower__trace" cx="465.1" cy="535.1" r="150" pathLength="100"/><circle class="flower__trace" cx="334.9" cy="535.1" r="150" pathLength="100"/><circle class="flower__trace" cx="253.8" cy="433.4" r="150" pathLength="100"/><circle class="flower__trace" cx="282.7" cy="306.5" r="150" pathLength="100"/></g>
+  <g class="petal" style="--fleur-i:0"><a href="approche.html#axe-nutrition" aria-label="Nutrition"><circle cx="400.0" cy="250.0" r="150" pathLength="100"/><text x="400.0" y="190.0" text-anchor="middle">Nutrition</text></a></g>
+  <g class="petal" style="--fleur-i:1"><a href="approche.html#axe-sommeil" aria-label="Sommeil"><circle cx="517.3" cy="306.5" r="150" pathLength="100"/><text x="578.3" y="275.8" text-anchor="middle">Sommeil</text></a></g>
+  <g class="petal" style="--fleur-i:2"><a href="approche.html#axe-mouvement" aria-label="Mouvement"><circle cx="546.2" cy="433.4" r="150" pathLength="100"/><text x="622.3" y="468.7" text-anchor="middle">Mouvement</text></a></g>
+  <g class="petal" style="--fleur-i:3"><a href="approche.html#axe-detox" aria-label="Détox"><circle cx="465.1" cy="535.1" r="150" pathLength="100"/><text x="498.9" y="623.4" text-anchor="middle">Détox</text></a></g>
+  <g class="petal" style="--fleur-i:4"><a href="approche.html#axe-systeme-nerveux" aria-label="Système nerveux"><circle cx="334.9" cy="535.1" r="150" pathLength="100"/><text x="301.1" y="612.4" text-anchor="middle">Système</text><text x="301.1" y="635.4" text-anchor="middle">nerveux</text></a></g>
+  <g class="petal" style="--fleur-i:5"><a href="approche.html#axe-psycho-emotionnel" aria-label="Psycho-émotionnel"><circle cx="253.8" cy="433.4" r="150" pathLength="100"/><text x="177.7" y="457.7" text-anchor="middle">Psycho-</text><text x="177.7" y="480.7" text-anchor="middle">émotionnel</text></a></g>
+  <g class="petal" style="--fleur-i:6"><a href="approche.html#axe-sens" aria-label="Sens"><circle cx="282.7" cy="306.5" r="150" pathLength="100"/><text x="221.7" y="275.8" text-anchor="middle">Sens</text></a></g>
   <circle class="flower__core" cx="400" cy="400" r="5"/>
   <text class="flower__core-label" x="400" y="428" text-anchor="middle" aria-hidden="true">élan vital</text>
 </svg>

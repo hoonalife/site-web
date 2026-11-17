@@ -276,6 +276,120 @@ body.menu-open .site-head .bar { background: var(--color-paper) !important; colo
 .flower[data-active] .petal circle { fill: transparent; }
 .petal.is-active circle { fill: var(--color-wash); stroke-width: 2; }
 .petal.is-near circle { fill: var(--color-wash-near); }
+
+/* ---------- Lot 4 : fleur, éclosion, tracé et pulsation (accueil seulement : .axes-strip[data-fleur-anim]) ----------
+   hoona.js pose .is-anim à la première entrée du bloc dans l'écran (ou au chargement s'il est déjà visible),
+   puis .is-paused quand il en sort. Tout le reste est en CSS, sur une seule horloge (t = 0 à .is-anim) :
+     0 → 2,6 s   éclosion, une fois : chaque cercle se dessine depuis le centre (0,5 s, décalé de 0,18 s,
+                 sens horaire), son nom apparaît quand il se referme, « élan vital » apparaît avec un halo,
+                 puis les traits s'amincissent et les tirets lumineux apparaissent (dès 1,8 s) ;
+     ensuite, en boucle : sept tirets (18 % du contour) parcourent les cercles, 12 s par tour, décalés d'un
+                 septième ; ils se rejoignent au centre une fois par tour, à t = 6 s, 18 s, 30 s…
+     5,4 → 6,6 s  battement du centre (×1,2, lueur 0,45, « élan vital » en gras), culmine à la convergence ;
+     6 → 8,5 s    l'onde part du centre et traverse les sept cercles jusqu'au bord ; effacée à 9,2 s.
+   Phase des tirets : décalage de départ 0,66 + rang/7 (en fraction du tour) ; le tiret est centré sur le
+   centre de la fleur quand t/12 s + 0,41 ≡ 0,91, soit t = 6 s (mod 12 s).
+   Sans JS, sans IntersectionObserver ou avec « réduire les animations » : fleur visible, immobile
+   (traits fins, tirets arrêtés, lueur 0,10). Le survol garde la priorité sur les traits et les teintes.
+   Ailleurs (approche, soins, sessions) : lueur, onde et tirets de flower.svg restent en display: none.
+   Les pourcentages des keyframes trace-* supposent un cycle de 12 s et un battement à 5,4 s. */
+.flower__glow, .flower__waves, .flower__traces { display: none; }
+[data-fleur-anim] {
+  --trace-cycle: 12s;              /* un tour de cercle pour chaque tiret ; une pulsation par tour */
+  --trace-dash: 18;                /* longueur du tiret, sur 100 (pathLength) */
+  --trace-width: 2.4;              /* épaisseur du tiret */
+  --trace-base-width: 0.8;         /* trait de base aminci */
+  --trace-base-ink: oklch(27.4% 0.049 256 / 0.4);   /* trait de base éclairci */
+  --trace-glow: 0.10;              /* lueur continue du centre */
+  --trace-pulse-at: 5.4s;          /* début du battement ; culmine à 6 s, quand les tirets se rejoignent */
+  --trace-beat-glow: 0.45;         /* lueur au battement */
+  --trace-core-scale: 1.2;         /* battement du centre */
+  --fleur-draw: 1.5s;              /* éclosion d'un cercle : tracé 0,5 s, puis amincissement */
+  --fleur-stagger: 180ms;          /* décalage entre deux cercles */
+  --fleur-soft: cubic-bezier(0.45, 0, 0.55, 1);
+  --fleur-drop: cubic-bezier(0.22, 0.6, 0.36, 1);   /* l'onde part vite et ralentit : une goutte dans l'eau */
+}
+[data-fleur-anim] .flower__glow, [data-fleur-anim] .flower__waves, [data-fleur-anim] .flower__traces { display: inline; }
+[data-fleur-anim] .flower__glow { opacity: var(--trace-glow); pointer-events: none; transform-box: fill-box; transform-origin: center; }
+[data-fleur-anim] .flower__waves, [data-fleur-anim] .flower__traces { pointer-events: none; }
+[data-fleur-anim] .flower__wave { opacity: 0; transform-box: view-box; transform-origin: 400px 400px; }
+[data-fleur-anim] .flower__core { transform-box: fill-box; transform-origin: center; }
+[data-fleur-anim] .flower__core-label { transform-box: view-box; transform-origin: 400px 400px; }
+[data-fleur-anim] .petal circle { stroke: var(--trace-base-ink); stroke-width: var(--trace-base-width); --fleur-start: calc(90deg + var(--fleur-i) * 51.4286deg); }
+/* tirets : rang et phase (au repos, la même phase que le départ de l'animation) */
+.flower__trace:nth-child(1) { --trace-i: 0; } .flower__trace:nth-child(2) { --trace-i: 1; } .flower__trace:nth-child(3) { --trace-i: 2; }
+.flower__trace:nth-child(4) { --trace-i: 3; } .flower__trace:nth-child(5) { --trace-i: 4; } .flower__trace:nth-child(6) { --trace-i: 5; }
+.flower__trace:nth-child(7) { --trace-i: 6; }
+[data-fleur-anim] .flower__trace {
+  fill: none; stroke: var(--color-ink); stroke-width: var(--trace-width); stroke-linecap: round;
+  stroke-dasharray: var(--trace-dash) calc(100 - var(--trace-dash));
+  stroke-dashoffset: calc(-66 - var(--trace-i) * 100 / 7);
+}
+/* survol : l'axe survolé reprend un trait plein et se remplit, ses voisins se teintent
+   (v6.css l.354 rendait tout transparent sur l'accueil) ; les tirets continuent */
+[data-fleur-anim] .petal.is-active circle { stroke: var(--color-ink); stroke-width: 2; }
+[data-fleur-anim][data-active] .petal.is-active circle { fill: oklch(from var(--color-blue-300) l c h / 0.42); }
+[data-fleur-anim][data-active] .petal.is-near circle { fill: oklch(from var(--color-blue-300) l c h / 0.16); }
+@media (prefers-reduced-motion: no-preference) {
+  /* avant l'éclosion : fleur invisible (.is-still : navigateur sans IntersectionObserver, fleur affichée) */
+  .js [data-fleur-anim]:not(.is-anim):not(.is-still) .petal circle { stroke-dasharray: 100 100; stroke-dashoffset: 100; }
+  .js [data-fleur-anim]:not(.is-anim):not(.is-still) :is(.petal text, .flower__core, .flower__core-label, .flower__glow, .flower__traces) { opacity: 0; }
+  /* éclosion */
+  [data-fleur-anim].is-anim .petal circle {
+    animation: fleur-draw var(--fleur-draw) linear backwards;
+    animation-delay: calc(var(--fleur-i) * var(--fleur-stagger));
+  }
+  [data-fleur-anim].is-anim .petal text {
+    animation: fleur-fade-in 380ms var(--fleur-soft) backwards;
+    animation-delay: calc(var(--fleur-i) * var(--fleur-stagger) + 380ms);   /* quand le cercle se referme */
+  }
+  [data-fleur-anim].is-anim .flower__traces { animation: fleur-fade-in 800ms var(--fleur-soft) 1.8s backwards; }
+  /* tirets : la phase vient d'un délai négatif (var() dans les keyframes ne s'anime pas sur stroke-dashoffset) */
+  [data-fleur-anim].is-anim .flower__trace {
+    animation: trace-run var(--trace-cycle) linear infinite both;
+    animation-delay: calc(var(--trace-cycle) * -0.66 - var(--trace-i) * var(--trace-cycle) / 7);
+  }
+  /* centre : apparition avec halo à 1,64 s, puis battement à chaque convergence */
+  [data-fleur-anim].is-anim .flower__glow {
+    animation: fleur-halo 900ms var(--fleur-soft) 1.64s both,
+               trace-glow var(--trace-cycle) var(--fleur-soft) var(--trace-pulse-at) infinite forwards;
+  }
+  [data-fleur-anim].is-anim .flower__core {
+    animation: fleur-fade-in 400ms var(--fleur-soft) 1.64s backwards,
+               trace-beat var(--trace-cycle) var(--fleur-soft) var(--trace-pulse-at) infinite both;
+  }
+  [data-fleur-anim].is-anim .flower__core-label {
+    animation: fleur-fade-in 400ms var(--fleur-soft) 1.64s backwards,
+               trace-beat var(--trace-cycle) var(--fleur-soft) var(--trace-pulse-at) infinite both,
+               trace-bold var(--trace-cycle) linear var(--trace-pulse-at) infinite both;
+  }
+  [data-fleur-anim].is-anim .flower__wave { animation: trace-wave var(--trace-cycle) linear var(--trace-pulse-at) infinite both; }
+  /* !important : le raccourci animation des règles .is-anim, plus spécifiques, remettrait « running » */
+  [data-fleur-anim].is-paused .flower__svg, [data-fleur-anim].is-paused .flower__svg * { animation-play-state: paused !important; }
+}
+/* éclosion d'un cercle (1,5 s) : tracé depuis le centre de la fleur (rotation pendant le tracé seulement :
+   au repos, Chrome grise un cercle tourné), puis amincissement vers le trait de base */
+@keyframes fleur-draw {
+  0%     { stroke-dasharray: 100 100; stroke-dashoffset: 100; rotate: var(--fleur-start); stroke: var(--color-ink); stroke-width: 1.2; animation-timing-function: var(--fleur-soft); }
+  33.2%  { stroke-dasharray: 100 100; stroke-dashoffset: 0; rotate: var(--fleur-start); stroke: var(--color-ink); stroke-width: 1.2; }
+  33.3%  { stroke-dasharray: none; stroke-dashoffset: 0; rotate: 0deg; stroke: var(--color-ink); stroke-width: 1.2; }
+  60%    { stroke-dasharray: none; rotate: 0deg; stroke: var(--color-ink); stroke-width: 1.2; animation-timing-function: var(--fleur-soft); }
+  100%   { stroke-dasharray: none; rotate: 0deg; stroke: var(--trace-base-ink); stroke-width: var(--trace-base-width); }
+}
+@keyframes fleur-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fleur-halo { 0% { opacity: 0; scale: 0.3; } 40% { opacity: var(--trace-beat-glow); } 100% { opacity: var(--trace-glow); scale: 1; } }
+@keyframes trace-run { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -100; } }
+/* pulsation, sur 12 s à partir de 5,4 s : battement 1,2 s, onde de 6 s à 8,5 s, effacée à 9,2 s */
+@keyframes trace-beat { 0%, 10%, 100% { scale: 1; } 5% { scale: var(--trace-core-scale); } }
+@keyframes trace-glow { 0% { opacity: var(--trace-glow); } 5% { opacity: var(--trace-beat-glow); } 10%, 100% { opacity: var(--trace-glow); } }
+@keyframes trace-bold { 0%, 1% { font-weight: 300; } 1.5%, 8.5% { font-weight: 600; } 9.5%, 100% { font-weight: 300; } }
+@keyframes trace-wave {
+  0%, 5%       { scale: 0.02; opacity: 0; animation-timing-function: var(--fleur-drop); }
+  6.67%        { opacity: 1; animation-timing-function: var(--fleur-drop); }
+  25.83%       { scale: 1; opacity: 0.85; animation-timing-function: var(--fleur-soft); }
+  31.67%, 100% { scale: 1; opacity: 0; }
+}
+
 .flower__legend { counter-reset: axe; display: grid; grid-template-columns: minmax(0, 1fr); border-top: var(--rule-hair) solid var(--color-rule); }
 .flower__legend li { border-bottom: var(--rule-hair) solid var(--color-rule); }
 .flower__legend a {
@@ -1074,10 +1188,10 @@ body.search-open { overflow: hidden; }
 .soins-head .page-head { padding-block: var(--space-xl) 0; }
 .soins-head .axes { border-bottom: 0; padding-bottom: 0; }
 @media (min-width: 60rem) {
-  .soins-head { display: grid; grid-template-columns: minmax(0, 1fr) 30rem; grid-template-areas: "text flower" "pick flower"; column-gap: var(--space-2xl); row-gap: var(--space-md); align-items: center; padding-bottom: var(--space-md); margin-bottom: 0; }
+  .soins-head { display: grid; grid-template-columns: minmax(0, 1fr) 24rem; grid-template-areas: "text flower" "pick flower"; column-gap: var(--space-2xl); row-gap: var(--space-md); align-items: center; padding-bottom: var(--space-md); margin-bottom: 0; }
   .soins-head .page-head { grid-area: text; align-self: end; padding-bottom: 0; }
   .soins-head .axes { display: contents; }
-  .soins-head .axes__flower { grid-area: flower; max-width: 30rem; width: 100%; margin: 0; align-self: center; justify-self: end; }
+  .soins-head .axes__flower { grid-area: flower; max-width: 24rem; width: 100%; margin: 0; align-self: center; justify-self: end; }
   .soins-head .axes__pick { grid-area: pick; align-self: start; }
   .soins-head .axes__pick > .insert, .soins-head .axes__pick > .muted, .soins-head .axes__toggle { display: none; }
 }
