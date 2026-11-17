@@ -354,9 +354,10 @@ main > .strata:last-of-type { margin-bottom: var(--space-xl); }
 .axes-strip[data-active] .petal circle { fill: transparent; }
 .axes-strip h3 { font-size: var(--text-2xl); font-weight: var(--weight-light); line-height: 1.1; }
 .axes-strip .stack { max-width: 34rem; }
+/* 17 nov. 2026 : en miroir du bloc Olivia (photo à gauche), le texte passe à gauche et la fleur à droite ; sur mobile, la fleur reste au-dessus */
 @media (min-width: 56rem) {
-  .axes-strip { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: var(--space-3xl); }
-  .axes-strip .flower__figure { margin: 0; }
+  .axes-strip { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); column-gap: var(--space-3xl); }
+  .axes-strip .flower__figure { order: 2; max-width: 26rem; margin: 0; justify-self: end; }
 }
 
 /* ---------- v7 : photos 2026, accueil allégé, en-tête à cinq entrées ---------- */

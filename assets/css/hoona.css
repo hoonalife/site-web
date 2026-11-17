@@ -1067,3 +1067,16 @@ body.search-open { overflow: hidden; }
   .toolbar .toolbar__status { grid-column: 2; grid-row: 2; justify-self: end; font-size: var(--text-xs); }
 }
 @media (prefers-reduced-motion: reduce) { .cat-locked summary::after { transition: none; } }
+
+/* ---- Lot 4 : tête de la page Soins, texte et pastilles à gauche, fleur à droite ---- */
+.soins-head { border-bottom: var(--rule-hair) solid var(--color-rule); padding-bottom: var(--space-lg); margin-bottom: var(--space-md); }
+.soins-head .page-head { padding-block: var(--space-xl) 0; }
+.soins-head .axes { border-bottom: 0; padding-bottom: 0; }
+@media (min-width: 60rem) {
+  .soins-head { display: grid; grid-template-columns: minmax(0, 1fr) 18rem; grid-template-areas: "text flower" "pick flower"; column-gap: var(--space-3xl); row-gap: var(--space-lg); align-items: center; padding-bottom: var(--space-xl); }
+  .soins-head .page-head { grid-area: text; align-self: end; padding-bottom: 0; }
+  .soins-head .axes { display: contents; }
+  .soins-head .axes__flower { grid-area: flower; max-width: 18rem; margin: 0; align-self: center; }
+  .soins-head .axes__pick { grid-area: pick; align-self: start; }
+  .soins-head .axes__pick > .insert, .soins-head .axes__pick > .muted, .soins-head .axes__toggle { display: none; }
+}

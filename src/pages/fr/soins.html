@@ -4,15 +4,16 @@ description: Les soins hoona à Tervuren : bilans, consultations, technologies d
 nav: SOINS
 -->
 
-<header class="wrap page-head page-head--compact">
-  <ol class="crumbs" aria-label="Fil d'Ariane"><li><a href="index.html">Accueil</a></li><li><span aria-current="page">Soins &amp; consultations</span></li></ol>
-  <h1>Soins &amp; consultations</h1>
-  <p class="chapeau">Tout est lié. Notre approche holistique s'articule autour de sept piliers fondamentaux qui fonctionnent comme des vases communicants : agir sur l'un, c'est soutenir l'ensemble de votre élan vital.</p>
-  <p class="chapeau-suite">Pour savoir quel axe soutenir en priorité, nous vous conseillons de commencer par une <a href="#consultations">consultation holistique</a>.</p>
-</header>
-
 <div class="wrap" data-catalogue data-collapsible>
-  {{AXES_PICKER}}
+  <div class="soins-head">
+    <header class="page-head page-head--compact">
+      <ol class="crumbs" aria-label="Fil d'Ariane"><li><a href="index.html">Accueil</a></li><li><span aria-current="page">Soins &amp; consultations</span></li></ol>
+      <h1>Soins &amp; consultations</h1>
+      <p class="chapeau">Tout est lié. Notre approche holistique s'articule autour de sept piliers fondamentaux qui fonctionnent comme des vases communicants : agir sur l'un, c'est soutenir l'ensemble de votre élan vital.</p>
+      <p class="chapeau-suite">Pour savoir quel axe soutenir en priorité, nous vous conseillons de commencer par une <a href="#consultations">consultation holistique</a>. Vous pouvez aussi sélectionner un ou plusieurs axes : la liste des soins se compose.</p>
+    </header>
+    {{AXES_PICKER}}
+  </div>
   <div class="toolbar">
     <div class="filters" aria-label="{{t:goto_cat}}">
       {{SOINS_FILTERS}}

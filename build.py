@@ -967,13 +967,14 @@ def typographie(html, lang):
 
 def lang_switch(t, lang, page, available, depth=0):
     """Sélecteur de langue : uniquement les langues où cette page existe."""
-    langs = [l for l in LANGS if page in available[l]]
-    if len(langs) < 2:
-        return ""
+    # Toujours les trois langues : si la page n'existe pas dans une langue, le lien mène à l'accueil de cette langue
+    # (sans hreflang, qui ne vaut que pour une vraie traduction).
     links = "".join(
-        '<a href="%s%s/%s.html" hreflang="%s" lang="%s"%s>%s</a>'
-        % ("../" * (depth + 1), l, page, l, l, ' aria-current="true"' if l == lang else "", l.upper())
-        for l in langs
+        '<a href="%s%s/%s.html"%s lang="%s"%s>%s</a>'
+        % ("../" * (depth + 1), l, page if page in available[l] else "index",
+           ' hreflang="%s"' % l if page in available[l] else "", l,
+           ' aria-current="true"' if l == lang else "", l.upper())
+        for l in LANGS
     )
     return '<nav class="langs" aria-label="%s">%s</nav>' % (htmllib.escape(t["lang_switch"]), links)
 
@@ -1081,7 +1082,7 @@ def render_page(lang, t, page_id, meta, content, tokens, available, outpath, war
     html = re.sub(r"\{\{t:([a-z0-9_]+)\}\}", lambda m: htmllib.escape(t[m.group(1)], quote=True), html)
     # Les pages vivent dans /<langue>/ : les médias partagés sont un niveau plus haut.
     up = "../" * (depth + 1)
-    html = re.sub(r'((?:src|href|data-src|data-src-webm|content)=")assets/', r"\g<1>%s" % up + "assets/", html)
+    html = re.sub(r'((?:src|href|data-src|data-src-webm|data-video|content)=")assets/', r"\g<1>%s" % up + "assets/", html)
     if depth:
         # Les liens internes sont écrits depuis la racine de la langue : on remonte d'autant.
         html = re.sub(r'(href=")((?:[a-z0-9-]+/)*[a-z0-9-]+\.html(?:[?#][^"]*)?")', r"\g<1>%s\g<2>" % ("../" * depth), html)
