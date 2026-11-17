@@ -123,7 +123,7 @@
       "image_caption": "L'espace Soins & technologies",
       "prestations": [
         {
-          "nom": "Papimi, induction ionique · 1re séance",
+          "nom": "Thérapie par induction ionique (Papimi) - 1ʳᵉ séance",
           "description": "Des impulsions électromagnétiques pour soutenir la régénération et revitaliser l'organisme.",
           "duree": 45,
           "prix": 60,
@@ -135,11 +135,12 @@
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Soins%2520hoona/appointment/79690218",
           "page": "papimi.html",
           "alias": [
-            "Papimi"
+            "Papimi",
+            "Papimi, induction ionique · 1re séance"
           ]
         },
         {
-          "nom": "Papimi, induction ionique · séances suivantes",
+          "nom": "Thérapie par induction ionique (Papimi) - à partir de la 2ème séance",
           "description": null,
           "duree": 30,
           "prix": 60,
@@ -153,11 +154,13 @@
           "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2154526",
           "page": "papimi.html",
           "alias": [
-            "Papimi"
+            "Papimi",
+            "Papimi, induction ionique · séances suivantes"
           ]
         },
         {
-          "nom": "Indiba, radiofréquence",
+          "nom": "Régénération cellulaire par radiofréquence - Indiba",
+          "alias": ["Indiba, radiofréquence", "Indiba", "radiofréquence"],
           "description": "Une radiofréquence de 448 kHz pour soutenir la régénération naturelle et l'énergie cellulaire.",
           "duree": 45,
           "prix": 100,
@@ -171,7 +174,8 @@
           "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2154528"
         },
         {
-          "nom": "IHHT, Mitovit",
+          "nom": "Séance d'Hypoxie-Hyperoxie Intermittente (IHHT) - Mitovit",
+          "alias": ["IHHT, Mitovit", "IHHT Mitovit", "IHHT", "Mitovit", "hypoxie"],
           "description": "Une alternance d'air pauvre puis riche en oxygène, comme un entraînement en altitude.",
           "duree": 50,
           "prix": 60,
@@ -186,8 +190,9 @@
           "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2154529"
         },
         {
-          "nom": "QRS et Airnergy",
-          "description": "Stimulation électromagnétique douce et oxygène actif.",
+          "nom": "Stimulation électromagnétique douce (QRS) et oxygène actif (Airnergy)",
+          "alias": ["QRS et Airnergy", "QRS", "Airnergy"],
+          "description": "Un champ magnétique doux relance la circulation, puis vous respirez un air enrichi en oxygène actif.",
           "duree": 25,
           "prix": 30,
           "apres_consultation": true,
@@ -200,7 +205,8 @@
           "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2075667"
         },
         {
-          "nom": "Lumière infrarouge",
+          "nom": "Exposition à la lumière infrarouge",
+          "alias": ["Lumière infrarouge", "infrarouge"],
           "description": "Une chaleur douce pour soutenir la régénération et recharger l'énergie.",
           "duree": 25,
           "prix": 30,
@@ -304,7 +310,8 @@
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/76346236"
         },
         {
-          "nom": "Massage du corps à deux",
+          "nom": "Massage du corps pour 2 personnes - sur demande",
+          "alias": ["Massage du corps à deux", "massage en duo"],
           "description": "Le même massage, partagé à deux. Sur demande.",
           "duree": 90,
           "prix": 250,
@@ -329,7 +336,8 @@
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868394"
         },
         {
-          "nom": "Drainage lymphatique des jambes",
+          "nom": "Massage circulatoire des jambes",
+          "alias": ["Drainage lymphatique des jambes", "drainage lymphatique"],
           "description": "Pour alléger les jambes lourdes et relancer la circulation.",
           "duree": 60,
           "prix": 100,
@@ -355,7 +363,8 @@
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868446"
         },
         {
-          "nom": "Visage, pieds et voyage sonore",
+          "nom": "Massage visage, pieds & voyage sonore",
+          "alias": ["Visage, pieds et voyage sonore", "réflexologie"],
           "description": "Un soin en trois temps pour apaiser le mental et harmoniser le système nerveux.",
           "duree": 90,
           "prix": 150,
@@ -383,7 +392,8 @@
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79580799"
         },
         {
-          "nom": "Chi Nei Tsang, massage du ventre",
+          "nom": "Massage du ventre Chi Nei Tsang",
+          "alias": ["Chi Nei Tsang, massage du ventre", "Chi Nei Tsang"],
           "description": "Un massage abdominal pour la digestion et les tensions physiques et émotionnelles.",
           "duree": 60,
           "prix": 100,
@@ -397,7 +407,8 @@
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868375"
         },
         {
-          "nom": "Dien Chan, massage vietnamien",
+          "nom": "Massage vietnamien Dien Chan",
+          "alias": ["Dien Chan, massage vietnamien", "Dien Chan"],
           "description": "Une multi-réflexologie du visage et du corps pour la détente et la circulation.",
           "duree": 60,
           "prix": 100,

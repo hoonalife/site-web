@@ -321,7 +321,7 @@ a.row { transition: background-color var(--dur-short) var(--ease-out); }
 a.row:hover { background: var(--color-paper-2); }
 a.row:hover .row__go { transform: translateX(0.25rem); }
 .row__title { font-size: var(--text-xl); font-weight: var(--weight-light); line-height: 1.25; }
-.row__desc { color: var(--color-ink-2); max-width: 56ch; }
+.row__desc { color: var(--color-ink-2); max-width: 80ch; }
 .row__meta { font-size: var(--text-sm); color: var(--color-ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .row__price { font-weight: var(--weight-bold); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .row__go { color: var(--color-accent-ink); transition: transform var(--dur-short) var(--ease-out); }
@@ -907,3 +907,163 @@ h2.insert { font-size: var(--text-xs); line-height: var(--leading-body); }
   .panel { padding: var(--space-2xl); }
   .panel.lead-split { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); column-gap: var(--space-2xl); }
 }
+
+/* ---- Lot 4 S1 : recherche globale ---- */
+/* La loupe reste dans la barre à toutes les largeurs : sur téléphone la barre ne garde que le logo, les langues et le menu,
+   il y a la place pour une icône de 44 px, et elle reste accessible quand le menu plein écran est ouvert. */
+.search-toggle {
+  display: grid; place-items: center; width: 2.75rem; height: 2.75rem; flex: none; padding: 0;
+  border: 0; border-radius: var(--radius-pill); background: none; color: inherit; cursor: pointer;
+  transition: background-color var(--dur-short) var(--ease-out);
+}
+.search-toggle:hover { background: var(--color-rule); }
+.search-toggle .i { width: 1.35rem; height: 1.35rem; }
+[data-header="overlay"] .site-head:not(.is-scrolled) .search-toggle:hover { background: var(--color-cream-24); }
+body.search-open { overflow: hidden; }
+.search-layer { position: fixed; inset: 0; z-index: 55; overflow-y: auto; overscroll-behavior: contain; color: var(--color-ink); }
+.search-layer[hidden] { display: none; }
+.search-layer__veil {
+  position: fixed; inset: 0; background: var(--color-cream-90);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+}
+.search-layer__panel {
+  position: relative; width: min(44rem, 100% - 2 * var(--gutter)); margin-inline: auto;
+  padding-block: clamp(var(--space-xl), 14vh, var(--space-3xl)) var(--space-xl);
+  animation: search-in var(--dur-medium) var(--ease-out);
+}
+@keyframes search-in { from { opacity: 0; transform: translateY(-0.5rem); } }
+.search-layer__form { display: flex; align-items: center; gap: var(--space-2xs); }
+.search-layer__field { flex: 1; min-width: 0; max-width: none; }
+.search-layer__field input {
+  min-height: 3.5rem; font-size: var(--text-lg); background: var(--color-paper);
+  border-color: var(--color-rule-strong);
+}
+.search-layer__field input::-webkit-search-cancel-button { appearance: none; }
+.search-layer__x {
+  display: grid; place-items: center; width: 3rem; height: 3rem; flex: none; padding: 0;
+  border: 0; border-radius: var(--radius-pill); background: none; color: inherit; cursor: pointer;
+}
+.search-layer__x:hover { background: var(--color-rule); }
+.search-layer__hint { margin-top: var(--space-sm); padding-inline: var(--space-sm); font-size: var(--text-sm); color: var(--color-ink-2); }
+.search-layer__hint[hidden] { display: none; }
+.search-layer__results { margin: var(--space-md) 0 0; padding: 0; list-style: none; }
+.search-layer__results:empty { display: none; }
+.search-layer__results li + li { border-top: var(--rule-hair) solid var(--color-rule); }
+.search-hit {
+  display: grid; gap: var(--space-3xs); padding: var(--space-sm); border-radius: 0.9rem; text-decoration: none;
+  transition: background-color var(--dur-short) var(--ease-out);
+}
+.search-hit:hover, .search-hit:focus-visible { background: var(--color-paper-2); }
+.search-hit:focus-visible { outline-offset: 0; }
+.search-hit__section { color: var(--color-ink-2); }
+.search-hit__section::after { width: 1.5rem; }
+.search-hit__title { font-size: var(--text-lg); line-height: var(--leading-snug); }
+.search-hit__excerpt { font-size: var(--text-sm); color: var(--color-ink-2); }
+.search-hit mark { padding: 0 0.12em; border-radius: 0.2em; background: var(--color-paper-3); color: var(--color-ink); }
+.search-hit:hover mark, .search-hit:focus-visible mark { background: var(--color-wash); }
+/* Téléphones : la loupe s'ajoute au logo, aux trois langues et au menu ; on resserre les espaces (les zones tactiles
+   gardent leurs 44 px de haut) pour que la barre tienne jusqu'à 360 px de large. */
+@media (max-width: 29.99rem) {
+  .bar__inner { gap: var(--space-xs); }
+  .bar__end { gap: var(--space-3xs); }
+  .search-toggle { width: 2.5rem; }
+}
+@media (max-width: 23.99rem) {
+  .brand svg { width: 5.5rem; }
+}
+/* Sous 360 px, la barre n'a plus la place : la loupe passe en tête du menu plein écran. */
+.drawer__search { display: none; }
+.drawer__search button {
+  display: flex; align-items: center; gap: var(--space-xs); width: 100%; padding-block: var(--space-xs);
+  border: 0; border-bottom: var(--rule-hair) solid var(--color-rule); background: none; color: inherit; cursor: pointer;
+  font: inherit; font-size: var(--text-xl); font-weight: var(--weight-light); text-align: left;
+}
+@media (max-width: 22.49rem) {
+  .bar__end .search-toggle { display: none; }
+  .drawer__search { display: block; }
+}
+@media (max-width: 39.99rem) {
+  .search-layer__panel { padding-top: var(--space-md); }
+  .search-layer__field input { font-size: var(--text-md); }
+  .search-hit { padding-inline: var(--space-2xs); }
+}
+
+/* ---- Lot 4 S5 : carrousel ---- */
+/* Sans JS, la bande défile nativement (barre de défilement visible) ; le JS ajoute .is-ready, les flèches et le compteur. */
+.lieu-gallery { padding-bottom: var(--space-md); }
+.carousel { position: relative; }
+.carousel__track {
+  display: flex; gap: var(--space-sm); margin: 0; padding: 0 0 var(--space-2xs); list-style: none;
+  overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+}
+.carousel__track:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 4px; }
+.carousel.is-ready .carousel__track { padding-bottom: 0; scrollbar-width: none; }
+.carousel.is-ready .carousel__track::-webkit-scrollbar { display: none; }
+.carousel__slide { flex: 0 0 88%; margin: 0; scroll-snap-align: start; }
+.carousel__slide figure { margin: 0; }
+.carousel__slide img {
+  display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover;
+  border-radius: var(--radius-media); background: var(--color-paper-2);
+}
+.carousel__slide figcaption { margin-top: var(--space-2xs); font-size: var(--text-xs); color: var(--color-ink-2); }
+.carousel__bar { display: none; }
+.carousel.is-ready .carousel__bar { display: flex; align-items: center; gap: var(--space-md); margin-top: var(--space-sm); }
+.carousel__count { margin: 0; font-size: var(--text-sm); font-variant-numeric: tabular-nums; color: var(--color-ink-2); }
+.carousel__nav { display: flex; gap: var(--space-2xs); }
+.carousel__nav button {
+  width: 2.75rem; height: 2.75rem; padding: 0; display: inline-grid; place-items: center; cursor: pointer;
+  border: var(--rule-hair) solid var(--color-rule-strong); border-radius: var(--radius-pill); background: transparent; color: var(--color-ink);
+  transition: background-color var(--dur-short) var(--ease-out), opacity var(--dur-short) var(--ease-out);
+}
+.carousel__nav button:hover:not([aria-disabled="true"]) { background: var(--color-paper-2); }
+.carousel__nav button[aria-disabled="true"] { opacity: 0.35; cursor: default; }
+.carousel__prev .i { transform: rotate(180deg); }
+@media (min-width: 48rem) {
+  .carousel__slide { flex-basis: 78%; }
+  .carousel__slide img { aspect-ratio: 16 / 9; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .carousel__track { scroll-behavior: auto; }
+  .carousel__nav button { transition: none; }
+}
+
+/* ---- Lot 4 S2 : soins ---- */
+/* Chapeau de la page Soins : un second paragraphe plus discret, qui mène aux consultations. */
+.page-head .chapeau-suite { margin-top: var(--space-sm); max-width: 56ch; color: var(--color-ink-2); }
+.page-head .chapeau-suite a { color: var(--color-ink); text-decoration: underline; text-underline-offset: 0.2em; }
+/* La virgule du logo marque les soins accessibles après une première consultation. */
+.i--virgule { color: var(--color-navy); }
+.badge .i--virgule { width: 1em; height: 1.2em; }
+/* « Axes concernés : » devant les axes d'une ligne de soin ou de session. */
+.axes-label { align-self: center; margin-right: 0.15em; font-size: var(--text-xs); color: var(--color-ink-2); line-height: 1.4; }
+/* Les soins après consultation, regroupés dans un accordéon fermé sous les soins ouverts à tous. */
+.cat-locked { margin-top: var(--space-lg); border-top: var(--rule-hair) solid var(--color-rule-strong); border-bottom: var(--rule-hair) solid var(--color-rule-strong); }
+.rows + .cat-locked { margin-top: 0; border-top: 0; }
+.cat-locked[hidden] { display: none; }
+.cat-locked summary { display: flex; align-items: center; gap: var(--space-xs); padding-block: var(--space-md); cursor: pointer; list-style: none; }
+.cat-locked summary::-webkit-details-marker { display: none; }
+.cat-locked summary .i--virgule { width: 1.1em; height: 1.35em; }
+.cat-locked__title { font-weight: var(--weight-bold); line-height: 1.35; }
+.cat-locked__count { flex: none; min-width: 1.6rem; padding: 0.1rem 0.5rem; border-radius: var(--radius-pill); background: var(--color-paper-2); font-size: var(--text-xs); text-align: center; font-variant-numeric: tabular-nums; }
+.cat-locked summary::after {
+  content: ""; flex: none; width: 0.55em; height: 0.55em; margin: 0 0.4em 0.2em auto;
+  border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg);
+  transition: transform var(--dur-short) var(--ease-out);
+}
+.cat-locked[open] summary::after { transform: rotate(225deg) translate(-0.1em, -0.1em); }
+.cat-locked summary:hover .cat-locked__title { color: var(--color-accent-ink); }
+.cat-locked summary:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.cat-locked__text { max-width: 64ch; margin-bottom: var(--space-md); font-size: var(--text-sm); color: var(--color-ink-2); }
+.cat-locked__text a { color: var(--color-ink); text-decoration: underline; text-underline-offset: 0.2em; }
+.cat-locked > .rows { border-bottom: 0; }
+.cat-locked > .rows > .row:last-child { border-bottom: 0; }
+/* Sous la barre d'outils, la première rubrique suit de près ; l'écart entre rubriques ne change pas. */
+.toolbar + .cat-group { margin-top: 0; padding-top: var(--space-lg); }
+/* Barre d'outils : sur grand écran, les rubriques à gauche, la recherche à droite sur la même ligne, le compteur dessous. */
+@media (min-width: 60rem) {
+  .toolbar { grid-template-columns: minmax(0, 1fr) 22rem; column-gap: var(--space-lg); row-gap: var(--space-2xs); align-items: center; }
+  .toolbar .filters { grid-column: 1; grid-row: 1; }
+  .toolbar .search { grid-column: 2; grid-row: 1; max-width: none; }
+  .toolbar .toolbar__status { grid-column: 2; grid-row: 2; justify-self: end; font-size: var(--text-xs); }
+}
+@media (prefers-reduced-motion: reduce) { .cat-locked summary::after { transition: none; } }

@@ -45,6 +45,7 @@ Contenus éditables dans Sveltia CMS (admin/) :
 import datetime as dt
 from zoneinfo import ZoneInfo
 import html as htmllib
+from html.parser import HTMLParser  # Lot 4 S1 : index de recherche
 import json
 import pathlib
 import re
@@ -215,14 +216,16 @@ def axes_picker(t, lang):
     )
 
 
-def axes_tags(item, t):
+def axes_tags(item, t, label=False):
+    """Les axes d'une prestation ; `label` : précédés de « Axes concernés : » (lignes de soins et de sessions)."""
     e = lambda x: htmllib.escape(str(x), quote=True)
     axes = [a for a in item.get("axes", []) if a in AXES]
     if not axes:
         return ""
+    lab = '<span class="axes-label">%s</span>' % e(t["axes_label"]) if label else ""
     if len(axes) == 7:
-        return '<span class="axes-tags"><span class="axes-tag axes-tag--all">%s</span></span>' % e(t["axes_all_tag"])
-    return '<span class="axes-tags">%s</span>' % "".join('<span class="axes-tag">%s</span>' % e(t["axes"][a]) for a in axes)
+        return '<span class="axes-tags">%s<span class="axes-tag axes-tag--all">%s</span></span>' % (lab, e(t["axes_all_tag"]))
+    return '<span class="axes-tags">%s%s</span>' % (lab, "".join('<span class="axes-tag">%s</span>' % e(t["axes"][a]) for a in axes))
 
 
 def actions(item, t, lang):
@@ -254,8 +257,8 @@ def offer_buttons(item, t, lang):
     return out
 
 
-ICON_LOCK = ('<svg class="i" aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4">'
-             '<rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg>')
+# La virgule du logo hoona (symbole #i-virgule du gabarit) marque les soins accessibles après une première consultation.
+ICON_VIRGULE = '<svg class="i i--fill i--virgule" aria-hidden="true"><use href="#i-virgule"/></svg>'
 
 
 def locked(item):
@@ -264,18 +267,7 @@ def locked(item):
 
 
 def lock_badge(t):
-    return '<span class="badge badge--lock">%s%s</span>' % (ICON_LOCK, htmllib.escape(t["after_consult"], quote=False))
-
-
-def locked_actions(item, t, lang):
-    """Prestation réservée : d'abord la consultation, puis l'agenda pour qui est déjà venu·e, puis Pack / Abonnement."""
-    e = lambda x: htmllib.escape(str(x), quote=True)
-    out = '<a class="btn btn--sm" href="%s">%s</a>' % (e(t["url_consultation"]), e(t["book_consult_first"]))
-    u = item.get("url") or ""
-    if u.startswith("http"):
-        out += ('<a class="link link--sm" href="%s" target="_blank" rel="noopener">%s<span class="visually-hidden"> : %s</span></a>'
-                % (e(u), e(t["already_client"]), e(item.get("nom"))))
-    return out + offer_buttons(item, t, lang)
+    return '<span class="badge badge--lock">%s%s</span>' % (ICON_VIRGULE, htmllib.escape(t["after_consult"], quote=False))
 
 
 def anchor_chips(cats, key, t):
@@ -287,13 +279,13 @@ def cat_head(c, note=""):
     """L'en-tête d'une catégorie : bandeau photo avec le titre en réserve et une légende, puis l'intro ; sans photo, titre et intro.
     `note` : une phrase facultative sous l'intro (les soins réservés après consultation)."""
     e = lambda x: htmllib.escape(str(x or ""), quote=True)
-    note = '      <p class="cat-note">%s%s</p>\n' % (ICON_LOCK, e(note)) if note else ""
+    note = '      <p class="cat-note">%s%s</p>\n' % (ICON_VIRGULE, e(note)) if note else ""
     if not c.get("image"):
-        return '      <h2 id="h-%s">%s</h2>\n      <p>%s</p>\n%s' % (e(c["slug"]), e(c["nom"]), e(c.get("intro")), note)
-    cap = '<span class="cartouche">%s</span>' % e(c["image_caption"]) if c.get("image_caption") else ""
+        return '      <h2 id="h-%s">%s</h2>\n      <p class="cat-intro">%s</p>\n%s' % (e(c["slug"]), e(c["nom"]), e(c.get("intro")), note)
+    # La photo porte seulement le titre de la rubrique (la légende `image_caption` n'est plus affichée, 17 nov. 2026).
     return ('      <figure class="cat-plate"><img src="%s" alt="" width="1600" height="900" loading="lazy" decoding="async">'
-            '<figcaption><h2 id="h-%s">%s</h2>%s</figcaption></figure>\n      <p class="cat-intro">%s</p>\n%s'
-            % (e(c["image"].lstrip("/")), e(c["slug"]), e(c["nom"]), cap, e(c.get("intro")), note))
+            '<figcaption><h2 id="h-%s">%s</h2></figcaption></figure>\n      <p class="cat-intro">%s</p>\n%s'
+            % (e(c["image"].lstrip("/")), e(c["slug"]), e(c["nom"]), e(c.get("intro")), note))
 
 
 ICON_CLOCK = '<svg class="i" aria-hidden="true"><use href="#i-clock"/></svg>'
@@ -348,17 +340,19 @@ def row_title(i, e):
 
 
 def soin_row(i, t, lang):
-    """Une ligne de soin ; les soins réservés après consultation portent un badge à côté de la durée (visible même replié
-    sur mobile) et renvoient d'abord vers la consultation."""
+    """Une ligne de soin ; les soins réservés après consultation portent un badge (la virgule hoona) à côté de la durée,
+    visible même replié sur mobile, et se réservent directement comme les autres."""
     e = lambda x: htmllib.escape(str(x or ""), quote=False)
     lock = locked(i)
-    return ('        <div class="row row--soin item%s" data-axes="%s"><span class="row__title">%s</span>'
-            '<span class="row__desc">%s%s%s</span><span class="row__meta">%s</span>%s'
+    # Les anciens noms et mots-clés (`alias`) restent trouvables par la recherche locale (data-alias, lu par hoona.js).
+    alias = ' data-alias="%s"' % htmllib.escape(" ".join(i["alias"]), quote=True) if i.get("alias") else ""
+    return ('        <div class="row row--soin item%s" data-axes="%s"%s><span class="row__title">%s</span>'
+            '<span class="row__desc">%s%s</span><span class="row__meta">%s</span>%s'
             '<span class="row__act">%s</span></div>'
-            % (" row--locked" if lock else "", " ".join(a for a in i.get("axes", []) if a in AXES), row_title(i, e),
-               "", link_products(e(i.get("description")), lang, i.get("page")), axes_tags(i, t),
+            % (" row--locked" if lock else "", " ".join(a for a in i.get("axes", []) if a in AXES), alias, row_title(i, e),
+               link_products(e(i.get("description")), lang, i.get("page")), axes_tags(i, t, label=True),
                pill(duree(i.get("duree", 0), lang), ICON_CLOCK) + (lock_badge(t) if lock else ""), price_span(i.get("prix"), t, lang),
-               locked_actions(i, t, lang) if lock else actions(i, t, lang)))
+               actions(i, t, lang)))
 
 
 def session_row(i, t, lang):
@@ -369,7 +363,7 @@ def session_row(i, t, lang):
             '<span class="row__desc">%s%s</span><span class="row__meta">%s</span>%s'
             '<span class="row__act">%s</span></div>'
             % (slugify(i.get("nom", "")), " ".join(a for a in i.get("axes", []) if a in AXES), row_title(i, e), link_products(e(i.get("description")), lang, i.get("page")),
-               axes_tags(i, t), pills, price_span(i.get("prix"), t, lang), actions(i, t, lang)))
+               axes_tags(i, t, label=True), pills, price_span(i.get("prix"), t, lang), actions(i, t, lang)))
 
 
 def catalogue_items(kind, lang):
@@ -481,16 +475,22 @@ def render_journees(t, lang):
         # « Inclus : soin · soin · … » sur sa propre ligne, les soins qui ont une page sont reliés
         if not i.get("inclus"):
             return ""
-        return '<span class="row__inclus">%s %s</span>' % (e(t["included"]), link_products(" · ".join(e(x) for x in i["inclus"]), lang))
+        return '<span class="row__inclus">%s %s</span>' % (e(t["included"]), link_products(" · ".join(e(x) for x in i["inclus"]), lang))
     out = {}
     for c in load_json(path).get("categories", []):
+        demi = c["slug"] == "demi-journees"
+        # id par ligne (demi-<thème> / journee-<thème>), pour que les pages parcours y renvoient
         rows = "\n".join(
-            '        <div class="row row--soin"><span class="row__title">%s</span><span class="row__desc">%s%s</span><span class="row__meta">%s</span>'
+            '        <div class="row row--soin" id="%s-%s"><span class="row__title">%s</span><span class="row__desc">%s%s</span><span class="row__meta">%s</span>'
             '%s<span class="row__act">%s</span></div>'
-            % (e(i.get("nom")), link_products(e(i.get("description")), lang), inclus(i),
+            % ("demi" if demi else "journee", slugify(i.get("nom", "")), e(i.get("nom")), link_products(e(i.get("description")), lang), inclus(i),
                pill(i["duree_txt"], ICON_CLOCK) if i.get("duree_txt") else "", price_span(i.get("prix"), t, lang), actions(i, t, lang))
             for i in c.get("prestations", []))
-        out["{{JOURNEES_%s}}" % ("DEMI" if c["slug"] == "demi-journees" else "COMPLETES")] = '<div class="rows rows--compact">\n%s\n    </div>' % rows
+        key = "DEMI" if demi else "COMPLETES"
+        out["{{JOURNEES_%s}}" % key] = '<div class="rows rows--compact">\n%s\n    </div>' % rows
+        prix = [i["prix"] for i in c.get("prestations", []) if isinstance(i.get("prix"), (int, float))]
+        if prix:
+            out["{{JOURNEES_%s_PRIX}}" % key] = "%d à %d €" % (min(prix), max(prix))
     return out
 
 
@@ -549,20 +549,23 @@ def render_soins(t, lang):
     e = lambda x: htmllib.escape(str(x or ""), quote=False)
     total = sum(len(c.get("prestations", [])) for c in cats)
     # Dans chaque catégorie, les soins ouverts à tous d'abord ; les soins réservés après une première consultation
-    # suivent, sous une rubrique « Déjà venu·e chez hoona ? » qui en explique l'accès.
+    # suivent dans un accordéon fermé « Déjà venu·e chez hoona ? » qui en explique l'accès (17 nov. 2026).
     groups = []
     for c in cats:
         items = c.get("prestations", [])
         open_items, locked_items = [i for i in items if not locked(i)], [i for i in items if locked(i)]
-        rows = "\n".join(soin_row(i, t, lang) for i in open_items)
+        body = ('      <div class="rows rows--compact">\n%s\n      </div>\n' % "\n".join(soin_row(i, t, lang) for i in open_items)) if open_items else ""
         if locked_items:
-            rows += ('\n      </div>\n      <div class="cat-sub" id="%s-deja">\n        <h3 class="cat-sub__title">%s%s</h3>\n        <p class="cat-sub__text">%s</p>\n      </div>\n'
-                     '      <div class="rows rows--compact">\n' % (e(c["slug"]), ICON_LOCK, e(t["locked_heading"]), e(t["locked_text"]))
-                     ) + "\n".join(soin_row(i, t, lang) for i in locked_items)
+            body += ('      <details class="cat-locked" id="%(s)s-deja">\n'
+                     '        <summary>%(icon)s<span class="cat-locked__title">%(h)s</span><span class="cat-locked__count" data-locked-count>%(n)d</span></summary>\n'
+                     '        <p class="cat-locked__text">%(txt)s %(lead)s <a href="%(url)s">%(cta)s</a>.</p>\n'
+                     '        <div class="rows rows--compact">\n%(r)s\n        </div>\n      </details>\n'
+                     % {"s": e(c["slug"]), "icon": ICON_VIRGULE, "h": e(t["locked_heading"]), "n": len(locked_items),
+                        "txt": e(t["locked_text"]), "lead": e(t["locked_lead"]), "url": htmllib.escape(t["url_consultation"], quote=True),
+                        "cta": e(t["locked_cta"]), "r": "\n".join(soin_row(i, t, lang) for i in locked_items)})
         groups.append(
-            '    <section class="cat-group" data-cat="%(s)s" id="%(s)s" aria-labelledby="h-%(s)s">\n%(h)s'
-            '      <div class="rows rows--compact">\n%(r)s\n      </div>\n    </section>'
-            % {"s": e(c["slug"]), "h": cat_head(c), "r": rows}
+            '    <section class="cat-group" data-cat="%(s)s" id="%(s)s" aria-labelledby="h-%(s)s">\n%(h)s%(b)s    </section>'
+            % {"s": e(c["slug"]), "h": cat_head(c), "b": body}
         )
     return {
         "{{SOINS_FILTERS}}": anchor_chips(cats, "prestations", t),
@@ -827,12 +830,13 @@ def post_card(a, t, lang, level=2):
         '<article class="post-card item" data-axes="%s">\n'
         '  <a class="post-card__link" href="journal/%s.html">\n'
         '    <figure class="post-card__media">%s</figure>\n'
-        '    <p class="post-card__meta">%s<time datetime="%s">%s</time><span>%d %s</span></p>\n'
+        '    <p class="post-card__when"><time datetime="%s">%s</time> · <span>%d %s</span></p>\n'
+        '    <p class="post-card__axes">%s</p>\n'
         '    <h%d class="post-card__title">%s</h%d>\n'
         '    <p class="post-card__desc">%s</p>\n'
         '  </a>\n</article>'
-        % (" ".join(a["axes"]), e(a["slug"]), img, axes_tags(a, t), a["date"].isoformat(), fmt_date(a["date"], t, lang),
-           a["minutes"], e(t["journal_min"]), level, e(a["title"]), level, e(a["description"]))
+        % (" ".join(a["axes"]), e(a["slug"]), img, a["date"].isoformat(), fmt_date(a["date"], t, lang),
+           a["minutes"], e(t["journal_min"]), axes_tags(a, t), level, e(a["title"]), level, e(a["description"]))
     )
 
 
@@ -1101,6 +1105,149 @@ def render_page(lang, t, page_id, meta, content, tokens, available, outpath, war
     return name
 
 
+# ---- Lot 4 S1 : recherche globale ----
+# Après la génération des pages, chaque langue reçoit un index assets/search-<langue>.json, lu par la loupe de l'en-tête
+# (hoona.js, chargé à la première ouverture). Il est extrait des pages générées, plus une entrée par soin et par session.
+SEARCH_SKIP = {"script", "style", "nav", "footer", "svg", "noscript", "template", "button", "select", "form", "dialog"}
+SEARCH_INLINE = {"a", "strong", "em", "b", "i", "small", "abbr", "mark", "sup", "sub", "time", "q", "cite", "u"}
+SEARCH_VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
+SEARCH_SKIP_CLASS = {"crumbs", "post__meta", "post__aside"}  # fil d'Ariane, date et axes d'un article
+SEARCH_TEXT_MAX = 1500
+
+
+def _search_clean(s):
+    """Espaces compactés ; les espaces insécables de la typographie restent en place."""
+    return re.sub(r"[ \t\r\n\f\v]+", " ", s or "").strip()
+
+
+class _SearchPage(HTMLParser):
+    """Lit une page générée : <title>, meta description, h1/h2/h3 et texte visible de <main>."""
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.title, self.desc, self.h1, self.heads, self.text = "", "", "", [], []
+        self.noindex = False
+        self._in_title = self._in_main = False
+        self._skip = 0
+        self._head = None
+
+    def handle_starttag(self, tag, attrs):
+        a = dict(attrs)
+        if tag == "title":
+            self._in_title = True
+        elif tag == "meta" and a.get("name") == "description":
+            self.desc = a.get("content") or ""
+        elif tag == "meta" and a.get("name") == "robots" and "noindex" in (a.get("content") or ""):
+            self.noindex = True
+        elif tag == "main":
+            self._in_main = True
+        if not self._in_main or tag in SEARCH_VOID:
+            if tag in SEARCH_VOID and tag not in SEARCH_INLINE and self._in_main and not self._skip:
+                self.text.append(" ")
+            return
+        if self._skip:
+            self._skip += 1
+            return
+        if tag in SEARCH_SKIP or a.get("aria-hidden") == "true" or SEARCH_SKIP_CLASS & set((a.get("class") or "").split()):
+            self._skip = 1
+            return
+        if tag in ("h1", "h2", "h3"):
+            self._head = [tag, []]
+        if tag not in SEARCH_INLINE:
+            self.text.append(" ")
+
+    def handle_startendtag(self, tag, attrs):
+        if tag == "meta":
+            self.handle_starttag(tag, attrs)
+
+    def handle_endtag(self, tag):
+        if tag == "title":
+            self._in_title = False
+        if not self._in_main or tag in SEARCH_VOID:
+            return
+        if tag == "main":
+            self._in_main = False
+            return
+        if self._skip:
+            self._skip -= 1
+            return
+        if self._head and tag == self._head[0]:
+            txt = _search_clean("".join(self._head[1]))
+            if tag == "h1" and not self.h1:
+                self.h1 = txt
+            elif txt:
+                self.heads.append(txt)
+            self._head = None
+        if tag not in SEARCH_INLINE:
+            self.text.append(" ")
+
+    def handle_data(self, data):
+        if self._in_title:
+            self.title += data
+        if self._in_main and not self._skip:
+            if not (self._head and self._head[0] == "h1"):  # le h1 est déjà dans headings
+                self.text.append(data)
+            if self._head:
+                self._head[1].append(data)
+
+
+def _search_cut(text, limit=SEARCH_TEXT_MAX):
+    if len(text) <= limit:
+        return text
+    cut = text.rfind(" ", 0, limit)
+    return text[:cut if cut > limit * 0.8 else limit].rstrip(" ,;:") + "…"
+
+
+def write_search_index(langs):
+    """assets/search-<langue>.json : une entrée par page publique (pages, articles du Journal, parcours),
+    puis une entrée par soin et par session qui pointe vers sa ligne du catalogue ou sa page dédiée."""
+    section_of = {"SOINS": "m_soins", "SESSIONS": "m_sessions", "SEJOURS": "m_sejours", "JOURNAL": "m_journal",
+                  "JOURNEES": "nav_experimenter", "CADEAU": "nav_experimenter",
+                  "CONSULTATION": "nav_comprendre", "BILAN": "nav_comprendre", "PARCOURS": "nav_comprendre", "CALL": "nav_comprendre",
+                  "APPROCHE": "nav_apropos", "APROPOS": "nav_apropos", "SOUTIEN": "nav_apropos", "CONTACT": "nav_apropos"}
+    section_page = {"index": "m_home", "contact": "m_contact", "bon-cadeau": "nav_experimenter", "entreprises": "m_entreprises",
+                    "echange-decouverte": "nav_comprendre", "journal": "m_journal", "reserver-sejour": "m_sejours"}
+    for lang in langs:
+        t = json.loads((SRC / "i18n" / ("%s.json" % lang)).read_text(encoding="utf-8"))
+        root = ROOT / lang
+        entries = []
+        files = sorted(root.glob("*.html")) + sorted((root / "journal").glob("*.html"))
+        for f in files:
+            rel = f.relative_to(root).as_posix()
+            if f.name.startswith("_") or f.name.startswith("merci-"):
+                continue
+            p = _SearchPage()
+            p.feed(f.read_text(encoding="utf-8"))
+            if p.noindex:
+                continue
+            src = SRC / "pages" / lang / f.name
+            nav = parse_front_matter(src.read_text(encoding="utf-8"))[0].get("nav", "").strip().upper() if src.exists() and "/" not in rel else ""
+            if rel.startswith("journal/"):
+                key = "m_journal"
+            elif f.stem.startswith("parcours-"):
+                key = "nav_comprendre"
+            else:
+                key = section_page.get(f.stem) or section_of.get(nav) or "nav_apropos"
+            title = re.sub(r"^\s*hoona\s*\|\s*", "", re.sub(r"\s*\|\s*hoona.*$", "", _search_clean(p.title)))
+            heads = ([p.h1] if p.h1 else []) + [h for h in p.heads if len(h) < 140][:24]
+            entries.append({"url": rel, "title": title, "description": _search_clean(p.desc), "section": t.get(key, ""),
+                            "headings": heads, "text": _search_cut(_search_clean("".join(p.text))), "lang": lang})
+        pages = {e["url"] for e in entries}
+        for kind, list_key, page, key in (("soins", "prestations", "soins.html", "m_soins"), ("sessions", "sessions", "sessions.html", "m_sessions")):
+            path = CONTENT / kind / ("%s.json" % lang)
+            if not path.exists() or page not in pages:
+                continue
+            for c in load_json(path).get("categories", []):
+                for i in c.get(list_key, []):
+                    nom = _search_clean(i.get("nom"))
+                    if not nom or (i.get("page") and i["page"] in pages):
+                        continue  # la page dédiée est déjà indexée
+                    url = i.get("page") or ("%s#s-%s" % (page, slugify(nom)) if kind == "sessions" else "%s#%s" % (page, c.get("slug", "")))
+                    entries.append({"url": url, "title": nom, "description": _search_clean(re.sub(r"<[^>]+>", " ", str(i.get("description") or ""))),
+                                    "section": t.get(key, ""), "headings": [_search_clean(c.get("nom"))], "text": "", "lang": lang, "item": True})
+        (ROOT / "assets" / ("search-%s.json" % lang)).write_text(
+            json.dumps(entries, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+
 def build():
     today = dt.date.today()
     articles = {l: load_articles(l, today) for l in LANGS}
@@ -1202,6 +1349,8 @@ location.replace("%(d)s/index.html");})();</script>
 """ % {"d": DEFAULT_LANG, "site": SITE_URL, "langs": json.dumps(langs_live)},
         encoding="utf-8",
     )
+
+    write_search_index(langs_live)  # Lot 4 S1 : recherche globale, avant la copie vers dist/
 
     print("Généré : " + ", ".join(built))
     if warnings:

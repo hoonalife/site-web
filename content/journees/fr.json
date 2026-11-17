@@ -9,8 +9,8 @@
           "description": "Un programme pour relâcher les tensions et régénérer le système nerveux.",
           "inclus": [
             "Réflexologie visage, pieds et voyage sonore",
-            "IHHT Mitovit",
-            "QRS et Airnergy"
+            "Séance d'Hypoxie-Hyperoxie Intermittente (IHHT) - Mitovit",
+            "Stimulation électromagnétique douce (QRS) et oxygène actif (Airnergy)"
           ],
           "duree_txt": "2h50",
           "prix": 228,
@@ -44,8 +44,8 @@
           "nom": "Prévention naturelle",
           "description": "Un programme pour soutenir la détox et la vitalité, en prévention.",
           "inclus": [
-            "Papimi",
-            "QRS et Airnergy",
+            "Thérapie par induction ionique (Papimi)",
+            "Stimulation électromagnétique douce (QRS) et oxygène actif (Airnergy)",
             "Sauna privé",
             "Bain aux sels de magnésium"
           ],
@@ -65,9 +65,9 @@
           "inclus": [
             "Consultation de naturopathie (1h30)",
             "Massage spécifique (1h)",
-            "IHHT Mitovit",
-            "QRS et Airnergy",
-            "Lumière infrarouge",
+            "Séance d'Hypoxie-Hyperoxie Intermittente (IHHT) - Mitovit",
+            "Stimulation électromagnétique douce (QRS) et oxygène actif (Airnergy)",
+            "Exposition à la lumière infrarouge",
             "Bain aux sels de magnésium",
             "Lunch"
           ],
@@ -82,9 +82,9 @@
             "Consultation de naturopathie (1h30)",
             "Indiba du ventre",
             "Chi Nei Tsang ou réflexologie",
-            "Papimi",
+            "Thérapie par induction ionique (Papimi)",
             "Cataplasme du foie",
-            "Lumière infrarouge",
+            "Exposition à la lumière infrarouge",
             "Lunch"
           ],
           "duree_txt": "5h de soins + lunch",
@@ -98,8 +98,8 @@
             "Deux massages spécifiques (2 × 1h)",
             "Sauna privé",
             "Bain aux sels de magnésium",
-            "Lumière infrarouge",
-            "QRS et Airnergy",
+            "Exposition à la lumière infrarouge",
+            "Stimulation électromagnétique douce (QRS) et oxygène actif (Airnergy)",
             "Lunch"
           ],
           "duree_txt": "4h45 de soins + lunch",
@@ -111,11 +111,11 @@
           "description": "Un programme pour soutenir la détox et la vitalité, en prévention.",
           "inclus": [
             "Consultation de naturopathie (1h30)",
-            "Papimi",
-            "QRS et Airnergy",
+            "Thérapie par induction ionique (Papimi)",
+            "Stimulation électromagnétique douce (QRS) et oxygène actif (Airnergy)",
             "Sauna privé",
             "Bain de pieds aux sels de magnésium",
-            "Lumière infrarouge",
+            "Exposition à la lumière infrarouge",
             "Massage (1h)",
             "Lunch"
           ],

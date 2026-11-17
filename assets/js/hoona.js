@@ -194,7 +194,7 @@
     var axisNames = {};
     axisBtns.forEach(function (b) { var t = b.querySelector(".t"); if (t) axisNames[b.getAttribute("data-axis")] = t.textContent; });
     var norm = function (s) { return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""); };
-    items.forEach(function (it) { it._text = norm(it.textContent); it._axes = (it.getAttribute("data-axes") || "").split(" "); });
+    items.forEach(function (it) { it._text = norm(it.textContent + " " + (it.getAttribute("data-alias") || "")); it._axes = (it.getAttribute("data-axes") || "").split(" "); });
     /* compteur par axe, d'après les lignes présentes */
     axisBtns.forEach(function (b) {
       var c = b.querySelector("[data-axis-count]");
@@ -218,6 +218,13 @@
         if (!it.hidden) shown++;
       });
       groups.forEach(function (g) { g.hidden = !g.querySelector(".item:not([hidden])"); });
+      /* Soins après consultation (accordéon) : compteur à jour, masqué sans résultat, ouvert quand la recherche y trouve un soin. */
+      [].forEach.call(catalogue.querySelectorAll("details.cat-locked"), function (d) {
+        var n = d.querySelectorAll(".item:not([hidden])").length, c = d.querySelector("[data-locked-count]");
+        if (c) c.textContent = n;
+        d.hidden = !n;
+        if (q && n) d.open = true;
+      });
       if (status) status.textContent = shown + " " + unit(shown);
       if (empty) empty.hidden = shown !== 0;
       if (axisStatus) {
@@ -293,6 +300,8 @@
         axisBtns.forEach(function (o) { o.setAttribute("aria-pressed", "false"); });
         apply();
       }
+      var box = el.closest && el.closest("details");
+      if (box) box.open = true;
       var tg = el.querySelector(".row__toggle");
       if (tg && el.classList.contains("is-collapsed")) tg.click();
       el.scrollIntoView({ block: "start" });
@@ -422,4 +431,306 @@
   } else {
     [].forEach.call(reveals, function (r) { r.classList.add("is-in"); });
   }
+})();
+
+/* ---- Lot 4 S1 : recherche globale ---- */
+/* La loupe de l'en-tête (ou « / », ou Ctrl/Cmd+K) ouvre un calque plein écran. L'index assets/search-<langue>.json,
+   écrit par build.py, n'est chargé qu'à la première ouverture. Tous les mots tapés doivent se trouver, en début de mot,
+   dans le titre, les intertitres, la description ou le texte ; le titre pèse le plus. */
+(function () {
+  "use strict";
+  var layer = document.querySelector("[data-search-layer]");
+  var openers = [].slice.call(document.querySelectorAll("[data-search-open]"));
+  if (!layer || !openers.length || !window.fetch) return;
+  var input = layer.querySelector("input");
+  var form = layer.querySelector("[data-search-form]");
+  var list = layer.querySelector("[data-search-results]");
+  var hint = layer.querySelector("[data-search-hint]");
+  var status = layer.querySelector("[data-search-status]");
+  var closeBtn = layer.querySelector("[data-search-close]");
+  var veil = layer.querySelector("[data-search-veil]");
+  var hintText = hint.textContent;
+  var lang = (document.documentElement.lang || "fr").slice(0, 2);
+  /* Même base que la feuille de script : hoona.js vit dans <racine>/assets/js/, quelle que soit la profondeur de la page. */
+  var script = document.querySelector('script[src*="assets/js/hoona.js"]');
+  var base = script ? script.src : window.location.href;
+  var indexUrl = new URL("../search-" + lang + ".json", base).href;
+  var langRoot = new URL("../../" + lang + "/", base).href;
+  var MAX = 8, data = null, loading = null, failed = false, lastFocus = null, timer = 0;
+
+  var msg = function (key, n, q) { return (layer.getAttribute("data-" + key) || "").replace("{n}", n).replace("{q}", q); };
+  var norm = function (s) {
+    return String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/œ/g, "oe").replace(/æ/g, "ae");
+  };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
+  var isWordChar = function (c) { return /[a-z0-9]/.test(c || ""); };
+  /* Position du terme en début de mot, -1 sinon. */
+  var find = function (hay, term, from) {
+    var i = hay.indexOf(term, from || 0);
+    while (i !== -1) {
+      if (i === 0 || !isWordChar(hay.charAt(i - 1))) return i;
+      i = hay.indexOf(term, i + 1);
+    }
+    return -1;
+  };
+  var count = function (hay, term) { var n = 0, i = find(hay, term); while (i !== -1 && n < 6) { n++; i = find(hay, term, i + term.length); } return n; };
+  /* Texte normalisé + correspondance vers les positions du texte d'origine (pour l'extrait et le surlignage). */
+  var mapped = function (s) {
+    var out = "", map = [];
+    for (var i = 0; i < s.length; i++) { var n = norm(s.charAt(i)); for (var k = 0; k < n.length; k++) { out += n.charAt(k); map.push(i); } }
+    map.push(s.length);
+    return { n: out, map: map };
+  };
+  var highlight = function (s, terms) {
+    var m = mapped(s), ranges = [];
+    terms.forEach(function (term) {
+      var i = find(m.n, term);
+      while (i !== -1) {
+        var j = i + term.length;
+        while (isWordChar(m.n.charAt(j))) j++;  /* le mot entier : « gongs » pour « gong » */
+        ranges.push([m.map[i], m.map[j - 1] + 1]);
+        i = find(m.n, term, j);
+      }
+    });
+    if (!ranges.length) return esc(s);
+    ranges.sort(function (a, b) { return a[0] - b[0]; });
+    var html = "", pos = 0;
+    ranges.forEach(function (r) {
+      if (r[0] < pos) return;
+      html += esc(s.slice(pos, r[0])) + "<mark>" + esc(s.slice(r[0], r[1])) + "</mark>";
+      pos = r[1];
+    });
+    return html + esc(s.slice(pos));
+  };
+  var excerpt = function (e, terms) {
+    var sources = [e.description, e.text, (e.headings || []).join(" · ")];
+    for (var s = 0; s < sources.length; s++) {
+      var src = sources[s] || "";
+      var m = mapped(src);
+      for (var t = 0; t < terms.length; t++) {
+        var i = find(m.n, terms[t]);
+        if (i === -1) continue;
+        var at = m.map[i];
+        if (src.length <= 170) return src;
+        var start = Math.max(0, at - 60);
+        if (start > 0) { var sp = src.indexOf(" ", start); start = sp !== -1 && sp < at ? sp + 1 : start; }
+        var end = Math.min(src.length, start + 160);
+        if (end < src.length) { var sp2 = src.lastIndexOf(" ", end); if (sp2 > at) end = sp2; }
+        return (start > 0 ? "…" : "") + src.slice(start, end).replace(/[\s,;:]+$/, "") + (end < src.length ? "…" : "");
+      }
+    }
+    var d = e.description || e.text || "";
+    return d.length > 170 ? d.slice(0, d.lastIndexOf(" ", 160)) + "…" : d;
+  };
+
+  function prepare(entries) {
+    return entries.map(function (e, k) {
+      e._k = k;
+      e._t = norm(e.title);
+      e._h = norm((e.headings || []).join(" · "));
+      e._d = norm(e.description);
+      e._x = norm(e.text);
+      e._u = norm((e.url || "").replace(/\.html.*$/, "").replace(/^.*\//, ""));
+      return e;
+    });
+  }
+
+  function score(e, terms, phrase) {
+    var total = 0;
+    for (var i = 0; i < terms.length; i++) {
+      var term = terms[i], s = 0;
+      var pt = find(e._t, term);
+      if (pt !== -1) {
+        s += 12 + 6 * (1 - pt / Math.max(e._t.length, 1));  /* plus le mot vient tôt dans le titre, mieux c'est */
+        if (!isWordChar(e._t.charAt(pt + term.length))) s += 2;  /* mot entier */
+        if (e.item) s += 5;  /* un soin ou une session nommé : on va droit à la ligne */
+      }
+      if (find(e._h, term) !== -1) s += 6;
+      if (find(e._d, term) !== -1) s += 4;
+      var nx = count(e._x, term);
+      if (nx) s += 1 + nx * 0.6;
+      var pu = find(e._u, term);
+      if (pu !== -1) s += pu === 0 ? 6 : 3;  /* page dédiée : sejours.html pour « séjour », bain-de-gongs.html pour « gong » */
+      if (!s) return 0;  /* tous les mots sont requis */
+      total += s;
+    }
+    if (terms.length > 1 && e._t.indexOf(phrase) !== -1) total += 10;
+    return total;
+  }
+
+  function render(q) {
+    var phrase = norm(q).replace(/[^a-z0-9]+/g, " ").trim();
+    var terms = phrase.split(" ").filter(Boolean);
+    if (terms.length > 1) terms = terms.filter(function (t) { return t.length > 1; });
+    var hits = [];
+    data.forEach(function (e) { var s = score(e, terms, phrase); if (s) hits.push([s, e]); });
+    hits.sort(function (a, b) { return b[0] - a[0] || a[1].title.length - b[1].title.length || a[1]._k - b[1]._k; });
+    var top = hits.slice(0, MAX);
+    list.innerHTML = top.map(function (h) {
+      var e = h[1];
+      return '<li><a class="search-hit" href="' + esc(langRoot + e.url) + '">'
+        + (e.section ? '<span class="insert search-hit__section">' + esc(e.section) + "</span>" : "")
+        + '<span class="search-hit__title">' + highlight(e.title, terms) + "</span>"
+        + '<span class="search-hit__excerpt">' + highlight(excerpt(e, terms), terms) + "</span></a></li>";
+    }).join("");
+    if (!hits.length) {
+      hint.textContent = msg("empty", 0, q); hint.hidden = false;
+      status.textContent = hint.textContent;
+    } else {
+      hint.hidden = true;
+      status.textContent = hits.length === 1 ? msg("one", 1, q) : msg(hits.length > MAX ? "top" : "many", hits.length, q);
+    }
+  }
+
+  function run() {
+    var q = input.value.trim();
+    if (norm(q).replace(/[^a-z0-9]/g, "").length < 2) {
+      list.innerHTML = ""; hint.textContent = hintText; hint.hidden = false; status.textContent = "";
+      return;
+    }
+    if (data) render(q);
+    else if (failed) { hint.textContent = msg("error"); hint.hidden = false; status.textContent = hint.textContent; }
+    else load();
+  }
+
+  function load() {
+    if (data || loading) return loading;
+    failed = false;
+    loading = window.fetch(indexUrl, { credentials: "same-origin" })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (d) { data = prepare(d); loading = null; if (!layer.hidden) run(); })
+      .catch(function () { loading = null; failed = true; if (!layer.hidden) run(); failed = false; });
+    return loading;
+  }
+
+  var focusables = function () { return [input, closeBtn].concat([].slice.call(list.querySelectorAll("a"))); };
+
+  function open(trigger) {
+    if (!layer.hidden) { input.focus(); return; }
+    lastFocus = trigger || document.activeElement;
+    /* Ouvert depuis le menu plein écran (ou loupe masquée sous 360 px) : le focus reviendra sur le bouton du menu. */
+    if (lastFocus && (!lastFocus.offsetParent || (lastFocus.closest && lastFocus.closest("#drawer")))) lastFocus = document.querySelector(".burger") || lastFocus;
+    /* Le menu plein écran est ouvert ? On le referme d'abord. */
+    var burger = document.querySelector(".burger[aria-expanded='true']");
+    if (burger) burger.click();
+    layer.hidden = false;
+    document.body.classList.add("search-open");
+    openers.forEach(function (b) { b.setAttribute("aria-expanded", "true"); });
+    input.focus();
+    input.select();
+    load();
+    run();
+  }
+
+  function close(restore) {
+    if (layer.hidden) return;
+    window.clearTimeout(timer);
+    layer.hidden = true;
+    document.body.classList.remove("search-open");
+    openers.forEach(function (b) { b.setAttribute("aria-expanded", "false"); });
+    if (restore !== false && lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  openers.forEach(function (b) { b.addEventListener("click", function () { open(b); }); });
+  closeBtn.addEventListener("click", function () { close(); });
+  veil.addEventListener("click", function () { close(); });
+  layer.addEventListener("click", function (e) {
+    if (e.target === layer) close();
+    /* Un résultat qui pointe vers une ancre de la page courante : le calque se ferme aussi. */
+    if (e.target.closest && e.target.closest(".search-hit")) close(false);
+  });
+  input.addEventListener("input", function () { window.clearTimeout(timer); timer = window.setTimeout(run, 120); });
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    window.clearTimeout(timer);
+    run();
+    var first = list.querySelector("a");
+    if (first) first.click();
+  });
+
+  layer.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); close(); return; }
+    var links = [].slice.call(list.querySelectorAll("a"));
+    var at = links.indexOf(document.activeElement);
+    if (e.key === "ArrowDown" && links.length) {
+      e.preventDefault();
+      links[at === -1 ? 0 : Math.min(at + 1, links.length - 1)].focus();
+    } else if (e.key === "ArrowUp" && at !== -1) {
+      e.preventDefault();
+      if (at === 0) input.focus(); else links[at - 1].focus();
+    } else if (e.key === "Tab") {
+      /* Focus piégé dans le calque. */
+      var f = focusables(), i = f.indexOf(document.activeElement);
+      if (e.shiftKey && i <= 0) { e.preventDefault(); f[f.length - 1].focus(); }
+      else if (!e.shiftKey && i === f.length - 1) { e.preventDefault(); f[0].focus(); }
+    }
+  });
+
+  document.addEventListener("keydown", function (e) {
+    var tgt = e.target, typing = tgt && (/^(input|textarea|select)$/i.test(tgt.tagName) || tgt.isContentEditable);
+    if ((e.key === "k" || e.key === "K") && (e.metaKey || e.ctrlKey) && !e.altKey) {
+      e.preventDefault();
+      if (layer.hidden) open(openers[0]); else close();
+    } else if (e.key === "/" && !typing && !e.metaKey && !e.ctrlKey && !e.altKey && layer.hidden) {
+      e.preventDefault();
+      open(openers[0]);
+    }
+  });
+})();
+
+/* ---- Lot 4 S5 : carrousel ---- */
+/* Bande à défilement natif (scroll-snap) : le script ajoute flèches, compteur et flèches du clavier. */
+(function () {
+  "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+  [].forEach.call(document.querySelectorAll("[data-carousel]"), function (box) {
+    var track = box.querySelector(".carousel__track");
+    var slides = track ? [].slice.call(track.children) : [];
+    var prev = box.querySelector("[data-carousel-prev]"), next = box.querySelector("[data-carousel-next]");
+    var out = box.querySelector("[data-carousel-current]");
+    if (slides.length < 2 || !prev || !next) return;
+    var current = 0, target = null, timer = 0;
+
+    function left(i) { return slides[i].offsetLeft - slides[0].offsetLeft; }
+    function index() {
+      var max = track.scrollWidth - track.clientWidth;
+      if (track.scrollLeft >= max - 2) return slides.length - 1;
+      var best = 0, dist = Infinity;
+      slides.forEach(function (s, i) { var d = Math.abs(left(i) - track.scrollLeft); if (d < dist) { dist = d; best = i; } });
+      return best;
+    }
+    function render(i) {
+      current = i;
+      if (out) out.textContent = String(i + 1);
+      prev.setAttribute("aria-disabled", String(i === 0));
+      next.setAttribute("aria-disabled", String(i === slides.length - 1));
+    }
+    /* Pendant un défilement lancé par les flèches, le compteur garde la cible ; sinon il suit la position. */
+    function sync() {
+      var i = index();
+      if (target !== null) { if (i !== target) return; target = null; }
+      if (i !== current) render(i);
+    }
+    function go(i) {
+      i = Math.max(0, Math.min(slides.length - 1, i));
+      target = i; render(i);
+      window.clearTimeout(timer);
+      timer = window.setTimeout(function () { target = null; sync(); }, 900);
+      track.scrollTo({ left: left(i), behavior: reduce.matches ? "instant" : "smooth" });
+    }
+    prev.addEventListener("click", function () { if (current > 0) go(current - 1); });
+    next.addEventListener("click", function () { if (current < slides.length - 1) go(current + 1); });
+    box.addEventListener("keydown", function (e) {
+      if (e.altKey || e.ctrlKey || e.metaKey) return;
+      var k = e.key;
+      if (k === "ArrowLeft" || k === "ArrowRight" || k === "Home" || k === "End") {
+        e.preventDefault();
+        go(k === "ArrowLeft" ? current - 1 : k === "ArrowRight" ? current + 1 : k === "Home" ? 0 : slides.length - 1);
+      }
+    });
+    track.addEventListener("scroll", sync, { passive: true });
+    window.addEventListener("resize", function () { target = null; sync(); });
+    box.classList.add("is-ready");
+    render(index());
+  });
 })();

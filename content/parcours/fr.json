@@ -34,18 +34,18 @@
         {
           "phase": "experimenter",
           "titre": "La demi-journée « Apaisement profond »",
-          "texte": "Réflexologie visage, pieds et voyage sonore, IHHT Mitovit, QRS et Airnergy. Une parenthèse de quelques heures pour faire redescendre le système nerveux.",
+          "texte": "En 2h50, vous enchaînez une réflexologie du visage et des pieds avec voyage sonore, une séance d'IHHT Mitovit, puis QRS et Airnergy, pour faire redescendre le système nerveux.",
           "label": "Voir la demi-journée",
-          "url": "journees.html#demi-journees",
+          "url": "journees.html#demi-apaisement-profond",
           "prix": "228 €"
         },
         {
           "phase": "experimenter",
-          "titre": "Des soins qui apaisent, à votre rythme",
-          "texte": "Massage du corps, massage du visage et du crâne, voyage sonore : des séances d'une heure, à la carte, pour entretenir le calme retrouvé.",
-          "label": "Voir les soins",
-          "url": "soins.html",
-          "prix": "dès 100 €"
+          "titre": "La journée « Apaisement profond »",
+          "texte": "Vous commencez par une consultation de naturopathie de 1h30, puis vous recevez un massage d'une heure, l'IHHT Mitovit, QRS et Airnergy, la lumière infrarouge et un bain aux sels de magnésium, avec un lunch au centre.",
+          "label": "Voir la journée",
+          "url": "journees.html#journee-apaisement-profond",
+          "prix": "368 €"
         },
         {
           "phase": "immerger",
@@ -60,7 +60,7 @@
         "Consultation de naturopathie holistique",
         "Massage du corps",
         "Massage du visage et du crâne",
-        "Visage, pieds et voyage sonore",
+        "Massage visage, pieds & voyage sonore",
         "Réflexologie visage, pieds et voyage sonore, rituel approfondi"
       ],
       "sessions": [
@@ -107,19 +107,19 @@
         },
         {
           "phase": "experimenter",
-          "titre": "La journée « Équilibre digestif »",
-          "texte": "Consultation de naturopathie, Chi Nei Tsang ou réflexologie, technologies ciblées sur le ventre et le foie, lunch anti-inflammatoire.",
-          "label": "Voir la journée",
-          "url": "journees.html#journees-completes",
-          "prix": "431 €"
+          "titre": "La demi-journée « Équilibre digestif »",
+          "texte": "En 2h30, vous recevez du Chi Nei Tsang ou de l'Indiba, une heure de réflexologie, puis un cataplasme du foie ou une séance de Papimi, pour relancer la digestion.",
+          "label": "Voir la demi-journée",
+          "url": "journees.html#demi-equilibre-digestif",
+          "prix": "247 €"
         },
         {
           "phase": "experimenter",
-          "titre": "Des soins pour le ventre et le foie",
-          "texte": "Chi Nei Tsang, hydrothérapie du côlon, Dien Chan : des soins à la carte, selon ce que la consultation a montré. Entre deux, la marche nordique et le yoga hormonal soutiennent le transit.",
-          "label": "Voir les soins",
-          "url": "soins.html#massages",
-          "prix": "dès 100 €"
+          "titre": "La journée « Équilibre digestif »",
+          "texte": "Vous commencez par une consultation de naturopathie de 1h30, puis vous recevez de l'Indiba sur le ventre, du Chi Nei Tsang ou de la réflexologie, du Papimi, un cataplasme du foie et de la lumière infrarouge, avec un lunch au centre.",
+          "label": "Voir la journée",
+          "url": "journees.html#journee-equilibre-digestif",
+          "prix": "431 €"
         },
         {
           "phase": "immerger",
@@ -132,9 +132,9 @@
       ],
       "soins": [
         "Consultation de naturopathie holistique",
-        "Chi Nei Tsang, massage du ventre",
+        "Massage du ventre Chi Nei Tsang",
         "Hydrothérapie du côlon",
-        "Dien Chan, massage vietnamien"
+        "Massage vietnamien Dien Chan"
       ],
       "sessions": [
         "Marche nordique",
@@ -179,19 +179,19 @@
         {
           "phase": "experimenter",
           "principal": true,
-          "titre": "Une demi-journée ou une journée pour vous",
-          "texte": "Quelques heures ou toute une journée autour du thème « Sérénité absolue » : des massages, des soins pour les sens, du temps pour déposer, et un lunch au centre pour la journée complète. Pour lâcher prise sans rien avoir à décider.",
-          "label": "Voir les journées",
-          "url": "journees.html",
-          "prix": "180 à 332 €"
+          "titre": "La demi-journée « Sérénité absolue »",
+          "texte": "En 2h15, vous recevez un massage spécifique d'une heure, puis vous profitez du sauna privé et d'un bain aux sels de magnésium, pour lâcher prise sans rien avoir à décider.",
+          "label": "Voir la demi-journée",
+          "url": "journees.html#demi-serenite-absolue",
+          "prix": "180 €"
         },
         {
           "phase": "experimenter",
-          "titre": "Entre deux, le Dôme",
-          "texte": "Bain de gongs le mardi soir, Yoga Nidra le vendredi matin, Body & Sound Experience une fois par mois : des rendez-vous réguliers pour ne pas laisser retomber.",
-          "label": "Voir les sessions",
-          "url": "sessions.html",
-          "prix": "dès 25 €"
+          "titre": "La journée « Sérénité absolue »",
+          "texte": "Vous recevez deux massages spécifiques d'une heure, avec le sauna privé, un bain aux sels de magnésium, la lumière infrarouge, QRS et Airnergy, et un lunch au centre.",
+          "label": "Voir la journée",
+          "url": "journees.html#journee-serenite-absolue",
+          "prix": "332 €"
         },
         {
           "phase": "immerger",
@@ -203,7 +203,7 @@
         }
       ],
       "soins": [
-        "Visage, pieds et voyage sonore",
+        "Massage visage, pieds & voyage sonore",
         "Massage du corps",
         "Massage Tuina",
         "Réflexologie visage, pieds et voyage sonore, rituel approfondi",
@@ -253,19 +253,19 @@
         },
         {
           "phase": "experimenter",
-          "titre": "La journée « Prévention naturelle »",
-          "texte": "Consultation de naturopathie, Papimi, QRS et Airnergy, sauna, bain de pieds, lumière infrarouge, massage et lunch : un programme complet pour prendre de l'avance.",
-          "label": "Voir la journée",
-          "url": "journees.html#journees-completes",
-          "prix": "422 €"
+          "titre": "La demi-journée « Prévention naturelle »",
+          "texte": "En 2h15, vous enchaînez le Papimi, QRS et Airnergy, le sauna privé et un bain aux sels de magnésium, pour soutenir la détox et prendre de l'avance.",
+          "label": "Voir la demi-journée",
+          "url": "journees.html#demi-prevention-naturelle",
+          "prix": "171 €"
         },
         {
           "phase": "experimenter",
-          "titre": "La régularité, en forêt",
-          "texte": "Marche nordique le mardi matin et le jeudi midi, coaching sportif le mardi, au départ du centre : c'est la régularité qui fait tenir une détox.",
-          "label": "Voir les sessions",
-          "url": "sessions.html",
-          "prix": "dès 15 €"
+          "titre": "La journée « Prévention naturelle »",
+          "texte": "Vous commencez par une consultation de naturopathie de 1h30, puis vous enchaînez le Papimi, QRS et Airnergy, le sauna privé, un bain de pieds aux sels de magnésium, la lumière infrarouge et un massage d'une heure, avec un lunch au centre.",
+          "label": "Voir la journée",
+          "url": "journees.html#journee-prevention-naturelle",
+          "prix": "422 €"
         },
         {
           "phase": "immerger",
@@ -280,7 +280,7 @@
         "Bilan holistique individuel, au centre",
         "Consultation de naturopathie holistique",
         "Hydrothérapie du côlon",
-        "Drainage lymphatique des jambes",
+        "Massage circulatoire des jambes",
         "Massage Tuina"
       ],
       "sessions": [
