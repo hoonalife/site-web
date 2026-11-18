@@ -1287,3 +1287,12 @@ body.search-open { overflow: hidden; }
 .askpanel__menu a:hover, .askpanel__menu a:focus-visible { background: var(--color-paper-2); }
 .askpanel__menu .i { width: 1.05em; height: 1.05em; color: var(--color-accent-ink); flex: none; }
 @media (max-width: 59.99rem) { .askpanel__menu { position: static; margin-top: 0.35rem; box-shadow: none; } }
+
+/* ---- Lot 4 : sélecteur d'axes (soins, sessions), la fleur réagit au survol ---- */
+.axes__flower .petal a { cursor: pointer; }
+.axes__flower .petal circle { transition: fill var(--dur-medium) var(--ease-out), stroke-width var(--dur-medium) var(--ease-out), transform var(--dur-slow) var(--ease-spring); transform-box: fill-box; transform-origin: center; }
+.axes__flower .petal text { transition: fill var(--dur-short) var(--ease-out); }
+.axes__flower .petal.is-hover circle, .axes__flower .petal a:hover circle, .axes__flower .petal a:focus-visible circle { fill: oklch(from var(--color-blue-300) l c h / 0.32); stroke-width: 2; transform: scale(1.03); }
+.axes__flower .petal.is-near circle { fill: oklch(from var(--color-blue-300) l c h / 0.12); }
+.axes__btn.is-hover { border-color: var(--color-ink); background: var(--color-paper-2); }
+@media (prefers-reduced-motion: reduce) { .axes__flower .petal circle { transition: none; transform: none !important; } }

@@ -879,3 +879,30 @@
   });
   document.addEventListener("click", function (e) { if (!e.target.closest("[data-askpanel]")) closeAll(null); });
 })();
+
+/* ---- Lot 4 : sélecteur d'axes, survol croisé fleur <-> pastilles ---- */
+(function () {
+  var picker = document.querySelector("[data-axes-picker]");
+  if (!picker || !window.matchMedia("(hover: hover)").matches) return;
+  var petals = [].slice.call(picker.querySelectorAll(".axes__flower .petal"));
+  var btns = [].slice.call(picker.querySelectorAll(".axes__btn[data-axis]"));
+  var n = petals.length;
+  function axisOf(p) { var a = p.querySelector("[data-axis]"); return a ? a.getAttribute("data-axis") : null; }
+  function light(axis) {
+    petals.forEach(function (p, k) {
+      var on = axisOf(p) === axis;
+      p.classList.toggle("is-hover", on);
+      var near = axis !== null && !on && n && (axisOf(petals[(k + 1) % n]) === axis || axisOf(petals[(k - 1 + n) % n]) === axis);
+      p.classList.toggle("is-near", !!near);
+    });
+    btns.forEach(function (b) { b.classList.toggle("is-hover", b.getAttribute("data-axis") === axis); });
+  }
+  petals.forEach(function (p) {
+    p.addEventListener("mouseenter", function () { light(axisOf(p)); });
+    p.addEventListener("mouseleave", function () { light(null); });
+  });
+  btns.forEach(function (b) {
+    b.addEventListener("mouseenter", function () { light(b.getAttribute("data-axis")); });
+    b.addEventListener("mouseleave", function () { light(null); });
+  });
+})();
