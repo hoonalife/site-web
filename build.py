@@ -294,9 +294,11 @@ def cat_head(c, note=""):
     if not c.get("image"):
         return '      <h2 id="h-%s">%s</h2>\n      <p class="cat-intro">%s</p>\n%s' % (e(c["slug"]), e(c["nom"]), e(c.get("intro")), note)
     # La photo porte seulement le titre de la rubrique (la légende `image_caption` n'est plus affichée, 17 nov. 2026).
-    return ('      <figure class="cat-plate"><img src="%s" alt="" width="1600" height="900" loading="lazy" decoding="async">'
+    # `image_position` (facultatif, ex. "center 62%") : point de cadrage quand la photo est recadrée en bandeau.
+    pos = ' style="object-position:%s"' % e(c["image_position"]) if c.get("image_position") else ""
+    return ('      <figure class="cat-plate"><img src="%s" alt="" width="1600" height="900" loading="lazy" decoding="async"%s>'
             '<figcaption><h2 id="h-%s">%s</h2></figcaption></figure>\n      <p class="cat-intro">%s</p>\n%s'
-            % (e(c["image"].lstrip("/")), e(c["slug"]), e(c["nom"]), e(c.get("intro")), note))
+            % (e(c["image"].lstrip("/")), pos, e(c["slug"]), e(c["nom"]), e(c.get("intro")), note))
 
 
 ICON_CLOCK = '<svg class="i" aria-hidden="true"><use href="#i-clock"/></svg>'

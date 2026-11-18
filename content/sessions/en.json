@@ -269,6 +269,7 @@
       "nom": "Yoga and sound journey",
       "intro": "A yoga session followed by a gong bath, for a complete body and mind reconnection.",
       "image": "assets/img/lieu-dome.webp",
+      "image_position": "center 62%",
       "image_caption": "The Dome at dusk",
       "sessions": [
         {

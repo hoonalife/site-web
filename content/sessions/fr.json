@@ -275,6 +275,7 @@
       "nom": "Yoga et voyage sonore",
       "intro": "Une séance de yoga suivie d'un bain de gongs, pour une reconnexion complète corps-esprit.",
       "image": "assets/img/lieu-dome.webp",
+      "image_position": "center 62%",
       "image_caption": "Le Dôme, à la tombée du jour",
       "sessions": [
         {

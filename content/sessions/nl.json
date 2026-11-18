@@ -269,6 +269,7 @@
       "nom": "Yoga en klankreis",
       "intro": "Een yogasessie gevolgd door een gongbad, voor een volledige verbinding tussen lichaam en geest.",
       "image": "assets/img/lieu-dome.webp",
+      "image_position": "center 62%",
       "image_caption": "De Dome, bij valavond",
       "sessions": [
         {
