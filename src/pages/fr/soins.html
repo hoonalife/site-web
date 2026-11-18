@@ -14,16 +14,17 @@ nav: SOINS
     </header>
     {{AXES_PICKER}}
   </div>
+  <!-- Lot 4 : onglets collants. Rubriques en onglets texte, loupe qui ouvre le champ ; le compteur n'apparaît que pendant un filtrage. -->
   <div class="toolbar">
-    <div class="filters" aria-label="{{t:goto_cat}}">
+    <nav class="tabs" aria-label="{{t:goto_cat}}">
       {{SOINS_FILTERS}}
-    </div>
-    <div class="search">
-      <svg class="i" aria-hidden="true"><use href="#i-search"/></svg>
+    </nav>
+    <div class="search" data-search-box>
       <label class="visually-hidden" for="q">Rechercher un soin</label>
       <input id="q" type="search" data-search placeholder="Rechercher : sommeil, massage, détox…" autocomplete="off">
     </div>
-    <p class="toolbar__status" data-status role="status" aria-live="polite">{{SOINS_STATUS}}</p>
+    <button class="toolbar__search-toggle" type="button" aria-expanded="false" aria-controls="q" data-search-toggle><svg class="i" aria-hidden="true"><use href="#i-search"/></svg><span class="visually-hidden">{{t:search_toggle}}</span></button>
+    <p class="toolbar__status" data-status role="status" aria-live="polite" hidden>{{SOINS_STATUS}}</p>
   </div>
 
     {{SOINS_GROUPS}}

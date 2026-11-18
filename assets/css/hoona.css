@@ -284,15 +284,20 @@ body.menu-open .site-head .bar { background: var(--color-paper) !important; colo
                  sens horaire), son nom apparaît quand il se referme, « élan vital » apparaît avec un halo,
                  puis les traits s'amincissent et les tirets lumineux apparaissent (dès 1,8 s) ;
      ensuite, en boucle : sept tirets (18 % du contour) parcourent les cercles, 12 s par tour, décalés d'un
-                 septième ; ils se rejoignent au centre une fois par tour, à t = 6 s, 18 s, 30 s…
-     5,4 → 6,6 s  battement du centre (×1,2, lueur 0,45, « élan vital » en gras), culmine à la convergence ;
-     6 → 8,5 s    l'onde part du centre et traverse les sept cercles jusqu'au bord ; effacée à 9,2 s.
-   Phase des tirets : décalage de départ 0,66 + rang/7 (en fraction du tour) ; le tiret est centré sur le
-   centre de la fleur quand t/12 s + 0,41 ≡ 0,91, soit t = 6 s (mod 12 s).
+                 septième ; leurs pointes touchent le centre une fois par tour, à t = 4,92 s, 16,92 s…
+     4,92 → 6,12 s  battement du centre (×1,2, lueur 0,45, « élan vital » en gras), dès le contact,
+                    culmine 0,5 s après (5,42 s) ;
+     4,92 → 7,42 s  l'onde part du centre au même instant et traverse les sept cercles jusqu'au bord ;
+                    effacée à 8,12 s (à 6 s, tirets centrés, elle est déjà à mi-course).
+   Phase des tirets : départ du tiret, relatif au point du cercle qui touche le centre de la fleur,
+   r(t) = t/12 s + 0,41 (fraction du tour ; décalage de départ 0,66 + rang/7, moins 0,25 + rang/7 pour
+   la position du centre ; le tiret avance dans le sens du tracé). La pointe avant (r + 0,18) touche le
+   centre quand r ≡ -0,18, soit t/12 + 0,41 = 0,82 : t = 4,92 s ; le tiret est centré (r ≡ -0,09) à 6 s.
    Sans JS, sans IntersectionObserver ou avec « réduire les animations » : fleur visible, immobile
    (traits fins, tirets arrêtés, lueur 0,10). Le survol garde la priorité sur les traits et les teintes.
    Ailleurs (approche, soins, sessions) : lueur, onde et tirets de flower.svg restent en display: none.
-   Les pourcentages des keyframes trace-* supposent un cycle de 12 s et un battement à 5,4 s. */
+   Les pourcentages des keyframes trace-* supposent un cycle de 12 s et un départ à 4,92 s
+   (si le tiret ou le cycle changent : départ = (0,82 − 0,41) × cycle, avec 0,82 = 1 − longueur du tiret). */
 .flower__glow, .flower__waves, .flower__traces { display: none; }
 [data-fleur-anim] {
   --trace-cycle: 12s;              /* un tour de cercle pour chaque tiret ; une pulsation par tour */
@@ -301,7 +306,7 @@ body.menu-open .site-head .bar { background: var(--color-paper) !important; colo
   --trace-base-width: 0.8;         /* trait de base aminci */
   --trace-base-ink: oklch(27.4% 0.049 256 / 0.4);   /* trait de base éclairci */
   --trace-glow: 0.10;              /* lueur continue du centre */
-  --trace-pulse-at: 5.4s;          /* début du battement ; culmine à 6 s, quand les tirets se rejoignent */
+  --trace-pulse-at: 4.92s;         /* battement et onde : dès que la pointe des tirets touche le centre */
   --trace-beat-glow: 0.45;         /* lueur au battement */
   --trace-core-scale: 1.2;         /* battement du centre */
   --fleur-draw: 1.5s;              /* éclosion d'un cercle : tracé 0,5 s, puis amincissement */
@@ -379,15 +384,16 @@ body.menu-open .site-head .bar { background: var(--color-paper) !important; colo
 @keyframes fleur-fade-in { from { opacity: 0; } to { opacity: 1; } }
 @keyframes fleur-halo { 0% { opacity: 0; scale: 0.3; } 40% { opacity: var(--trace-beat-glow); } 100% { opacity: var(--trace-glow); scale: 1; } }
 @keyframes trace-run { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -100; } }
-/* pulsation, sur 12 s à partir de 5,4 s : battement 1,2 s, onde de 6 s à 8,5 s, effacée à 9,2 s */
-@keyframes trace-beat { 0%, 10%, 100% { scale: 1; } 5% { scale: var(--trace-core-scale); } }
-@keyframes trace-glow { 0% { opacity: var(--trace-glow); } 5% { opacity: var(--trace-beat-glow); } 10%, 100% { opacity: var(--trace-glow); } }
-@keyframes trace-bold { 0%, 1% { font-weight: 300; } 1.5%, 8.5% { font-weight: 600; } 9.5%, 100% { font-weight: 300; } }
+/* pulsation, sur 12 s à partir de 4,92 s (contact) : battement 1,2 s, culmine à +0,5 s (4,17 %) ;
+   onde au même départ, bord atteint à +2,5 s (20,83 %), effacée à +3,2 s (26,67 %) */
+@keyframes trace-beat { 0%, 10%, 100% { scale: 1; } 4.17% { scale: var(--trace-core-scale); } }
+@keyframes trace-glow { 0% { opacity: var(--trace-glow); } 4.17% { opacity: var(--trace-beat-glow); } 10%, 100% { opacity: var(--trace-glow); } }
+@keyframes trace-bold { 0%, 0.5% { font-weight: 300; } 1%, 8% { font-weight: 600; } 9%, 100% { font-weight: 300; } }
 @keyframes trace-wave {
-  0%, 5%       { scale: 0.02; opacity: 0; animation-timing-function: var(--fleur-drop); }
-  6.67%        { opacity: 1; animation-timing-function: var(--fleur-drop); }
-  25.83%       { scale: 1; opacity: 0.85; animation-timing-function: var(--fleur-soft); }
-  31.67%, 100% { scale: 1; opacity: 0; }
+  0%           { scale: 0.02; opacity: 0; animation-timing-function: var(--fleur-drop); }
+  1.67%        { opacity: 1; animation-timing-function: var(--fleur-drop); }
+  20.83%       { scale: 1; opacity: 0.85; animation-timing-function: var(--fleur-soft); }
+  26.67%, 100% { scale: 1; opacity: 0; }
 }
 
 .flower__legend { counter-reset: axe; display: grid; grid-template-columns: minmax(0, 1fr); border-top: var(--rule-hair) solid var(--color-rule); }
@@ -542,7 +548,7 @@ a.row:hover .row__go { transform: translateX(0.25rem); }
 .field:focus-visible, .search input:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 1px; border-color: var(--color-ink); }
 .field[aria-invalid="true"] { border-color: var(--color-error); }
 .field[disabled] { opacity: 0.5; cursor: not-allowed; }
-.toolbar { display: grid; gap: var(--space-md); padding-block: var(--space-md); border-bottom: var(--rule-hair) solid var(--color-rule); }
+/* Lot 4 : onglets collants. La barre d'outils (.toolbar) est définie plus bas, dans le bloc « onglets collants ». */
 .toolbar__status { font-size: var(--text-sm); color: var(--color-ink-2); }
 .cat-group { padding-top: var(--space-xl); }
 .cat-group[hidden] { display: none; }
@@ -647,8 +653,6 @@ select.field { appearance: none; background-image: linear-gradient(45deg, transp
   .spaces { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .duo { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cal { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .toolbar { grid-template-columns: minmax(0, 1fr) auto; align-items: center; }
-  .toolbar .filters { grid-column: 1 / -1; }
   .day { grid-template-columns: 9rem minmax(0, 1fr); }
 }
 @media (min-width: 56rem) {
@@ -1173,18 +1177,45 @@ body.search-open { overflow: hidden; }
 .cat-locked > .rows > .row:last-child { border-bottom: 0; }
 /* Sous la barre d'outils, la première rubrique suit de près ; l'écart entre rubriques ne change pas. */
 .toolbar + .cat-group { margin-top: 0; padding-top: var(--space-lg); }
-/* Barre d'outils : sur grand écran, les rubriques à gauche, la recherche à droite sur la même ligne, le compteur dessous. */
-@media (min-width: 60rem) {
-  .toolbar { grid-template-columns: minmax(0, 1fr) 22rem; column-gap: var(--space-lg); row-gap: var(--space-2xs); align-items: center; }
-  .toolbar .filters { grid-column: 1; grid-row: 1; }
-  .toolbar .search { grid-column: 2; grid-row: 1; max-width: none; }
-  .toolbar .toolbar__status { grid-column: 2; grid-row: 2; justify-self: end; font-size: var(--text-xs); }
+/* ---- Lot 4 : onglets collants ----
+   La barre des rubriques est une fine ligne d'onglets (texte, soulignement de 2 px sous la rubrique à l'écran) qui reste collée sous l'en-tête
+   replié ; à droite, une loupe ouvre le champ de recherche. Le compteur ne s'affiche que pendant un filtrage (hoona.js, apply()). */
+:root { --toolbar-h: 3.25rem; }
+.toolbar { position: sticky; top: var(--bar-h); z-index: 20; display: flex; flex-wrap: wrap; align-items: center; column-gap: var(--space-sm); padding-block: 0; background: var(--color-paper); border-bottom: var(--rule-hair) solid var(--color-rule); }
+.toolbar .tabs { flex: 1 1 0; min-width: 0; display: flex; gap: var(--space-lg); overflow-x: auto; scrollbar-width: none; scroll-snap-type: x proximity; overscroll-behavior-x: contain; }
+.toolbar .tabs::-webkit-scrollbar { display: none; }
+.tab { flex: none; display: inline-flex; align-items: center; min-height: 3rem; border-bottom: 2px solid transparent; font-size: var(--text-sm); color: var(--color-ink-2); text-decoration: none; white-space: nowrap; scroll-snap-align: start; transition: color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out); }
+.tab:hover { color: var(--color-ink); }
+.tab[aria-current="true"] { color: var(--color-ink); border-bottom-color: currentColor; }
+.tab:focus-visible { outline: 2px solid var(--color-focus); outline-offset: -2px; }
+.tab .count { margin-left: 0.4em; font-size: var(--text-xs); font-weight: var(--weight-light); font-variant-numeric: tabular-nums; opacity: 0.6; }
+.tab[hidden] { display: none; }
+/* La loupe n'existe qu'avec le script : sans lui, le champ reste visible en permanence. */
+.toolbar__search-toggle { display: none; flex: none; order: 3; width: 2.5rem; height: 2.5rem; place-items: center; padding: 0; border: 0; border-radius: var(--radius-pill); background: none; color: var(--color-ink); cursor: pointer; transition: background-color var(--dur-short) var(--ease-out); }
+.toolbar__search-toggle .i { width: 1.35rem; height: 1.35rem; }
+.toolbar__search-toggle:hover, .toolbar__search-toggle[aria-expanded="true"] { background: var(--color-paper-2); }
+.toolbar__search-toggle:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 1px; }
+.js .toolbar__search-toggle { display: grid; }
+.toolbar .search { order: 2; flex: none; width: 14rem; max-width: none; }
+.toolbar .search input { min-height: 2.25rem; padding: 0.3em 1em; border: 0; background: var(--color-paper-2); font-size: var(--text-sm); }
+.js .toolbar .search:not(.is-open) { display: none; }
+/* Sessions : le catalogue est posé sur le fond --color-paper-2 ; la barre en reprend la couleur, le champ passe en --color-paper. */
+.section--deep .toolbar { background: var(--color-paper-2); }
+.section--deep .toolbar .search input, .section--deep .toolbar__search-toggle:hover, .section--deep .toolbar__search-toggle[aria-expanded="true"] { background: var(--color-paper); }
+.toolbar .toolbar__status { order: 1; flex: none; font-size: var(--text-xs); white-space: nowrap; }
+.toolbar .toolbar__status[hidden] { display: none; }
+/* Une rubrique atteinte par un onglet s'arrête sous la barre collée. */
+[data-catalogue] .cat-group { scroll-margin-top: calc(var(--toolbar-h) - var(--space-lg)); }
+/* Mobile : les onglets défilent sur une ligne, la loupe reste à droite hors de la zone qui défile ; le champ ouvert passe pleine largeur dessous. */
+@media (max-width: 59.99rem) {
+  .toolbar .tabs { gap: var(--space-md); scroll-padding-inline: 0; }
+  .toolbar .search { order: 4; flex: 1 1 100%; width: auto; padding-bottom: var(--space-2xs); }
+  .toolbar .toolbar__status { order: 5; flex-basis: 100%; margin: 0; padding-bottom: var(--space-2xs); text-align: right; }
 }
 @media (prefers-reduced-motion: reduce) { .cat-locked summary::after { transition: none; } }
 
 /* ---- Lot 4 : tête de la page Soins, texte et pastilles à gauche, fleur à droite ---- */
 .soins-head { border-bottom: var(--rule-hair) solid var(--color-rule); padding-bottom: var(--space-lg); margin-bottom: var(--space-md); }
-.soins-head + .toolbar { padding-block: var(--space-sm) var(--space-md); }
 .soins-head .page-head { padding-block: var(--space-xl) 0; }
 .soins-head .axes { border-bottom: 0; padding-bottom: 0; }
 @media (min-width: 60rem) {

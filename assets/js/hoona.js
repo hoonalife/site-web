@@ -233,6 +233,13 @@
       return out;
     };
     var unit = function (n) { return isSessions ? (n > 1 ? T.session_many : T.session_one) : (n > 1 ? T.many : T.one); };
+    /* Lot 4 : onglets collants. Les onglets de rubriques, reliés à leur .cat-group par l'ancre (voir plus bas : aria-current). */
+    var tabs = [].slice.call(catalogue.querySelectorAll(".toolbar .tab"));
+    var tabsSync = null;
+    tabs.forEach(function (tb) {
+      var id = (tb.getAttribute("href") || "").slice(1);
+      tb._group = groups.filter(function (g) { return g.id === id; })[0] || null;
+    });
 
     function apply() {
       var q = norm((input && input.value || "").trim());
@@ -252,7 +259,10 @@
         d.hidden = !n;
         if (q && n) d.open = true;
       });
-      if (status) status.textContent = shown + " " + unit(shown);
+      /* Lot 4 : onglets collants. Le compteur n'apparaît que pendant un filtrage (champ non vide ou axe choisi) ; un onglet disparaît avec sa rubrique. */
+      if (status) { status.textContent = shown + " " + unit(shown); status.hidden = !(q || axes.length); }
+      tabs.forEach(function (tb) { tb.hidden = !!tb._group && tb._group.hidden; });
+      if (tabsSync) tabsSync();
       if (empty) empty.hidden = shown !== 0;
       if (axisStatus) {
         axisStatus.textContent = (axes.length ? axes.map(function (a) { return axisNames[a] || a; }).join(" + ") : (picker.getAttribute("data-all") || axisStatus.getAttribute("data-all") || axisStatus._all))
@@ -282,6 +292,62 @@
       axisToggle.textContent = open ? axisToggle.getAttribute("data-hide") : axisToggle.getAttribute("data-show");
     });
     if (input) input.addEventListener("input", apply);
+
+    /* Lot 4 : onglets collants. La loupe ouvre le champ de recherche (focus) ; Échap le vide et le referme, la perte de focus le referme s'il est vide. */
+    var searchBox = catalogue.querySelector("[data-search-box]");
+    var searchToggle = catalogue.querySelector("[data-search-toggle]");
+    if (input && searchBox && searchToggle) {
+      var searchOpen = function (open, focus) {
+        searchBox.classList.toggle("is-open", open);
+        searchToggle.setAttribute("aria-expanded", String(open));
+        if (open && focus) input.focus();
+      };
+      searchToggle.addEventListener("mousedown", function (e) { if (document.activeElement === input) e.preventDefault(); });
+      searchToggle.addEventListener("click", function () {
+        var open = searchBox.classList.contains("is-open");
+        if (open && !input.value) searchOpen(false);
+        else searchOpen(true, true);
+      });
+      input.addEventListener("keydown", function (e) {
+        if (e.key !== "Escape") return;
+        input.value = "";
+        apply();
+        searchOpen(false);
+        searchToggle.focus();
+      });
+      input.addEventListener("blur", function () { if (!input.value) searchOpen(false); });
+      if (input.value) searchOpen(true);
+    }
+
+    /* Lot 4 : onglets collants. L'onglet de la rubrique qui traverse la bande 40 % à 45 % de l'écran porte aria-current ; au chargement, le premier. */
+    if (tabs.length) {
+      var tabsBar = tabs[0].parentNode;
+      var current = null;
+      var setCurrent = function (tb) {
+        if (!tb || tb === current) return;
+        current = tb;
+        tabs.forEach(function (o) { if (o === tb) o.setAttribute("aria-current", "true"); else o.removeAttribute("aria-current"); });
+        /* Sur mobile, la ligne d'onglets défile pour garder l'onglet courant visible (sans toucher au défilement de la page). */
+        if (tabsBar.scrollWidth > tabsBar.clientWidth) {
+          var left = tb.offsetLeft - tabsBar.offsetLeft - 16;
+          tabsBar.scrollTo({ left: left, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+        }
+      };
+      var firstTab = function () { return tabs.filter(function (tb) { return !tb.hidden; })[0]; };
+      tabsSync = function () { if (!current || current.hidden) { current = null; setCurrent(firstTab()); } };
+      setCurrent(firstTab());
+      if ("IntersectionObserver" in window) {
+        var tabIo = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (!en.isIntersecting) return;
+            var tb = tabs.filter(function (t) { return t._group === en.target; })[0];
+            if (tb && !tb.hidden) setCurrent(tb);
+          });
+        }, { rootMargin: "-40% 0px -55% 0px" });
+        groups.forEach(function (g) { tabIo.observe(g); });
+      }
+      tabs.forEach(function (tb) { tb.addEventListener("click", function () { setCurrent(tb); }); });
+    }
 
     /* Sur mobile, chaque soin se replie sur son titre, sa durée et son prix ; le toucher déplie la description et les boutons. */
     if (catalogue.hasAttribute("data-collapsible")) {

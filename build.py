@@ -234,7 +234,7 @@ def actions(item, t, lang):
     u = item.get("url") or ""
     if u.startswith("mailto:"):
         out = ('<a class="btn btn--sm btn--line" href="%s"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg>%s</a>'
-               '<a class="btn btn--sm btn--line offer-btn" href="tel:%s" title="%s"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>%s</a>'
+               '<a class="btn btn--sm btn--line" href="tel:%s" title="%s"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>%s</a>'
                % (e(u), e(t["contact_mail"]), e(t["tel_link"]), e(t["tel_label"]), e(t["contact_tel"])))
     elif u.startswith("http"):
         out = ('<a class="btn btn--sm" href="%s" target="_blank" rel="noopener">%s<span class="visually-hidden"> : %s %s</span></a>'
@@ -271,8 +271,10 @@ def lock_badge(t):
 
 
 def anchor_chips(cats, key, t):
+    # Lot 4 : onglets collants. Les rubriques deviennent des onglets texte (a.tab) ; hoona.js pose aria-current sur l'onglet de la rubrique à l'écran.
+    # Seuls les deux gabarits de catalogue (soins, sessions) appellent cette fonction.
     e = lambda x: htmllib.escape(str(x), quote=True)
-    return "\n      ".join('<a class="chip chip--link" href="#%s">%s<span class="count">%d</span></a>' % (e(c["slug"]), e(c["nom"]), len(c.get(key, []))) for c in cats)
+    return "\n      ".join('<a class="tab" href="#%s">%s<span class="count">%d</span></a>' % (e(c["slug"]), e(c["nom"]), len(c.get(key, []))) for c in cats)
 
 
 def cat_head(c, note=""):

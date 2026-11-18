@@ -508,6 +508,8 @@ main > .strata:last-of-type { margin-bottom: var(--space-xl); }
   /* Variante 2 retenue le 4 nov. 2026 : Réserver plein, puis pack et abonnement en boutons filets empilés, libellé à gauche, prix à droite. */
   .row--soin > .row__act { grid-area: act; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.3rem; align-content: start; align-self: start; }
   .row--soin > .row__act > .btn:first-child { justify-content: center; min-height: 2.4rem; }
+  .row--soin > .row__act > .btn--line:not(.offer-btn) { justify-content: center; min-height: 2.4rem; }
+  .row--soin > .row__price--ask { min-height: 0; display: inline-block; align-self: start; margin-top: 0.45rem; }
   .row__act .btn--line.offer-btn { justify-content: space-between; padding-inline: 0.8rem; min-height: 1.9rem; }
   .row__act .offer-btn b { margin-left: 0.5em; }
   .row--soin .axes-tags { margin-top: 0.3rem; gap: 0 0.4em; }
