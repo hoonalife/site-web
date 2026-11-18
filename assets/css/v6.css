@@ -883,3 +883,46 @@ a.quote__who:focus-visible { outline: 2px solid var(--color-focus); outline-offs
   .soins-band { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: var(--space-2xl); align-items: center; }
   .soins-band__figure { max-width: 24rem; }
 }
+
+/* ---------- Lot 4 : trois temps sur mobile ----------
+   Mobile (< 56 rem) : le titre et les cercles forment une bande collante sous l'en-tête ; les trois étapes défilent dessous, resserrées.
+   Ordinateur (≥ 56 rem) : .journey__band est transparent et le titre, la phrase puis la figure se replacent dans la colonne de gauche, comme avant. */
+.journey__band { display: contents; }
+.journey__intro { max-width: 40ch; }
+@media (min-width: 56rem) {
+  .journey__aside { gap: 0; }
+  .journey__head { grid-column: 1; grid-row: 1; }
+  .journey__intro { grid-column: 1; grid-row: 2; margin-top: var(--space-sm); }
+  .journey__figure { grid-column: 1; grid-row: 3; margin-top: var(--space-xl); }
+}
+@media (max-width: 55.99rem) {
+  #etapes { padding-block: var(--space-xl); }
+  .journey { display: flex; flex-direction: column; gap: var(--space-sm); }
+  .journey__aside { display: contents; }
+  .journey__band {
+    display: grid; grid-template-columns: 6rem minmax(0, 1fr); align-items: center; column-gap: var(--space-sm);
+    position: sticky; top: var(--bar-h); z-index: 5;
+    margin-inline: calc(var(--gutter) * -1); padding: var(--space-2xs) var(--gutter);
+    background: var(--color-paper-2); border-bottom: var(--rule-hair) solid var(--color-rule);
+    box-shadow: 0 -0.75rem 0 var(--color-paper-2); /* bouche l'interstice sous la pilule de l'en-tête */
+  }
+  .journey__band .journey__figure { order: -1; position: relative; width: 6rem; height: 6rem; max-width: none; overflow: hidden; }
+  .journey__band .journey__svg { position: absolute; left: 0; bottom: 0; width: 6rem; height: 6rem; overflow: hidden; } /* le grand cercle ne déborde plus sur les étapes */
+  .journey__band .strate__label { font-size: 60px; }
+  .journey__band .journey__head { max-width: none; display: block; }
+  .journey__band .journey__head h2 { font-size: var(--text-lg); line-height: 1.2; }
+  .journey__intro { font-size: var(--text-sm); max-width: none; }
+  .journey .journey__steps { gap: 0; }
+  .journey .journey__step { grid-template-columns: 1.75rem minmax(0, 1fr); gap: var(--space-xs); padding-block: var(--space-xs); opacity: 0.7; }
+  .journey .journey__step.is-active { opacity: 1; }
+  .journey .journey__n { font-size: var(--text-lg); line-height: 1.25; color: var(--color-accent-ink); }
+  .journey .journey__step h3 { font-size: var(--text-lg); max-width: none; line-height: 1.25; }
+  .journey .journey__what { font-size: var(--text-sm); }
+  .journey .journey__step .muted { font-size: var(--text-sm); }
+  .journey .journey__price { font-size: var(--text-md); }
+  .journey .journey__step > div { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-2xs) var(--space-sm); }
+  .journey .journey__step h3, .journey .journey__what, .journey .journey__step .muted { flex: 0 0 100%; }
+  .journey .journey__price { flex: none; }
+  .journey .journey__step .actions { flex: 1 1 0; min-width: 0; margin: 0; gap: var(--space-2xs) var(--space-sm); }
+  .journey .journey__step .link { font-size: var(--text-sm); }
+}

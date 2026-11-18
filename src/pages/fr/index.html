@@ -108,9 +108,10 @@ header: overlay
 <section class="section section--deep" id="etapes" aria-labelledby="etapes-title">
   <div class="wrap journey" data-journey data-step="1">
     <div class="journey__aside">
+      <!-- Lot 4 : trois temps sur mobile. La bande (titre + cercles) est collante ; la phrase d'introduction sort de la bande. Sur ordinateur, .journey__band est transparent (display: contents) et la mise en page reste celle d'avant. -->
+      <div class="journey__band">
       <div class="journey__head" data-stagger>
         <h2 id="etapes-title">Trois temps, une même approche.</h2>
-        <p class="muted">On comprend, on expérimente, on s'immerge. Chaque étape se suffit à elle-même.</p>
       </div>
       <figure class="journey__figure" aria-hidden="true">
         <svg class="journey__svg" viewBox="0 0 520 520">
@@ -122,6 +123,8 @@ header: overlay
           <text class="strate__label" x="372" y="148">3</text>
         </svg>
       </figure>
+      </div>
+      <p class="muted journey__intro reveal" style="--i:1">On comprend, on expérimente, on s'immerge. Chaque étape se suffit à elle-même.</p>
     </div>
     <ol class="journey__steps">
       <li class="journey__step" data-step="1">
