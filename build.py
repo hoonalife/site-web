@@ -1247,8 +1247,13 @@ def write_search_index(langs):
                     url = i.get("page") or ("%s#s-%s" % (page, slugify(nom)) if kind == "sessions" else "%s#%s" % (page, c.get("slug", "")))
                     entries.append({"url": url, "title": nom, "description": _search_clean(re.sub(r"<[^>]+>", " ", str(i.get("description") or ""))),
                                     "section": t.get(key, ""), "headings": [_search_clean(c.get("nom"))], "text": "", "lang": lang, "item": True})
-        (ROOT / "assets" / ("search-%s.json" % lang)).write_text(
-            json.dumps(entries, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+        payload = json.dumps(entries, ensure_ascii=False, separators=(",", ":"))
+        (ROOT / "assets" / ("search-%s.json" % lang)).write_text(payload, encoding="utf-8")
+        # Même index sous forme de script : chargeable par <script src>, donc aussi depuis un fichier local (file://),
+        # là où fetch() est refusé par le navigateur.
+        (ROOT / "assets" / ("search-%s.js" % lang)).write_text(
+            'window.hoonaSearchIndex=window.hoonaSearchIndex||{};window.hoonaSearchIndex[%s]=%s;' % (json.dumps(lang), payload),
+            encoding="utf-8")
 
 
 def build():

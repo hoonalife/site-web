@@ -689,8 +689,17 @@
   function load() {
     if (data || loading) return loading;
     failed = false;
-    loading = window.fetch(indexUrl, { credentials: "same-origin" })
-      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    /* L'index arrive par une balise <script> (assets/search-<langue>.js) : cela marche sur un serveur comme
+       pour une page ouverte en local (file://), où fetch() est refusé. */
+    loading = new Promise(function (resolve, reject) {
+      var ready = window.hoonaSearchIndex && window.hoonaSearchIndex[lang];
+      if (ready) return resolve(ready);
+      var s = document.createElement("script");
+      s.src = indexUrl.replace(/\.json$/, ".js"); s.async = true;
+      s.onload = function () { var d = window.hoonaSearchIndex && window.hoonaSearchIndex[lang]; if (d) resolve(d); else reject(new Error("index")); };
+      s.onerror = function () { reject(new Error("index")); };
+      document.head.appendChild(s);
+    })
       .then(function (d) { data = prepare(d); loading = null; if (!layer.hidden) run(); })
       .catch(function () { loading = null; failed = true; if (!layer.hidden) run(); failed = false; });
     return loading;
