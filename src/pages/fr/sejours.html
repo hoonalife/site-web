@@ -11,7 +11,6 @@ nav: SEJOURS
   <p class="chapeau">S'arrêter pour faire le point, se reconnecter à sa petite voix intérieure et se régénérer dans un refuge moderne, en lisière de la forêt de Soignes.</p>
   <div class="actions">
     <a class="btn" href="#dates">Voir les dates</a>
-    <a class="link" href="journees.html">Ou une demi-journée</a>
   </div>
 </header>
 
@@ -83,25 +82,40 @@ nav: SEJOURS
 </section>
 
 <section class="section section--tight" id="journee-type" aria-labelledby="jt-title">
-  <div class="wrap doc">
+  <div class="wrap doc doc--daytype">
     <div class="stack">
       <h2 id="jt-title">Une journée type</h2>
       <p class="muted">Le rythme d'une journée de séjour. Les soins et les consultations varient selon votre programme personnalisé.</p>
     </div>
-    <ol class="daytype">
-      <li><span class="daytype__time">7h30</span><span class="daytype__what"><strong>Réveil en douceur &amp; petit-déjeuner</strong></span></li>
-      <li><span class="daytype__time">8h45</span><span class="daytype__what"><strong>Départ vers hoona</strong></span></li>
-      <li><span class="daytype__time">9h</span><span class="daytype__what"><strong>Mouvement en groupe</strong>Marche nordique au grand air ou yoga, pour éveiller le corps et ouvrir le souffle.</span></li>
-      <li><span class="daytype__time">10h30</span><span class="daytype__what"><strong>Échange thématique</strong>Autour de l'un des axes hoona (détox, sommeil, digestion, système nerveux…), pour comprendre son corps et repartir avec des clés simples au quotidien.</span></li>
-      <li><span class="daytype__time">11h30</span><span class="daytype__what"><strong>Soin individuel</strong>Un massage, ou une séance sur l'une de nos technologies dédiées à la détox (<a href="papimi.html">Papimi</a>, IHHT, lumière infrarouge…).</span></li>
-      <li><span class="daytype__time">12h30</span><span class="daytype__what"><strong>Déjeuner</strong>Anti-inflammatoire, bio et partagé.</span></li>
-      <li><span class="daytype__time">13h30</span><span class="daytype__what"><strong>Balade digestive</strong></span></li>
-      <li><span class="daytype__time">14h30 à 16h30</span><span class="daytype__what"><strong>Soins individuels &amp; consultations</strong>En naturopathie holistique, selon votre programme personnalisé.</span></li>
-      <li><span class="daytype__time">16h30</span><span class="daytype__what"><strong>Cercle de parole</strong>Un temps pour déposer et partager.</span></li>
-      <li><span class="daytype__time">17h30</span><span class="daytype__what"><strong>Temps libre &amp; repos</strong></span></li>
-      <li><span class="daytype__time">19h</span><span class="daytype__what"><strong>Dîner</strong></span></li>
-      <li><span class="daytype__time">19h45</span><span class="daytype__what"><strong>Soirée thématique</strong>Film, échange avec une naturopathe ou sound healing.</span></li>
-    </ol>
+    <div class="daytype">
+      <div class="daytype__group">
+        <h3 class="daytype__moment">Matin</h3>
+        <ol class="daytype__steps">
+          <li><span class="daytype__time">7h30</span><span class="daytype__what"><strong>Réveil en douceur &amp; petit-déjeuner</strong></span></li>
+          <li><span class="daytype__time">8h45</span><span class="daytype__what"><strong>Départ vers hoona</strong></span></li>
+          <li><span class="daytype__time">9h</span><span class="daytype__what"><strong>Mouvement en groupe</strong>Marche nordique au grand air ou yoga, pour éveiller le corps et ouvrir le souffle.</span></li>
+          <li><span class="daytype__time">10h30</span><span class="daytype__what"><strong>Échange thématique</strong>Autour de l'un des axes hoona (détox, sommeil, digestion, système nerveux…), pour comprendre son corps et repartir avec des clés simples au quotidien.</span></li>
+          <li><span class="daytype__time">11h30</span><span class="daytype__what"><strong>Soin individuel</strong>Un massage, ou une séance sur l'une de nos technologies dédiées à la détox (<a href="papimi.html">Papimi</a>, IHHT, lumière infrarouge…).</span></li>
+        </ol>
+      </div>
+      <div class="daytype__group">
+        <h3 class="daytype__moment">Midi</h3>
+        <ol class="daytype__steps">
+          <li><span class="daytype__time">12h30</span><span class="daytype__what"><strong>Déjeuner</strong>Anti-inflammatoire, bio et partagé.</span></li>
+          <li><span class="daytype__time">13h30</span><span class="daytype__what"><strong>Balade digestive</strong></span></li>
+        </ol>
+      </div>
+      <div class="daytype__group">
+        <h3 class="daytype__moment">Après-midi et soir</h3>
+        <ol class="daytype__steps">
+          <li><span class="daytype__time">14h30 à 16h30</span><span class="daytype__what"><strong>Soins individuels &amp; consultations</strong>En naturopathie holistique, selon votre programme personnalisé.</span></li>
+          <li><span class="daytype__time">16h30</span><span class="daytype__what"><strong>Cercle de parole</strong>Un temps pour déposer et partager.</span></li>
+          <li><span class="daytype__time">17h30</span><span class="daytype__what"><strong>Temps libre &amp; repos</strong></span></li>
+          <li><span class="daytype__time">19h</span><span class="daytype__what"><strong>Dîner</strong></span></li>
+          <li><span class="daytype__time">19h45</span><span class="daytype__what"><strong>Soirée thématique</strong>Film, échange avec une naturopathe ou sound healing.</span></li>
+        </ol>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -110,7 +124,7 @@ nav: SEJOURS
     <div class="stack" style="margin-bottom:var(--space-xl)">
       <p class="insert">Où vous logez</p>
       <h2 id="mh-title">La maison d'hôtes, à quelques pas du centre.</h2>
-      <p class="muted measure">Pendant votre séjour, vous dormez dans notre maison d'hôtes, à quelques pas du centre. Elle compte huit chambres sur deux étages, chacune avec sa salle de bain privée, ainsi qu'un salon, une salle à manger et un jardin. Les repas, sains et savoureux, sont préparés par notre chef.</p>
+      <p class="muted measure">Pendant votre séjour, vous dormez dans notre maison d'hôtes, à quelques pas du centre. Elle compte huit chambres sur deux étages, chacune avec sa salle de bain privée. Les espaces communs réunissent un salon, un salon extérieur, une salle à manger et un jardin. Les repas, sains et savoureux, sont servis dans notre salle à manger, à la table commune, à l'intérieur ou à l'extérieur.</p>
     </div>
     <div class="carousel" data-carousel role="region" aria-roledescription="carrousel" aria-label="La maison d'hôtes en images">
       <ul class="carousel__track" tabindex="0">
@@ -182,9 +196,6 @@ nav: SEJOURS
         </div>
         <p class="carousel__count" aria-live="polite" aria-atomic="true"><span class="visually-hidden">Photo </span><span data-carousel-current>1</span><span aria-hidden="true"> / </span><span class="visually-hidden"> sur </span>10</p>
       </div>
-    </div>
-    <div class="actions" style="margin-top:var(--space-lg)">
-      <a class="link" href="a-propos.html#maison">En savoir plus sur la maison</a>
     </div>
   </div>
 </section>
