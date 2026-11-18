@@ -700,10 +700,15 @@ select.field { appearance: none; background-image: linear-gradient(45deg, transp
   .menu-links { display: none; }
   .burger { display: grid; }
   .bar__inner { gap: var(--space-xs); }
-  .bar__end { order: 1; flex: 1 1 auto; min-width: 0; }
+  /* Le logo est collé au burger : les enfants de .bar__end deviennent des éléments directs de la barre (display: contents),
+     puis l'ordre est burger, logo, et à droite la loupe, « Échange découverte » (≥ 56 rem) et « Réserver ». */
+  .bar__end { display: contents; }
   .bar__end .langs { display: none; }
-  .bar__end .bookpanel { margin-left: auto; }
-  .brand { order: 2; }
+  .burger { order: 1; }
+  .brand { order: 2; margin-left: var(--space-2xs); }
+  .search-toggle { order: 3; margin-left: auto; }
+  .bar__call { order: 4; }
+  .bookpanel { order: 5; }
   body.menu-open .site-head .bar .btn { background: var(--color-ink) !important; color: var(--color-on-ink) !important; border-color: var(--color-ink) !important; }
   body.menu-open .site-head .bar .btn.btn--line { background: transparent !important; color: var(--color-ink) !important; }
 }
@@ -891,7 +896,7 @@ select.field { appearance: none; background-image: linear-gradient(45deg, transp
 }
 /* Lot 4 : menu mobile. Entre 56 et 75 rem, « Échange découverte » se range à côté de « Réserver », à droite */
 @media (min-width: 56rem) and (max-width: 74.99rem) {
-  .bar__call { margin-left: auto; }
+  .bar__call { margin-left: 0; }
   .bar__end .bookpanel { margin-left: 0; }
 }
 @media (max-width: 39.99rem) {
