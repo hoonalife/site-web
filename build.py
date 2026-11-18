@@ -114,6 +114,15 @@ def render_next(t, lang, today):
     return span(t, lang, nxt[0]["debut"], nxt[0]["fin"]) if nxt else t["banner_none"]
 
 
+def render_next_short(t, lang, today):
+    """Même prochain séjour, en dates courtes (30/11 au 4/12) pour le bandeau sur mobile."""
+    nxt = upcoming(today, open_only=True)
+    if not nxt:
+        return t["banner_none"]
+    b, e = d(nxt[0]["debut"]), d(nxt[0]["fin"])
+    return "%d/%02d %s %d/%02d" % (b.day, b.month, t["date_to"], e.day, e.month)
+
+
 def render_next3(t, lang, today):
     return "\n".join(
         '<li data-start="%s"><time datetime="%s">%s</time></li>' % (s["debut"], s["debut"], span(t, lang, s["debut"], s["fin"]))
@@ -1284,6 +1293,7 @@ def build():
 
         tokens = {
             "{{SEJOUR_NEXT}}": render_next(t, lang, today),
+            "{{SEJOUR_NEXT_SHORT}}": render_next_short(t, lang, today),
             "{{SEJOURS_NEXT3}}": render_next3(t, lang, today),
             "{{SEJOURS_CALENDAR}}": render_calendar(
                 t, lang, today,

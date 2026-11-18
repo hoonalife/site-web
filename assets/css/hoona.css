@@ -153,6 +153,7 @@ p { text-wrap: pretty; }
 }
 .banner__label { letter-spacing: var(--tracking-insert); text-transform: uppercase; font-weight: var(--weight-light); }
 .banner__date { font-weight: var(--weight-bold); overflow: hidden; text-overflow: ellipsis; }
+.banner__label--short, .banner__date--short, .banner__link-short { display: none; }
 .banner .link { color: var(--color-blue-300); }
 .banner .link:hover { color: var(--color-cream); }
 .banner__x {
@@ -683,8 +684,15 @@ select.field { appearance: none; background-image: linear-gradient(45deg, transp
 }
 @media (max-width: 39.99rem) {
   :root { --bar-h: 4rem; }
-  .banner__label { display: none; }
+  /* Sur mobile : libellé court + dates courtes (« Prochain séjour 30/11 au 4/12 »), le libellé long et la date longue sont masqués */
+  .banner__label:not(.banner__label--short), .banner__date:not(.banner__date--short) { display: none; }
+  .banner__label--short, .banner__date--short { display: inline; }
   .banner { justify-content: flex-start; }
+  .banner__inner { gap: 0 var(--space-xs); flex-wrap: nowrap; font-size: var(--text-xs); margin-left: 0; }
+  .banner__link-long { display: none; }
+  .banner__link-short { display: inline; }
+  .banner__label--short { letter-spacing: 0.04em; }
+  .banner__date--short { overflow: visible; }
   .bar__end .btn { display: none; }
   .retreat__facts dd { font-size: var(--text-lg); }
   .fold::after { background: linear-gradient(180deg, var(--color-veil-2) 0%, var(--color-veil-2) 38%, var(--color-veil-4) 100%); }
