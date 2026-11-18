@@ -58,16 +58,29 @@
 
   var burger = document.querySelector(".burger");
   var drawer = document.getElementById("drawer");
+  /* Lot 4 : menu mobile « accordéon ». Le nom accessible du bouton bascule entre « Menu » et « Fermer le menu » ;
+     l'ouverture du menu ferme la fenêtre « Réserver » (closePanel, définie plus bas) et inversement. */
+  var closePanel = function () {};
   function setMenu(open) {
     burger.setAttribute("aria-expanded", String(open));
+    if (T.menu && T.menu_close) burger.setAttribute("aria-label", open ? T.menu_close : T.menu);
     drawer.classList.toggle("is-open", open);
     document.body.classList.toggle("menu-open", open);
-    if (open) { var first = drawer.querySelector("a"); if (first) first.focus(); }
+    if (open) { closePanel(); var first = drawer.querySelector("summary"); if (first) first.focus(); }
   }
   if (burger && drawer) {
     burger.addEventListener("click", function () { setMenu(burger.getAttribute("aria-expanded") !== "true"); });
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && drawer.classList.contains("is-open")) { setMenu(false); burger.focus(); }
+    });
+    /* Chapitre ouvert au départ : celui de la page courante (aria-current sur le details), sinon « Expérimenter » */
+    var chapters = drawer.querySelectorAll("details");
+    var chapterOpen = drawer.querySelector("details[aria-current]") || chapters[1];
+    if (chapterOpen) chapterOpen.open = true;
+    /* Un lien vers une ancre de la page courante referme le menu (sinon la page défile derrière le voile) */
+    drawer.addEventListener("click", function (e) {
+      var a = e.target.closest ? e.target.closest("a[href]") : null;
+      if (a && a.hash && a.pathname === location.pathname && a.host === location.host) setMenu(false);
     });
   }
 
@@ -114,10 +127,16 @@
     var pBtn = panel.querySelector("[data-bookpanel-toggle]");
     var pMenu = panel.querySelector(".bookpanel__menu");
     function setPanel(open) {
+      /* Lot 4 : le menu plein écran et la fenêtre « Réserver » ne sont jamais ouverts ensemble */
+      if (open && drawer && drawer.classList.contains("is-open")) setMenu(false);
       pBtn.setAttribute("aria-expanded", String(open));
       pMenu.hidden = !open;
       if (open) { var f = pMenu.querySelector("a"); if (f) f.focus(); }
     }
+    closePanel = function () { if (!pMenu.hidden) setPanel(false); };
+    /* « Réserver » dans le menu : referme le menu et ouvre la même fenêtre que dans la barre (sans JS, le lien mène à la consultation) */
+    var drawerBook = document.querySelector("[data-drawer-book]");
+    if (drawerBook) drawerBook.addEventListener("click", function (e) { e.preventDefault(); e.stopPropagation(); setPanel(true); });
     pBtn.addEventListener("click", function () { setPanel(pMenu.hidden); });
     document.addEventListener("click", function (e) { if (!pMenu.hidden && !panel.contains(e.target)) setPanel(false); });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !pMenu.hidden) { setPanel(false); pBtn.focus(); } });

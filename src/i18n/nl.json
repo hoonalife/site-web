@@ -78,7 +78,9 @@
     "session_one": "sessie",
     "session_many": "sessies",
     "article_one": "artikel",
-    "article_many": "artikels"
+    "article_many": "artikels",
+    "menu": "Menu",
+    "menu_close": "Menu sluiten"
   },
   "filter_all": "Alles",
   "price_on_request": "op aanvraag",

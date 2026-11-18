@@ -10,8 +10,8 @@
 <link rel="icon" href="assets/brand/sigle-hoona.svg" type="image/svg+xml">
 <link rel="preload" href="assets/fonts/TWKLausanne-300.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/TWKLausanne-350.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/hoona.css?v=43">
-<link rel="stylesheet" href="assets/css/v6.css?v=43">
+<link rel="stylesheet" href="assets/css/hoona.css?v=44">
+<link rel="stylesheet" href="assets/css/v6.css?v=44">
 <script>
 /* Avant le premier rendu : bandeau déjà fermé ? */
 (function(){var d=document.documentElement;d.className+=" js";
@@ -120,6 +120,10 @@ try{if(localStorage.getItem("hoona-banner")==="closed"){d.className+=" is-banner
         </div>
       </nav>
       <div class="bar__end">
+        <!-- Lot 4 : menu mobile. Le burger ouvre le menu à gauche de la barre ; trois traits, le nom accessible vient d'aria-label (basculé par hoona.js). -->
+        <button class="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="{{t:menu}}">
+          <span></span><span></span><span></span>
+        </button>
         {{LANGSWITCH}}
         <button class="search-toggle" type="button" aria-expanded="false" aria-controls="search-layer" aria-haspopup="dialog" data-search-open><svg class="i" aria-hidden="true"><use href="#i-search"/></svg><span class="visually-hidden">{{t:search_open}}</span></button>
         <a class="btn btn--sm btn--line bar__call" href="{{t:url_call_page}}">{{t:call}}</a>
@@ -134,51 +138,63 @@ try{if(localStorage.getItem("hoona-banner")==="closed"){d.className+=" is-banner
             <a class="bookpanel__free" href="{{t:url_call_page}}"><strong>{{t:book_call}}</strong><span>{{t:book_call_meta}}</span></a>
           </div>
         </div>
-        <button class="burger" type="button" aria-expanded="false" aria-controls="drawer">
-          <span></span><span></span>
-          <span class="visually-hidden">{{t:menu}}</span>
-        </button>
       </div>
     </div>
   </div>
 </header>
 
+<!-- Lot 4 : menu mobile « accordéon ». Quatre chapitres (details, un seul ouvert à la fois grâce à name="chapitre") ; le chapitre de la page courante est ouvert par hoona.js (aria-current sur le details), sinon « Expérimenter ». Le logo mène à l'accueil. -->
 <div class="drawer" id="drawer">
-  <nav aria-label="{{t:nav_mobile}}">
-    <ul class="drawer__list">
-      <li class="drawer__search"><button type="button" aria-expanded="false" aria-controls="search-layer" aria-haspopup="dialog" data-search-open><svg class="i" aria-hidden="true"><use href="#i-search"/></svg>{{t:search_open}}</button></li>
-      <li><a href="index.html">{{t:m_home}}</a></li>
-      <li class="drawer__head">{{t:nav_comprendre}}<span class="drawer__lead">{{t:lead_comprendre}}</span></li>
-      <li><a href="{{t:url_consultation}}">{{t:m_consultation}}</a></li>
-      <li><a href="bilan.html">{{t:m_bilan}}</a></li>
-      {{PARCOURS_LI}}
-      <li><a href="{{t:url_call_page}}">{{t:m_call}}</a></li>
-      <li class="drawer__head">{{t:nav_experimenter}}<span class="drawer__lead">{{t:lead_experimenter}}</span></li>
-      <li><a href="soins.html">{{t:sub_soins_tech}}</a></li>
-      <li><a href="sessions.html">{{t:m_sessions}}</a></li>
-      <li><a href="{{t:url_journees}}">{{t:m_journees_sub}}</a></li>
-      <li><a href="bon-cadeau.html">{{t:m_cadeau}}</a></li>
-      <li class="drawer__head">{{t:nav_immerger}}<span class="drawer__lead">{{t:lead_immerger}}</span></li>
-      <li><a href="sejours.html">{{t:m_sejour_long}}</a></li>
-      {{JOURNEE_TYPE_LI}}
-      <li><a href="a-propos.html#maison">{{t:f_maison}}</a></li>
-      <li><a href="sejours.html#dates">{{t:m_dates}}</a></li>
-      <li class="drawer__head">{{t:nav_apropos}}<span class="drawer__lead">{{t:lead_apropos}}</span></li>
-      <li><a href="approche.html">{{t:m_approche}}</a></li>
-      <li><a href="approche.html#axes">{{t:f_axes}}</a></li>
-      <li><a href="a-propos.html">{{t:m_centre}}</a></li>
-      {{JOURNAL_LI}}
-      {{SOUTIEN_LI}}
-      <li><a href="contact.html#acces">{{t:f_venir}}</a></li>
-      <li><a href="contact.html">{{t:m_contact}}</a></li>
-    </ul>
+  <p class="drawer__search"><button type="button" aria-expanded="false" aria-controls="search-layer" aria-haspopup="dialog" data-search-open><svg class="i" aria-hidden="true"><use href="#i-search"/></svg>{{t:search_open}}</button></p>
+  <nav class="acc" aria-label="{{t:nav_mobile}}">
+    <details class="acc__item" name="chapitre" {{CUR_G_COMPRENDRE}}>
+      <summary><span class="acc__txt"><span class="acc__t">{{t:nav_comprendre}}</span><span class="acc__l">{{t:lead_comprendre}}</span></span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+      <ul>
+        <li><a href="{{t:url_consultation}}">{{t:m_consultation}}</a></li>
+        <li><a href="bilan.html">{{t:m_bilan}}</a></li>
+        {{PARCOURS_LI}}
+        <li><a href="{{t:url_call_page}}">{{t:m_call}}</a></li>
+      </ul>
+    </details>
+    <details class="acc__item" name="chapitre" {{CUR_G_EXPERIMENTER}}>
+      <summary><span class="acc__txt"><span class="acc__t">{{t:nav_experimenter}}</span><span class="acc__l">{{t:lead_experimenter}}</span></span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+      <ul>
+        <li><a href="soins.html">{{t:sub_soins_tech}}</a></li>
+        <li><a href="sessions.html">{{t:m_sessions}}</a></li>
+        <li><a href="{{t:url_journees}}">{{t:m_journees_sub}}</a></li>
+        <li><a href="bon-cadeau.html">{{t:m_cadeau}}</a></li>
+      </ul>
+    </details>
+    <details class="acc__item" name="chapitre" {{CUR_G_IMMERGER}}>
+      <summary><span class="acc__txt"><span class="acc__t">{{t:nav_immerger}}</span><span class="acc__l">{{t:lead_immerger}}</span></span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+      <ul>
+        <li><a href="sejours.html">{{t:m_sejour_long}}</a></li>
+        {{JOURNEE_TYPE_LI}}
+        <li><a href="a-propos.html#maison">{{t:f_maison}}</a></li>
+        <li><a href="sejours.html#dates">{{t:m_dates}}</a></li>
+      </ul>
+    </details>
+    <details class="acc__item" name="chapitre" {{CUR_G_APROPOS}}>
+      <summary><span class="acc__txt"><span class="acc__t">{{t:nav_apropos}}</span><span class="acc__l">{{t:lead_apropos}}</span></span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+      <ul>
+        <li><a href="approche.html">{{t:m_approche}}</a></li>
+        <li><a href="approche.html#axes">{{t:f_axes}}</a></li>
+        <li><a href="a-propos.html">{{t:m_centre}}</a></li>
+        {{JOURNAL_LI}}
+        {{SOUTIEN_LI}}
+        <li><a href="contact.html#acces">{{t:f_venir}}</a></li>
+        <li><a href="contact.html">{{t:m_contact}}</a></li>
+      </ul>
+    </details>
   </nav>
-  <div class="drawer__meta">
-    <a href="tel:+32471250922">+32 471 25 09 22</a>
-    <a href="mailto:hello@hoona.life">hello@hoona.life</a>
-    <span>{{t:address}}</span>
+  <div class="drawer__foot">
+    <p class="actions"><a class="btn btn--line" href="{{t:url_call_page}}">{{t:call}}</a><a class="btn" href="{{t:url_book_consultation}}" target="_blank" rel="noopener" data-drawer-book>{{t:book}}</a></p>
+    <div class="drawer__meta">
+      <a href="tel:+32471250922">+32 471 25 09 22</a>
+      <a href="mailto:hello@hoona.life">hello@hoona.life</a>
+      <span>{{t:address}}</span>
+    </div>
     {{LANGSWITCH}}
-    <p class="actions" style="margin-top:var(--space-md)"><a class="btn btn--line" href="{{t:url_call_page}}">{{t:call}}</a><a class="btn" href="{{t:url_book_consultation}}" target="_blank" rel="noopener">{{t:book_consult}}</a></p>
   </div>
 </div>
 
@@ -283,7 +299,7 @@ try{if(localStorage.getItem("hoona-banner")==="closed"){d.className+=" is-banner
 </a>
 
 <script>window.HOONA_I18N = {{JS_I18N}};</script>
-<script src="assets/js/hoona.js?v=43" defer></script>
+<script src="assets/js/hoona.js?v=44" defer></script>
 <script src="assets/js/v6.js?v=25" defer></script>
 </body>
 </html>

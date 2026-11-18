@@ -78,7 +78,9 @@
     "session_one": "session",
     "session_many": "sessions",
     "article_one": "article",
-    "article_many": "articles"
+    "article_many": "articles",
+    "menu": "Menu",
+    "menu_close": "Fermer le menu"
   },
   "filter_all": "Tout",
   "price_on_request": "sur demande",

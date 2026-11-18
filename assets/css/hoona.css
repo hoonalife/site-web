@@ -191,14 +191,15 @@ p { text-wrap: pretty; }
 .langs a:hover { background: var(--color-rule); }
 .langs a[aria-current="true"] { font-weight: var(--weight-bold); text-decoration: underline; text-underline-offset: 0.3em; }
 .drawer .langs { margin-top: var(--space-md); font-size: var(--text-sm); }
+/* Lot 4 : menu mobile. Burger à trois traits ; à l'ouverture le trait du milieu disparaît et les deux autres forment une croix. */
 .burger {
-  display: none; width: 2.75rem; height: 2.75rem; padding: 0; border: 0; background: none; cursor: pointer;
-  border-radius: var(--radius-pill); place-items: center;
+  display: none; width: 2.75rem; height: 2.75rem; padding: 0; border: 0; background: none; color: inherit; cursor: pointer;
+  border-radius: var(--radius-pill); place-items: center; align-content: center; gap: 0.4rem;
 }
-.burger span { display: block; width: 1.4rem; height: 1px; background: currentColor; transition: transform var(--dur-short) var(--ease-out); }
-.burger span + span { margin-top: 0.4rem; }
-.burger[aria-expanded="true"] span:first-child { transform: translateY(0.225rem) rotate(45deg); }
-.burger[aria-expanded="true"] span:last-child { transform: translateY(-0.225rem) rotate(-45deg); }
+.burger span { display: block; width: 1.4rem; height: 1px; background: currentColor; transition: transform var(--dur-short) var(--ease-out), opacity var(--dur-short) var(--ease-out); }
+.burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(calc(0.4rem + 1px)) rotate(45deg); }
+.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(calc(-0.4rem - 1px)) rotate(-45deg); }
 
 /* En-tête posé sur la vidéo de l'accueil, tant qu'on n'a pas défilé */
 [data-header="overlay"] .site-head:not(.is-scrolled) .bar { background: transparent; color: var(--color-cream); border-color: var(--color-cream-24); }
@@ -211,17 +212,33 @@ body[data-header="solid"] main { padding-top: calc(var(--banner-h) + var(--bar-h
 /* Menu plein écran (mobile et tablette) */
 .drawer {
   position: fixed; inset: 0; z-index: 39; overflow-y: auto;
-  padding: calc(var(--banner-h) + var(--bar-h) + var(--space-lg)) var(--gutter) var(--space-xl);
+  padding: calc(var(--banner-h) + var(--bar-h) + var(--space-md)) var(--gutter) var(--space-lg);
   background: var(--color-paper); color: var(--color-ink);
   opacity: 0; visibility: hidden; transition: opacity var(--dur-medium) var(--ease-out), visibility 0s linear var(--dur-medium);
 }
 .drawer.is-open { opacity: 1; visibility: visible; transition-delay: 0s; }
-.drawer__list a {
-  display: block; padding-block: var(--space-xs); border-bottom: var(--rule-hair) solid var(--color-rule);
-  font-size: var(--text-xl); font-weight: var(--weight-light); text-decoration: none;
+/* Lot 4 : menu mobile « accordéon » (remplace la liste plate à filets) */
+.acc { display: grid; gap: var(--space-2xs); }
+.acc__item { background: var(--color-paper-2); border-radius: 1.25rem; }
+.acc__item summary {
+  list-style: none; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-sm) var(--space-sm) var(--space-md); border-radius: 1.25rem; cursor: pointer;
 }
-.drawer__meta { margin-top: var(--space-lg); display: grid; gap: var(--space-2xs); color: var(--color-ink-2); }
-.drawer__meta a { text-decoration: none; }
+.acc__item summary::-webkit-details-marker { display: none; }
+.acc__txt { display: grid; gap: 0.2rem; }
+.acc__t { font-size: var(--text-2xl); font-weight: var(--weight-light); line-height: var(--leading-snug); letter-spacing: var(--tracking-display); }
+.acc__l { font-size: var(--text-xs); letter-spacing: 0.07em; text-transform: uppercase; color: var(--color-ink-2); }
+.acc__item summary .i { width: 1.5rem; height: 1.5rem; transition: transform var(--dur-short) var(--ease-out); }
+.acc__item[open] summary .i { transform: rotate(180deg); }
+.acc__item ul { list-style: none; margin: 0; padding: 0 var(--space-md) var(--space-sm); }
+.acc__item ul a { display: block; padding-block: 0.4rem; font-size: var(--text-md); color: var(--color-ink); text-decoration: none; }
+.acc__item ul a:hover { text-decoration: underline; text-underline-offset: 0.25em; }
+.drawer__foot { margin-top: var(--space-md); display: grid; gap: var(--space-sm); }
+.drawer__foot .actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr)); gap: var(--space-xs); margin: 0; }
+.drawer__foot .btn { padding-inline: 0.75em; white-space: normal; text-align: center; }
+.drawer__meta { display: flex; flex-wrap: wrap; gap: 0.25rem var(--space-md); font-size: var(--text-xs); color: var(--color-ink-2); }
+.drawer__meta a { text-decoration: none; color: inherit; }
+.drawer__foot .langs { margin-top: 0; justify-content: flex-start; }
 body.menu-open { overflow: hidden; }
 body.menu-open .site-head .bar { background: var(--color-paper) !important; color: var(--color-ink) !important; }
 
@@ -677,10 +694,18 @@ select.field { appearance: none; background-image: linear-gradient(45deg, transp
   .day + .day { padding-left: var(--space-sm); border-left: var(--rule-hair) solid var(--color-rule); }
   .day__slots li { display: grid; gap: 0; }
 }
+/* Lot 4 : menu mobile. Sous 75 rem, de gauche à droite : burger, loupe, « Réserver », puis le logo tout à droite.
+   Les langues vivent dans le menu ; « Échange découverte » aussi (masqué sous 40 rem). */
 @media (max-width: 74.99rem) {
   .menu-links { display: none; }
   .burger { display: grid; }
-  .bar__end { margin-left: auto; }
+  .bar__inner { gap: var(--space-xs); }
+  .bar__end { order: 1; flex: 1 1 auto; min-width: 0; }
+  .bar__end .langs { display: none; }
+  .bar__end .bookpanel { margin-left: auto; }
+  .brand { order: 2; }
+  body.menu-open .site-head .bar .btn { background: var(--color-ink) !important; color: var(--color-on-ink) !important; border-color: var(--color-ink) !important; }
+  body.menu-open .site-head .bar .btn.btn--line { background: transparent !important; color: var(--color-ink) !important; }
 }
 @media (max-width: 39.99rem) {
   :root { --bar-h: 4rem; }
@@ -693,7 +718,6 @@ select.field { appearance: none; background-image: linear-gradient(45deg, transp
   .banner__link-short { display: inline; }
   .banner__label--short { letter-spacing: 0.04em; }
   .banner__date--short { overflow: visible; }
-  .bar__end .btn { display: none; }
   .retreat__facts dd { font-size: var(--text-lg); }
   .fold::after { background: linear-gradient(180deg, var(--color-veil-2) 0%, var(--color-veil-2) 38%, var(--color-veil-4) 100%); }
   .letter__row { flex-direction: column; }
@@ -729,6 +753,12 @@ select.field { appearance: none; background-image: linear-gradient(45deg, transp
   box-shadow: 0 1.5rem 3rem var(--color-veil-1);
 }
 .bookpanel__menu[hidden] { display: none; }
+/* Lot 4 : menu mobile. « Réserver » n'est plus au bord droit de la barre (le logo y est) : la fenêtre s'accroche à l'en-tête,
+   alignée à droite sur la gouttière, sous la barre, sans déborder de l'écran. */
+@media (max-width: 74.99rem) {
+  .bookpanel { position: static; }
+  .bookpanel__menu { right: var(--gutter); top: calc(100% + var(--space-2xs)); width: min(22rem, calc(100vw - 2 * var(--gutter))); max-height: calc(100svh - var(--banner-h) - var(--bar-h) - var(--space-md)); overflow-y: auto; }
+}
 .bookpanel__title { padding: var(--space-2xs) var(--space-xs) var(--space-xs); font-size: var(--text-xs); letter-spacing: var(--tracking-insert); text-transform: uppercase; font-weight: var(--weight-light); color: var(--color-ink-2); }
 .bookpanel__menu a {
   display: grid; gap: 0.1rem; padding: var(--space-xs); border-radius: 0.6rem; text-decoration: none;
@@ -858,6 +888,11 @@ select.field { appearance: none; background-image: linear-gradient(45deg, transp
 @media (max-width: 55.99rem) {
   .fold__foot { display: grid; }
   .bar__call { display: none; }
+}
+/* Lot 4 : menu mobile. Entre 56 et 75 rem, « Échange découverte » se range à côté de « Réserver », à droite */
+@media (min-width: 56rem) and (max-width: 74.99rem) {
+  .bar__call { margin-left: auto; }
+  .bar__end .bookpanel { margin-left: 0; }
 }
 @media (max-width: 39.99rem) {
   .paths__head h2 { font-size: var(--text-2xl); }
@@ -1094,13 +1129,14 @@ body.search-open { overflow: hidden; }
 }
 @media (max-width: 23.99rem) {
   .brand svg { width: 5.5rem; }
+  .bar__end .bookpanel .btn { padding-inline: 0.9em; }
 }
 /* Sous 360 px, la barre n'a plus la place : la loupe passe en tête du menu plein écran. */
-.drawer__search { display: none; }
+.drawer__search { display: none; margin: 0 0 var(--space-xs); }
 .drawer__search button {
-  display: flex; align-items: center; gap: var(--space-xs); width: 100%; padding-block: var(--space-xs);
-  border: 0; border-bottom: var(--rule-hair) solid var(--color-rule); background: none; color: inherit; cursor: pointer;
-  font: inherit; font-size: var(--text-xl); font-weight: var(--weight-light); text-align: left;
+  display: flex; align-items: center; gap: var(--space-xs); width: 100%; min-height: 3rem; padding: 0 var(--space-md);
+  border: 0; border-radius: var(--radius-pill); background: var(--color-paper-2); color: var(--color-ink-2); cursor: pointer;
+  font: inherit; font-size: var(--text-md); text-align: left;
 }
 @media (max-width: 22.49rem) {
   .bar__end .search-toggle { display: none; }
