@@ -1187,6 +1187,16 @@ body.search-open { overflow: hidden; }
   .carousel__slide { flex-basis: 78%; }
   .carousel__slide img { aspect-ratio: 16 / 9; }
 }
+/* Accueil : la bande « soins-band » sert aussi de section Entreprises, sans filet ni marge de page Soins. */
+#entreprises .soins-band { margin-top: 0; padding-top: 0; border-top: 0; }
+
+/* Diapositive portrait : même hauteur que les paysages, image en 4 / 5 (aucune déformation, recadrage léger par object-fit). */
+.carousel__slide--portrait { flex-basis: 47%; }
+.carousel__slide--portrait img { aspect-ratio: 4 / 5; }
+@media (min-width: 48rem) {
+  .carousel__slide--portrait { flex-basis: 35%; }
+  .carousel__slide--portrait img { aspect-ratio: 4 / 5; }
+}
 @media (prefers-reduced-motion: reduce) {
   .carousel__track { scroll-behavior: auto; }
   .carousel__nav button { transition: none; }
