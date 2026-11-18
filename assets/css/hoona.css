@@ -1273,3 +1273,17 @@ body.search-open { overflow: hidden; }
   .soins-head .axes__pick { grid-area: pick; align-self: start; }
   .soins-head .axes__pick > .insert, .soins-head .axes__pick > .muted, .soins-head .axes__toggle { display: none; }
 }
+
+/* ---- Lot 4 : « Nous contacter », un bouton qui déplie téléphone et e-mail (soins et sessions sur demande) ---- */
+.askpanel { position: relative; display: block; }
+.askpanel__btn { width: 100%; justify-content: center; gap: 0.45em; }
+.askpanel__chev { width: 0.9em; height: 0.9em; transition: transform var(--dur-short) var(--ease-out); }
+.askpanel__btn[aria-expanded="true"] .askpanel__chev { transform: rotate(180deg); }
+.askpanel__menu { position: absolute; right: 0; top: calc(100% + 0.35rem); z-index: 12; min-width: 100%; display: grid; padding: 0.3rem;
+  background: var(--color-paper); border: var(--rule-hair) solid var(--color-rule-strong); border-radius: 1rem; box-shadow: 0 16px 36px -18px oklch(27.4% 0.049 256 / 0.45); }
+.askpanel__menu[hidden] { display: none; }
+.askpanel__menu a { display: flex; align-items: center; gap: 0.6em; padding: 0.6rem 0.9rem; border-radius: 0.7rem; text-decoration: none; color: var(--color-ink); font-size: var(--text-sm); white-space: nowrap; }
+.askpanel__menu a + a { border-top: var(--rule-hair) solid var(--color-rule); border-radius: 0 0 0.7rem 0.7rem; }
+.askpanel__menu a:hover, .askpanel__menu a:focus-visible { background: var(--color-paper-2); }
+.askpanel__menu .i { width: 1.05em; height: 1.05em; color: var(--color-accent-ink); flex: none; }
+@media (max-width: 59.99rem) { .askpanel__menu { position: static; margin-top: 0.35rem; box-shadow: none; } }

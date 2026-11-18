@@ -242,9 +242,16 @@ def actions(item, t, lang):
     e = lambda x: htmllib.escape(str(x), quote=True)
     u = item.get("url") or ""
     if u.startswith("mailto:"):
-        out = ('<a class="btn btn--sm btn--line" href="%s"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg>%s</a>'
-               '<a class="btn btn--sm btn--line" href="tel:%s" title="%s"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>%s</a>'
-               % (e(u), e(t["contact_mail"]), e(t["tel_link"]), e(t["tel_label"]), e(t["contact_tel"])))
+        # Lot 4 : un seul bouton « Nous contacter » qui déplie « Par téléphone » et « Par email » (hoona.js, [data-askpanel]).
+        aid = "ask-" + slugify(str(item.get("nom") or "soin"))
+        out = ('<div class="askpanel" data-askpanel>'
+               '<button class="btn btn--sm btn--line askpanel__btn" type="button" aria-expanded="false" aria-controls="%s">%s'
+               '<svg class="i askpanel__chev" aria-hidden="true" viewBox="0 0 16 16"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>'
+               '<div class="askpanel__menu" id="%s" hidden>'
+               '<a href="tel:%s" title="%s"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>%s</a>'
+               '<a href="%s"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg>%s</a>'
+               '</div></div>'
+               % (aid, e(t["contact_us"]), aid, e(t["tel_link"]), e(t["tel_label"]), e(t["contact_tel"]), e(u), e(t["contact_mail"])))
     elif u.startswith("http"):
         out = ('<a class="btn btn--sm" href="%s" target="_blank" rel="noopener">%s<span class="visually-hidden"> : %s %s</span></a>'
                % (e(u), e(t["book"]), e(item.get("nom")), e(t["book_sr"])))

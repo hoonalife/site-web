@@ -855,3 +855,27 @@
     render(index());
   });
 })();
+
+/* ---- Lot 4 : « Nous contacter » dépliant ([data-askpanel]) : un seul ouvert à la fois, Échap et clic extérieur referment ---- */
+(function () {
+  var panels = [].slice.call(document.querySelectorAll("[data-askpanel]"));
+  if (!panels.length) return;
+  function set(p, open) {
+    var b = p.querySelector("button"), m = p.querySelector(".askpanel__menu");
+    if (!b || !m) return;
+    m.hidden = !open; b.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+  function closeAll(except) { panels.forEach(function (p) { if (p !== except) set(p, false); }); }
+  panels.forEach(function (p) {
+    var b = p.querySelector("button");
+    if (!b) return;
+    b.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var m = p.querySelector(".askpanel__menu"), open = m.hidden;
+      closeAll(p); set(p, open);
+      if (open) { var first = m.querySelector("a"); if (first) first.focus(); }
+    });
+    p.addEventListener("keydown", function (e) { if (e.key === "Escape") { set(p, false); b.focus(); } });
+  });
+  document.addEventListener("click", function (e) { if (!e.target.closest("[data-askpanel]")) closeAll(null); });
+})();
