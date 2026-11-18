@@ -281,7 +281,7 @@ body.menu-open .site-head .bar { background: var(--color-paper) !important; colo
    hoona.js pose .is-anim à la première entrée du bloc dans l'écran (ou au chargement s'il est déjà visible),
    puis .is-paused quand il en sort. Tout le reste est en CSS, sur une seule horloge (t = 0 à .is-anim) :
      0 → 2,6 s   éclosion, une fois : chaque cercle se dessine depuis le centre (0,5 s, décalé de 0,18 s,
-                 sens horaire), son nom apparaît quand il se referme, « élan vital » apparaît avec un halo,
+                 sens horaire), son nom apparaît quand il se referme, « élan vital » apparaît en fondu (sans bleu),
                  puis les traits s'amincissent et les tirets lumineux apparaissent (dès 1,8 s) ;
      ensuite, en boucle : sept tirets (18 % du contour) parcourent les cercles, 12 s par tour, décalés d'un
                  septième ; leurs pointes touchent le centre une fois par tour, à t = 4,92 s, 16,92 s…
@@ -294,7 +294,7 @@ body.menu-open .site-head .bar { background: var(--color-paper) !important; colo
    la position du centre ; le tiret avance dans le sens du tracé). La pointe avant (r + 0,18) touche le
    centre quand r ≡ -0,18, soit t/12 + 0,41 = 0,82 : t = 4,92 s ; le tiret est centré (r ≡ -0,09) à 6 s.
    Sans JS, sans IntersectionObserver ou avec « réduire les animations » : fleur visible, immobile
-   (traits fins, tirets arrêtés, lueur 0,10). Le survol garde la priorité sur les traits et les teintes.
+   (traits fins, tirets arrêtés, pas de lueur). Le bleu du centre n'apparaît qu'au battement et à l'onde. Le survol garde la priorité sur les traits et les teintes.
    Ailleurs (approche, soins, sessions) : lueur, onde et tirets de flower.svg restent en display: none.
    Les pourcentages des keyframes trace-* supposent un cycle de 12 s et un départ à 4,92 s
    (si le tiret ou le cycle changent : départ = (0,82 − 0,41) × cycle, avec 0,82 = 1 − longueur du tiret). */
@@ -305,7 +305,7 @@ body.menu-open .site-head .bar { background: var(--color-paper) !important; colo
   --trace-width: 2.4;              /* épaisseur du tiret */
   --trace-base-width: 0.8;         /* trait de base aminci */
   --trace-base-ink: oklch(27.4% 0.049 256 / 0.4);   /* trait de base éclairci */
-  --trace-glow: 0.10;              /* lueur continue du centre */
+  --trace-glow: 0;                 /* lueur du centre hors pulsation : aucune (demande du client, 18 nov.) */
   --trace-pulse-at: 4.92s;         /* battement et onde : dès que la pointe des tirets touche le centre */
   --trace-beat-glow: 0.45;         /* lueur au battement */
   --trace-core-scale: 1.2;         /* battement du centre */
@@ -354,10 +354,9 @@ body.menu-open .site-head .bar { background: var(--color-paper) !important; colo
     animation: trace-run var(--trace-cycle) linear infinite both;
     animation-delay: calc(var(--trace-cycle) * -0.66 - var(--trace-i) * var(--trace-cycle) / 7);
   }
-  /* centre : apparition avec halo à 1,64 s, puis battement à chaque convergence */
+  /* centre : point et « élan vital » apparaissent en fondu à 1,64 s ; la lueur ne monte qu'au battement */
   [data-fleur-anim].is-anim .flower__glow {
-    animation: fleur-halo 900ms var(--fleur-soft) 1.64s both,
-               trace-glow var(--trace-cycle) var(--fleur-soft) var(--trace-pulse-at) infinite forwards;
+    animation: trace-glow var(--trace-cycle) var(--fleur-soft) var(--trace-pulse-at) infinite both;
   }
   [data-fleur-anim].is-anim .flower__core {
     animation: fleur-fade-in 400ms var(--fleur-soft) 1.64s backwards,
@@ -382,7 +381,6 @@ body.menu-open .site-head .bar { background: var(--color-paper) !important; colo
   100%   { stroke-dasharray: none; rotate: 0deg; stroke: var(--trace-base-ink); stroke-width: var(--trace-base-width); }
 }
 @keyframes fleur-fade-in { from { opacity: 0; } to { opacity: 1; } }
-@keyframes fleur-halo { 0% { opacity: 0; scale: 0.3; } 40% { opacity: var(--trace-beat-glow); } 100% { opacity: var(--trace-glow); scale: 1; } }
 @keyframes trace-run { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -100; } }
 /* pulsation, sur 12 s à partir de 4,92 s (contact) : battement 1,2 s, culmine à +0,5 s (4,17 %) ;
    onde au même départ, bord atteint à +2,5 s (20,83 %), effacée à +3,2 s (26,67 %) */

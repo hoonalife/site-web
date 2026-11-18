@@ -872,3 +872,16 @@ a.quote__who:focus-visible { outline: 2px solid var(--color-focus); outline-offs
   .axes-bloom .petal circle { transition: none; transform: none !important; }
   .axis-panel summary::after { transition: none; }
 }
+
+/* ---- Lot 4 : renvoi vers les sessions collectives (page Soins) ---- */
+.soins-band { display: grid; gap: var(--space-lg); margin-top: var(--space-2xl); padding-top: var(--space-2xl); border-top: var(--rule-hair) solid var(--color-rule-strong); }
+.soins-band__figure { margin: 0; }
+.soins-band__figure img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius-card, 1.25rem); }
+.soins-band__text { display: grid; gap: var(--space-xs); align-content: center; }
+.soins-band__text h2 { font-size: var(--text-xl); font-weight: var(--weight-light); }
+.soins-band__text p { color: var(--color-ink-2); max-width: 52ch; }
+.soins-band__text .actions { margin-top: var(--space-xs); }
+@media (min-width: 60rem) {
+  .soins-band { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: var(--space-2xl); align-items: center; }
+  .soins-band__figure { max-width: 24rem; }
+}
