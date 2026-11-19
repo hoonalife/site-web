@@ -10,8 +10,8 @@
 <link rel="icon" href="assets/brand/sigle-hoona.svg" type="image/svg+xml">
 <link rel="preload" href="assets/fonts/TWKLausanne-300.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/TWKLausanne-350.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/hoona.css?v=51">
-<link rel="stylesheet" href="assets/css/v6.css?v=51">
+<link rel="stylesheet" href="assets/css/hoona.css?v=52">
+<link rel="stylesheet" href="assets/css/v6.css?v=52">
 <script>
 /* Avant le premier rendu : bandeau déjà fermé ? */
 (function(){var d=document.documentElement;d.className+=" js";
@@ -88,9 +88,9 @@ try{if(localStorage.getItem("hoona-banner")==="closed"){d.className+=" is-banner
           <button class="menu-item__toggle" type="button" aria-expanded="false" aria-controls="sub-experimenter" aria-label="{{t:sub_open}} : {{t:nav_experimenter}}"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
           <ul class="submenu" id="sub-experimenter">
             <li class="submenu__lead">{{t:lead_experimenter}}</li>
+            <li><a href="{{t:url_journees}}">{{t:m_journees_sub}}</a></li>
             <li><a href="soins.html">{{t:sub_soins_tech}}</a></li>
             <li><a href="sessions.html">{{t:m_sessions}}</a></li>
-            <li><a href="{{t:url_journees}}">{{t:m_journees_sub}}</a></li>
             <li><a href="bon-cadeau.html">{{t:m_cadeau}}</a></li>
           </ul>
         </div>
@@ -159,9 +159,9 @@ try{if(localStorage.getItem("hoona-banner")==="closed"){d.className+=" is-banner
     <details class="acc__item" name="chapitre" {{CUR_G_EXPERIMENTER}}>
       <summary><span class="acc__txt"><span class="acc__t">{{t:nav_experimenter}}</span><span class="acc__l">{{t:lead_experimenter}}</span></span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
       <ul>
+        <li><a href="{{t:url_journees}}">{{t:m_journees_sub}}</a></li>
         <li><a href="soins.html">{{t:sub_soins_tech}}</a></li>
         <li><a href="sessions.html">{{t:m_sessions}}</a></li>
-        <li><a href="{{t:url_journees}}">{{t:m_journees_sub}}</a></li>
         <li><a href="bon-cadeau.html">{{t:m_cadeau}}</a></li>
       </ul>
     </details>
@@ -299,7 +299,7 @@ try{if(localStorage.getItem("hoona-banner")==="closed"){d.className+=" is-banner
 </a>
 
 <script>window.HOONA_I18N = {{JS_I18N}};</script>
-<script src="assets/js/hoona.js?v=51" defer></script>
+<script src="assets/js/hoona.js?v=52" defer></script>
 <script src="assets/js/v6.js?v=25" defer></script>
 </body>
 </html>
