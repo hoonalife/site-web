@@ -1341,3 +1341,32 @@ body.search-open { overflow: hidden; }
 @media (min-width: 60rem) {
   .ap-maison-body .card-grid { gap: var(--space-lg); }
 }
+
+/* Lot 5 : carrousel de l'équipe dans la colonne de droite de la page du centre. Une photo à la fois, les portraits gardent la hauteur des paysages. */
+.team__carousel { margin: 0; }
+.carousel--inset .carousel__slide { flex-basis: 100%; }
+.carousel--inset .carousel__slide img { aspect-ratio: 4 / 3; border-radius: var(--radius-card); }
+.carousel--inset .carousel__slide--portrait { flex-basis: 62%; }
+.carousel--inset .carousel__slide--portrait img { aspect-ratio: 4 / 5; }
+@media (min-width: 48rem) {
+  .carousel--inset .carousel__slide { flex-basis: 100%; }
+  .carousel--inset .carousel__slide img { aspect-ratio: 4 / 3; }
+  .carousel--inset .carousel__slide--portrait { flex-basis: 62%; }
+  .carousel--inset .carousel__slide--portrait img { aspect-ratio: 4 / 5; }
+}
+
+/* Lot 5 : toutes les photos de contenu ont des coins arrondis (règle du 19 nov. 2026). Les bandeaux pleine largeur (.plate) et le hero restent à bords droits. */
+.space img, .duo img, .post-card__media img, .doc figure img, .stack > img, .prose img, .team__figure img { border-radius: var(--radius-media); }
+.post-card__media { overflow: hidden; border-radius: var(--radius-media); }
+
+/* Lot 5 : repli « Découvrez nos soins à la carte » sur les pages de parcours. */
+.reco summary { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); cursor: pointer; padding-block: var(--space-2xs); }
+.reco summary::-webkit-details-marker { display: none; }
+.reco__txt { display: grid; gap: var(--space-2xs); }
+.reco__title { font-size: var(--text-3xl); font-weight: var(--weight-light); line-height: var(--leading-snug); letter-spacing: var(--tracking-tight); }
+.reco__chev { flex: 0 0 auto; width: 2.75rem; height: 2.75rem; padding: 0.6rem; border: var(--rule-hair) solid var(--color-rule-strong); border-radius: var(--radius-pill); transition: transform var(--dur-short) var(--ease-out); }
+.reco[open] .reco__chev { transform: rotate(180deg); }
+.reco summary:hover .reco__chev { background: var(--color-paper-2); }
+.reco summary:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 4px; border-radius: var(--radius-media); }
+.reco__body { margin-top: var(--space-lg); display: grid; gap: var(--space-md); }
+.wrap figure:not(.plate) > img { border-radius: var(--radius-media); }

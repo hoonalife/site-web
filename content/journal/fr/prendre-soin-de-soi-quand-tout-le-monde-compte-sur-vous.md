@@ -31,7 +31,7 @@ Nous proposons une autre lecture. Prendre soin de soi n'est pas une parenthèse 
 
 ## Trois gestes pour commencer
 
-- **Un rendez-vous avec vous, dans l'agenda.** Pas « quand j'aurai le temps » : une date, une heure, comme pour n'importe qui d'autre. Une marche en forêt, une session au Dôme, une consultation. Ce qui est écrit existe.
+- **Un rendez-vous avec vous, dans l'agenda.** Pas « quand j'aurai le temps » : une date, une heure, comme pour n'importe qui d'autre. Une marche en forêt, une session au dôme, une consultation. Ce qui est écrit existe.
 - **Une question à vous poser chaque soir.** De quoi mon corps a-t-il eu besoin aujourd'hui, et le lui ai-je donné ? Pas pour vous juger. Pour écouter les murmures avant qu'ils ne deviennent des cris.
 - **Une chose que quelqu'un d'autre peut faire.** Une seule, cette semaine. Déléguer n'est pas abandonner : c'est faire de la place.
 

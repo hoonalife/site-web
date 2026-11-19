@@ -31,7 +31,7 @@ Wij stellen een andere lezing voor. Voor jezelf zorgen is geen haakje dat je van
 
 ## Drie gebaren om te beginnen
 
-- **Een afspraak met jezelf, in de agenda.** Niet « als ik tijd heb »: een datum, een uur, zoals voor iedereen. Een wandeling in het bos, een sessie in de Dome, een consultatie. Wat geschreven staat, bestaat.
+- **Een afspraak met jezelf, in de agenda.** Niet « als ik tijd heb »: een datum, een uur, zoals voor iedereen. Een wandeling in het bos, een sessie in de dome, een consultatie. Wat geschreven staat, bestaat.
 - **Eén vraag om jezelf elke avond te stellen.** Wat had mijn lichaam vandaag nodig, en heb ik het dat gegeven? Niet om jezelf te veroordelen. Om naar het gefluister te luisteren voor het geroep wordt.
 - **Eén ding dat iemand anders kan doen.** Eén, deze week. Delegeren is niet opgeven: het is ruimte maken.
 

@@ -68,7 +68,7 @@
       "nom": "Voyage sonore",
       "intro": "La vibration des gongs, une expérience immersive et régénératrice animée par Coralie.",
       "image": "assets/img/chemin-ressourcer.webp",
-      "image_caption": "Le Dôme",
+      "image_caption": "Le dôme",
       "sessions": [
         {
           "nom": "Bain de gongs",
@@ -106,7 +106,7 @@
       "nom": "Yoga",
       "intro": "Plusieurs approches pour répondre à vos besoins de souplesse, de force, de détente ou d'éveil intérieur. Chaque yoga existe aussi en session individuelle.",
       "image": "assets/img/yoga.webp",
-      "image_caption": "Le Dôme",
+      "image_caption": "Le dôme",
       "sessions": [
         {
           "nom": "Yoga Flow",
@@ -276,7 +276,7 @@
       "intro": "Une séance de yoga suivie d'un bain de gongs, pour une reconnexion complète corps-esprit.",
       "image": "assets/img/lieu-dome.webp",
       "image_position": "center 62%",
-      "image_caption": "Le Dôme, à la tombée du jour",
+      "image_caption": "Le dôme, à la tombée du jour",
       "sessions": [
         {
           "nom": "Body & Sound Experience",

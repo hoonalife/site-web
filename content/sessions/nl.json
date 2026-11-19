@@ -68,7 +68,7 @@
       "nom": "Klankreis",
       "intro": "De trilling van de gongs, een onderdompelende en regenererende ervaring, begeleid door Coralie.",
       "image": "assets/img/chemin-ressourcer.webp",
-      "image_caption": "De Dome",
+      "image_caption": "De dome",
       "sessions": [
         {
           "nom": "Gongbad",
@@ -100,7 +100,7 @@
       "nom": "Yoga",
       "intro": "Verschillende benaderingen voor soepelheid, kracht, ontspanning of innerlijk ontwaken. Elke yoga bestaat ook als individuele sessie.",
       "image": "assets/img/yoga.webp",
-      "image_caption": "De Dome",
+      "image_caption": "De dome",
       "sessions": [
         {
           "nom": "Flow yoga",
@@ -270,7 +270,7 @@
       "intro": "Een yogasessie gevolgd door een gongbad, voor een volledige verbinding tussen lichaam en geest.",
       "image": "assets/img/lieu-dome.webp",
       "image_position": "center 62%",
-      "image_caption": "De Dome, bij valavond",
+      "image_caption": "De dome, bij valavond",
       "sessions": [
         {
           "nom": "Body & Sound Experience",

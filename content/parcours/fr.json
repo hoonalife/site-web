@@ -8,8 +8,8 @@
       "titre": "Sortir de l'épuisement et apaiser son système nerveux",
       "chapeau": "Fatigue qui s'installe, sommeil peu réparateur, tête qui ne s'arrête plus. Vous continuez à tout faire tourner, et vous commencez à vous perdre en route.",
       "image": "assets/img/chemin-nerveux.webp",
-      "image_alt": "Une participante, les yeux fermés, respire sous la charpente du Dôme",
-      "image_caption": "Le Dôme · hoona",
+      "image_alt": "Une participante, les yeux fermés, respire sous la charpente du dôme",
+      "image_caption": "Le dôme · hoona",
       "signaux": [
         "Vous dormez, mais vous vous réveillez déjà fatigué·e.",
         "Les pensées tournent le soir et ne s'arrêtent plus.",
@@ -153,8 +153,8 @@
       "titre": "Se ressourcer en profondeur",
       "chapeau": "Une vraie parenthèse pour ralentir, déposer ce que vous portez et revenir à vous. Quelques heures, une journée, ou cinq jours loin du quotidien.",
       "image": "assets/img/chemin-ressourcer.webp",
-      "image_alt": "Un gong et des bols dans la lumière du Dôme",
-      "image_caption": "Le Dôme · hoona",
+      "image_alt": "Un gong et des bols dans la lumière du dôme",
+      "image_caption": "Le dôme · hoona",
       "signaux": [
         "Vous n'avez pas pris de temps pour vous depuis des mois.",
         "Vous fonctionnez, sans vraiment être là.",

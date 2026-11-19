@@ -4,12 +4,12 @@ description: Après une frayeur, les animaux tremblent, puis passent à autre ch
 date: 2026-10-05
 axes: [psycho-emotionnel, systeme-nerveux]
 image: assets/img/espace-dome.webp
-image_alt: Le Dôme : un cercle de participants assis sur des coussins sous la charpente en bois
-image_caption: Le Dôme · hoona
+image_alt: Le dôme : un cercle de participants assis sur des coussins sous la charpente en bois
+image_caption: Le dôme · hoona
 author: L'équipe hoona
 cta_label: Nous écrire
 cta_url: contact.html
-cta_text: La méthode TRE se découvre accompagné, en séance individuelle ou lors d'un atelier au Dôme. Écrivez-nous pour connaître les prochaines dates.
+cta_text: La méthode TRE se découvre accompagné, en séance individuelle ou lors d'un atelier au dôme. Écrivez-nous pour connaître les prochaines dates.
 ---
 
 Observez un animal après une frayeur : il tremble de tout son corps pendant quelques secondes, puis il reprend sa vie. Ce tremblement n'est pas un reste de peur. C'est la façon dont le système nerveux évacue l'adrénaline et le cortisol mobilisés pour fuir ou combattre. Nous avons le même réflexe. Mais nous avons appris à le retenir : on ne tremble pas en réunion, ni devant ses enfants. La tension reste alors stockée dans les muscles, et s'y installe.

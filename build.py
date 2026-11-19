@@ -406,6 +406,10 @@ def parcours_html(c, parcours, t, lang, arts):
     if missing:
         print("⚠ parcours %s : introuvable dans les catalogues %s" % (c["slug"], missing))
     rows_soins = "\n".join(soin_row(soins[n], t, lang) for n in c.get("soins", []) if n in soins)
+    # Lot 5 : les soins réservés après une première consultation, sur les axes du parcours (six au plus), listés à part dans le repli.
+    paxes = set(c.get("axes", []))
+    lock_items = [i for i in soins.values() if locked(i) and (not paxes or paxes & set(i.get("axes", [])))][:6]
+    rows_locked = "\n".join(soin_row(i, t, lang) for i in lock_items)
     rows_sessions = "\n".join(session_row(sessions[n], t, lang) for n in c.get("sessions", []) if n in sessions)
     # Bouton d'en-tête : l'étape marquée "principal", sinon la première.
     first = next((s for s in c["etapes"] if s.get("principal")), c["etapes"][0])
@@ -456,10 +460,15 @@ def parcours_html(c, parcours, t, lang, arts):
         '    <div class="stack" style="margin-bottom:var(--space-xl)"><p class="insert">%(path_kicker)s</p><h2 id="cp-title">%(path_title)s</h2><p class="muted measure">%(path_intro)s</p></div>\n'
         '    <ol class="path-phases" style="--cols:%(path_cols)d">\n%(steps)s\n    </ol>\n  </div>\n</section>\n'
         '<section class="section section--deep" aria-labelledby="cr-title">\n  <div class="wrap">\n'
-        '    <div class="stack" style="margin-bottom:var(--space-lg)"><p class="insert">%(reco_kicker)s</p><h2 id="cr-title">%(reco_title)s</h2><p class="muted measure">%(reco_intro)s</p></div>\n'
-        '    <div class="rows rows--compact">\n%(rows_soins)s\n    </div>\n'
+        '    <details class="reco" id="a-la-carte">\n'
+        '      <summary><span class="reco__txt"><span class="insert">%(reco_kicker)s</span><span class="reco__title" id="cr-title">%(reco_fold)s</span></span><svg class="i reco__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>\n'
+        '      <div class="reco__body">\n'
+        '        <p class="muted measure">%(reco_intro)s</p>\n'
+        '        <div class="rows rows--compact">\n%(rows_soins)s\n    </div>\n'
         '%(sessions_block)s'
-        '    <p class="actions" style="margin-top:var(--space-lg)"><a class="btn btn--line" href="soins.html">%(all_soins)s</a><a class="link" href="sessions.html">%(all_sessions)s</a></p>\n'
+        '%(locked_block)s'
+        '        <p class="actions" style="margin-top:var(--space-lg)"><a class="btn btn--line" href="soins.html">%(all_soins)s</a><a class="link" href="sessions.html">%(all_sessions)s</a></p>\n'
+        '      </div>\n    </details>\n'
         '  </div>\n</section>\n'
         '%(journal)s'
         '<section class="section section--tight" aria-labelledby="cc-title">\n  <div class="wrap"><aside class="post__cta">\n'
@@ -476,7 +485,8 @@ def parcours_html(c, parcours, t, lang, arts):
             "image": e(c["image"].lstrip("/")), "image_alt": e(c.get("image_alt")), "image_caption": e(c.get("image_caption")),
             "signals_title": e(t["parcours_signals"]), "signals": signals,
             "path_kicker": e(t["parcours_path_kicker"]), "path_title": e(t["parcours_path_title"]), "path_intro": e(t["parcours_path_intro"]), "steps": steps, "path_cols": path_cols,
-            "reco_kicker": e(t["parcours_reco_kicker"]), "reco_title": e(t["parcours_reco_title"]), "reco_intro": e(t["parcours_reco_intro"]), "rows_soins": rows_soins,
+            "reco_kicker": e(t["parcours_reco_kicker"]), "reco_title": e(t["parcours_reco_title"]), "reco_intro": e(t["parcours_reco_intro"]), "rows_soins": rows_soins, "reco_fold": e(t["parcours_reco_fold"]),
+            "locked_block": ('        <h3 class="chemin-sub">%s</h3>\n        <p class="muted measure">%s</p>\n        <div class="rows rows--compact">\n%s\n    </div>\n' % (e(t["locked_heading"]), e(t["locked_text"]), rows_locked)) if rows_locked else "",
             "sessions_block": ('    <h3 class="chemin-sub">%s</h3>\n    <div class="rows rows--compact">\n%s\n    </div>\n' % (e(t["parcours_sessions"]), rows_sessions)) if rows_sessions else "",
             "all_soins": e(t["parcours_all_soins"]), "all_sessions": e(t["parcours_all_sessions"]), "journal": journal,
             "cta_kicker": e(t["parcours_cta_kicker"]), "cta_text": e(t["parcours_cta_text"]), "others_title": e(t["parcours_others"]), "others": others,

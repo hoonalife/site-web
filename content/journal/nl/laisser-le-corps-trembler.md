@@ -4,12 +4,12 @@ description: Na een schrik trillen dieren even, en gaan ze verder. Wij houden he
 date: 2026-10-05
 axes: [psycho-emotionnel, systeme-nerveux]
 image: assets/img/espace-dome.webp
-image_alt: De Dome, een kring deelnemers op kussens onder het houten gebinte
-image_caption: De Dome · hoona
+image_alt: De dome, een kring deelnemers op kussens onder het houten gebinte
+image_caption: De dome · hoona
 author: Het hoona-team
 cta_label: Schrijf ons
 cta_url: contact.html
-cta_text: De TRE-methode ontdek je onder begeleiding, in een individuele sessie of tijdens een workshop in de Dome. Schrijf ons voor de volgende data.
+cta_text: De TRE-methode ontdek je onder begeleiding, in een individuele sessie of tijdens een workshop in de dome. Schrijf ons voor de volgende data.
 ---
 
 Kijk naar een dier na een schrik: het trilt een paar seconden over zijn hele lijf, en gaat dan verder met zijn leven. Dat trillen is geen restje angst. Het is de manier waarop het zenuwstelsel de adrenaline en het cortisol afvoert die werden vrijgemaakt om te vluchten of te vechten. Wij hebben dezelfde reflex. Maar we hebben geleerd hem in te houden: niemand trilt in een vergadering, of voor de kinderen. De spanning blijft dan opgeslagen in de spieren, en nestelt zich daar.

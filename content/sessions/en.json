@@ -68,7 +68,7 @@
       "nom": "Sound journey",
       "intro": "The vibration of the gongs, an immersive and regenerating experience led by Coralie.",
       "image": "assets/img/chemin-ressourcer.webp",
-      "image_caption": "The Dome",
+      "image_caption": "The dome",
       "sessions": [
         {
           "nom": "Gong bath",
@@ -100,7 +100,7 @@
       "nom": "Yoga",
       "intro": "Several approaches for flexibility, strength, relaxation or inner awakening. Every yoga also exists as an individual session.",
       "image": "assets/img/yoga.webp",
-      "image_caption": "The Dome",
+      "image_caption": "The dome",
       "sessions": [
         {
           "nom": "Yoga Flow",
@@ -270,7 +270,7 @@
       "intro": "A yoga session followed by a gong bath, for a complete body and mind reconnection.",
       "image": "assets/img/lieu-dome.webp",
       "image_position": "center 62%",
-      "image_caption": "The Dome at dusk",
+      "image_caption": "The dome at dusk",
       "sessions": [
         {
           "nom": "Body & Sound Experience",

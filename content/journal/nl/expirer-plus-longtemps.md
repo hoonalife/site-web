@@ -4,12 +4,12 @@ description: Een uitademing die langer duurt dan de inademing stuurt het zenuwst
 date: 2026-10-26
 axes: [systeme-nerveux, psycho-emotionnel]
 image: assets/img/chemin-nerveux.webp
-image_alt: Een deelneemster ademt met gesloten ogen onder het houten gebinte van de Dome
-image_caption: De Dome · hoona
+image_alt: Een deelneemster ademt met gesloten ogen onder het houten gebinte van de dome
+image_caption: De dome · hoona
 author: Het hoona-team
 cta_label: De yogasessies bekijken
 cta_url: sessions.html
-cta_text: Louise en het team delen dit soort ademhaling tijdens de yogasessies in de Dome, van Yin tot Kundalini. 25 € per sessie, de eerste gratis met de code ENSEMBLE.
+cta_text: Louise en het team delen dit soort ademhaling tijdens de yogasessies in de dome, van Yin tot Kundalini. 25 € per sessie, de eerste gratis met de code ENSEMBLE.
 ---
 
 Langer uitademen is een van de eenvoudigste manieren om je lichaam te vertellen dat het veilig is. Wanneer de adem die naar buiten gaat langer duurt dan de adem die binnenkomt, krijgt het zenuwstelsel een kalmerend signaal. Geen materiaal, geen bijzondere plek: een stoel, een bank of je bed volstaan.
@@ -42,4 +42,4 @@ In deze tijd van het jaar stapelen de rollen die we tegelijk opnemen zich op. Ee
 
 Hij toont zich vaak eerst elders: kortere nachten, een gevoeligere spijsvertering, energie die in de namiddag wegzakt. Dat zijn signalen om naar te luisteren, geen redenen tot ongerustheid. Bij hoona is het zenuwstelsel een van de 7 vitaliteitsassen, en een van de meest overkoepelende: wanneer het tot rust komt, volgen slaap, spijsvertering en humeur.
 
-De adem is de goedkoopste ingang. De yogasessies in de Dome, de gongbaden of een QRS-sessie zijn er andere, voor de dagen waarop je liever begeleid wordt.
+De adem is de goedkoopste ingang. De yogasessies in de dome, de gongbaden of een QRS-sessie zijn er andere, voor de dagen waarop je liever begeleid wordt.

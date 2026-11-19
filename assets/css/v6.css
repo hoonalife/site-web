@@ -930,7 +930,7 @@ a.quote__who:focus-visible { outline: 2px solid var(--color-focus); outline-offs
 }
 
 /* Lot 5 : vignette du séjour dans le sous-menu Expérimenter, renvoi dans le tiroir */
-#sub-experimenter { display: grid; grid-template-columns: 14.5rem 16rem; column-gap: 0.4rem; min-width: 0; padding-bottom: 0.6rem; }
+#sub-experimenter { display: grid; grid-template-columns: max-content 16rem; column-gap: 0.4rem; min-width: 0; padding-bottom: 0.6rem; }
 #sub-experimenter .submenu__lead { grid-column: 1 / -1; }
 #sub-experimenter > li:not(.submenu__lead):not(.submenu__side) { grid-column: 1; }
 .submenu__side { grid-column: 2; grid-row: 2 / span 4; margin: 0 0.6rem 0 0; }
@@ -948,3 +948,4 @@ a.quote__who:focus-visible { outline: 2px solid var(--color-focus); outline-offs
 /* Lot 5 : cartes de parcours, prix au-dessus du bouton pour un rendu identique sur les quatre cartes */
 .path-step__go { flex-direction: column-reverse; align-items: flex-start; gap: var(--space-xs); }
 .path-step__go .btn--sm { margin-top: 0.1rem; }
+#sub-experimenter > li:not(.submenu__lead):not(.submenu__side) a { white-space: nowrap; }

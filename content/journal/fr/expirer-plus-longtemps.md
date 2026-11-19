@@ -4,12 +4,12 @@ description: Une expiration plus longue que l'inspiration envoie au système ner
 date: 2026-10-26
 axes: [systeme-nerveux, psycho-emotionnel]
 image: assets/img/chemin-nerveux.webp
-image_alt: Une participante, les yeux fermés, respire sous la charpente du Dôme
-image_caption: Le Dôme · hoona
+image_alt: Une participante, les yeux fermés, respire sous la charpente du dôme
+image_caption: Le dôme · hoona
 author: L'équipe hoona
 cta_label: Voir les sessions de yoga
 cta_url: sessions.html
-cta_text: Louise et l'équipe partagent ce type de respiration lors des sessions de yoga au Dôme, du Yin au Kundalini. 25 € la session, la première offerte avec le code ENSEMBLE.
+cta_text: Louise et l'équipe partagent ce type de respiration lors des sessions de yoga au dôme, du Yin au Kundalini. 25 € la session, la première offerte avec le code ENSEMBLE.
 ---
 
 Une expiration plus longue, c'est l'une des façons les plus simples de dire à son corps qu'il est en sécurité. Lorsque le souffle qui sort dure plus longtemps que celui qui entre, le système nerveux reçoit un signal d'apaisement. Pas de matériel, pas de lieu particulier : une chaise, un banc ou votre lit font l'affaire.
@@ -42,4 +42,4 @@ Avant une réunion, dans la voiture à l'arrêt, dans la file du supermarché. A
 
 Il se montre souvent ailleurs d'abord : des nuits plus courtes, une digestion plus sensible, une énergie qui chute l'après-midi. Ce sont des signaux à écouter, pas des raisons de s'inquiéter. Chez hoona, le système nerveux est l'un des 7 axes de vitalité, et l'un des plus transversaux : quand il s'apaise, le sommeil, la digestion et l'humeur suivent.
 
-Le souffle est la porte d'entrée la moins chère. Les sessions de yoga au Dôme, les [bains de gongs](bain-de-gongs.html) ou une séance de QRS en sont d'autres, quand on a envie d'être accompagné.
+Le souffle est la porte d'entrée la moins chère. Les sessions de yoga au dôme, les [bains de gongs](bain-de-gongs.html) ou une séance de QRS en sont d'autres, quand on a envie d'être accompagné.

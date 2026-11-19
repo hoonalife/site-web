@@ -31,7 +31,7 @@ We suggest another reading. Taking care of yourself is not a bracket stolen from
 
 ## Three gestures to begin with
 
-- **An appointment with yourself, in the diary.** Not "when I have time": a date, a time, like for anyone else. A walk in the forest, a session at the Dome, a consultation. What is written down exists.
+- **An appointment with yourself, in the diary.** Not "when I have time": a date, a time, like for anyone else. A walk in the forest, a session at the dome, a consultation. What is written down exists.
 - **One question to ask yourself every evening.** What did my body need today, and did I give it? Not to judge yourself. To listen to the whispers before they become shouts.
 - **One thing someone else can do.** Just one, this week. Delegating is not abandoning: it is making room.
 

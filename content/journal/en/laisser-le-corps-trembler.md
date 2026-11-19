@@ -4,12 +4,12 @@ description: After a fright, animals shake, then move on. We hold it in. The TRE
 date: 2026-10-05
 axes: [psycho-emotionnel, systeme-nerveux]
 image: assets/img/espace-dome.webp
-image_alt: The Dome, a circle of participants sitting on cushions under the timber frame
-image_caption: The Dome · hoona
+image_alt: The dome, a circle of participants sitting on cushions under the timber frame
+image_caption: The dome · hoona
 author: The hoona team
 cta_label: Write to us
 cta_url: contact.html
-cta_text: The TRE method is discovered with guidance, in an individual session or during a workshop at the Dome. Write to us for the next dates.
+cta_text: The TRE method is discovered with guidance, in an individual session or during a workshop at the dome. Write to us for the next dates.
 ---
 
 Watch an animal after a fright: it shakes from head to tail for a few seconds, then gets on with its life. That shaking is not leftover fear. It is how the nervous system discharges the adrenaline and cortisol mobilised to flee or fight. We have the same reflex. But we have learnt to hold it in: nobody shakes in a meeting, or in front of their children. The tension then stays stored in the muscles, and settles there.

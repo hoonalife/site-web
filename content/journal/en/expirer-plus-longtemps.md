@@ -4,12 +4,12 @@ description: An out-breath longer than the in-breath sends the nervous system a 
 date: 2026-10-26
 axes: [systeme-nerveux, psycho-emotionnel]
 image: assets/img/chemin-nerveux.webp
-image_alt: A participant, eyes closed, breathing under the timber frame of the Dome
-image_caption: The Dome · hoona
+image_alt: A participant, eyes closed, breathing under the timber frame of the dome
+image_caption: The dome · hoona
 author: The hoona team
 cta_label: See the yoga sessions
 cta_url: sessions.html
-cta_text: Louise and the team share this kind of breathing during the yoga sessions at the Dome, from Yin to Kundalini. 25 € per session, the first one free with the code ENSEMBLE.
+cta_text: Louise and the team share this kind of breathing during the yoga sessions at the dome, from Yin to Kundalini. 25 € per session, the first one free with the code ENSEMBLE.
 ---
 
 A longer exhale is one of the simplest ways to tell your body it is safe. When the breath going out lasts longer than the breath coming in, the nervous system receives a calming signal. No equipment, no special place: a chair, a bench or your bed will do.
@@ -42,4 +42,4 @@ At this time of year, the roles we hold at the same time multiply. Part of the t
 
 It often shows up elsewhere first: shorter nights, a more sensitive digestion, energy that dips in the afternoon. These are signals worth listening to, not reasons to worry. At hoona, the nervous system is one of the 7 vitality axes, and one of the most far-reaching: when it settles, sleep, digestion and mood follow.
 
-The breath is the cheapest way in. The yoga sessions at the Dome, the gong baths or a QRS session are others, for the days when you would rather be accompanied.
+The breath is the cheapest way in. The yoga sessions at the dome, the gong baths or a QRS session are others, for the days when you would rather be accompanied.
