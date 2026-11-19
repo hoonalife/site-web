@@ -1,24 +1,26 @@
 <!--
-title: Verzorgingen, consultaties en technologieën | hoona
-description: Het aanbod van hoona in Tervuren: vitaliteitschecks, consultaties, regeneratietechnologieën (Indiba, Papimi, IHHT), massages, energetische verzorgingen.
+title: Verzorgingen, consultaties en regeneratietechnologieën | hoona
+description: De verzorgingen van hoona in Tervuren: vitaliteitschecks, consultaties, regeneratietechnologieën (Indiba, Papimi, IHHT) en massages.
 nav: SOINS
 -->
 
-<header class="wrap page-head page-head--compact">
-  <ol class="crumbs" aria-label="Kruimelpad"><li><a href="index.html">Home</a></li><li><span aria-current="page">Verzorgingen &amp; consultaties</span></li></ol>
-  <h1>Verzorgingen &amp; consultaties</h1>
-  <p class="chapeau">Geavanceerde technologieën, manuele therapieën en holistische consultaties, om de juiste omstandigheden voor je evenwicht samen te brengen.</p>
-</header>
-
 <div class="wrap" data-catalogue data-collapsible>
-  {{AXES_PICKER}}
+  <div class="soins-head">
+    <header class="page-head page-head--compact">
+      <ol class="crumbs" aria-label="Kruimelpad"><li><a href="index.html">Home</a></li><li><span aria-current="page">Verzorgingen &amp; consultaties</span></li></ol>
+      <h1>Verzorgingen &amp; consultaties</h1>
+      <p class="chapeau">Alles hangt samen. Onze holistische aanpak draait rond zeven fundamentele pijlers die werken als communicerende vaten: wie op één ervan inzet, ondersteunt je hele levenskracht.</p>
+      <p class="chapeau-suite">Wil je weten welke as je best eerst ondersteunt? Dan raden we je aan om te beginnen met een <a href="#consultations">holistische consultatie</a>. Je kunt ook één of meerdere assen selecteren, waarna de lijst met verzorgingen zich aanpast.</p>
+    </header>
+    {{AXES_PICKER}}
+  </div>
   <!-- Lot 4 : onglets collants. Rubriques en onglets texte, loupe qui ouvre le champ ; le compteur n'apparaît que pendant un filtrage. -->
   <div class="toolbar">
     <nav class="tabs" aria-label="{{t:goto_cat}}">
       {{SOINS_FILTERS}}
     </nav>
     <div class="search" data-search-box>
-      <label class="visually-hidden" for="q">Zoeken in het aanbod</label>
+      <label class="visually-hidden" for="q">Een verzorging zoeken</label>
       <input id="q" type="search" data-search placeholder="Zoeken: slaap, massage, detox…" autocomplete="off">
     </div>
     <button class="toolbar__search-toggle" type="button" aria-expanded="false" aria-controls="q" data-search-toggle><svg class="i" aria-hidden="true"><use href="#i-search"/></svg><span class="visually-hidden">{{t:search_toggle}}</span></button>
@@ -31,17 +33,29 @@ nav: SOINS
     <p>Niets in ons aanbod komt overeen met deze zoekopdracht.</p>
     <p style="margin-top:var(--space-sm)"><button class="btn btn--line btn--sm" type="button" data-reset>Alles tonen</button></p>
   </div>
+  <!-- Lot 4 : renvoi vers les sessions collectives, avec une session sous le Dôme -->
+  <section class="soins-band reveal" aria-labelledby="soins-band-title">
+    <figure class="soins-band__figure">
+      <img src="assets/img/sessions-dome.webp" alt="Een yogasessie in de Dome, met zicht op de tuin" width="1181" height="1476" loading="lazy" decoding="async">
+    </figure>
+    <div class="soins-band__text">
+      <p class="insert">Elke week, in de Dome</p>
+      <h2 id="soins-band-title">De groepssessies</h2>
+      <p>Elke week, in de Dome of in het bos, beoefen je yoga, nordic walking, gongbad en sportcoaching in kleine groep. Deze afspraken zetten voort wat een verzorging op gang bracht, en je eerste sessie is gratis met de code ENSEMBLE.</p>
+      <p class="actions"><a class="btn btn--line" href="sessions.html">Bekijk de sessies</a></p>
+    </div>
+  </section>
   <section class="soins-next" aria-label="Verder gaan">
     <div class="soins-next__card">
       <p class="insert">Ervaren · korte formules</p>
       <h2>De thematische dagen en halve dagen</h2>
-      <p>Vier thema's samengesteld door onze therapeuten, als halve dag of als dag met lunch: de verzorgingen hierboven, na elkaar, met tijd om te integreren.</p>
-      <p class="actions"><a class="btn btn--line" href="sejours.html#experiences">Bekijk de dagen</a></p>
+      <p>Onze therapeuten hebben vier thema's samengesteld, als halve dag of als dag met lunch. Elk thema bundelt meerdere van deze verzorgingen, met een pauze tussen elke verzorging.</p>
+      <p class="actions"><a class="btn btn--line" href="journees.html">Bekijk de dagen</a></p>
     </div>
     <div class="soins-next__card">
       <p class="insert">Schenk hoona</p>
       <h2>De cadeaubonnen</h2>
-      <p>Een verzorging, een thematische dag of een vrij bedrag voor een verblijf: de hoona-cadeaubon wordt samengesteld op maat en blijft een jaar geldig.</p>
+      <p>Een verzorging, een thematische dag of een vrij bedrag voor een retreat: de hoona-cadeaubon stel je samen naar de persoon voor wie hij bedoeld is, en hij blijft een jaar geldig.</p>
       <p class="actions"><a class="btn btn--line" href="bon-cadeau.html">Ontdek de cadeaubonnen</a></p>
     </div>
   </section>

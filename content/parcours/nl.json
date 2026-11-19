@@ -1,0 +1,299 @@
+{
+  "intro": "Vier trajecten om je vitaliteit te ondersteunen. Elk traject begint met een eenvoudige eerste stap en wordt daarna samen met jou samengesteld.",
+  "parcours": [
+    {
+      "slug": "epuisement",
+      "num": "01",
+      "nom": "Uit de uitputting komen",
+      "titre": "Uit de uitputting en je zenuwstelsel tot rust brengen",
+      "chapeau": "Een vermoeidheid die zich nestelt, een slaap die niet herstelt, een hoofd dat niet meer stopt. Je blijft alles draaiende houden en je begint jezelf onderweg kwijt te raken.",
+      "image": "assets/img/chemin-nerveux.webp",
+      "image_alt": "Een deelneemster ademt met gesloten ogen onder het houten dak van de Dome",
+      "image_caption": "De Dome · hoona",
+      "signaux": [
+        "Je slaapt wel, maar wordt al moe wakker.",
+        "De gedachten blijven 's avonds draaien en stoppen niet meer.",
+        "Je geduld raakt op en je reageert sneller dan vroeger.",
+        "Luisteren naar anderen, ook naar wie je graag ziet, kost je moeite.",
+        "Je houdt het huishouden, je werk en je gezin draaiende en je vraagt je af hoe lang nog."
+      ],
+      "axes": [
+        "systeme-nerveux",
+        "sommeil",
+        "psycho-emotionnel"
+      ],
+      "etapes": [
+        {
+          "phase": "point",
+          "titre": "Een naturopathie-consultatie",
+          "texte": "1u20 met een naturopaat om je 7 assen in kaart te brengen en te ontdekken wat je het eerst uitput, zoals slaap, mentale belasting, spijsvertering of tekorten.",
+          "label": "De consultatie boeken",
+          "url": "consultation.html",
+          "prix": "120 €"
+        },
+        {
+          "phase": "experimenter",
+          "titre": "De halve dag « Diepe ontspanning »",
+          "texte": "In 2u50 volg je een reflexologie van gezicht en voeten met klankreis, een IHHT-sessie met Mitovit en daarna QRS en Airnergy, zodat je zenuwstelsel tot rust kan komen.",
+          "label": "De halve dag bekijken",
+          "url": "journees.html#demi-diepe-ontspanning",
+          "prix": "228 €"
+        },
+        {
+          "phase": "experimenter",
+          "titre": "De dag « Diepe ontspanning »",
+          "texte": "Je begint met een naturopathie-consultatie van 1u30, daarna ontvang je een massage van een uur, IHHT met Mitovit, QRS en Airnergy, infraroodlicht en een bad met magnesiumzout, met een lunch in het centrum.",
+          "label": "De dag bekijken",
+          "url": "journees.html#journee-diepe-ontspanning",
+          "prix": "368 €"
+        },
+        {
+          "phase": "immerger",
+          "titre": "Vijf dagen om alles neer te leggen",
+          "texte": "Wanneer de vermoeidheid zich heeft genesteld, geeft de immersieve retreat je lichaam de tijd die een halve dag niet kan geven, met vier nachten, consultaties, verzorgingen, sessies en ontstekingsremmende keuken.",
+          "label": "De verblijven bekijken",
+          "url": "sejours.html",
+          "prix": "vanaf 2 650 €"
+        }
+      ],
+      "soins": [
+        "Holistische naturopathie-consultatie",
+        "Lichaamsmassage",
+        "Gezichts- en hoofdhuidmassage",
+        "Massage van gezicht en voeten & klankreis",
+        "Reflexologie van gezicht en voeten met klankreis, verdiepend ritueel"
+      ],
+      "sessions": [
+        "Yin yoga",
+        "Yoga nidra",
+        "Gongbad",
+        "Nordic walking"
+      ],
+      "journal": [
+        "expirer-plus-longtemps",
+        "le-sommeil-commence-le-matin",
+        "laisser-le-corps-trembler"
+      ]
+    },
+    {
+      "slug": "digestif",
+      "num": "02",
+      "nom": "Een comfortabele spijsvertering terugvinden",
+      "titre": "Opnieuw een comfortabele spijsvertering vinden",
+      "chapeau": "Een opgeblazen gevoel, terugkerend ongemak, een grillige spijsvertering. De buik spreekt als eerste, en vaak lang voor de rest. We luisteren er samen met jou naar.",
+      "image": "assets/img/chemin-digestif.webp",
+      "image_alt": "Een kom noedels met groenten en verse kruiden, bereid door de chef van hoona",
+      "image_caption": "De keuken van het gastenhuis · hoona",
+      "signaux": [
+        "Een opgeblazen gevoel na de maaltijd, ook een lichte.",
+        "Onregelmatige stoelgang, een zwaar gevoel, reflux.",
+        "Een schommelende energie en zin in suiker in de namiddag.",
+        "Normale labouitslagen, en toch.",
+        "Een spijsvertering die ontregeld raakt zodra de stress oploopt."
+      ],
+      "axes": [
+        "nutrition",
+        "detox",
+        "systeme-nerveux"
+      ],
+      "etapes": [
+        {
+          "phase": "point",
+          "titre": "Een naturopathie-consultatie",
+          "texte": "1u20 met een naturopaat om je 7 assen in kaart te brengen. De consultatie onderzoekt ook je spijsvertering, met je bord, het ritme van je maaltijden en je stress, en je krijgt persoonlijke aanbevelingen.",
+          "label": "De consultatie boeken",
+          "url": "consultation.html",
+          "prix": "120 €"
+        },
+        {
+          "phase": "experimenter",
+          "titre": "De halve dag « Spijsverteringsbalans »",
+          "texte": "In 2u30 ontvang je Chi Nei Tsang of Indiba, een uur reflexologie en daarna een leverkompres of een sessie Papimi, om de spijsvertering weer op gang te brengen.",
+          "label": "De halve dag bekijken",
+          "url": "journees.html#demi-spijsverteringsbalans",
+          "prix": "247 €"
+        },
+        {
+          "phase": "experimenter",
+          "titre": "De dag « Spijsverteringsbalans »",
+          "texte": "Je begint met een naturopathie-consultatie van 1u30, daarna ontvang je Indiba op de buik, Chi Nei Tsang of reflexologie, Papimi, een leverkompres en infraroodlicht, met een lunch in het centrum.",
+          "label": "De dag bekijken",
+          "url": "journees.html#journee-spijsverteringsbalans",
+          "prix": "431 €"
+        },
+        {
+          "phase": "immerger",
+          "titre": "De immersieve retreat van vijf dagen",
+          "texte": "Je verblijft vier nachten in het gastenhuis, met ontstekingsremmende keuken bij elke maaltijd, consultaties, verzorgingen en sessies. Zo krijg je de tijd om andere gewoonten te installeren, ver van het dagelijks leven.",
+          "label": "De verblijven bekijken",
+          "url": "sejours.html",
+          "prix": "vanaf 2 650 €"
+        }
+      ],
+      "soins": [
+        "Holistische naturopathie-consultatie",
+        "Buikmassage Chi Nei Tsang",
+        "Colonhydrotherapie",
+        "Vietnamese massage Dien Chan"
+      ],
+      "sessions": [
+        "Nordic walking",
+        "Hormonale yoga"
+      ],
+      "journal": [
+        "le-microbiote-socle-discret",
+        "la-premiere-detox",
+        "expirer-plus-longtemps"
+      ]
+    },
+    {
+      "slug": "ressourcer",
+      "num": "03",
+      "nom": "Diep herbronnen",
+      "titre": "Diep herbronnen",
+      "chapeau": "Een echte pauze om te vertragen, neer te leggen wat je draagt en bij jezelf terug te keren. Enkele uren, een dag of vijf dagen weg van het dagelijks leven.",
+      "image": "assets/img/chemin-ressourcer.webp",
+      "image_alt": "Een gong en klankschalen in het licht van de Dome",
+      "image_caption": "De Dome · hoona",
+      "signaux": [
+        "Je hebt al maanden geen tijd voor jezelf genomen.",
+        "Je functioneert, zonder er echt te zijn.",
+        "Het weekend volstaat niet meer om te recupereren.",
+        "Je hebt behoefte om neer te leggen, niet om te presteren.",
+        "Je zou willen dat er voor één keer iemand voor jou zorgt."
+      ],
+      "axes": [
+        "sens",
+        "psycho-emotionnel",
+        "systeme-nerveux"
+      ],
+      "etapes": [
+        {
+          "phase": "point",
+          "titre": "Een naturopathie-consultatie",
+          "texte": "1u20 met een naturopaat om neer te leggen wat je draagt, je 7 assen in kaart te brengen en de pauze te kiezen die bij je past.",
+          "label": "De consultatie boeken",
+          "url": "consultation.html",
+          "prix": "120 €"
+        },
+        {
+          "phase": "experimenter",
+          "principal": true,
+          "titre": "De halve dag « Absolute sereniteit »",
+          "texte": "In 2u15 ontvang je een specifieke massage van een uur en geniet je daarna van de privésauna en een bad met magnesiumzout, om los te laten zonder iets te hoeven beslissen.",
+          "label": "De halve dag bekijken",
+          "url": "journees.html#demi-absolute-sereniteit",
+          "prix": "180 €"
+        },
+        {
+          "phase": "experimenter",
+          "titre": "De dag « Absolute sereniteit »",
+          "texte": "Je ontvangt twee specifieke massages van een uur, met de privésauna, een bad met magnesiumzout, infraroodlicht, QRS en Airnergy, en een lunch in het centrum.",
+          "label": "De dag bekijken",
+          "url": "journees.html#journee-absolute-sereniteit",
+          "prix": "332 €"
+        },
+        {
+          "phase": "immerger",
+          "titre": "De immersieve retreat van vijf dagen",
+          "texte": "Van maandag tot vrijdag verblijf je in een kleine groep in het gastenhuis, met consultaties, verzorgingen, sessies en volpension. Zo krijg je de tijd om los te laten en met een nieuw ritme naar huis te gaan.",
+          "label": "De data bekijken",
+          "url": "sejours.html#dates",
+          "prix": "vanaf 2 650 €"
+        }
+      ],
+      "soins": [
+        "Massage van gezicht en voeten & klankreis",
+        "Lichaamsmassage",
+        "Tuinamassage",
+        "Reflexologie van gezicht en voeten met klankreis, verdiepend ritueel",
+        "Gezichts- en hoofdhuidmassage"
+      ],
+      "sessions": [
+        "Gongbad",
+        "Body & Sound Experience",
+        "Yoga nidra",
+        "Kundalini yoga"
+      ],
+      "journal": [
+        "laisser-le-corps-trembler",
+        "expirer-plus-longtemps",
+        "marche-nordique-foret-de-soignes"
+      ]
+    },
+    {
+      "slug": "prevenir",
+      "num": "04",
+      "nom": "Voorkomen en ontgiften",
+      "titre": "Actief voorkomen en ontgiften",
+      "chapeau": "Zorg dragen voor je vitaliteit terwijl het goed met je gaat, zodat dat zo blijft. Er is niets slimmer dan voor je gezondheid te zorgen voordat je lichaam gaat protesteren.",
+      "image": "assets/img/chemin-prevenir.webp",
+      "image_alt": "Een groep beoefent Nordic walking onder de bomen van het park van Tervuren",
+      "image_caption": "Nordic walking · park van Tervuren",
+      "signaux": [
+        "Het gaat goed met je en je wilt dat dat zo blijft.",
+        "Je voelt dat het dagelijks leven je vervuilt, met schermen, alcohol, suiker en informatie.",
+        "Je zoekt betrouwbare houvast in een wereld vol wondermiddelen.",
+        "Je wilt je lichaam begrijpen voordat het aan de alarmbel trekt.",
+        "Je beweegt graag, buiten, en je zou meer regelmaat willen."
+      ],
+      "axes": [
+        "detox",
+        "nutrition",
+        "mouvement"
+      ],
+      "etapes": [
+        {
+          "phase": "point",
+          "titre": "De holistische vitaliteitscheck",
+          "texte": "1u20 met Olivia en een therapeute om je 7 assen te evalueren en te weten welke je het eerst ondersteunt. In het centrum of op afstand.",
+          "label": "De check boeken",
+          "url": "bilan.html",
+          "prix": "140 €"
+        },
+        {
+          "phase": "experimenter",
+          "titre": "De halve dag « Natuurlijke preventie »",
+          "texte": "In 2u15 volg je Papimi, QRS en Airnergy, de privésauna en een bad met magnesiumzout, om de detox te ondersteunen en een stap voor te blijven.",
+          "label": "De halve dag bekijken",
+          "url": "journees.html#demi-natuurlijke-preventie",
+          "prix": "171 €"
+        },
+        {
+          "phase": "experimenter",
+          "titre": "De dag « Natuurlijke preventie »",
+          "texte": "Je begint met een naturopathie-consultatie van 1u30, daarna volg je Papimi, QRS en Airnergy, de privésauna, een voetbad met magnesiumzout, infraroodlicht en een massage van een uur, met een lunch in het centrum.",
+          "label": "De dag bekijken",
+          "url": "journees.html#journee-natuurlijke-preventie",
+          "prix": "422 €"
+        },
+        {
+          "phase": "immerger",
+          "titre": "De immersieve retreat van vijf dagen",
+          "texte": "Vijf dagen om een stap voor te blijven, met vier nachten in het gastenhuis, consultaties, verzorgingen, beweging en ontstekingsremmende keuken. Preventie op groot formaat.",
+          "label": "De verblijven bekijken",
+          "url": "sejours.html",
+          "prix": "vanaf 2 650 €"
+        }
+      ],
+      "soins": [
+        "Individuele holistische vitaliteitscheck, in het centrum",
+        "Holistische naturopathie-consultatie",
+        "Colonhydrotherapie",
+        "Circulatiemassage van de benen",
+        "Tuinamassage"
+      ],
+      "sessions": [
+        "Nordic walking",
+        "Sportcoaching & spierversterking",
+        "Flow yoga"
+      ],
+      "journal": [
+        "la-premiere-detox",
+        "marche-nordique-foret-de-soignes",
+        "le-microbiote-socle-discret"
+      ]
+    }
+  ],
+  "_aide_etapes": "Chaque étape porte une phase : point (Faire le point), experimenter (Expérimenter) ou immerger (S'immerger). Les étapes voisines de même phase sont regroupées sous un seul intitulé. principal: true = l'étape reprise par le bouton d'en-tête (sinon la première). Quatre étapes par parcours."
+}

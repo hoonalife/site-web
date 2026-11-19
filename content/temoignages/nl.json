@@ -1,0 +1,176 @@
+{
+  "google_url": "https://www.google.com/maps/place/hoona/@50.8308058,4.507971,717m/data=!3m1!1e3!4m8!3m7!1s0x47c3d97b022ccfd7:0x1e445bc87bc55351!8m2!3d50.8308058!4d4.5105459!9m1!1b1!16s%2Fg%2F11x98cbg4m",
+  "google_note": "5,0",
+  "google_nombre": 24,
+  "videos": [
+    {
+      "fichier": "assets/video/temoignages/jean-sejour.mp4",
+      "affiche": "assets/video/temoignages/jean-sejour.jpg",
+      "auteur": "Jean",
+      "format": "immersieve retreat",
+      "sejour": true,
+      "accueil": true,
+      "duree": "1 min"
+    },
+    {
+      "fichier": "assets/video/temoignages/marie-estelle-sejour.mp4",
+      "affiche": "assets/video/temoignages/marie-estelle-sejour.jpg",
+      "auteur": "Marie-Estelle",
+      "format": "immersieve retreat",
+      "sejour": true,
+      "accueil": true,
+      "duree": "1 min 55"
+    },
+    {
+      "fichier": "assets/video/temoignages/nadia-sejour.mp4",
+      "affiche": "assets/video/temoignages/nadia-sejour.jpg",
+      "auteur": "Nadia",
+      "format": "immersieve retreat",
+      "sejour": true,
+      "accueil": true,
+      "duree": "1 min 21"
+    },
+    {
+      "fichier": "assets/video/temoignages/maurice-sejour.mp4",
+      "affiche": "assets/video/temoignages/maurice-sejour.jpg",
+      "auteur": "Maurice",
+      "format": "immersieve retreat",
+      "sejour": true,
+      "accueil": true,
+      "duree": "45 s"
+    },
+    {
+      "fichier": "assets/video/temoignages/marie-estelle-papimi.mp4",
+      "affiche": "assets/video/temoignages/marie-estelle-papimi.jpg",
+      "auteur": "Marie-Estelle",
+      "format": "Papimi-sessie tijdens haar retreat",
+      "sejour": true,
+      "accueil": false,
+      "duree": "1 min 21"
+    }
+  ],
+  "_aide_videos": "Chaque vidéo : fichier mp4 (portrait 9/16, 540x960) et affiche jpg dans assets/video/temoignages/, auteur, format vécu, sejour (page séjours), accueil (page d'accueil), duree affichée. Lecture au clic seulement.",
+  "google": [
+    {
+      "texte": "Sinds mijn terugkeer blijven de inzichten die ik heb meegekregen mij elke dag begeleiden, ondanks de uitdagingen van het dagelijks leven, dankzij de zeven assen van de vitaliteit die ons zijn overgedragen. Een rijke en inspirerende ervaring die ik zonder aarzelen aanbeveel.",
+      "auteur": "Christine K.",
+      "format": "immersieve retreat van vijf dagen",
+      "sejour": true,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xkcGJXSjZka3RWWWsxelRFbGZVVGRLYW14MFRFRRAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOldpbWJ6dktVYk1zTElfUTdKamx0TEE||",
+      "photo": "assets/img/avis/christine-k.webp"
+    },
+    {
+      "texte": "Ik was dol op de massage van Jaqueline. De sfeer is er heel ontspannend en haar handen voelen precies aan wat ons lichaam nodig heeft. Een ongelooflijke ontspanning, anders dan alle andere. Je voelt dat ze dit werk met haar hart doet.",
+      "auteur": "Camille C.",
+      "format": "massage",
+      "sejour": false,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2sxVFdIbE1hVzFWVjNsVVFVODRNRTh0YWsxU05XYxAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOk1TWHlMaW1VV3lUQU84ME8tak1SNWc||",
+      "photo": "assets/img/avis/camille-c.webp"
+    },
+    {
+      "texte": "Vanaf mijn aankomst was ik geraakt door de kwaliteit van het onthaal, de aandacht voor elk detail en de voortdurende welwillendheid van alle professionals. Ik vertrek dankbaar, opgeladen en diep geïnspireerd.",
+      "auteur": "Maurice M.",
+      "format": "immersieve retreat van vijf dagen",
+      "sejour": true,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25CSVRGSktSWFU0TldwbmJFVjBiV1p2YkhoUmJXYxAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOnBITFJKRXU4NWpnbEV0bWZvbHhRbWc||",
+      "photo": "assets/img/avis/maurice-m.webp"
+    },
+    {
+      "texte": "Deze plek is gewoonweg uitzonderlijk! Het team is gastvrij, de verzorging is professioneel en alles is goed doordacht. Ik nam deel aan een gongbad in de prachtige koepelzaal: een moment van totaal welzijn, buiten de tijd.",
+      "auteur": "Sophie d'Y.",
+      "format": "gongbad",
+      "sejour": false,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pVM1UybG9RV2x3ZUZwcWJGOXdjamsyYkVKRVdXYxAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOjU3U2loQWlweFpqbF9wcjk2bEJEWWc||",
+      "photo": "assets/img/avis/sophie-dy.webp"
+    },
+    {
+      "texte": "Een unieke, transformerende en diep regenererende pauze. Het zenuwstelsel komt tot rust, de spanningen laten los en de geest wordt helder. Beetje bij beetje keert een eenvoudige vreugde terug, alsof elk moment het mogelijk maakt iets meer naar jezelf terug te keren.",
+      "auteur": "Delphine C.",
+      "format": "immersieve retreat van vijf dagen",
+      "sejour": true,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2twcmVHc3dYMDVyTVdoTWJuTXhSMjgwWDNSbVlWRRAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOkpreGswX05rMWhMbnMxR280X3RmYVE||",
+      "photo": "assets/img/avis/delphine-c.webp"
+    },
+    {
+      "texte": "Een consult, daarna Indiba, Papimi, Airnergy en infrarood: deze therapieën hebben me geholpen om niet in een burn-out te belanden en hebben meerdere lichamelijke klachten verholpen, zoals geblokkeerde schouders. Het team is zeer professioneel en warm.",
+      "auteur": "Menno B.",
+      "format": "verzorging en technologieën, vertaald uit het Engels",
+      "sejour": false,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pONVoyWnhVMmhsT0RSeGJFRnRTVWRvYjNjMkxWRRAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOjN5Z2ZxU2hlODRxbEFtSUdob3c2LVE||",
+      "photo": "assets/img/avis/menno-b.webp"
+    },
+    {
+      "texte": "Vijf dagen en vier nachten voor een subtiele opeenvolging van consulten, traditionele en innovatieve verzorging en ook momenten van uitwisseling. Ik kwam uitgeput aan en ging rechtop weer weg, verzoend met mijn slaap en gedreven door een enorme zin om weer in vitaliteitsmodus te schakelen.",
+      "auteur": "Carine d. S.",
+      "format": "immersieve retreat van vijf dagen",
+      "sejour": true,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xKT1MyVkxVSHBUVGtSMlNuWm5RazF5WXpCdFprRRAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOlJOS2VLUHpTTkR2SnZnQk1yYzBtZkE||",
+      "photo": "assets/img/avis/carine-ds.webp"
+    },
+    {
+      "texte": "Een magische plek en omgeving die echt uitnodigen om los te koppelen. De yogalessen, van grote kwaliteit, vinden plaats in de koepel, een echte cocon. Elke sessie krijgt bijzondere aandacht.",
+      "auteur": "Stéphanie V.",
+      "format": "yogasessies",
+      "sejour": false,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pCNFprSmtZa3BCYkMweGJXdHNaRXBaVlhCWVFWRRAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOjB4ZkJkYkpBbC0xbWtsZEpZVXBYQVE||",
+      "photo": "assets/img/avis/stephanie-v.webp"
+    },
+    {
+      "texte": "Ondanks de nabijheid van de plek had ik het gevoel ver van huis te zijn. In een prachtige, groene omgeving was ik geraakt door de vriendelijkheid en de goedheid van de therapeuten. De verzorging die ik er kreeg is van grote kwaliteit.",
+      "auteur": "Evelyne V. L.",
+      "format": "immersieve retreat van vijf dagen",
+      "sejour": true,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25kbFQwYzROVmswVEhScE5IbGpSblp6WjBsUmJtYxAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOndlT0c4NVk0THRpNHljRnZzZ0lRbmc||",
+      "photo": "assets/img/avis/evelyne-vl.webp"
+    },
+    {
+      "texte": "Een mooi onthaal, gevolgd door twee verzorgingen, een infrarood en een Airnergy. Subtiel, en precies wat mijn zenuwstelsel nodig had om tot rust te komen. Wat een zen ruimte en wat een warme zorg. Een mooi verjaardagscadeau.",
+      "auteur": "Claire B.",
+      "format": "infrarood en Airnergy",
+      "sejour": false,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25sWlUyZHFTV05QVFVadmVqRlRRV3RMUkhWQ2NsRRAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOnlZU2dqSWNPTUZvejFTQWtLRHVCclE||",
+      "photo": "assets/img/avis/claire-b.webp"
+    },
+    {
+      "texte": "Ik had het geluk deel te nemen aan een retreat bij hoona en ik was echt dol op dit moment buiten de tijd. Een fantastisch team, verzorging die gewoonweg magisch is, een idyllische omgeving: alles draagt bij aan een volledige herbronning.",
+      "auteur": "Louis d. B.",
+      "format": "immersieve retreat van vijf dagen",
+      "sejour": true,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xsbmRuY3hhRjkzU0Y4d2NtOUtUbkUzWms5VmNWRRAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOllndncxaF93SF8wcm9KTnE3Zk9VcVE||",
+      "photo": "assets/img/avis/louis-db.webp"
+    },
+    {
+      "texte": "Uitstekende sessies yoga, nidra en yin. Mijn rugpijn neemt gaandeweg af. Ook zeer mooie levenslessen worden er doorgegeven.",
+      "auteur": "Basile M.",
+      "format": "yogasessies",
+      "sejour": false,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21KUU5HeHBSbTV1ZDFKMGJVaHNiRUZ1TkY4M2FIYxAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOmJQNGxpRm5ud1J0bUhsbEFuNF83aHc||",
+      "photo": "assets/img/avis/basile-m.webp"
+    },
+    {
+      "texte": "Ik had de enorme vreugde om een retreat bij hoona te volgen, in een natuurlijke en harmonieuze omgeving, in de deskundige handen van een zeer welwillend team, met een aanbod van geavanceerde technologie. Alle benaderingen hebben mijn wens naar een gezond lichaam in topvorm gevoed.",
+      "auteur": "Annie H.",
+      "format": "immersieve retreat van vijf dagen",
+      "sejour": true,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21OU1UycGlPREpSTUZObE5pMWhNM0YzTm1GcVNuYxAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOmNSU2piODJRMFNlNi1hM3F3NmFqSnc||",
+      "photo": "assets/img/avis/annie-h.webp"
+    },
+    {
+      "texte": "Vanaf mijn aankomst voelde ik me welkom en verwacht. Marie begreep goed wat ik wilde en was aandachtig voor mijn vragen. Het was lang geleden dat ik een verzorging van zulke kwaliteit had gehad.",
+      "auteur": "Delphine E.",
+      "format": "lichaamsmassage",
+      "sejour": false,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pJMFQxSTRXbUp6WldOU1VHVTBURmxDVjJRM1kxRRAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOjI0T1I4WmJzZWNSUGU0TFlCV2Q3Y1E||",
+      "photo": "assets/img/avis/delphine-e.webp"
+    },
+    {
+      "texte": "De yogazaal met de koepel is uitzonderlijk en de therapeuten zijn top. Je voelt dat er een mooie energie is en dat je omringd bent door bekwame en attente mensen.",
+      "auteur": "Julie R.",
+      "format": "yogasessies",
+      "sejour": false,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2toSldrMUhVMnh6TkhsWFRVRnpja1IyWTBaM1JHYxAB!2m1!1s0x0:0x1e445bc87bc55351!3m1!1s2@1:CAIQACodChtycF9oOkhJWk1HU2xzNHlXTUFzckR2Y0Z3RGc||",
+      "photo": "assets/img/avis/julie-r.webp"
+    }
+  ],
+  "_aide_google": "Extraits fidèles des avis publiés sur la fiche Google (24 avis au 4 nov. 2026). sejour: true = montré aussi sur la page séjours. url = lien de partage de l'avis sur Google ; photo = portrait Google (96 px, webp) dans assets/img/avis/."
+}

@@ -253,8 +253,8 @@ def actions(item, t, lang):
                '</div></div>'
                % (aid, e(t["contact_us"]), aid, e(t["tel_link"]), e(t["tel_label"]), e(t["contact_tel"]), e(u), e(t["contact_mail"])))
     elif u.startswith("http"):
-        out = ('<a class="btn btn--sm" href="%s" target="_blank" rel="noopener">%s<span class="visually-hidden"> : %s %s</span></a>'
-               % (e(u), e(t["book"]), e(item.get("nom")), e(t["book_sr"])))
+        out = ('<a class="btn btn--sm" href="%s" target="_blank" rel="noopener">%s<span class="visually-hidden">%s%s %s</span></a>'
+               % (e(u), e(t["book"]), " : " if lang == "fr" else ": ", e(item.get("nom")), e(t["book_sr"])))
     else:
         out = '<a class="btn btn--sm btn--line" href="contact.html?sujet=soin#reserver">%s</a>' % e(t["contact_us"])
     return out + offer_buttons(item, t, lang)
@@ -510,7 +510,7 @@ def render_journees(t, lang):
         out["{{JOURNEES_%s}}" % key] = '<div class="rows rows--compact">\n%s\n    </div>' % rows
         prix = [i["prix"] for i in c.get("prestations", []) if isinstance(i.get("prix"), (int, float))]
         if prix:
-            out["{{JOURNEES_%s_PRIX}}" % key] = "%d à %d €" % (min(prix), max(prix))
+            out["{{JOURNEES_%s_PRIX}}" % key] = {"fr": "%d à %d\u00a0€", "nl": "€\u00a0%d tot €\u00a0%d", "en": "€%d to €%d"}[lang] % (min(prix), max(prix))
     return out
 
 
@@ -633,8 +633,8 @@ def render_week(cats, t, lang, href_prefix=""):
                    % (e(t["jours"][jour].capitalize()), lis))
     html = '    <div class="week">\n%s\n    </div>' % "\n".join(out)
     if on_request:
-        html += '\n    <p class="week__note muted">%s : %s</p>' % (
-            e(t["on_request"][:1].upper() + t["on_request"][1:]), ", ".join('<a href="%s#%s">%s</a>' % (href_prefix, sid, e(label)) for label, sid in on_request))
+        html += '\n    <p class="week__note muted">%s%s%s</p>' % (
+            e(t["on_request"][:1].upper() + t["on_request"][1:]), " : " if lang == "fr" else ": ", ", ".join('<a href="%s#%s">%s</a>' % (href_prefix, sid, e(label)) for label, sid in on_request))
     return html
 
 
@@ -1312,8 +1312,8 @@ def build():
             "{{FLOWER}}": flower(lang),
             "{{LANG}}": lang,
             "{{JS_I18N}}": json.dumps(dict(t["js"], lang=lang), ensure_ascii=False),
-            "{{PARCOURS_LI}}": '<li><a href="index.html#parcours">%s</a></li>' % htmllib.escape(t["m_parcours"], quote=True) if lang == "fr" else "",
-            "{{JOURNEE_TYPE_LI}}": '<li><a href="sejours.html#journee-type">%s</a></li>' % htmllib.escape(t["m_journee_type"], quote=True) if lang == "fr" else "",
+            "{{PARCOURS_LI}}": '<li><a href="index.html#parcours">%s</a></li>' % htmllib.escape(t["m_parcours"], quote=True) if parcours[lang] else "",
+            "{{JOURNEE_TYPE_LI}}": '<li><a href="sejours.html#journee-type">%s</a></li>' % htmllib.escape(t["m_journee_type"], quote=True) if "sejours" in available[lang] else "",
             "{{SOUTIEN_LI}}": '<li><a href="hoona-soutien.html">%s</a></li>' % htmllib.escape(t["m_soutien"], quote=True) if "hoona-soutien" in available[lang] else "",
             "{{JOURNAL_LI}}": '<li><a href="journal.html">%s</a></li>' % htmllib.escape(t["m_journal"], quote=True) if arts else "",
             "{{FOOT_PLUS_LI}}": "".join('<li><a href="%s.html">%s</a></li>' % (pg, htmllib.escape(t[key], quote=True))

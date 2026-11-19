@@ -1,0 +1,299 @@
+{
+  "intro": "Four pathways to support your vitality. Each one starts with a simple first step, then is shaped with you.",
+  "parcours": [
+    {
+      "slug": "epuisement",
+      "num": "01",
+      "nom": "Coming out of exhaustion",
+      "titre": "Coming out of exhaustion and calming your nervous system",
+      "chapeau": "Fatigue is settling in, your sleep does not restore you, and your mind will not stop. You keep everything running, and you are starting to lose yourself along the way.",
+      "image": "assets/img/chemin-nerveux.webp",
+      "image_alt": "A participant, eyes closed, breathes beneath the timber frame of the Dome",
+      "image_caption": "The Dome, hoona",
+      "signaux": [
+        "You sleep, but you wake up already tired.",
+        "Your thoughts spin in the evening and will not stop.",
+        "Your patience wears thin, and your reactions rise faster than before.",
+        "Listening to others, even the people you love, takes an effort.",
+        "You hold the home, the job and the family together, and you wonder how much longer you can."
+      ],
+      "axes": [
+        "systeme-nerveux",
+        "sommeil",
+        "psycho-emotionnel"
+      ],
+      "etapes": [
+        {
+          "phase": "point",
+          "titre": "A naturopathy consultation",
+          "texte": "80 minutes with a naturopath to take stock of your 7 axes and spot what wears you down first: sleep, mental load, digestion, deficiencies.",
+          "label": "Book the consultation",
+          "url": "consultation.html",
+          "prix": "€120"
+        },
+        {
+          "phase": "experimenter",
+          "titre": "The “Deep calm” half-day",
+          "texte": "In 2 hr 50, you move through a face and foot reflexology with sound journey, an IHHT Mitovit session, then QRS and Airnergy, to bring your nervous system back down.",
+          "label": "See the half-day",
+          "url": "journees.html#demi-deep-calm",
+          "prix": "€228"
+        },
+        {
+          "phase": "experimenter",
+          "titre": "The “Deep calm” full day",
+          "texte": "You begin with a 90-minute naturopathy consultation, then receive a one-hour massage, IHHT Mitovit, QRS and Airnergy, infrared light and a magnesium salt bath, with a lunch at the centre.",
+          "label": "See the full day",
+          "url": "journees.html#journee-deep-calm",
+          "prix": "€368"
+        },
+        {
+          "phase": "immerger",
+          "titre": "Five days to put it all down",
+          "texte": "When fatigue has set in, the immersive retreat gives your body the time that a half-day cannot give: four nights, consultations, care, sessions and anti-inflammatory cooking.",
+          "label": "See the retreats",
+          "url": "sejours.html",
+          "prix": "from €2,650"
+        }
+      ],
+      "soins": [
+        "Holistic naturopathy consultation",
+        "Full body massage",
+        "Face and scalp massage",
+        "Face and foot massage & sound journey",
+        "Face and foot reflexology with sound journey, in-depth ritual"
+      ],
+      "sessions": [
+        "Yin Yoga",
+        "Yoga Nidra",
+        "Gong bath",
+        "Nordic walking"
+      ],
+      "journal": [
+        "expirer-plus-longtemps",
+        "le-sommeil-commence-le-matin",
+        "laisser-le-corps-trembler"
+      ]
+    },
+    {
+      "slug": "digestif",
+      "num": "02",
+      "nom": "Finding digestive comfort again",
+      "titre": "Finding digestive comfort again",
+      "chapeau": "Bloating, recurring discomfort, a temperamental digestion. Your belly speaks first, and often long before the rest of you. We listen to it with you.",
+      "image": "assets/img/chemin-digestif.webp",
+      "image_alt": "A bowl of noodles with vegetables and fresh herbs, prepared by the hoona chef",
+      "image_caption": "The guesthouse kitchen, hoona",
+      "signaux": [
+        "You feel bloated after meals, even mildly.",
+        "Your transit is irregular, and you feel heaviness and reflux.",
+        "Your energy rises and falls, and you crave sugar in the afternoon.",
+        "Your test results are normal, and yet something is off.",
+        "Your digestion goes off track as soon as stress rises."
+      ],
+      "axes": [
+        "nutrition",
+        "detox",
+        "systeme-nerveux"
+      ],
+      "etapes": [
+        {
+          "phase": "point",
+          "titre": "A naturopathy consultation",
+          "texte": "80 minutes with a naturopath to take stock of your 7 axes. The consultation also explores your digestion: your plate, your meal rhythm and your stress, with personalised recommendations.",
+          "label": "Book the consultation",
+          "url": "consultation.html",
+          "prix": "€120"
+        },
+        {
+          "phase": "experimenter",
+          "titre": "The “Digestive balance” half-day",
+          "texte": "In 2 hr 30, you receive Chi Nei Tsang or Indiba, an hour of reflexology, then a liver compress or a Papimi session, to get your digestion moving again.",
+          "label": "See the half-day",
+          "url": "journees.html#demi-digestive-balance",
+          "prix": "€247"
+        },
+        {
+          "phase": "experimenter",
+          "titre": "The “Digestive balance” full day",
+          "texte": "You begin with a 90-minute naturopathy consultation, then receive Indiba on the abdomen, Chi Nei Tsang or reflexology, Papimi, a liver compress and infrared light, with a lunch at the centre.",
+          "label": "See the full day",
+          "url": "journees.html#journee-digestive-balance",
+          "prix": "€431"
+        },
+        {
+          "phase": "immerger",
+          "titre": "The five-day immersive retreat",
+          "texte": "Four nights in the guesthouse, anti-inflammatory cooking at every meal, consultations, care and sessions: you have the time to build new habits, away from daily life.",
+          "label": "See the retreats",
+          "url": "sejours.html",
+          "prix": "from €2,650"
+        }
+      ],
+      "soins": [
+        "Holistic naturopathy consultation",
+        "Chi Nei Tsang abdominal massage",
+        "Colon hydrotherapy",
+        "Vietnamese Dien Chan massage"
+      ],
+      "sessions": [
+        "Nordic walking",
+        "Hormonal yoga"
+      ],
+      "journal": [
+        "le-microbiote-socle-discret",
+        "la-premiere-detox",
+        "expirer-plus-longtemps"
+      ]
+    },
+    {
+      "slug": "ressourcer",
+      "num": "03",
+      "nom": "Recharging deeply",
+      "titre": "Recharging deeply",
+      "chapeau": "A real pause to slow down, set down what you carry and come back to yourself. It can be a few hours, a full day, or five days away from daily life.",
+      "image": "assets/img/chemin-ressourcer.webp",
+      "image_alt": "A gong and bowls in the light of the Dome",
+      "image_caption": "The Dome, hoona",
+      "signaux": [
+        "You have not taken time for yourself in months.",
+        "You function, without really being there.",
+        "The weekend is no longer enough to recover.",
+        "You need to set things down, not to perform.",
+        "You would like someone to look after you, for once."
+      ],
+      "axes": [
+        "sens",
+        "psycho-emotionnel",
+        "systeme-nerveux"
+      ],
+      "etapes": [
+        {
+          "phase": "point",
+          "titre": "A naturopathy consultation",
+          "texte": "80 minutes with a naturopath to set down what you carry, take stock of your 7 axes and choose the pause that suits you.",
+          "label": "Book the consultation",
+          "url": "consultation.html",
+          "prix": "€120"
+        },
+        {
+          "phase": "experimenter",
+          "principal": true,
+          "titre": "The “Absolute serenity” half-day",
+          "texte": "In 2 hr 15, you receive a one-hour targeted massage, then enjoy the private sauna and a magnesium salt bath, so you can let go without having to decide anything.",
+          "label": "See the half-day",
+          "url": "journees.html#demi-absolute-serenity",
+          "prix": "€180"
+        },
+        {
+          "phase": "experimenter",
+          "titre": "The “Absolute serenity” full day",
+          "texte": "You receive two one-hour targeted massages, with the private sauna, a magnesium salt bath, infrared light, QRS and Airnergy, and a lunch at the centre.",
+          "label": "See the full day",
+          "url": "journees.html#journee-absolute-serenity",
+          "prix": "€332"
+        },
+        {
+          "phase": "immerger",
+          "titre": "The five-day immersive retreat",
+          "texte": "From Monday to Friday, in a small group, in the guesthouse: consultations, care, sessions and full board. You have the time to let go and leave with a new rhythm.",
+          "label": "See the dates",
+          "url": "sejours.html#dates",
+          "prix": "from €2,650"
+        }
+      ],
+      "soins": [
+        "Face and foot massage & sound journey",
+        "Full body massage",
+        "Tuina massage",
+        "Face and foot reflexology with sound journey, in-depth ritual",
+        "Face and scalp massage"
+      ],
+      "sessions": [
+        "Gong bath",
+        "Body & Sound Experience",
+        "Yoga Nidra",
+        "Kundalini Yoga"
+      ],
+      "journal": [
+        "laisser-le-corps-trembler",
+        "expirer-plus-longtemps",
+        "marche-nordique-foret-de-soignes"
+      ]
+    },
+    {
+      "slug": "prevenir",
+      "num": "04",
+      "nom": "Active prevention and detox",
+      "titre": "Active prevention and detox",
+      "chapeau": "Look after your vitality while you are well, and make it last. There is nothing smarter than taking care of your health before your body protests.",
+      "image": "assets/img/chemin-prevenir.webp",
+      "image_alt": "A group doing Nordic walking under the trees of Tervuren park",
+      "image_caption": "Nordic walking, Tervuren park",
+      "signaux": [
+        "You are doing well and you want it to last.",
+        "You feel that daily life clogs you up: screens, alcohol, sugar and information overload.",
+        "You look for reliable landmarks in a world of miracle remedies.",
+        "You want to understand your body before it sounds the alarm.",
+        "You like to move, outdoors, and you would like more regularity."
+      ],
+      "axes": [
+        "detox",
+        "nutrition",
+        "mouvement"
+      ],
+      "etapes": [
+        {
+          "phase": "point",
+          "titre": "The holistic assessment",
+          "texte": "80 minutes with Olivia and a therapist to assess your 7 axes and know which one to support first. At the centre or remotely.",
+          "label": "Book the assessment",
+          "url": "bilan.html",
+          "prix": "€140"
+        },
+        {
+          "phase": "experimenter",
+          "titre": "The “Natural prevention” half-day",
+          "texte": "In 2 hr 15, you move through Papimi, QRS and Airnergy, the private sauna and a magnesium salt bath, to support detox and get ahead.",
+          "label": "See the half-day",
+          "url": "journees.html#demi-natural-prevention",
+          "prix": "€171"
+        },
+        {
+          "phase": "experimenter",
+          "titre": "The “Natural prevention” full day",
+          "texte": "You begin with a 90-minute naturopathy consultation, then move through Papimi, QRS and Airnergy, the private sauna, a magnesium salt foot bath, infrared light and a one-hour massage, with a lunch at the centre.",
+          "label": "See the full day",
+          "url": "journees.html#journee-natural-prevention",
+          "prix": "€422"
+        },
+        {
+          "phase": "immerger",
+          "titre": "The five-day immersive retreat",
+          "texte": "Five days to get ahead: four nights in the guesthouse, consultations, care, movement and anti-inflammatory cooking. Prevention on a grand scale.",
+          "label": "See the retreats",
+          "url": "sejours.html",
+          "prix": "from €2,650"
+        }
+      ],
+      "soins": [
+        "One-to-one holistic assessment, at the centre",
+        "Holistic naturopathy consultation",
+        "Colon hydrotherapy",
+        "Circulatory leg massage",
+        "Tuina massage"
+      ],
+      "sessions": [
+        "Nordic walking",
+        "Sports coaching & strength training",
+        "Yoga Flow"
+      ],
+      "journal": [
+        "la-premiere-detox",
+        "marche-nordique-foret-de-soignes",
+        "le-microbiote-socle-discret"
+      ]
+    }
+  ],
+  "_aide_etapes": "Each step carries a phase: point (Take stock), experimenter (Experience) or immerger (Immerse). Neighbouring steps of the same phase are grouped under one heading. principal: true = the step used by the header button (otherwise the first). Four steps per pathway."
+}

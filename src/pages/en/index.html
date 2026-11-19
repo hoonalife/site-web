@@ -1,25 +1,33 @@
 <!--
-title: hoona | Holistic centre for vitality near Brussels
-description: 5-day immersive retreats, holistic assessment, care and group sessions on the edge of the Sonian Forest, minutes from Brussels. Credible well-being.
+title: hoona | Naturopathy, care and immersive retreats in Tervuren
+description: Holistic naturopathy, themed days, care and 5-day immersive retreats on the edge of the Sonian Forest, near Brussels.
 header: overlay
 -->
 
-<section class="fold" aria-labelledby="fold-title">
+<section class="fold fold--promo" aria-labelledby="fold-title">
+  <!-- Client test, end-of-year festive season: floating gift voucher pill under the bar -->
+  <div class="promo" role="region" aria-label="Gift vouchers for the festive season">
+    <a class="promo__link" href="bon-cadeau.html">
+      <svg class="i promo__icon" aria-hidden="true"><use href="#i-gift"/></svg>
+      <strong class="promo__title">Give hoona this festive season</strong>
+      <span class="promo__sep" aria-hidden="true">·</span>
+      <span class="promo__cta"><span class="promo__cta-label">Discover our gift vouchers</span> <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+    </a>
+  </div>
   <div class="fold__media">
     <img src="assets/img/hero-poster.jpg" alt="" width="1600" height="899" fetchpriority="high">
-    <video data-hero-video data-src="assets/video/hero-hoona.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
+    <video data-hero-video data-src="assets/video/hero-hoona.mp4" data-src-webm="assets/video/hero-hoona.webm" muted loop playsinline preload="none" aria-hidden="true"></video>
   </div>
   <div class="wrap fold__body">
-    <p class="cartouche">Holistic centre for renewal</p>
-    <h1 class="fold__title" id="fold-title">Back to what matters.</h1>
-    <p class="fold__lede">A place on the edge of the Sonian Forest to get your energy back. For an hour, a day or five days.</p>
+    <p class="cartouche">Holistic centre for vitality · Tervuren</p>
+    <h1 class="fold__title" id="fold-title" data-split-words>Back to what matters.</h1>
+    <p class="fold__lede">A place on the edge of the Sonian Forest to get your energy back. Come for an hour, a day or five days.</p>
     <div class="fold__foot">
       <div class="actions on-ink" style="background:none">
-        <a class="btn btn--cream" href="sejours.html">Discover the retreats</a>
-        <a class="btn btn--ghost-cream" href="bilan.html">Assess my vitality</a>
+        <a class="btn btn--cream" href="echange-decouverte.html">Book a discovery call <span class="btn__arrow"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="link link--cream" href="#parcours">Explore how we can support you <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
       <div class="fold__caption">
-        <span>Tervuren · Sonian Forest</span>
         <button class="media-toggle" type="button" data-media-toggle aria-pressed="false" aria-label="Pause the video" hidden>
           <svg class="i" data-icon="pause" aria-hidden="true"><use href="#i-pause"/></svg>
           <svg class="i" data-icon="play" aria-hidden="true"><use href="#i-play"/></svg>
@@ -29,74 +37,150 @@ header: overlay
   </div>
 </section>
 
-<section class="section" aria-labelledby="opening-title">
-  <div class="wrap opening">
-    <div>
-      <h2 class="visually-hidden" id="opening-title">The hoona spirit</h2>
-      <p class="opening__lead">With a thousand tips on how to “feel better”, it is hard to know what is right for you. At hoona, we start from something obvious: your body knows how to regulate itself, as long as it is given the right conditions.</p>
+<section class="section" id="parcours" aria-labelledby="parcours-title">
+  <div class="wrap">
+    <div class="paths__head" data-stagger>
+      <h2 id="parcours-title">Where to begin?</h2>
+      <p class="muted measure">Four pathways to support your vitality. Choose the one that feels like you.</p>
     </div>
-    <div class="opening__body">
-      <p>hoona is a place to slow down, ask yourself questions, sort through what matters and reconnect with yourself. Through experiences and one-to-one support, we invite you to listen to your deeper needs, to preserve or regain your full energy.</p>
-      <p>No magic promises, no dogma: plain good sense, grounded and tangible, shared by a team of naturopaths, nurses, therapists and coaches.</p>
-      <p style="margin-top:var(--space-md)"><a class="link" href="approche.html">Discover our approach <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+    <ol class="paths reveal reveal--scale" data-paths>
+      <li class="path is-open">
+        <img src="assets/img/chemin-nerveux.webp" alt="" width="1181" height="1476" loading="lazy" decoding="async">
+        <button class="path__toggle" type="button" aria-label="Open: coming out of exhaustion"></button>
+        <div class="path__body">
+          <h3><a href="parcours-epuisement.html">Coming out of exhaustion and calming your nervous system</a></h3>
+          <div class="path__more">
+            <p>Fatigue that sets in, unrefreshing sleep, or a mind that will not stop are signs that it is time to slow down.</p>
+            <p class="path__go"><a class="btn btn--sm btn--cream" href="parcours-epuisement.html">Discover this pathway <span class="btn__arrow"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span></a></p>
+          </div>
+        </div>
+      </li>
+      <li class="path">
+        <img src="assets/img/chemin-digestif.webp" alt="" width="1200" height="1500" loading="lazy" decoding="async">
+        <button class="path__toggle" type="button" aria-label="Open: finding digestive comfort again"></button>
+        <div class="path__body">
+          <h3><a href="parcours-digestif.html">Finding digestive comfort again</a></h3>
+          <div class="path__more">
+            <p>Bloating, recurring discomfort, unpredictable digestion: your gut has something to tell you.</p>
+            <p class="path__go"><a class="btn btn--sm btn--cream" href="parcours-digestif.html">Discover this pathway <span class="btn__arrow"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span></a></p>
+          </div>
+        </div>
+      </li>
+      <li class="path">
+        <img src="assets/img/chemin-ressourcer.webp" alt="" width="1200" height="1500" loading="lazy" decoding="async">
+        <button class="path__toggle" type="button" aria-label="Open: recharging deeply"></button>
+        <div class="path__body">
+          <h3><a href="parcours-ressourcer.html">Recharging deeply</a></h3>
+          <div class="path__more">
+            <p>Take a real pause to slow down and come back to yourself.</p>
+            <p class="path__go"><a class="btn btn--sm btn--cream" href="parcours-ressourcer.html">Discover this pathway <span class="btn__arrow"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span></a></p>
+          </div>
+        </div>
+      </li>
+      <li class="path">
+        <img src="assets/img/chemin-prevenir.webp" alt="" width="1181" height="1476" loading="lazy" decoding="async">
+        <button class="path__toggle" type="button" aria-label="Open: preventing actively and detoxifying"></button>
+        <div class="path__body">
+          <h3><a href="parcours-prevenir.html">Active prevention and detox</a></h3>
+          <div class="path__more">
+            <p>Look after your vitality while you are well, and make it last.</p>
+            <p class="path__go"><a class="btn btn--sm btn--cream" href="parcours-prevenir.html">Discover this pathway <span class="btn__arrow"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span></a></p>
+          </div>
+        </div>
+      </li>
+    </ol>
+    <div class="ask reveal">
+      <img class="ask__bg" src="assets/brand/strates-open.jpg" alt="" loading="lazy" decoding="async" width="2000" height="1125">
+      <div class="ask__inner">
+        <div class="stack">
+          <h3>I do not know yet.</h3>
+          <p>Spend twenty minutes with a naturopath, with no commitment, to identify what suits you.</p>
+        </div>
+        <div class="stack">
+          <a class="btn" href="echange-decouverte.html">Book a discovery call <span class="btn__arrow"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+          <p class="ask__meta">20 min remotely or 40 min on site · free</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section section--deep" id="axes" aria-labelledby="axes-title">
-  <div class="wrap flower" data-flower>
-    <div class="flower__main">
-    <div class="flower__head stack">
-      <p class="insert">The 7 vitality axes</p>
-      <h2 id="axes-title">Everything is connected.</h2>
-      <p class="muted">Seven pillars that work like communicating vessels: support one, and you nourish your whole vital energy.</p>
+<section class="section section--deep" id="etapes" aria-labelledby="etapes-title">
+  <div class="wrap journey" data-journey data-step="1">
+    <div class="journey__aside">
+      <!-- Batch 4: three stages on mobile. The band (title + circles) is sticky; the introductory sentence sits outside the band. On desktop, .journey__band is transparent (display: contents) and the layout stays as before. -->
+      <div class="journey__band">
+      <div class="journey__head" data-stagger>
+        <h2 id="etapes-title">Three stages, one approach.</h2>
+      </div>
+      <figure class="journey__figure" aria-hidden="true">
+        <svg class="journey__svg" viewBox="0 0 520 520">
+          <circle class="strate strate--3" cx="60" cy="460" r="440"/>
+          <circle class="strate strate--2" cx="60" cy="460" r="300"/>
+          <circle class="strate strate--1" cx="60" cy="460" r="160"/>
+          <text class="strate__label" x="86" y="376">1</text>
+          <text class="strate__label" x="246" y="262">2</text>
+          <text class="strate__label" x="372" y="148">3</text>
+        </svg>
+      </figure>
+      </div>
+      <p class="muted journey__intro reveal" style="--i:1">You understand, you experiment, you immerse yourself. Each stage stands on its own.</p>
     </div>
-    <figure class="flower__figure">
-      {{FLOWER}}
-    </figure>
-    </div>
-    <ol class="flower__legend">
-      <li data-axis-item><a href="approche.html#axe-nutrition"><strong>Nutrition</strong><span class="d">Fresh, seasonal, anti-inflammatory food, without going to extremes.</span></a></li>
-      <li data-axis-item><a href="approche.html#axe-sommeil"><strong>Sleep</strong><span class="d">The time when the body repairs, regenerates and clears out.</span></a></li>
-      <li data-axis-item><a href="approche.html#axe-mouvement"><strong>Movement</strong><span class="d">Moving in a way that suits you: not too much, not too little.</span></a></li>
-      <li data-axis-item><a href="approche.html#axe-detox"><strong>Detox</strong><span class="d">The first detox is to stop taking in toxins.</span></a></li>
-      <li data-axis-item><a href="approche.html#axe-systeme-nerveux"><strong>Nervous system</strong><span class="d">Finding the rhythm between drive and restorative calm again.</span></a></li>
-      <li data-axis-item><a href="approche.html#axe-psycho-emotionnel"><strong>Psycho-emotional</strong><span class="d">Recognising, welcoming and soothing what moves through us.</span></a></li>
-      <li data-axis-item><a href="approche.html#axe-sens"><strong>Meaning</strong><span class="d">Connecting with what truly drives you: a reason to feel fully alive.</span></a></li>
+    <ol class="journey__steps">
+      <li class="journey__step" data-step="1">
+        <span class="journey__n" aria-hidden="true">1</span>
+        <div>
+          <h3>Understand</h3>
+          <p class="journey__what">Holistic naturopathy consultation</p>
+          <p class="muted">Spend 80 minutes with a naturopath, at the centre or by video call. You leave with your priorities across the 7 axes and simple steps to get started. It is the gateway to everything else.</p>
+          <div class="actions"><a class="btn btn--sm" href="{{t:url_book_consultation}}" target="_blank" rel="noopener">Book my consultation</a><a class="link" href="consultation.html">Learn more <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+        </div>
+      </li>
+      <li class="journey__step" data-step="2">
+        <span class="journey__n" aria-hidden="true">2</span>
+        <div>
+          <h3>Experiment</h3>
+          <p class="journey__what">Days, half-days, care and sessions</p>
+          <p class="muted">Themed days and half-days, care à la carte and group sessions, which you can put together according to your needs.</p>
+          <div class="actions"><a class="link" href="journees.html">See the days <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="link" href="soins.html">Care à la carte <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+        </div>
+      </li>
+      <li class="journey__step" data-step="3">
+        <span class="journey__n" aria-hidden="true">3</span>
+        <div>
+          <h3>Immerse yourself</h3>
+          <p class="journey__what">Five-day immersive retreat</p>
+          <p class="muted">You spend four nights in the guesthouse, with consultations, care, group sessions and anti-inflammatory meals. Everything is included.</p>
+          <div class="actions"><a class="link" href="#sejour">Discover the retreat <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+        </div>
+      </li>
     </ol>
   </div>
 </section>
 
-<figure class="plate">
-  <img src="assets/img/sejour-immersif.jpg" alt="A guest receives a facial, eyes closed, during an immersive retreat" width="1800" height="1019" loading="lazy" decoding="async">
+<figure class="plate plate--parallax" id="sejour">
+  <img src="assets/img/sejour-chambre.webp" alt="A room in the hoona guesthouse, with an oak bed and light from the garden" width="1771" height="1181" loading="lazy" decoding="async">
 </figure>
 
 <section class="section" aria-labelledby="retreat-title">
   <div class="wrap retreat">
-    <div class="stack-lg">
+    <div class="stack-lg" data-stagger>
       <p class="cartouche">Immersive retreat</p>
       <h2 class="retreat__title" id="retreat-title">Five days to come back to yourself.</h2>
-      <p class="chapeau">A 360° pause where everything is designed for your renewal: you leave with concrete resources to keep your balance, on your own.</p>
-      <div class="stack">
-        <p class="insert">Included</p>
-        <ul class="bullets">
-          <li>4 nights in our guesthouse, a short walk from the centre</li>
-          <li>4 one-to-one consultations: before, during and after the retreat</li>
-          <li>Around fifteen personalised care sessions: massages and technologies</li>
-          <li>Around fifteen group sessions: yoga, Nordic walking, sound healing, sharing circles</li>
-          <li>Healthy, anti-inflammatory meals prepared by our chef</li>
-        </ul>
-      </div>
-      <blockquote class="voice">
-        <p>“A fantastic team, simply magical care, an idyllic setting… everything adds up to complete renewal.”</p>
-        <footer>Louis, immersive retreat guest</footer>
-      </blockquote>
+      <p class="chapeau">A pause where everything is designed for your renewal. You leave with practical tools for what comes next.</p>
+      <ul class="bullets">
+        <li>4 nights in our guesthouse, a short walk from the centre</li>
+        <li>4 one-to-one consultations, before, during and after</li>
+        <li>Around fifteen care sessions, including massages and technologies</li>
+        <li>Around fifteen group sessions, including yoga, Nordic walking and sound healing</li>
+        <li>Anti-inflammatory meals prepared by our chef</li>
+      </ul>
     </div>
-    <div class="stack-lg">
+    <div class="stack-lg" data-stagger>
       <dl class="retreat__facts">
         <div><dt>Duration</dt><dd>5 days, 4 nights</dd></div>
         <div><dt>Programme</dt><dd>30 hours of care and sessions</dd></div>
-        <div><dt>Group</dt><dd>Small groups</dd></div>
+        <div><dt>Group</dt><dd>A small group</dd></div>
         <div><dt>All inclusive</dt><dd>from €2,650</dd></div>
       </dl>
       <div class="stack">
@@ -106,55 +190,123 @@ header: overlay
         </ul>
       </div>
       <div class="actions">
-        <a class="btn" href="contact.html?sujet=sejour#reserver">Book my retreat</a>
-        <a class="link" href="sejours.html#dates">Full calendar</a>
+        <a class="btn" href="contact.html?sujet=sejour#reserver">Book my retreat <span class="btn__arrow"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="link" href="sejours.html">The programme and a typical day <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
-      <p class="muted" style="font-size:var(--text-sm)">A question before you decide? We are happy to talk it through on <a href="tel:+32471250922" style="white-space:nowrap">+32 471 25 09 22</a>.</p>
     </div>
   </div>
 </section>
 
-<section class="section section--tight" aria-labelledby="doors-title">
+<section class="section section--deep" id="approche" aria-labelledby="approche-title">
+  <div class="wrap founder">
+    <figure class="founder__figure reveal reveal--scale">
+      <img src="assets/img/olivia.webp" alt="Olivia De Stoop, founder of hoona, sitting on a log in the Sonian Forest" width="1181" height="1476" loading="lazy" decoding="async">
+    </figure>
+    <div class="stack-lg" data-stagger>
+      <h2 id="approche-title">Your body knows how to regulate itself. We create the right conditions.</h2>
+      <div class="prose">
+        <p>A nurse by training, with thirty years in healthcare and a background in naturopathy, Olivia De Stoop founded hoona on a simple observation: the body knows what it needs, provided it is given the right conditions. We make no magic promises and follow no dogma, only plain good sense, grounded and tangible.</p>
+      </div>
+      <blockquote class="voice">
+        <p>“There is nothing more intelligent than looking after your health when you are well.”</p>
+        <footer>Olivia De Stoop, founder of hoona</footer>
+      </blockquote>
+    </div>
+  </div>
+  <!-- Batch 4: flower, blooming, drawing and pulse (data-fleur-anim, see hoona.css and hoona.js) -->
+  <div class="wrap axes-strip" id="axes" data-flower data-fleur-anim>
+    <figure class="flower__figure reveal reveal--scale">
+      {{FLOWER}}
+    </figure>
+    <div class="stack" data-stagger>
+      <p class="insert">The 7 vitality axes</p>
+      <h3>Everything is connected.</h3>
+      <p class="muted">Nutrition, sleep, movement, detox, nervous system, psycho-emotional, and meaning: these seven axes work like communicating vessels.</p>
+      <p><a class="link" href="approche.html">Discover our approach <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="avis" aria-labelledby="avis-title">
   <div class="wrap">
-    <div class="stack" style="margin-bottom:var(--space-xl)">
-      <h2 id="doors-title">Other ways to begin</h2>
-      <p class="muted measure">For a first encounter with the hoona approach, a few hours are enough.</p>
+    <div class="avis__head reveal">
+      <div class="stack">
+        <h2 id="avis-title">They came to hoona</h2>
+        <p class="muted">Reviews published on Google by people who were supported at the centre.</p>
+      </div>
+      <a class="avis__google" href="https://www.google.com/maps/place/hoona/@50.8308058,4.507971,717m/data=!3m1!1e3!4m8!3m7!1s0x47c3d97b022ccfd7:0x1e445bc87bc55351!8m2!3d50.8308058!4d4.5105459!9m1!1b1!16s%2Fg%2F11x98cbg4m" target="_blank" rel="noopener"><span class="avis__stars" aria-hidden="true">★★★★★</span><strong>5.0 on Google</strong><span>24 reviews · read all the reviews <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
     </div>
-    <div class="rows">
-      <a class="row" href="bilan.html">
-        <span class="row__title">Holistic assessment</span>
-        <span class="row__desc">Take stock of your 7 axes and identify your priorities, at the centre or by video call.</span>
-        <span class="row__price">€140</span>
-        <svg class="i row__go" aria-hidden="true"><use href="#i-arrow"/></svg>
-      </a>
-      <a class="row" href="sejours.html#experiences">
-        <span class="row__title">Half-day experiences</span>
-        <span class="row__desc">A selection of care sessions and consultations around one axis: sleep, detox, nervous system…</span>
-        <span class="row__price">from €171</span>
-        <svg class="i row__go" aria-hidden="true"><use href="#i-arrow"/></svg>
-      </a>
-      <a class="row" href="soins.html">
-        <span class="row__title">Care &amp; consultations</span>
-        <span class="row__desc">Massages, regeneration technologies and holistic consultations, à la carte.</span>
-        <span class="row__price">from €30</span>
-        <svg class="i row__go" aria-hidden="true"><use href="#i-arrow"/></svg>
-      </a>
-      <a class="row" href="sessions.html">
-        <span class="row__title">Group sessions</span>
-        <span class="row__desc">Yoga, Nordic walking, gong bath: every week in the Dome. Your first session is on us.</span>
-        <span class="row__price">€25</span>
-        <svg class="i row__go" aria-hidden="true"><use href="#i-arrow"/></svg>
-      </a>
+    {{TEMOIGNAGES_VIDEO}}
+    {{AVIS_GOOGLE}}
+    <div class="team">
+      <figure class="team__figure reveal reveal--scale">
+        <img src="assets/img/equipe.webp" alt="The hoona team together in front of the centre, in Tervuren" width="1600" height="1200" loading="lazy" decoding="async">
+      </figure>
+      <div class="stack" data-stagger>
+        <h3>Naturopaths, nurses, therapists and coaches.</h3>
+        <p class="muted">They are trained in the hoona approach and committed to a charter of integrity and kindness. They speak French, Dutch and English.</p>
+        <p><a class="link" href="a-propos.html#equipe">Meet the team <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="strata section" aria-label="A word from Olivia De Stoop">
+<section class="section section--deep" id="lieu" aria-labelledby="lieu-title">
+  <div class="wrap">
+    <div class="places__head reveal">
+      <h2 id="lieu-title">The place itself is our first form of care.</h2>
+      <p class="muted">2,000 m² on the edge of the Sonian Forest, at the terminus of tram 44: the Dome, the care space, the consultation rooms and the guesthouse.</p>
+    </div>
+    <div class="places" data-stagger>
+      <figure class="place"><img src="assets/img/lieu-dome.webp" alt="The Dome, lit up at dusk" width="1200" height="1500" loading="lazy" decoding="async"><figcaption>The Dome</figcaption></figure>
+      <figure class="place"><img src="assets/img/lieu-centre.webp" alt="The front of the hoona centre, in Tervuren" width="1800" height="771" loading="lazy" decoding="async"><figcaption>The centre</figcaption></figure>
+      <figure class="place"><img src="assets/img/lieu-jardin.webp" alt="The garden, its lawn and its pond" width="1181" height="787" loading="lazy" decoding="async"><figcaption>The garden</figcaption></figure>
+      <figure class="place"><img src="assets/img/lieu-soins.webp" alt="A massage in the care space" width="1181" height="787" loading="lazy" decoding="async"><figcaption>The care space</figcaption></figure>
+    </div>
+    <p class="reveal" style="margin-top:var(--space-lg)"><a class="link" href="a-propos.html#centre">Visit the centre <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+  </div>
+</section>
+
+<section class="section" id="agenda" aria-labelledby="agenda-title">
+  <div class="wrap">
+    <div class="agenda__head" data-stagger>
+      <div class="stack">
+        <h2 id="agenda-title">This week at hoona</h2>
+        <p class="muted measure">Yoga, Nordic walking, gong bath, coaching: small-group sessions, from €15 to €30. Your first one is free with the code <strong>ENSEMBLE</strong>.</p>
+      </div>
+      <div class="actions"><a class="btn btn--line" href="sessions.html">Full timetable</a><a class="link" href="{{t:url_book_soins}}" target="_blank" rel="noopener">Book a session <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="agenda__week reveal">
+{{HOME_WEEK}}
+    </div>
+  </div>
+</section>
+
+<section class="section section--deep" id="entreprises" aria-labelledby="entreprises-title">
+  <div class="wrap">
+    <div class="soins-band reveal">
+      <figure class="soins-band__figure">
+        <img src="assets/img/entreprises-groupe.webp" alt="Seven people walking in single file along a forest path, Nordic walking poles in hand, seen from behind" width="900" height="1125" loading="lazy" decoding="async">
+      </figure>
+      <div class="soins-band__text">
+        <p class="insert">Companies &amp; teams</p>
+        <h2 id="entreprises-title">A team building day that does you good.</h2>
+        <p>The centre welcomes teams for a half-day, a day or several days, tailored to you. Between the forest and the Dome, your team moves, breathes and reconnects, guided by our naturopaths and therapists. Nothing is imposed: we put the programme together with you, according to your team and your goal.</p>
+        <p class="actions"><a class="btn" href="contact.html#reserver">Plan a day for your team</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="strata section" aria-labelledby="closing-title" data-draw>
   <img class="strata__bg" src="assets/brand/strates.jpg" alt="" loading="lazy" decoding="async" width="2000" height="1125">
-  <div class="wrap" style="padding-block:var(--space-2xl)">
-    <blockquote>
-      <p>“The best time to look after your health is when you are feeling well.”</p>
-      <footer class="signature"><span>Olivia De Stoop</span><span class="signature__rule" aria-hidden="true"></span><span>founder of hoona</span></footer>
-    </blockquote>
+  <div class="wrap closing">
+    <div class="stack" data-stagger>
+      <h2 id="closing-title">Not sure where to begin?</h2>
+      <p>Spend twenty minutes with a naturopath, with no commitment, to identify the support that suits you.</p>
+    </div>
+    <div class="stack reveal">
+      <div class="actions"><a class="btn" href="echange-decouverte.html">Book a discovery call <span class="btn__arrow"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span></a></div>
+      <p style="font-size:var(--text-sm)">It is free: 20 minutes remotely or 40 minutes on site. Would you rather call? <a href="tel:+32471250922" style="white-space:nowrap">+32 471 25 09 22</a></p>    </div>
   </div>
 </section>

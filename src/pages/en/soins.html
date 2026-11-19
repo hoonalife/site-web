@@ -1,17 +1,19 @@
 <!--
 title: Care, consultations and regeneration technologies | hoona
-description: The hoona care menu in Tervuren: holistic assessments, consultations, regeneration technologies (Indiba, Papimi, IHHT), massages and energy work. Prices.
+description: The hoona care menu in Tervuren: holistic assessments, consultations, regeneration technologies (Indiba, Papimi, IHHT), massages and energy work.
 nav: SOINS
 -->
 
-<header class="wrap page-head page-head--compact">
-  <ol class="crumbs" aria-label="Breadcrumb"><li><a href="index.html">Home</a></li><li><span aria-current="page">Care &amp; consultations</span></li></ol>
-  <h1>Care &amp; consultations</h1>
-  <p class="chapeau">Advanced technologies, manual therapies and holistic consultations, to bring together the right conditions for your balance.</p>
-</header>
-
 <div class="wrap" data-catalogue data-collapsible>
-  {{AXES_PICKER}}
+  <div class="soins-head">
+    <header class="page-head page-head--compact">
+      <ol class="crumbs" aria-label="Breadcrumb"><li><a href="index.html">Home</a></li><li><span aria-current="page">Care &amp; consultations</span></li></ol>
+      <h1>Care &amp; consultations</h1>
+      <p class="chapeau">Everything is connected. Our holistic approach rests on seven fundamental pillars that work like communicating vessels: acting on one supports the whole of your vital momentum.</p>
+      <p class="chapeau-suite">To find out which pillar to support first, we recommend starting with a <a href="#consultations">holistic consultation</a>. You can also select one or more pillars, and the list of care adapts to your choice.</p>
+    </header>
+    {{AXES_PICKER}}
+  </div>
   <!-- Lot 4 : onglets collants. Rubriques en onglets texte, loupe qui ouvre le champ ; le compteur n'apparaît que pendant un filtrage. -->
   <div class="toolbar">
     <nav class="tabs" aria-label="{{t:goto_cat}}">
@@ -31,17 +33,29 @@ nav: SOINS
     <p>Nothing matches this search.</p>
     <p style="margin-top:var(--space-sm)"><button class="btn btn--line btn--sm" type="button" data-reset>Show everything</button></p>
   </div>
+  <!-- Lot 4 : renvoi vers les sessions collectives, avec une session sous le Dôme -->
+  <section class="soins-band reveal" aria-labelledby="soins-band-title">
+    <figure class="soins-band__figure">
+      <img src="assets/img/sessions-dome.webp" alt="A yoga class in the Dome, facing the garden" width="1181" height="1476" loading="lazy" decoding="async">
+    </figure>
+    <div class="soins-band__text">
+      <p class="insert">Every week, in the Dome</p>
+      <h2 id="soins-band-title">The group sessions</h2>
+      <p>Every week, in the Dome or in the forest, yoga, Nordic walking, the gong bath and sports coaching are practised in small groups. These sessions carry on what a care session has started, and your first session is free with the code ENSEMBLE.</p>
+      <p class="actions"><a class="btn btn--line" href="sessions.html">See the sessions</a></p>
+    </div>
+  </section>
   <section class="soins-next" aria-label="Going further">
     <div class="soins-next__card">
       <p class="insert">Experience · short formats</p>
       <h2>The themed days and half-days</h2>
-      <p>Four themes composed by our therapists, as a half-day or a day with lunch: the care above, one after the other, with time to integrate.</p>
-      <p class="actions"><a class="btn btn--line" href="sejours.html#experiences">See the days</a></p>
+      <p>Our therapists have designed four themes, as a half-day or a day with lunch. Each one brings together several of these care sessions, with a pause between each.</p>
+      <p class="actions"><a class="btn btn--line" href="journees.html">See the days</a></p>
     </div>
     <div class="soins-next__card">
       <p class="insert">Give hoona</p>
       <h2>The gift vouchers</h2>
-      <p>A care session, a themed day or a free amount towards a retreat: the hoona gift voucher is composed for the person, and stays valid for a year.</p>
+      <p>You can give a care session, a themed day or a free amount towards a retreat. The hoona gift voucher is composed to suit the person, and stays valid for a year.</p>
       <p class="actions"><a class="btn btn--line" href="bon-cadeau.html">Discover the gift vouchers</a></p>
     </div>
   </section>

@@ -123,7 +123,7 @@
       "image_caption": "The care & technology space",
       "prestations": [
         {
-          "nom": "Papimi, ion induction · first session",
+          "nom": "Ion induction therapy (Papimi) - 1st session",
           "description": "Electromagnetic pulses to support regeneration and revitalise the body.",
           "duree": 45,
           "prix": 60,
@@ -132,11 +132,15 @@
             "detox",
             "systeme-nerveux"
           ],
-          "url": "https://hoonalife.as.me/schedule/584843fc/category/Soins%2520hoona/appointment/79690218"
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Soins%2520hoona/appointment/79690218",
+          "alias": [
+            "Papimi",
+            "Papimi, ion induction, 1st session"
+          ]
         },
         {
-          "nom": "Papimi, ion induction · further sessions",
-          "description": "5 + 1 pack available at €300.",
+          "nom": "Ion induction therapy (Papimi) - from the 2nd session",
+          "description": null,
           "duree": 30,
           "prix": 60,
           "apres_consultation": true,
@@ -146,11 +150,20 @@
           ],
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Soins%2520hoona/appointment/86482176",
           "pack": 300,
-          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2154526"
+          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2154526",
+          "alias": [
+            "Papimi",
+            "Papimi, ion induction, further sessions"
+          ]
         },
         {
-          "nom": "Indiba, radiofrequency",
-          "description": "A 448 kHz radiofrequency to support natural regeneration and cellular energy. 5 + 1 pack at €500.",
+          "nom": "Cellular regeneration by radiofrequency - Indiba",
+          "alias": [
+            "Indiba, radiofrequency",
+            "Indiba",
+            "radiofrequency"
+          ],
+          "description": "A 448 kHz radiofrequency to support natural regeneration and cellular energy.",
           "duree": 45,
           "prix": 100,
           "apres_consultation": true,
@@ -163,8 +176,15 @@
           "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2154528"
         },
         {
-          "nom": "IHHT, Mitovit",
-          "description": "Alternating oxygen-poor and oxygen-rich air, like altitude training. 5 + 1 pack at €300.",
+          "nom": "Intermittent Hypoxia-Hyperoxia (IHHT) session - Mitovit",
+          "alias": [
+            "IHHT, Mitovit",
+            "IHHT Mitovit",
+            "IHHT",
+            "Mitovit",
+            "hypoxia"
+          ],
+          "description": "Alternating oxygen-poor and oxygen-rich air, like altitude training.",
           "duree": 50,
           "prix": 60,
           "apres_consultation": true,
@@ -178,8 +198,13 @@
           "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2154529"
         },
         {
-          "nom": "QRS and Airnergy",
-          "description": "Gentle electromagnetic stimulation and active oxygen. 5 + 1 pack at €150.",
+          "nom": "Gentle electromagnetic stimulation (QRS) and active oxygen (Airnergy)",
+          "alias": [
+            "QRS and Airnergy",
+            "QRS",
+            "Airnergy"
+          ],
+          "description": "A gentle magnetic field boosts circulation, then you breathe air enriched with active oxygen.",
           "duree": 25,
           "prix": 30,
           "apres_consultation": true,
@@ -192,8 +217,12 @@
           "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2075667"
         },
         {
-          "nom": "Infrared light",
-          "description": "Gentle warmth to support regeneration and recharge your energy. 5 + 1 pack at €150.",
+          "nom": "Infrared light exposure",
+          "alias": [
+            "Infrared light",
+            "infrared"
+          ],
+          "description": "Gentle warmth to support regeneration and recharge your energy.",
           "duree": 25,
           "prix": 30,
           "apres_consultation": true,
@@ -208,7 +237,7 @@
         },
         {
           "nom": "Private sauna",
-          "description": "An infrared sauna to support detox, ease tension and help circulation. 5 + 1 pack at €200.",
+          "description": "An infrared sauna to support detox, ease tension and help circulation.",
           "duree": 60,
           "prix": 40,
           "apres_consultation": true,
@@ -235,7 +264,7 @@
         },
         {
           "nom": "Magnesium salt foot bath",
-          "description": "Recovery and deep relaxation. 5 + 1 pack at €150.",
+          "description": "Recovery and deep relaxation.",
           "duree": 25,
           "prix": 30,
           "apres_consultation": true,
@@ -296,7 +325,11 @@
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/76346236"
         },
         {
-          "nom": "Full body massage for two",
+          "nom": "Full body massage for 2 people - on request",
+          "alias": [
+            "Full body massage for two",
+            "duo massage"
+          ],
           "description": "The same massage, shared by two. On request.",
           "duree": 90,
           "prix": 250,
@@ -321,7 +354,11 @@
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868394"
         },
         {
-          "nom": "Lymphatic drainage of the legs",
+          "nom": "Circulatory leg massage",
+          "alias": [
+            "Lymphatic drainage of the legs",
+            "lymphatic drainage"
+          ],
           "description": "To lighten heavy legs and boost circulation.",
           "duree": 60,
           "prix": 100,
@@ -347,7 +384,11 @@
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868446"
         },
         {
-          "nom": "Face, feet and sound journey",
+          "nom": "Face and foot massage & sound journey",
+          "alias": [
+            "Face, feet and sound journey",
+            "reflexology"
+          ],
           "description": "A three-part session to quiet the mind and bring the nervous system into harmony.",
           "duree": 90,
           "prix": 150,
@@ -375,7 +416,11 @@
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79580799"
         },
         {
-          "nom": "Chi Nei Tsang, abdominal massage",
+          "nom": "Chi Nei Tsang abdominal massage",
+          "alias": [
+            "Chi Nei Tsang, abdominal massage",
+            "Chi Nei Tsang"
+          ],
           "description": "An abdominal massage for digestion and for physical and emotional tension.",
           "duree": 60,
           "prix": 100,
@@ -389,7 +434,11 @@
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868375"
         },
         {
-          "nom": "Dien Chan, Vietnamese massage",
+          "nom": "Vietnamese Dien Chan massage",
+          "alias": [
+            "Dien Chan, Vietnamese massage",
+            "Dien Chan"
+          ],
           "description": "Multi-reflexology of the face and body for relaxation and circulation.",
           "duree": 60,
           "prix": 100,

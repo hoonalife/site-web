@@ -8,7 +8,7 @@
       "image_caption": "De consultatieruimte",
       "prestations": [
         {
-          "nom": "Individuele vitaliteitscheck, in het centrum",
+          "nom": "Individuele holistische vitaliteitscheck, in het centrum",
           "description": "Met Olivia en een therapeute, voor een persoonlijke analyse.",
           "duree": 80,
           "prix": 140,
@@ -24,7 +24,7 @@
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520g%25C3%25A9n%25C3%25A9rales/appointment/84348096"
         },
         {
-          "nom": "Individuele vitaliteitscheck, op afstand",
+          "nom": "Individuele holistische vitaliteitscheck, op afstand",
           "description": "Dezelfde check, via Zoom, van thuis uit.",
           "duree": 80,
           "prix": 140,
@@ -40,7 +40,7 @@
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520g%25C3%25A9n%25C3%25A9rales/appointment/91421098"
         },
         {
-          "nom": "Vitaliteitscheck in kleine groep",
+          "nom": "Holistische vitaliteitscheck in kleine groep",
           "description": "Een begeleide halve dag, in groep.",
           "duree": 180,
           "axes": [
@@ -64,7 +64,7 @@
       "image_caption": "Een consultatie",
       "prestations": [
         {
-          "nom": "Consult holistische naturopathie",
+          "nom": "Holistische naturopathie-consultatie",
           "description": "Een globaal beeld van je vitaliteit: het evenwicht tussen lichaam, ziel en geest en de ondersteuning van je metabolisme.",
           "duree": 80,
           "prix": 120,
@@ -97,8 +97,8 @@
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Consultations%2520sp%25C3%25A9cifiques/appointment/79448166"
         },
         {
-          "nom": "Consult gerichte naturopathie",
-          "description": "Een kort moment met je naturopaat voor een specifiek punt, na een eerste consult.",
+          "nom": "Gerichte naturopathie-consultatie",
+          "description": "Een kort moment met je naturopaat voor een specifiek punt, na een eerste consultatie.",
           "duree": 30,
           "prix": 45,
           "apres_consultation": true,
@@ -123,7 +123,7 @@
       "image_caption": "De ruimte verzorgingen & technologieën",
       "prestations": [
         {
-          "nom": "Papimi, ioneninductie · eerste sessie",
+          "nom": "Therapie met ioneninductie (Papimi) - 1ste sessie",
           "description": "Elektromagnetische impulsen om de regeneratie te ondersteunen en het organisme te revitaliseren.",
           "duree": 45,
           "prix": 60,
@@ -132,11 +132,15 @@
             "detox",
             "systeme-nerveux"
           ],
-          "url": "https://hoonalife.as.me/schedule/584843fc/category/Soins%2520hoona/appointment/79690218"
+          "url": "https://hoonalife.as.me/schedule/584843fc/category/Soins%2520hoona/appointment/79690218",
+          "alias": [
+            "Papimi",
+            "Papimi, ioneninductie · eerste sessie"
+          ]
         },
         {
-          "nom": "Papimi, ioneninductie · volgende sessies",
-          "description": "Elektromagnetische impulsen om de regeneratie te ondersteunen en het organisme te revitaliseren.",
+          "nom": "Therapie met ioneninductie (Papimi) - vanaf de 2de sessie",
+          "description": null,
           "duree": 30,
           "prix": 60,
           "apres_consultation": true,
@@ -146,10 +150,19 @@
           ],
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Soins%2520hoona/appointment/86482176",
           "pack": 300,
-          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2154526"
+          "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2154526",
+          "alias": [
+            "Papimi",
+            "Papimi, ioneninductie · volgende sessies"
+          ]
         },
         {
-          "nom": "Indiba, radiofrequentie",
+          "nom": "Cellulaire regeneratie met radiofrequentie - Indiba",
+          "alias": [
+            "Indiba, radiofrequentie",
+            "Indiba",
+            "radiofrequentie"
+          ],
           "description": "Een radiofrequentie van 448 kHz om de natuurlijke regeneratie en de celenergie te ondersteunen.",
           "duree": 45,
           "prix": 100,
@@ -163,7 +176,14 @@
           "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2154528"
         },
         {
-          "nom": "IHHT, Mitovit",
+          "nom": "Sessie Intermitterende Hypoxie-Hyperoxie (IHHT) - Mitovit",
+          "alias": [
+            "IHHT, Mitovit",
+            "IHHT Mitovit",
+            "IHHT",
+            "Mitovit",
+            "hypoxie"
+          ],
           "description": "Afwisselend zuurstofarme en zuurstofrijke lucht, zoals een hoogtetraining.",
           "duree": 50,
           "prix": 60,
@@ -178,8 +198,13 @@
           "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2154529"
         },
         {
-          "nom": "QRS en Airnergy",
-          "description": "Zachte elektromagnetische stimulatie en actieve zuurstof.",
+          "nom": "Zachte elektromagnetische stimulatie (QRS) en actieve zuurstof (Airnergy)",
+          "alias": [
+            "QRS en Airnergy",
+            "QRS",
+            "Airnergy"
+          ],
+          "description": "Een zacht magnetisch veld brengt de doorbloeding op gang, daarna adem je lucht in die verrijkt is met actieve zuurstof.",
           "duree": 25,
           "prix": 30,
           "apres_consultation": true,
@@ -192,7 +217,11 @@
           "url_pack": "https://app.acuityscheduling.com/catalog.php?owner=35255412&action=addCart&clear=1&id=2075667"
         },
         {
-          "nom": "Infraroodlicht",
+          "nom": "Blootstelling aan infraroodlicht",
+          "alias": [
+            "Infraroodlicht",
+            "infrarood"
+          ],
           "description": "Een zachte warmte om de regeneratie te ondersteunen en je energie op te laden.",
           "duree": 25,
           "prix": 30,
@@ -296,7 +325,11 @@
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/76346236"
         },
         {
-          "nom": "Duomassage",
+          "nom": "Lichaamsmassage voor 2 personen - op aanvraag",
+          "alias": [
+            "Lichaamsmassage voor twee",
+            "Duomassage"
+          ],
           "description": "Dezelfde massage, met z’n tweeën. Op aanvraag.",
           "duree": 90,
           "prix": 250,
@@ -321,7 +354,11 @@
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868394"
         },
         {
-          "nom": "Lymfedrainage van de benen",
+          "nom": "Circulatiemassage van de benen",
+          "alias": [
+            "Lymfedrainage van de benen",
+            "lymfedrainage"
+          ],
           "description": "Voor lichtere benen en een betere doorbloeding.",
           "duree": 60,
           "prix": 100,
@@ -347,7 +384,11 @@
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868446"
         },
         {
-          "nom": "Gezicht, voeten en klankreis",
+          "nom": "Massage van gezicht en voeten & klankreis",
+          "alias": [
+            "Gezicht, voeten en klankreis",
+            "reflexologie"
+          ],
           "description": "Een verzorging in drie delen om het hoofd tot rust te brengen en het zenuwstelsel in balans te brengen.",
           "duree": 90,
           "prix": 150,
@@ -375,7 +416,11 @@
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79580799"
         },
         {
-          "nom": "Chi Nei Tsang, buikmassage",
+          "nom": "Buikmassage Chi Nei Tsang",
+          "alias": [
+            "Chi Nei Tsang, buikmassage",
+            "Chi Nei Tsang"
+          ],
           "description": "Een buikmassage voor de spijsvertering en voor fysieke en emotionele spanningen.",
           "duree": 60,
           "prix": 100,
@@ -389,7 +434,11 @@
           "url": "https://hoonalife.as.me/schedule/584843fc/category/Massages/appointment/79868375"
         },
         {
-          "nom": "Dien Chan, Vietnamese massage",
+          "nom": "Vietnamese massage Dien Chan",
+          "alias": [
+            "Dien Chan, Vietnamese massage",
+            "Dien Chan"
+          ],
           "description": "Multireflexologie van gezicht en lichaam voor ontspanning en doorbloeding.",
           "duree": 60,
           "prix": 100,

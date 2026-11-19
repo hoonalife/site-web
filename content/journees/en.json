@@ -1,0 +1,129 @@
+{
+  "categories": [
+    {
+      "slug": "demi-journees",
+      "nom": "Half-days",
+      "prestations": [
+        {
+          "nom": "Deep calm",
+          "description": "A programme to release tension and regenerate the nervous system.",
+          "inclus": [
+            "Face and foot reflexology with sound journey",
+            "Intermittent Hypoxia-Hyperoxia (IHHT) session - Mitovit",
+            "Gentle electromagnetic stimulation (QRS) and active oxygen (Airnergy)"
+          ],
+          "duree_txt": "2 hr 50",
+          "prix": 228,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        },
+        {
+          "nom": "Digestive balance",
+          "description": "A programme to get digestion moving again and bring back abdominal comfort.",
+          "inclus": [
+            "Chi Nei Tsang or Indiba",
+            "Reflexology (1 hr)",
+            "Liver compress or Papimi"
+          ],
+          "duree_txt": "2 hr 30",
+          "prix": 247,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        },
+        {
+          "nom": "Absolute serenity",
+          "description": "A programme to let go and disconnect, through the senses.",
+          "inclus": [
+            "Targeted massage (1 hr)",
+            "Private sauna",
+            "Magnesium salt bath"
+          ],
+          "duree_txt": "2 hr 15",
+          "prix": 180,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        },
+        {
+          "nom": "Natural prevention",
+          "description": "A programme to support detox and vitality, as prevention.",
+          "inclus": [
+            "Ion induction therapy (Papimi)",
+            "Gentle electromagnetic stimulation (QRS) and active oxygen (Airnergy)",
+            "Private sauna",
+            "Magnesium salt bath"
+          ],
+          "duree_txt": "2 hr 15",
+          "prix": 171,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        }
+      ]
+    },
+    {
+      "slug": "journees",
+      "nom": "Full days",
+      "prestations": [
+        {
+          "nom": "Deep calm",
+          "description": "A programme to release tension and regenerate the nervous system.",
+          "inclus": [
+            "Naturopathy consultation (90 min)",
+            "Targeted massage (1 hr)",
+            "Intermittent Hypoxia-Hyperoxia (IHHT) session - Mitovit",
+            "Gentle electromagnetic stimulation (QRS) and active oxygen (Airnergy)",
+            "Infrared light exposure",
+            "Magnesium salt bath",
+            "Lunch"
+          ],
+          "duree_txt": "5 hr 15 of care + lunch",
+          "prix": 368,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        },
+        {
+          "nom": "Digestive balance",
+          "description": "A programme to get digestion moving again and bring back abdominal comfort.",
+          "inclus": [
+            "Naturopathy consultation (90 min)",
+            "Indiba on the abdomen",
+            "Chi Nei Tsang or reflexology",
+            "Ion induction therapy (Papimi)",
+            "Liver compress",
+            "Infrared light exposure",
+            "Lunch"
+          ],
+          "duree_txt": "5 hr of care + lunch",
+          "prix": 431,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        },
+        {
+          "nom": "Absolute serenity",
+          "description": "A programme to let go and disconnect, through the senses.",
+          "inclus": [
+            "Two targeted massages (2 × 1 hr)",
+            "Private sauna",
+            "Magnesium salt bath",
+            "Infrared light exposure",
+            "Gentle electromagnetic stimulation (QRS) and active oxygen (Airnergy)",
+            "Lunch"
+          ],
+          "duree_txt": "4 hr 45 of care + lunch",
+          "prix": 332,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        },
+        {
+          "nom": "Natural prevention",
+          "description": "A programme to support detox and vitality, as prevention.",
+          "inclus": [
+            "Naturopathy consultation (90 min)",
+            "Ion induction therapy (Papimi)",
+            "Gentle electromagnetic stimulation (QRS) and active oxygen (Airnergy)",
+            "Private sauna",
+            "Magnesium salt foot bath",
+            "Infrared light exposure",
+            "Massage (1 hr)",
+            "Lunch"
+          ],
+          "duree_txt": "5 hr of care + lunch",
+          "prix": 422,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        }
+      ]
+    }
+  ]
+}

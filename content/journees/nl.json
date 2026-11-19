@@ -1,0 +1,129 @@
+{
+  "categories": [
+    {
+      "slug": "demi-journees",
+      "nom": "Halve dagen",
+      "prestations": [
+        {
+          "nom": "Diepe ontspanning",
+          "description": "Een programma om spanningen los te laten en het zenuwstelsel te laten regenereren.",
+          "inclus": [
+            "Reflexologie van gezicht en voeten met klankreis",
+            "Sessie Intermitterende Hypoxie-Hyperoxie (IHHT) - Mitovit",
+            "Zachte elektromagnetische stimulatie (QRS) en actieve zuurstof (Airnergy)"
+          ],
+          "duree_txt": "2u50",
+          "prix": 228,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        },
+        {
+          "nom": "Spijsverteringsbalans",
+          "description": "Een programma om de spijsvertering weer op gang te brengen en het buikcomfort te bevorderen.",
+          "inclus": [
+            "Chi Nei Tsang of Indiba",
+            "Reflexologie (1u)",
+            "Leverkompres of Papimi"
+          ],
+          "duree_txt": "2u30",
+          "prix": 247,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        },
+        {
+          "nom": "Absolute sereniteit",
+          "description": "Een programma om los te laten en te ontkoppelen, via de zintuigen.",
+          "inclus": [
+            "Specifieke massage (1u)",
+            "Privésauna",
+            "Bad met magnesiumzout"
+          ],
+          "duree_txt": "2u15",
+          "prix": 180,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        },
+        {
+          "nom": "Natuurlijke preventie",
+          "description": "Een programma om de detox en de vitaliteit te ondersteunen, als preventie.",
+          "inclus": [
+            "Therapie met ioneninductie (Papimi)",
+            "Zachte elektromagnetische stimulatie (QRS) en actieve zuurstof (Airnergy)",
+            "Privésauna",
+            "Bad met magnesiumzout"
+          ],
+          "duree_txt": "2u15",
+          "prix": 171,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        }
+      ]
+    },
+    {
+      "slug": "journees",
+      "nom": "Hele dagen",
+      "prestations": [
+        {
+          "nom": "Diepe ontspanning",
+          "description": "Een programma om spanningen los te laten en het zenuwstelsel te laten regenereren.",
+          "inclus": [
+            "Naturopathie-consultatie (1u30)",
+            "Specifieke massage (1u)",
+            "Sessie Intermitterende Hypoxie-Hyperoxie (IHHT) - Mitovit",
+            "Zachte elektromagnetische stimulatie (QRS) en actieve zuurstof (Airnergy)",
+            "Blootstelling aan infraroodlicht",
+            "Bad met magnesiumzout",
+            "Lunch"
+          ],
+          "duree_txt": "5u15 verzorging + lunch",
+          "prix": 368,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        },
+        {
+          "nom": "Spijsverteringsbalans",
+          "description": "Een programma om de spijsvertering weer op gang te brengen en het buikcomfort te bevorderen.",
+          "inclus": [
+            "Naturopathie-consultatie (1u30)",
+            "Indiba op de buik",
+            "Chi Nei Tsang of reflexologie",
+            "Therapie met ioneninductie (Papimi)",
+            "Leverkompres",
+            "Blootstelling aan infraroodlicht",
+            "Lunch"
+          ],
+          "duree_txt": "5u verzorging + lunch",
+          "prix": 431,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        },
+        {
+          "nom": "Absolute sereniteit",
+          "description": "Een programma om los te laten en te ontkoppelen, via de zintuigen.",
+          "inclus": [
+            "Twee specifieke massages (2 × 1u)",
+            "Privésauna",
+            "Bad met magnesiumzout",
+            "Blootstelling aan infraroodlicht",
+            "Zachte elektromagnetische stimulatie (QRS) en actieve zuurstof (Airnergy)",
+            "Lunch"
+          ],
+          "duree_txt": "4u45 verzorging + lunch",
+          "prix": 332,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        },
+        {
+          "nom": "Natuurlijke preventie",
+          "description": "Een programma om de detox en de vitaliteit te ondersteunen, als preventie.",
+          "inclus": [
+            "Naturopathie-consultatie (1u30)",
+            "Therapie met ioneninductie (Papimi)",
+            "Zachte elektromagnetische stimulatie (QRS) en actieve zuurstof (Airnergy)",
+            "Privésauna",
+            "Voetbad met magnesiumzout",
+            "Blootstelling aan infraroodlicht",
+            "Massage (1u)",
+            "Lunch"
+          ],
+          "duree_txt": "5u verzorging + lunch",
+          "prix": 422,
+          "url": "https://hoonalife.as.me/schedule/584843fc"
+        }
+      ]
+    }
+  ]
+}
