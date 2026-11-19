@@ -945,7 +945,10 @@ a.quote__who:focus-visible { outline: 2px solid var(--color-focus); outline-offs
 .acc__item ul .acc__more a { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--color-navy); font-weight: 500; }
 .acc__more .i { width: 1em; height: 1em; }
 
-/* Lot 5 : cartes de parcours, prix au-dessus du bouton pour un rendu identique sur les quatre cartes */
-.path-step__go { flex-direction: column-reverse; align-items: flex-start; gap: var(--space-xs); }
-.path-step__go .btn--sm { margin-top: 0.1rem; }
+/* Lot 5 : cartes de parcours (P5c, 19 nov. 2026). Un filet sur toute la largeur sépare le texte de l'action ;
+   le prix puis le bouton se calent sur la marge droite. */
+.path-step__go { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.9rem; justify-items: end; margin-top: auto; padding-top: var(--space-xs); }
+.path-step__price { order: -1; display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; row-gap: 0.5rem; width: 100%; justify-self: stretch; box-sizing: border-box; font-weight: 500; font-size: var(--text-md); color: var(--color-ink); }
+.path-step__price::before { content: ""; flex: 0 0 100%; border-top: 1px solid var(--color-rule-strong); }
+.path-step__go .btn--sm { margin-top: 0; }
 #sub-experimenter > li:not(.submenu__lead):not(.submenu__side) a { white-space: nowrap; }
