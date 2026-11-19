@@ -203,7 +203,7 @@ h2 { font-size: var(--text-2xl); line-height: 1.06; letter-spacing: var(--tracki
 .retreat__title { font-size: var(--text-3xl); max-width: 14ch; }
 .retreat__facts { border-top: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-sm); }
 .retreat__facts div { padding: var(--space-md); border: 0; border-radius: var(--radius-media); background: var(--color-paper-2); }
-.retreat__facts dd { font-size: clamp(var(--text-lg), 2.6vw, var(--text-2xl)); line-height: 1.05; white-space: nowrap; }
+.retreat__facts dd { font-size: clamp(var(--text-lg), 1.85vw, var(--text-xl)); line-height: 1.1; white-space: nowrap; }
 .retreat__facts .retreat__sub { margin: var(--space-3xs) 0 0; font-size: var(--text-sm); line-height: 1.3; color: var(--color-ink-2); }
 @media (max-width: 56rem) { .retreat__facts dd { font-size: var(--text-xl); } }
 .dates { border-top: 0; display: flex; flex-wrap: wrap; gap: var(--space-2xs); }
@@ -949,4 +949,3 @@ a.quote__who:focus-visible { outline: 2px solid var(--color-focus); outline-offs
 .path-step__go { flex-direction: column-reverse; align-items: flex-start; gap: var(--space-xs); }
 .path-step__go .btn--sm { margin-top: 0.1rem; }
 #sub-experimenter > li:not(.submenu__lead):not(.submenu__side) a { white-space: nowrap; }
-.retreat__facts dd.dd--long { font-size: clamp(var(--text-lg), 1.85vw, var(--text-xl)); }
