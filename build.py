@@ -412,7 +412,7 @@ def parcours_html(c, parcours, t, lang, arts):
     # Le parcours se lit en trois notions (phase : point / experimenter / immerger), sans numéros.
     def step_card(s):
         return ('        <li class="path-step"><h4>%s</h4><p>%s</p>'
-                '<p class="path-step__go"><a class="link" href="%s">%s</a>%s</p></li>'
+                '<p class="path-step__go"><a class="btn btn--sm" href="%s">%s</a>%s</p></li>'
                 % (e(s["titre"]), link_products(e(s["texte"]), lang), e(s["url"]), e(s["label"]),
                    ('<span class="path-step__price">%s</span>' % e(s["prix"])) if s.get("prix") else ""))
     groups = []
