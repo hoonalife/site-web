@@ -1342,19 +1342,6 @@ body.search-open { overflow: hidden; }
   .ap-maison-body .card-grid { gap: var(--space-lg); }
 }
 
-/* Lot 5 : carrousel de l'équipe dans la colonne de droite de la page du centre. Une photo à la fois, les portraits gardent la hauteur des paysages. */
-.team__carousel { margin: 0; }
-.carousel--inset .carousel__slide { flex-basis: 100%; }
-.carousel--inset .carousel__slide img { aspect-ratio: 4 / 3; border-radius: var(--radius-card); }
-.carousel--inset .carousel__slide--portrait { flex-basis: 62%; }
-.carousel--inset .carousel__slide--portrait img { aspect-ratio: 4 / 5; }
-@media (min-width: 48rem) {
-  .carousel--inset .carousel__slide { flex-basis: 100%; }
-  .carousel--inset .carousel__slide img { aspect-ratio: 4 / 3; }
-  .carousel--inset .carousel__slide--portrait { flex-basis: 62%; }
-  .carousel--inset .carousel__slide--portrait img { aspect-ratio: 4 / 5; }
-}
-
 /* Lot 5 : toutes les photos de contenu ont des coins arrondis (règle du 19 nov. 2026). Les bandeaux pleine largeur (.plate) et le hero restent à bords droits. */
 .space img, .duo img, .post-card__media img, .doc figure img, .stack > img, .prose img, .team__figure img { border-radius: var(--radius-media); }
 .post-card__media { overflow: hidden; border-radius: var(--radius-media); }
